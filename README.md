@@ -1,4 +1,5 @@
-<<<<<<< HEAD
+THIS PROJECT IS COMPLETELY AI GENERATED
+MEANT TO MAKE PERSONAL STUDYING MORE EFFICIENT
 # Net-Practice
 Notes and Python Project to practice for CompTIA Network+
 =======
