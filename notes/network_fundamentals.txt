@@ -1,0 +1,41 @@
+IMAGE: NETWORKING CONCEPTS (IMG_0418)
+--------------------------------------------------------------------------------
+Networking Concepts
+
+Server:
+Makes network applications and resources available to other hosts.
+
+Client:
+Consumes services provided by servers.
+
+Networks:
+* Client-server: Where nodes act mostly as clients, servers being powerful computers. Application services and resources are provided, managed, and secured in a more centralized way.
+* Peer-to-peer: Hosts act as both client and server. Decentralized model; provision, management, security are distributed across the net. Can also be referred as workgroup.
+
+Appliances:
+Computers that perform a specific role in a network. Can be deployed both physically and virtually.
+Example: Virtual Machine running on a hypervisor.
+
+--------------------------------------------------------------------------------
+IMAGE: TOPOLOGIES & ENCAPSULATION (IMG_0419)
+--------------------------------------------------------------------------------
+
+Applications:
+The nodes and links are deployed to run services: file sharing, emailing.
+
+Functions:
+Implemented by configuring additional properties.
+Ex: 
+- VPN: Allowing devices across the internet.
+- Optimization of a network for different data types.
+
+Topologies:
+* Mesh: Redundancy.
+* Star: Easy to reconfig, faults are automatically isolated.
+
+Data Encapsulation & De-encapsulation:
+* Network Protocol: Set of rules for exchanging data in a structured format.
+* Encapsulation: Describes how messages should be packet for transmission. Each layer requires its own envelope.
+* PDU (Protocol Data Unit): The unit of data handled at a given layer, including payload plus any headers or trailers added at that layer.
+
+--------------------------------------------------------------------------------

@@ -1,0 +1,62 @@
+[
+    {
+        "id": "fc-1",
+        "term": "BGP",
+        "definition": "Border Gateway Protocol (Port 179) - External path-vector routing protocol.",
+        "domain_id": 2
+    },
+    {
+        "id": "fc-2",
+        "term": "OSPF",
+        "definition": "Open Shortest Path First - Link-state interior gateway protocol.",
+        "domain_id": 2
+    },
+    {
+        "id": "fc-3",
+        "term": "MTBF",
+        "definition": "Mean Time Between Failures - Average operating time between failures for repairable systems.",
+        "domain_id": 3
+    },
+    {
+        "id": "fc-4",
+        "term": "MTTF",
+        "definition": "Mean Time To Failure - Expected operating lifetime before failure for non-repairable components.",
+        "domain_id": 3
+    },
+    {
+        "id": "fc-5",
+        "term": "RPO",
+        "definition": "Recovery Point Objective - Maximum acceptable data loss measured in time.",
+        "domain_id": 3
+    },
+    {
+        "id": "fc-6",
+        "term": "RTO",
+        "definition": "Recovery Time Objective - Duration of time within which a business process must be restored.",
+        "domain_id": 3
+    },
+    {
+        "id": "fc-7",
+        "term": "PFS",
+        "definition": "Perfect Forward Secrecy - Ensures past sessions stay encrypted even if a server key is later compromised.",
+        "domain_id": 4
+    },
+    {
+        "id": "fc-8",
+        "term": "Stratum 1",
+        "definition": "NTP server that obtains UTC time from a direct physical link to an accurate clock source.",
+        "domain_id": 3
+    },
+    {
+        "id": "fc-9",
+        "term": "PTP",
+        "definition": "Precision Time Protocol (IEEE 1588) - Used for nanosecond-level time precision.",
+        "domain_id": 3
+    },
+    {
+        "id": "fc-10",
+        "term": "NAS",
+        "definition": "Network Attached Storage - Appliance dedicated to performing a file server role.",
+        "domain_id": 1
+    }
+]

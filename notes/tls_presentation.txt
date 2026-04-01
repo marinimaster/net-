@@ -1,95 +1,3 @@
-================================================================================
-IMAGE: BGP, OSPF & EIGRP (IMG_0417)
-================================================================================
-
-BGP (Border Gateway Protocol) - Port 179 - External Routing
-
-Path Vector:
-Meaning that it makes routing decisions using path information such as AS paths rather than simple hop count.
-
-Policy Based:
-It does NOT prioritize speed, but whatever accommodates the best to enterprise policies.
-
---------------------------------------------------------------------------------
-
-OSPF (Open Shortest Path First):
-* IPv4
-* IPv6 (OSPFv3)
-
---------------------------------------------------------------------------------
-
-EIGRP (Enhanced Interior Gateway Routing Protocol):
-* VLSM / CIDR
-* Hello Packets
-* Bandwidth / Delay
-* Partial Routing Updates: Only when something changes.
-* Topology Tables: Contains information to all routers.
-* Routing Tables: Only BEST routes.
-* DUAL (Diffusing Update Algorithm): Chooses best path. Assigns guaranteed loop-free successor.
-
---------------------------------------------------------------------------------
-IMAGE: NETWORKING CONCEPTS (IMG_0418)
---------------------------------------------------------------------------------
-
-Networking Concepts
-
-Server:
-Makes network applications and resources available to other hosts.
-
-Client:
-Consumes services provided by servers.
-
-Networks:
-* Client-server: Where nodes act mostly as clients, servers being powerful computers. Application services and resources are provided, managed, and secured in a more centralized way.
-* Peer-to-peer: Hosts act as both client and server. Decentralized model; provision, management, security are distributed across the net. Can also be referred as workgroup.
-
-Appliances:
-Computers that perform a specific role in a network. Can be deployed both physically and virtually.
-Example: Virtual Machine running on a hypervisor.
-
---------------------------------------------------------------------------------
-IMAGE: TOPOLOGIES & ENCAPSULATION (IMG_0419)
---------------------------------------------------------------------------------
-
-Applications:
-The nodes and links are deployed to run services: file sharing, emailing.
-
-Functions:
-Implemented by configuring additional properties.
-Ex: 
-- VPN: Allowing devices across the internet.
-- Optimization of a network for different data types.
-
-Topologies:
-* Mesh: Redundancy.
-* Star: Easy to reconfig, faults are automatically isolated.
-
-Data Encapsulation & De-encapsulation:
-* Network Protocol: Set of rules for exchanging data in a structured format.
-* Encapsulation: Describes how messages should be packet for transmission. Each layer requires its own envelope.
-* PDU (Protocol Data Unit): The unit of data handled at a given layer, including payload plus any headers or trailers added at that layer.
-
---------------------------------------------------------------------------------
-IMAGE: OSI LAYERS 2, 3 & 4 (IMG_0420)
---------------------------------------------------------------------------------
-
-Data Link Layer (Layer 2):
-* Network Adapter
-* Bridge: Intermediate system that isolates collision domains while joining segments from the same broadcast domain.
-* Minimizes performance reduction of having more nodes on the same network.
-
-Network Layer (Layer 3):
-* Access Control Lists (ACL) Management: Collection of Access Control Entries.
-* Determines which subjects (Accounts, IP Addresses) are allowed or denied access to a network as well as managing privileges (read/write).
-
-Transport Layer (End-to-end layer) (Layer 4):
-* Reliable Delivery Mechanisms.
-* Multilayer switches working as load balancers.
-* Firewalls.
-* Intrusion Detection Systems.
-* Data Segmentation.
-
---------------------------------------------------------------------------------
 IMAGE: PRESENTATION & TLS (IMG_0421)
 --------------------------------------------------------------------------------
 
@@ -114,7 +22,6 @@ Perfect Forward Secrecy (PFS):
 * Allows packets to stay encrypted even if server's key is obtained.
 
 --------------------------------------------------------------------------------
-IMAGE: NTP & STRATUM (IMG_0422)
 --------------------------------------------------------------------------------
 
 Network Time Protocol (NTP) - Port 123/UDP
@@ -152,7 +59,6 @@ IMAGE: PRECISION TIME PROTOCOL (PTP) (IMG_0424)
 --------------------------------------------------------------------------------
 
 Precision Time Protocol (PTP):
-Provides:
 * Nanosecond Precision.
 * IEEE 1588 standard.
 
@@ -234,7 +140,6 @@ Simple Mail Transfer Protocol (SMTP) - Port 25
 IMAP - Port 143
 IMAPS - Port 993
 
-Process:
 1. Local Mail Client (PC) -> Local IMAP or IMAPS Server (Port 143 or 993).
 2. Local Mail Client (PC) -> Local SMTP Server (Port 25).
 3. Local SMTP Server -> Remote SMTP Server (Port 25).
@@ -302,7 +207,6 @@ Note: Not to be confused with VLAN segmentation.
 Private Branch Exchange (PBX):
 Automated switchboard providing a single-connection point for an organization's voice lines.
 
-TDM-based PBX:
 Connects to the telecoms carrier over a digital trunk line (Inward/outward calls).
 Provides telephony features: Hold, Call Waiting, Music on hold, Voice Mail.
 
@@ -330,4 +234,3 @@ IMAGE: REAL-TIME PROTOCOLS (IMG_0433)
 Protocols designed to support real-time services cover one or more of the following functions:
 * Session Control — establish connections.
 * Data transfer — delivery.
-* QoS — Provides information about the connection to a QoS system.

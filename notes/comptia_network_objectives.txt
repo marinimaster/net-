@@ -1,0 +1,101 @@
+================================================================================
+NETWORK+ (N10-009) EXAM DOMAINS & OBJECTIVES
+================================================================================
+
+1. NETWORKING CONCEPTS (23%)
+--------------------------------------------------------------------------------
+* OSI Model Layers: 
+  - Physical, Data Link, Network, Transport, Session, Presentation, Application.
+* Networking Appliances: 
+  - Routers, switches, firewalls, IDS/IPS, load balancers, proxies, NAS, SAN, and wireless devices.
+* Cloud Concepts: 
+  - NFV, VPC, network security groups, cloud gateways.
+  - Deployment Models: Public, private, hybrid.
+  - Service Models: SaaS, IaaS, PaaS.
+* Ports and Protocols: 
+  - FTP, SFTP, SSH, Telnet, SMTP, DNS, DHCP, HTTP, HTTPS, SNMP, LDAP, RDP, SIP.
+* Traffic Types: 
+  - Unicast, multicast, anycast, broadcast.
+* Transmission Media: 
+  - Wireless: 802.11, cellular, satellite.
+  - Wired: Fiber, coaxial, DAC.
+* Transceivers and Connectors: 
+  - SC, LC, ST, MPO, RJ11, RJ45, F-type, BNC.
+* Network Topologies: 
+  - Mesh, hybrid, star/hub and spoke, spine and leaf, point-to-point, three-tier, and collapsed core.
+* IPv4 Addressing: 
+  - Public vs. private, APIPA, RFC1918, loopback.
+  - Subnetting: VLSM, CIDR.
+  - Address Classes: A, B, C, D, E.
+
+2. NETWORK IMPLEMENTATION (20%)
+--------------------------------------------------------------------------------
+* Routing Technologies: 
+  - Static and dynamic routing (BGP, EIGRP, OSPF), route selection, NAT, PAT, FHRP, VIP, and subinterfaces.
+* Switching Technologies: 
+  - VLANs, interface configuration, spanning tree, MTU, and jumbo frames.
+* Wireless Devices: 
+  - Channels, frequency options, SSID, network types, encryption, guest networks, authentication, antennas, and access points.
+* Physical Installations: 
+  - Installation implications, power considerations, and environmental factors.
+
+3. NETWORK OPERATIONS (19%)
+--------------------------------------------------------------------------------
+* Documentation: 
+  - Physical vs. logical diagrams, rack diagrams, cable maps, network diagrams, asset inventory, IPAM, SLA, and wireless surveys.
+* Life-cycle Management: 
+  - EOL (End of Life), EOS (End of Support), software management, and decommissioning.
+* Change Management: 
+  - Request process tracking.
+* Configuration Management: 
+  - Production, backup, baseline configurations.
+* Network Monitoring: 
+  - SNMP, flow data, packet capture, baseline metrics, log aggregation, API integration, and port mirroring.
+* Disaster Recovery: 
+  - RPO, RTO, MTTR, MTBF, cold/warm/hot sites, active-active/passive, and testing.
+* Network Services: 
+  - DHCP, SLAAC, DNS, NTP, PTP, and NTS.
+* Access and Management: 
+  - VPNs, SSH, GUI, API, and console.
+
+4. NETWORK SECURITY (14%)
+--------------------------------------------------------------------------------
+* Logical Security: 
+  - Encryption (data in transit/rest), PKI, IAM, MFA, SSO.
+  - Authentication: RADIUS, LDAP, SAML, TACACS+, time-based authentication.
+  - Access Control: Authorization, least privilege, role-based access control (RBAC), and geofencing.
+* Physical Security: 
+  - Cameras and locks.
+* Deception Technologies: 
+  - Honeypot and honeynet.
+* Security Terminology: 
+  - Risk, vulnerability, exploit, threat, and CIA triad.
+* Audits and Compliance: 
+  - Data locality, PCI DSS, and GDPR.
+* Network Segmentation: 
+  - IoT, IIoT, SCADA, ICS, OT, guest, and BYOD.
+* Types of Attacks: 
+  - DoS/DDoS, VLAN hopping, MAC flooding, ARP poisoning/spoofing, DNS poisoning/spoofing, rogue devices/services, evil twin, on-path attack, and social engineering (phishing, dumpster diving, shoulder surfing, tailgating).
+* Security Features and Defense: 
+  - Device hardening, NAC, key management, ACL, URL/content filtering, trusted vs. untrusted zones, and screened subnet.
+
+5. NETWORK TROUBLESHOOTING (24%)
+--------------------------------------------------------------------------------
+* Troubleshooting Methodology: 
+  - Identifying the problem, establishing a theory, testing, planning, and implementing a solution, verifying functionality, and documenting findings.
+* Cabling and Physical Interface Issues: 
+  - Cable issues: Incorrect type, signal degradation, improper termination, TX/RX transposed.
+  - Interface issues: Increasing counters, port status.
+  - Hardware issues: PoE, transceiver mismatch, signal strength.
+* Network Services Issues: 
+  - Switching: STP, VLAN assignment, ACLs.
+  - Routing: Routing table and default routes.
+  - General: Address pool exhaustion, and incorrect gateway/IP/subnet mask.
+* Performance Issues: 
+  - Congestion, latency, packet loss, and wireless interference.
+* Tools and Protocols: 
+  - Protocol analyzers, command line tools, cable testers, and Wi-Fi analyzers.
+
+================================================================================
+END OF DOCUMENT
+================================================================================

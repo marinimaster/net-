@@ -1,0 +1,19 @@
+IMAGE: OSI LAYERS 2, 3 & 4 (IMG_0420)
+--------------------------------------------------------------------------------
+
+Data Link Layer (Layer 2):
+* Network Adapter
+* Bridge: Intermediate system that isolates collision domains while joining segments from the same broadcast domain.
+* Minimizes performance reduction of having more nodes on the same network.
+
+Network Layer (Layer 3):
+* Access Control Lists (ACL) Management: Collection of Access Control Entries.
+* Determines which subjects (Accounts, IP Addresses) are allowed or denied access to a network as well as managing privileges (read/write).
+
+Transport Layer (End-to-end layer) (Layer 4):
+* Reliable Delivery Mechanisms.
+* Multilayer switches working as load balancers.
+* Firewalls.
+* Intrusion Detection Systems.
+* Data Segmentation.
+

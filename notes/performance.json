@@ -1,0 +1,74 @@
+{
+    "net-1": {
+        "correct": 1,
+        "total": 1
+    },
+    "mail-3": {
+        "correct": 2,
+        "total": 2
+    },
+    "time-2": {
+        "correct": 0,
+        "total": 1
+    },
+    "port-24": {
+        "correct": 1,
+        "total": 1
+    },
+    "svc-1": {
+        "correct": 1,
+        "total": 1
+    },
+    "diagram-2": {
+        "correct": 1,
+        "total": 1
+    },
+    "avail-1": {
+        "correct": 1,
+        "total": 1
+    },
+    "port-21": {
+        "correct": 0,
+        "total": 1
+    },
+    "mail-1": {
+        "correct": 1,
+        "total": 1
+    },
+    "metric-3": {
+        "correct": 2,
+        "total": 2
+    },
+    "net-4": {
+        "correct": 1,
+        "total": 1
+    },
+    "route-1": {
+        "correct": 1,
+        "total": 1
+    },
+    "net-2": {
+        "correct": 1,
+        "total": 1
+    },
+    "route-2": {
+        "correct": 1,
+        "total": 1
+    },
+    "disc-3": {
+        "correct": 0,
+        "total": 1
+    },
+    "ipam-1": {
+        "correct": 1,
+        "total": 1
+    },
+    "port-11": {
+        "correct": 1,
+        "total": 1
+    },
+    "route-3": {
+        "correct": 1,
+        "total": 1
+    }
+}

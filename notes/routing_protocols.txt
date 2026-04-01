@@ -1,0 +1,30 @@
+================================================================================
+IMAGE: BGP, OSPF & EIGRP (IMG_0417)
+================================================================================
+
+BGP (Border Gateway Protocol) - Port 179 - External Routing
+
+Path Vector:
+Meaning that it makes routing decisions using path information such as AS paths rather than simple hop count.
+
+Policy Based:
+It does NOT prioritize speed, but whatever accommodates the best to enterprise policies.
+
+--------------------------------------------------------------------------------
+
+OSPF (Open Shortest Path First):
+* IPv4
+* IPv6 (OSPFv3)
+
+--------------------------------------------------------------------------------
+
+EIGRP (Enhanced Interior Gateway Routing Protocol):
+* VLSM / CIDR
+* Hello Packets
+* Bandwidth / Delay
+* Partial Routing Updates: Only when something changes.
+* Topology Tables: Contains information to all routers.
+* Routing Tables: Only BEST routes.
+* DUAL (Diffusing Update Algorithm): Chooses best path. Assigns guaranteed loop-free successor.
+
+--------------------------------------------------------------------------------

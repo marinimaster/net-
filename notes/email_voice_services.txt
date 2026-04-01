@@ -1,0 +1,102 @@
+IMAGE: SMTP & IMAP DIAGRAM (IMG_0428)
+--------------------------------------------------------------------------------
+
+Simple Mail Transfer Protocol (SMTP) - Port 25
+IMAP - Port 143
+IMAPS - Port 993
+
+1. Local Mail Client (PC) -> Local IMAP or IMAPS Server (Port 143 or 993).
+2. Local Mail Client (PC) -> Local SMTP Server (Port 25).
+3. Local SMTP Server -> Remote SMTP Server (Port 25).
+4. Remote SMTP Server -> Remote IMAP Server -> Remote Mail Client.
+
+SMTP: How an email is delivered from one system to another. 
+The SMTP server of the sender discovers the IP address of the recipient by using the domain name part of the recipient's email address.
+SMTP servers for the domain are registered in DNS using MX and host records.
+SMTP looks up domain and establishes connections.
+
+IMAP: Allows clients to access and manage messages stored on the server.
+
+--------------------------------------------------------------------------------
+IMAGE: SMTP PORTS DETAILED (IMG_0429)
+--------------------------------------------------------------------------------
+
+SMTP (Port 25) & IMAP (Port 993) Continued
+
+* STARTTLS (Explicit TLS): Upgrades an existing plaintext connection to use TLS.
+* Implicit TLS (Preferred Method): Establishes a secure connection before any SMTP commands.
+
+Ports Detailed:
+* Port 25: Used for message relay between SMTP servers.
+* Port 465 (Implicit): Used for SMTP submission using implicit TLS.
+* Port 587 (Explicit): Used for SMTP submission using explicit TLS (STARTTLS).
+
+Note: Port 25 to submit messages is not best practice. Use of port 25 is typically reserved for relay between servers.
+
+--------------------------------------------------------------------------------
+IMAGE: IMAP DETAILS & SUMMARY (IMG_0430)
+--------------------------------------------------------------------------------
+
+Internet Message Access Protocol (IMAP)
+Insecure Port: 143 | TLS Port: 993
+
+* Widely used mail retrieval protocol.
+* Supports permanent connection to a server and connecting multiple clients to a mailbox.
+* Allows a client to manage the mailbox on the server and create multiple mailboxes.
+
+Summary:
+* SMTP -> Sending / Delivering (When hitting 'send'). Moves mail between servers.
+* IMAP -> Receiving / Managing (Access and manage stored email). Used when opening inbox.
+
+Port Reference:
+Protocol | Insecure | Secure
+IMAP     | 143      | 993
+SMTP     | 25       | 465 (Implicit TLS) | 587 (Submission with STARTTLS)
+
+--------------------------------------------------------------------------------
+IMAGE: VOICE AND VIDEO SERVICES (IMG_0431)
+--------------------------------------------------------------------------------
+
+Voice and Video Services:
+* Voice over IP (VoIP)
+* Web-conferencing
+* Video teleconferencing (VTC)
+
+Legacy voice services use the public switched telephone network (PSTN) / plain old telephone services (POTS).
+Typical businesses require tens or hundreds of lines for telephone services.
+Historically facilitated by a digital trunk line referred as Time Division Multiplexing (TDM).
+
+A TDM can multiplex separate voice and data channels for transmission over a single cable.
+Note: Not to be confused with VLAN segmentation.
+
+Private Branch Exchange (PBX):
+Automated switchboard providing a single-connection point for an organization's voice lines.
+
+Connects to the telecoms carrier over a digital trunk line (Inward/outward calls).
+Provides telephony features: Hold, Call Waiting, Music on hold, Voice Mail.
+
+--------------------------------------------------------------------------------
+IMAGE: VOIP ENABLED PBX (IMG_0432)
+--------------------------------------------------------------------------------
+
+VoIP enabled PBX:
+Replacement to TDM PBX.
+TDM-PBX is supplied as vendor-specific hardware.
+VoIP-PBX can be implemented as software running on a Windows or Linux server.
+Software examples: 3CX, Asterisk.
+
+VoIP is normally placed at the network edge and protected by a firewall.
+A VoIP/SIP endpoint can be implemented as software or as a dedicated hardware handset.
+VoIP phones use VLAN tagging to ensure that SIP and RTP protocols can be segregated from normal data traffic.
+
+VoIP Protocols:
+Voice and video services can be challenging to support because they require response times measured in milliseconds. Delayed response will result in poor call or video quality.
+
+--------------------------------------------------------------------------------
+IMAGE: REAL-TIME PROTOCOLS (IMG_0433)
+--------------------------------------------------------------------------------
+
+Protocols designed to support real-time services cover one or more of the following functions:
+* Session Control — establish connections.
+* Data transfer — delivery.
+* QoS — Provides information about the connection to a QoS system.
