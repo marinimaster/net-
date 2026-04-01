@@ -16,12 +16,12 @@
         "total": 1
     },
     "svc-1": {
-        "correct": 1,
-        "total": 1
+        "correct": 2,
+        "total": 2
     },
     "diagram-2": {
-        "correct": 1,
-        "total": 1
+        "correct": 2,
+        "total": 2
     },
     "avail-1": {
         "correct": 1,
@@ -32,8 +32,8 @@
         "total": 1
     },
     "mail-1": {
-        "correct": 1,
-        "total": 1
+        "correct": 2,
+        "total": 2
     },
     "metric-3": {
         "correct": 2,
@@ -60,14 +60,114 @@
         "total": 1
     },
     "ipam-1": {
-        "correct": 1,
-        "total": 1
+        "correct": 2,
+        "total": 2
     },
     "port-11": {
         "correct": 1,
         "total": 1
     },
     "route-3": {
+        "correct": 2,
+        "total": 2
+    },
+    "time-3": {
+        "correct": 2,
+        "total": 3
+    },
+    "voice-3": {
+        "correct": 1,
+        "total": 1
+    },
+    "tls-3": {
+        "correct": 1,
+        "total": 1
+    },
+    "time-5": {
+        "correct": 1,
+        "total": 1
+    },
+    "fault-2": {
+        "correct": 1,
+        "total": 1
+    },
+    "disc-1": {
+        "correct": 1,
+        "total": 1
+    },
+    "port-19": {
+        "correct": 0,
+        "total": 1
+    },
+    "agree-2": {
+        "correct": 1,
+        "total": 1
+    },
+    "port-14": {
+        "correct": 0,
+        "total": 1
+    },
+    "port-26": {
+        "correct": 1,
+        "total": 1
+    },
+    "port-10": {
+        "correct": 1,
+        "total": 1
+    },
+    "life-5": {
+        "correct": 1,
+        "total": 1
+    },
+    "port-20": {
+        "correct": 0,
+        "total": 1
+    },
+    "port-1": {
+        "correct": 1,
+        "total": 1
+    },
+    "port-2": {
+        "correct": 1,
+        "total": 1
+    },
+    "route-4": {
+        "correct": 2,
+        "total": 2
+    },
+    "fault-3": {
+        "correct": 1,
+        "total": 1
+    },
+    "port-15": {
+        "correct": 1,
+        "total": 1
+    },
+    "config-3": {
+        "correct": 1,
+        "total": 1
+    },
+    "route-5": {
+        "correct": 1,
+        "total": 1
+    },
+    "drp-2": {
+        "correct": 1,
+        "total": 1
+    },
+    "fault-4": {
+        "correct": 1,
+        "total": 1
+    },
+    "svc-4": {
+        "correct": 0,
+        "total": 1
+    },
+    "port-13": {
+        "correct": 1,
+        "total": 1
+    },
+    "perf-3": {
         "correct": 1,
         "total": 1
     }

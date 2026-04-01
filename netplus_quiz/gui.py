@@ -10,14 +10,18 @@ from tkinter.scrolledtext import ScrolledText
 from .engine import AnswerRecord, FlashcardSession, QuizSession, SubnetEngine
 from .quiz_bank import (
     FLASHCARD_BANK,
+    NOTES_DIR,
     PROJECT_ROOT,
     QUESTION_BANK,
-    available_domains,
     get_flashcards,
     get_global_stats,
+    get_port_drill_questions,
     get_questions,
+    load_settings,
+    reset_all_data,
     save_flashcard_mastery,
     save_performance,
+    save_settings,
 )
 
 DOMAIN_NAMES = {
@@ -28,427 +32,449 @@ DOMAIN_NAMES = {
     5: "Network Troubleshooting"
 }
 
-class QuizApp(tk.Tk):
-    """Network+ Study Suite with Quiz, Flashcards, and Subnetting."""
+# Nord/CompTIA Palette
+COLORS = {
+    "dark": {
+        "bg": "#2E3440",
+        "sidebar": "#242933",
+        "fg": "#ECEFF4",
+        "primary": "#0072CE",  # CompTIA Blue
+        "accent": "#FF8200",   # CompTIA Orange
+        "nord_blue": "#88C0D0",
+        "correct": "#A3BE8C",
+        "wrong": "#BF616A",
+        "hover": "#3B4252"
+    },
+    "light": {
+        "bg": "#ECEFF4",
+        "sidebar": "#D8DEE9",
+        "fg": "#2E3440",
+        "primary": "#0072CE",
+        "accent": "#FF8200",
+        "nord_blue": "#5E81AC",
+        "correct": "#4F734F",
+        "wrong": "#8B4B4B",
+        "hover": "#E5E9F0"
+    }
+}
 
+class QuizApp(tk.Tk):
     def __init__(self) -> None:
         super().__init__()
         self.title("CompTIA Network+ Study Suite")
-        self.geometry("1000x750")
-        self.minsize(850, 650)
+        self.geometry("1100x800")
+        self.minsize(900, 700)
         
-        self.font_size_offset = 0
-        default_family = tkfont.nametofont("TkDefaultFont").cget("family")
-        self.title_font = tkfont.Font(family=default_family, size=22, weight="bold")
-        self.header_font = tkfont.Font(family=default_family, size=16, weight="bold")
-        self.section_font = tkfont.Font(family=default_family, size=12, weight="bold")
-        self.prompt_font = tkfont.Font(family=default_family, size=14, weight="bold")
-        self.result_font = tkfont.Font(family=default_family, size=13)
+        self.app_settings = load_settings()
+        self.current_theme = self.app_settings.get("theme", "dark")
+        self.palette = COLORS[self.current_theme]
+        
+        self._init_fonts()
+        self._apply_theme_colors()
 
         # Session state
         self.session: QuizSession | None = None
         self.fc_session: FlashcardSession | None = None
-        self.last_record: AnswerRecord | None = None
         self._timer_after_id: str | None = None
-        self._end_time: float = 0
         
         # UI Variables
         self.timer_var = tk.StringVar()
         self.feedback_var = tk.StringVar()
-        self.subnet_challenge = {}
         
-        self._build_main_menu()
+        self._build_layout()
+        self._show_dashboard()
 
-    def _clear_window(self) -> None:
+    def _init_fonts(self) -> None:
+        base_size = self.app_settings.get("font_size", 12)
+        family = "Roboto"
+        self.title_font = tkfont.Font(family=family, size=base_size + 10, weight="bold")
+        self.header_font = tkfont.Font(family=family, size=base_size + 4, weight="bold")
+        self.ui_font = tkfont.Font(family=family, size=base_size)
+        self.code_font = tkfont.Font(family="Courier", size=base_size)
+
+    def _apply_theme_colors(self) -> None:
+        style = ttk.Style()
+        style.theme_use("clam")
+        p = self.palette
+        
+        self.configure(bg=p["bg"])
+        
+        style.configure("TFrame", background=p["bg"])
+        style.configure("Sidebar.TFrame", background=p["sidebar"])
+        style.configure("TLabel", background=p["bg"], foreground=p["fg"], font=self.ui_font)
+        style.configure("Header.TLabel", font=self.header_font)
+        style.configure("Title.TLabel", font=self.title_font)
+        
+        style.configure("TButton", font=self.ui_font, padding=6, background=p["sidebar"], foreground=p["fg"])
+        style.map("TButton", 
+                  background=[("active", p["hover"])],
+                  foreground=[("active", p["fg"])])
+        
+        style.configure("Primary.TButton", background=p["primary"], foreground="white")
+        style.map("Primary.TButton", 
+                  background=[("active", p["nord_blue"])],
+                  foreground=[("active", "white")])
+        
+        style.configure("Sidebar.TButton", background=p["sidebar"], foreground=p["fg"], borderwidth=0)
+        style.map("Sidebar.TButton", 
+                  background=[("active", p["bg"])],
+                  foreground=[("active", p["fg"])])
+        
+        style.configure("TCheckbutton", background=p["bg"], foreground=p["fg"], font=self.ui_font)
+        style.map("TCheckbutton", 
+                  background=[("active", p["bg"])],
+                  foreground=[("active", p["fg"])])
+                  
+        style.configure("TRadiobutton", background=p["bg"], foreground=p["fg"], font=self.ui_font)
+        style.map("TRadiobutton", 
+                  background=[("active", p["bg"])],
+                  foreground=[("active", p["fg"])])
+
+        style.configure("TProgressbar", thickness=10, background=p["nord_blue"])
+
+    def _build_layout(self) -> None:
+        self.sidebar = ttk.Frame(self, style="Sidebar.TFrame", width=200)
+        self.sidebar.pack(side="left", fill="y")
+        self.sidebar.pack_propagate(False)
+        
+        ttk.Label(self.sidebar, text="Net+", style="Title.TLabel", background=self.palette["sidebar"]).pack(pady=20)
+        
+        nav_items = [
+            ("Dashboard", self._show_dashboard),
+            ("Practice Quiz", self._show_quiz_config),
+            ("Port Practice", self._show_port_config),
+            ("Flashcards", self._show_fc_config),
+            ("Subnetting", self._show_subnetting),
+            ("Study Notes", self._show_notes),
+            ("Settings", self._show_settings)
+        ]
+        
+        for text, cmd in nav_items:
+            ttk.Button(self.sidebar, text=text, command=cmd, style="Sidebar.TButton").pack(fill="x", padx=10, pady=5)
+            
+        self.main_area = ttk.Frame(self)
+        self.main_area.pack(side="right", fill="both", expand=True)
+
+    def _clear_main(self) -> None:
         if self._timer_after_id:
             self.after_cancel(self._timer_after_id)
             self._timer_after_id = None
-        for child in self.winfo_children():
+        for child in self.main_area.winfo_children():
             child.destroy()
 
-    def _build_main_menu(self) -> None:
-        self._clear_window()
-        
-        frame = ttk.Frame(self, padding=40)
+    def _show_dashboard(self) -> None:
+        self._clear_main()
+        frame = ttk.Frame(self.main_area, padding=40)
         frame.pack(fill="both", expand=True)
-        frame.columnconfigure(0, weight=1)
-        frame.columnconfigure(1, weight=1)
-
-        # Header
-        ttk.Label(frame, text="Network+ Study Suite", font=self.title_font).grid(row=0, column=0, columnspan=2, pady=(0, 30))
-
-        # Dashboard / Stats
-        stats_frame = ttk.LabelFrame(frame, text="Current Mastery (Historical Accuracy)", padding=20)
-        stats_frame.grid(row=1, column=0, columnspan=2, sticky="ew", pady=(0, 40))
         
-        global_stats = get_global_stats()
+        ttk.Label(frame, text="System Mastery", style="Title.TLabel").pack(anchor="w", pady=(0, 30))
+        
+        stats = get_global_stats()
         for i in range(1, 6):
-            d_stats = global_stats[i]
+            d_stats = stats[i]
             acc = (d_stats["correct"] / d_stats["total"] * 100) if d_stats["total"] > 0 else 0
-            cov = (d_stats["seen"] / d_stats["bank_size"] * 100) if d_stats["bank_size"] > 0 else 0
             
-            d_row = ttk.Frame(stats_frame)
-            d_row.pack(fill="x", pady=4)
-            ttk.Label(d_row, text=f"D{i}: {DOMAIN_NAMES[i]}", width=30).pack(side="left")
+            row = ttk.Frame(frame)
+            row.pack(fill="x", pady=10)
+            ttk.Label(row, text=f"Domain {i}: {DOMAIN_NAMES[i]}", width=30).pack(side="left")
             
-            pb = ttk.Progressbar(d_row, length=300, mode="determinate", value=acc)
+            pb = ttk.Progressbar(row, length=400, mode="determinate", value=acc)
             pb.pack(side="left", padx=20)
-            ttk.Label(d_row, text=f"{acc:.0f}% Accuracy | {d_stats['seen']}/{d_stats['bank_size']} Covered").pack(side="left")
+            ttk.Label(row, text=f"{acc:.0f}% Accurate").pack(side="left")
 
-        # Action Buttons
-        btn_style = {"width": 25, "padding": 10}
-        
-        ttk.Button(frame, text="Practice Quiz", command=self._build_quiz_config, **btn_style).grid(row=2, column=0, pady=10)
-        ttk.Button(frame, text="Flashcard Mode", command=self._build_flashcard_config, **btn_style).grid(row=2, column=1, pady=10)
-        ttk.Button(frame, text="Subnetting Challenge", command=self._start_subnetting, **btn_style).grid(row=3, column=0, pady=10)
-        ttk.Button(frame, text="Study Notes", command=lambda: self._show_note_window(None), **btn_style).grid(row=3, column=1, pady=10)
-
-    # --- Quiz Module ---
-
-    def _build_quiz_config(self) -> None:
-        self._clear_window()
-        frame = ttk.Frame(self, padding=40)
+    # --- Quiz Configuration ---
+    def _show_quiz_config(self) -> None:
+        self._clear_main()
+        frame = ttk.Frame(self.main_area, padding=40)
         frame.pack(fill="both", expand=True)
         
-        ttk.Label(frame, text="Configure Practice Quiz", font=self.header_font).pack(pady=(0, 20))
+        ttk.Label(frame, text="Practice Quiz", style="Title.TLabel").pack(anchor="w", pady=(0, 20))
         
-        # Domain selection
-        domain_frame = ttk.LabelFrame(frame, text="Select Domains", padding=15)
-        domain_frame.pack(fill="x", pady=10)
+        self.sel_domains = {i: tk.BooleanVar(value=True) for i in range(1, 6)}
+        d_frame = ttk.LabelFrame(frame, text="Scope", padding=15)
+        d_frame.pack(fill="x", pady=10)
         
-        self.selected_domains = {}
-        for i in range(1, 6):
-            var = tk.BooleanVar(value=True)
-            self.selected_domains[i] = var
+        for i, var in self.sel_domains.items():
             count = sum(1 for q in QUESTION_BANK if q.domain_id == i)
             state = "normal" if count > 0 else "disabled"
-            label = f"Domain {i}: {DOMAIN_NAMES[i]} ({count} questions)"
-            ttk.Checkbutton(domain_frame, text=label, variable=var, state=state).pack(anchor="w", pady=2)
+            ttk.Checkbutton(d_frame, text=f"D{i}: {DOMAIN_NAMES[i]} ({count} items)", variable=var, state=state).pack(anchor="w")
 
-        # Options
-        opt_frame = ttk.Frame(frame, padding=10)
-        opt_frame.pack(fill="x")
+        opt_frame = ttk.Frame(frame)
+        opt_frame.pack(fill="x", pady=20)
         
-        ttk.Label(opt_frame, text="Count:").pack(side="left")
-        self.q_limit = tk.IntVar(value=10)
-        ttk.Spinbox(opt_frame, from_=1, to=len(QUESTION_BANK), textvariable=self.q_limit, width=5).pack(side="left", padx=10)
+        ttk.Label(opt_frame, text="Questions:").pack(side="left")
+        self.q_count = tk.IntVar(value=10)
+        ttk.Spinbox(opt_frame, from_=1, to=len(QUESTION_BANK), textvariable=self.q_count, width=5).pack(side="left", padx=10)
         
-        self.shuffle_var = tk.BooleanVar(value=True)
-        ttk.Checkbutton(opt_frame, text="Shuffle", variable=self.shuffle_var).pack(side="left", padx=20)
+        self.q_shuffle = tk.BooleanVar(value=True)
+        ttk.Checkbutton(opt_frame, text="Shuffle", variable=self.q_shuffle).pack(side="left", padx=20)
         
-        self.timed_var = tk.BooleanVar(value=False)
-        ttk.Checkbutton(opt_frame, text="Timed (10m)", variable=self.timed_var).pack(side="left")
-
-        btn_bar = ttk.Frame(frame, padding=20)
-        btn_bar.pack()
-        ttk.Button(btn_bar, text="Back", command=self._build_main_menu).pack(side="left", padx=10)
-        ttk.Button(btn_bar, text="Start Quiz", command=self._start_quiz).pack(side="left", padx=10)
+        ttk.Button(frame, text="Start Session", style="Primary.TButton", command=self._start_quiz).pack(pady=20)
 
     def _start_quiz(self) -> None:
-        domains = [d for d, var in self.selected_domains.items() if var.get()]
-        if not domains: return
-        
-        questions = get_questions(domains=domains, limit=self.q_limit.get(), shuffle=self.shuffle_var.get())
-        if not questions: return
-        
-        limit = 600 if self.timed_var.get() else None
-        self.session = QuizSession(questions, time_limit_seconds=limit)
-        
-        if limit:
-            self._end_time = time.time() + limit
-            self._update_timer()
-            
-        self._build_question_screen()
-        self._render_question()
+        ds = [d for d, v in self.sel_domains.items() if v.get()]
+        if not ds: return
+        qs = get_questions(domains=ds, limit=self.q_count.get(), shuffle=self.q_shuffle.get())
+        if not qs: return
+        self.session = QuizSession(qs)
+        self._render_quiz_view()
 
-    def _update_timer(self) -> None:
-        if not self.session or not self.timed_var.get(): return
-        rem = self._end_time - time.time()
-        if rem <= 0:
-            self.session.set_timed_out()
-            self._build_results_screen()
-            return
-        m, s = divmod(int(rem), 60)
-        self.timer_var.set(f"{m:02d}:{s:02d}")
-        self._timer_after_id = self.after(1000, self._update_timer)
-
-    def _build_question_screen(self) -> None:
-        self._clear_window()
-        frame = ttk.Frame(self, padding=30)
+    # --- Port Practice ---
+    def _show_port_config(self) -> None:
+        self._clear_main()
+        frame = ttk.Frame(self.main_area, padding=40)
         frame.pack(fill="both", expand=True)
         
-        # Header: Progress and Timer
-        head = ttk.Frame(frame)
-        head.pack(fill="x", pady=(0, 20))
-        self.prog_lbl = ttk.Label(head, text="", font=self.section_font)
-        self.prog_lbl.pack(side="left")
-        ttk.Label(head, textvariable=self.timer_var, font=self.section_font, foreground="red").pack(side="right")
+        ttk.Label(frame, text="Port Drill Mode", style="Title.TLabel").pack(anchor="w", pady=(0, 20))
+        ttk.Label(frame, text="Bidirectional Multiple Choice practice for all protocols and ports.", wraplength=600).pack(anchor="w")
         
-        self.topic_lbl = ttk.Label(frame, text="", foreground="gray")
-        self.topic_lbl.pack(anchor="w")
+        opt_frame = ttk.LabelFrame(frame, text="Options", padding=20)
+        opt_frame.pack(fill="x", pady=30)
         
-        self.prompt_lbl = ttk.Label(frame, text="", font=self.prompt_font, wraplength=850, justify="left")
-        self.prompt_lbl.pack(anchor="w", pady=20)
+        self.port_secure_only = tk.BooleanVar(value=False)
+        ttk.Checkbutton(opt_frame, text="Secure Protocols Only (SSH, HTTPS, etc)", variable=self.port_secure_only).pack(anchor="w", pady=5)
         
-        self.choices_frame = ttk.Frame(frame)
-        self.choices_frame.pack(fill="x", pady=10)
-        self.choice_widgets = []
-        self.multi_vars = []
-        self.single_var = tk.IntVar(value=-1)
+        ttk.Label(opt_frame, text="Question Count:").pack(side="left", pady=10)
+        self.port_q_count = tk.IntVar(value=20)
+        ttk.Spinbox(opt_frame, from_=5, to=50, textvariable=self.port_q_count, width=5).pack(side="left", padx=10)
         
-        ttk.Separator(frame).pack(fill="x", pady=20)
-        
-        self.fb_lbl = ttk.Label(frame, textvariable=self.feedback_var, wraplength=850, justify="left")
-        self.fb_lbl.pack(anchor="w")
-        
-        btns = ttk.Frame(frame, padding=20)
-        btns.pack(side="bottom", fill="x")
-        self.sub_btn = ttk.Button(btns, text="Submit", command=self._submit_answer)
-        self.sub_btn.pack(side="left", padx=5)
-        self.next_btn = ttk.Button(btns, text="Next", command=self._render_question, state="disabled")
-        self.next_btn.pack(side="left", padx=5)
-        ttk.Button(btns, text="Flag", command=self._toggle_flag).pack(side="left", padx=5)
-        ttk.Button(btns, text="Quit", command=self._build_main_menu).pack(side="right")
+        ttk.Button(frame, text="Start Drill", style="Primary.TButton", command=self._start_port_drill).pack(pady=20)
 
-    def _render_question(self) -> None:
+    def _start_port_drill(self) -> None:
+        qs = get_port_drill_questions(secure_only=self.port_secure_only.get(), limit=self.port_q_count.get())
+        if not qs: return
+        self.session = QuizSession(qs)
+        self._render_quiz_view()
+
+    def _render_quiz_view(self) -> None:
+        self._clear_main()
+        self.feedback_var.set("")
         q = self.session.current_question()
         if not q:
-            self._build_results_screen()
+            self._show_results()
             return
             
-        self.feedback_var.set("")
-        self.prog_lbl.config(text=f"Question {self.session.position+1} of {self.session.total_questions} | Domain {q.domain_id}")
-        self.topic_lbl.config(text=f"{q.topic} | {q.difficulty.title()}")
-        self.prompt_lbl.config(text=q.prompt + (f" (Select {len(q.answer_indices)})" if q.is_multi_select else ""))
+        frame = ttk.Frame(self.main_area, padding=30)
+        frame.pack(fill="both", expand=True)
         
-        for w in self.choice_widgets: w.destroy()
-        self.choice_widgets.clear()
-        self.multi_vars.clear()
+        prog_bar = ttk.Progressbar(frame, mode="determinate", value=(self.session.position/self.session.total_questions)*100)
+        prog_bar.pack(fill="x", pady=(0, 20))
+        
+        ttk.Label(frame, text=f"Question {self.session.position+1}/{self.session.total_questions} - {q.topic}", foreground="gray").pack(anchor="w")
+        ttk.Label(frame, text=q.prompt, font=self.header_font, wraplength=700, justify="left").pack(anchor="w", pady=20)
+        
+        self.choice_frame = ttk.Frame(frame)
+        self.choice_frame.pack(fill="both", expand=True)
+        self.vars = []
+        self.single_var = tk.IntVar(value=-1)
         
         if q.is_multi_select:
             for i, c in enumerate(q.choices):
                 v = tk.BooleanVar()
-                self.multi_vars.append(v)
-                w = ttk.Checkbutton(self.choices_frame, text=c, variable=v)
-                w.pack(anchor="w", pady=5)
-                self.choice_widgets.append(w)
+                self.vars.append(v)
+                ttk.Checkbutton(self.choice_frame, text=c, variable=v).pack(anchor="w", pady=5)
         else:
-            self.single_var.set(-1)
             for i, c in enumerate(q.choices):
-                w = ttk.Radiobutton(self.choices_frame, text=c, value=i, variable=self.single_var)
-                w.pack(anchor="w", pady=5)
-                self.choice_widgets.append(w)
+                ttk.Radiobutton(self.choice_frame, text=c, value=i, variable=self.single_var).pack(anchor="w", pady=5)
+                
+        self.fb_lbl = ttk.Label(frame, textvariable=self.feedback_var, wraplength=700)
+        self.fb_lbl.pack(pady=20)
         
-        self.sub_btn.config(state="normal")
-        self.next_btn.config(state="disabled")
+        btn_bar = ttk.Frame(frame)
+        btn_bar.pack(side="bottom", fill="x")
+        
+        self.sub_btn = ttk.Button(btn_bar, text="Submit", style="Primary.TButton", command=self._submit_quiz)
+        self.sub_btn.pack(side="left", padx=5)
+        self.next_btn = ttk.Button(btn_bar, text="Next", state="disabled", command=self._render_quiz_view)
+        self.next_btn.pack(side="left", padx=5)
+        ttk.Button(btn_bar, text="Source Note", command=lambda: self._show_notes(q.source_file)).pack(side="left", padx=5)
 
-    def _submit_answer(self) -> None:
+    def _submit_quiz(self) -> None:
         q = self.session.current_question()
-        if q.is_multi_select:
-            sel = tuple(i for i, v in enumerate(self.multi_vars) if v.get())
-            if len(sel) != len(q.answer_indices):
-                messagebox.showwarning("Incomplete", f"Select exactly {len(q.answer_indices)}.")
-                return
-        else:
-            if self.single_var.get() < 0: return
-            sel = (self.single_var.get(),)
-            
-        rec = self.session.answer_current(sel)
-        save_performance(q.id, rec.is_correct)
+        sel = tuple(i for i, v in enumerate(self.vars) if v.get()) if q.is_multi_select else (self.single_var.get(),)
+        if not sel or (not q.is_multi_select and sel[0] < 0): return
         
-        for w in self.choice_widgets: w.config(state="disabled")
-        prefix = "Correct!" if rec.is_correct else f"Incorrect. Correct: {', '.join(q.answer_texts)}"
-        self.feedback_var.set(f"{prefix}\n\nExplanation: {q.explanation}")
+        rec = self.session.answer_current(sel)
+        # Don't save performance for drills to avoid skewing domain stats with synthetic questions
+        if "drill" not in q.id:
+            save_performance(q.id, rec.is_correct)
+        
+        p = self.palette
+        color = p["correct"] if rec.is_correct else p["wrong"]
+        prefix = "CORRECT" if rec.is_correct else f"INCORRECT. Answer: {', '.join(q.answer_texts)}"
+        self.feedback_var.set(f"{prefix}\n\n{q.explanation}")
+        self.fb_lbl.config(foreground=color)
+        
         self.sub_btn.config(state="disabled")
         self.next_btn.config(state="normal")
 
-    def _toggle_flag(self) -> None:
-        q = self.session.current_question()
-        if q: self.session.toggle_flag(q.id)
-
-    def _build_results_screen(self) -> None:
-        self._clear_window()
-        frame = ttk.Frame(self, padding=40)
+    def _show_results(self) -> None:
+        self._clear_main()
+        frame = ttk.Frame(self.main_area, padding=40)
         frame.pack(fill="both", expand=True)
-        
-        ttk.Label(frame, text="Quiz Results", font=self.header_font).pack(pady=10)
-        ttk.Label(frame, text=f"Final Score: {self.session.score} / {self.session.total_questions}", font=self.prompt_font).pack(pady=5)
-        
-        stats = self.session.domain_stats
-        breakdown = ttk.LabelFrame(frame, text="Domain Breakdown", padding=15)
-        breakdown.pack(fill="x", pady=20)
-        for i in range(1, 6):
-            s = stats[i]
-            if s["total"] > 0:
-                perc = (s["correct"]/s["total"])*100
-                ttk.Label(breakdown, text=f"D{i}: {perc:.0f}% ({s['correct']}/{s['total']})").pack(anchor="w")
+        ttk.Label(frame, text="Session Complete", style="Title.TLabel").pack(pady=20)
+        ttk.Label(frame, text=f"Score: {self.session.score} / {self.session.total_questions}", font=self.header_font).pack()
+        ttk.Button(frame, text="Finish", command=self._show_dashboard).pack(pady=30)
 
-        ttk.Button(frame, text="Back to Menu", command=self._build_main_menu).pack(pady=20)
-
-    # --- Flashcard Module ---
-
-    def _build_flashcard_config(self) -> None:
-        self._clear_window()
-        frame = ttk.Frame(self, padding=40)
+    # --- Flashcards ---
+    def _show_fc_config(self) -> None:
+        self._clear_main()
+        frame = ttk.Frame(self.main_area, padding=40)
         frame.pack(fill="both", expand=True)
+        ttk.Label(frame, text="Flashcards", style="Title.TLabel").pack(anchor="w", pady=(0, 20))
         
-        ttk.Label(frame, text="Flashcard Mode", font=self.header_font).pack(pady=(0, 20))
-        
-        domain_frame = ttk.LabelFrame(frame, text="Select Domains", padding=15)
-        domain_frame.pack(fill="x", pady=10)
-        
-        self.fc_domains = {}
-        for i in range(1, 6):
-            v = tk.BooleanVar(value=True)
-            self.fc_domains[i] = v
+        self.fc_ds = {i: tk.BooleanVar(value=True) for i in range(1, 6)}
+        for i, v in self.fc_ds.items():
             count = sum(1 for c in FLASHCARD_BANK if c.domain_id == i)
-            state = "normal" if count > 0 else "disabled"
-            ttk.Checkbutton(domain_frame, text=f"D{i}: {DOMAIN_NAMES[i]} ({count} cards)", variable=v, state=state).pack(anchor="w", pady=2)
+            ttk.Checkbutton(frame, text=f"Domain {i} ({count} cards)", variable=v, state="normal" if count > 0 else "disabled").pack(anchor="w")
+            
+        ttk.Button(frame, text="Start Session", style="Primary.TButton", command=self._start_fc).pack(pady=20)
 
-        ttk.Button(frame, text="Start Session", command=self._start_flashcards).pack(pady=20)
-        ttk.Button(frame, text="Back", command=self._build_main_menu).pack()
-
-    def _start_flashcards(self) -> None:
-        ds = [d for d, v in self.fc_domains.items() if v.get()]
-        cards = get_flashcards(domains=ds)
-        if not cards: return
-        self.fc_session = FlashcardSession(cards)
-        self._build_fc_screen()
+    def _start_fc(self) -> None:
+        ds = [d for d, v in self.fc_ds.items() if v.get()]
+        cs = get_flashcards(domains=ds)
+        if not cs: return
+        self.fc_session = FlashcardSession(cs)
         self._render_fc()
 
-    def _build_fc_screen(self) -> None:
-        self._clear_window()
-        frame = ttk.Frame(self, padding=50)
-        frame.pack(fill="both", expand=True)
-        
-        self.fc_prog = ttk.Label(frame, text="", font=self.section_font)
-        self.fc_prog.pack(pady=(0, 30))
-        
-        # The Card
-        self.card_frame = tk.Frame(frame, bg="white", relief="raised", bd=2, height=300, width=600)
-        self.card_frame.pack_propagate(False)
-        self.card_frame.pack(pady=20)
-        
-        self.card_text = tk.Label(self.card_frame, text="", font=self.title_font, bg="white", wraplength=550)
-        self.card_text.pack(expand=True)
-        
-        self.is_flipped = False
-        self.card_frame.bind("<Button-1>", lambda e: self._flip_card())
-        self.card_text.bind("<Button-1>", lambda e: self._flip_card())
-        
-        ttk.Label(frame, text="(Click card to flip)", foreground="gray").pack()
-        
-        self.fc_actions = ttk.Frame(frame, padding=30)
-        self.fc_actions.pack(fill="x")
-        
-        self.btn_known = ttk.Button(self.fc_actions, text="I Knew It", command=lambda: self._report_fc(True))
-        self.btn_not_known = ttk.Button(self.fc_actions, text="Need Review", command=lambda: self._report_fc(False))
-        
-        ttk.Button(frame, text="Quit Session", command=self._build_main_menu).pack(side="bottom", pady=20)
-
     def _render_fc(self) -> None:
+        self._clear_main()
         c = self.fc_session.current_card
         if not c:
-            self._build_main_menu()
+            self._show_dashboard()
             return
             
-        self.is_flipped = False
-        self.fc_prog.config(text=f"Card {self.fc_session.position+1} of {self.fc_session.total}")
-        self.card_text.config(text=c.term, font=self.title_font, foreground="black")
-        self.btn_known.pack_forget()
-        self.btn_not_known.pack_forget()
+        frame = ttk.Frame(self.main_area, padding=50)
+        frame.pack(fill="both", expand=True)
+        
+        self.card_container = tk.Frame(frame, width=600, height=350, bg=self.palette["sidebar"], 
+                                       highlightthickness=2, highlightbackground=self.palette["nord_blue"])
+        self.card_container.pack_propagate(False)
+        self.card_container.pack(pady=20)
+        
+        self.card = tk.Label(self.card_container, text=c.term, bg=self.palette["sidebar"], fg=self.palette["fg"], 
+                             font=self.title_font, wraplength=550, justify="center")
+        self.card.pack(fill="both", expand=True)
+        
+        self.card_container.bind("<Button-1>", lambda e: self._flip_fc(c))
+        self.card.bind("<Button-1>", lambda e: self._flip_fc(c))
+        
+        ttk.Label(frame, text="Click card to flip", foreground="gray").pack()
+        
+        self.fc_btns = ttk.Frame(frame)
+        self.fc_btns.pack(pady=20)
 
-    def _flip_card(self) -> None:
-        c = self.fc_session.current_card
-        if not self.is_flipped:
-            self.card_text.config(text=c.definition, font=self.prompt_font, foreground="darkblue")
-            self.btn_known.pack(side="left", expand=True)
-            self.btn_not_known.pack(side="left", expand=True)
-            self.is_flipped = True
-        else:
-            self.card_text.config(text=c.term, font=self.title_font, foreground="black")
-            self.btn_known.pack_forget()
-            self.btn_not_known.pack_forget()
-            self.is_flipped = False
+    def _flip_fc(self, card: any) -> None:
+        self.card.config(text=card.definition, font=self.header_font, bg=self.palette["nord_blue"], fg="white")
+        self.card_container.config(bg=self.palette["nord_blue"])
+        for b in self.fc_btns.winfo_children(): b.destroy()
+        ttk.Button(self.fc_btns, text="I Knew It", style="Primary.TButton", command=lambda: self._report_fc(True)).pack(side="left", padx=10)
+        ttk.Button(self.fc_btns, text="Review Again", command=lambda: self._report_fc(False)).pack(side="left", padx=10)
 
     def _report_fc(self, known: bool) -> None:
-        c = self.fc_session.current_card
-        save_flashcard_mastery(c.id, known)
+        save_flashcard_mastery(self.fc_session.current_card.id, known)
         self.fc_session.report(known)
         self._render_fc()
 
-    # --- Subnetting Module ---
-
-    def _start_subnetting(self) -> None:
-        self._clear_window()
-        frame = ttk.Frame(self, padding=40)
+    # --- Subnetting ---
+    def _show_subnetting(self) -> None:
+        self._clear_main()
+        frame = ttk.Frame(self.main_area, padding=40)
         frame.pack(fill="both", expand=True)
         
-        ttk.Label(frame, text="Subnetting Challenge", font=self.header_font).pack(pady=(0, 20))
+        chal = SubnetEngine.generate_challenge()
+        ttk.Label(frame, text="Subnetting Challenge", style="Title.TLabel").pack(anchor="w")
+        ttk.Label(frame, text=f"IP/CIDR: {chal['ip']} / {chal['cidr']}", font=self.header_font).pack(pady=20)
         
-        self.sub_chal = SubnetEngine.generate_challenge()
-        
-        ttk.Label(frame, text=f"Identify the following for: {self.sub_chal['ip']} / {self.sub_chal['cidr']}", font=self.prompt_font).pack(pady=20)
-        
-        form = ttk.Frame(frame)
-        form.pack()
-        
-        self.sub_entries = {}
-        for i, label in enumerate(["Subnet Mask", "Network ID", "Broadcast Address"]):
-            ttk.Label(form, text=label + ":").grid(row=i, column=0, sticky="e", padx=10, pady=10)
-            ent = ttk.Entry(form, width=25, font=self.prompt_font)
-            ent.grid(row=i, column=1, sticky="w", pady=10)
-            key = label.split()[0].lower()
-            if key == "subnet": key = "mask"
-            self.sub_entries[key] = ent
+        self.entries = {}
+        self.correct_labels = {}
+        for label in ["Mask", "Network", "Broadcast"]:
+            f = ttk.Frame(frame)
+            f.pack(fill="x", pady=5)
+            ttk.Label(f, text=f"{label}:", width=15).pack(side="left")
+            e = tk.Entry(f, font=self.ui_font, bg=self.palette["sidebar"], fg=self.palette["fg"], insertbackground=self.palette["fg"], bd=0, highlightthickness=1)
+            e.config(highlightbackground=self.palette["sidebar"], highlightcolor=self.palette["primary"])
+            e.pack(side="left", fill="x", expand=True)
+            self.entries[label.lower()] = e
+            
+            cl = ttk.Label(f, text="", foreground=self.palette["nord_blue"])
+            cl.pack(side="left", padx=10)
+            self.correct_labels[label.lower()] = cl
 
-        self.sub_fb = ttk.Label(frame, text="", wraplength=600)
-        self.sub_fb.pack(pady=20)
-        
-        btn_bar = ttk.Frame(frame)
-        btn_bar.pack()
-        self.sub_check_btn = ttk.Button(btn_bar, text="Check Answers", command=self._check_subnet)
-        self.sub_check_btn.pack(side="left", padx=10)
-        ttk.Button(btn_bar, text="New Challenge", command=self._start_subnetting).pack(side="left", padx=10)
-        ttk.Button(btn_bar, text="Main Menu", command=self._build_main_menu).pack(side="left", padx=10)
+        ttk.Button(frame, text="Check", style="Primary.TButton", command=lambda: self._check_subnet(chal)).pack(pady=20)
+        self.sub_fb = ttk.Label(frame, text="")
+        self.sub_fb.pack()
+        ttk.Button(frame, text="New", command=self._show_subnetting).pack()
 
-    def _check_subnet(self) -> None:
+    def _check_subnet(self, chal: dict) -> None:
         correct = True
-        fb_msg = ""
-        for key, ent in self.sub_entries.items():
-            user_val = ent.get().strip()
-            actual = self.sub_chal[key]
+        for k, e in self.entries.items():
+            user_val = e.get().strip()
+            actual = chal[k]
             if user_val == actual:
-                ent.config(foreground="green")
+                e.config(highlightbackground=self.palette["correct"], highlightcolor=self.palette["correct"])
+                self.correct_labels[k].config(text="")
             else:
-                ent.config(foreground="red")
+                e.config(highlightbackground=self.palette["wrong"], highlightcolor=self.palette["wrong"])
+                self.correct_labels[k].config(text=f"Expected: {actual}")
                 correct = False
-                fb_msg += f"{key.title()}: Expected {actual}\n"
+        self.sub_fb.config(text="Perfect!" if correct else "Review the red fields and expected values.", 
+                           foreground=self.palette["correct"] if correct else self.palette["wrong"])
+
+    # --- Settings ---
+    def _show_settings(self) -> None:
+        self._clear_main()
+        frame = ttk.Frame(self.main_area, padding=40)
+        frame.pack(fill="both", expand=True)
         
-        if correct:
-            self.sub_fb.config(text="Perfect! All answers correct.", foreground="green")
+        ttk.Label(frame, text="Settings", style="Title.TLabel").pack(anchor="w", pady=(0, 20))
+        
+        ttk.Label(frame, text="Base Font Size:").pack(anchor="w")
+        fs_var = tk.IntVar(value=self.app_settings["font_size"])
+        s = ttk.Scale(frame, from_=8, to=24, variable=fs_var, orient="horizontal")
+        s.pack(fill="x", pady=10)
+        
+        theme_var = tk.StringVar(value=self.current_theme)
+        ttk.Radiobutton(frame, text="Nord Dark", value="dark", variable=theme_var).pack(anchor="w")
+        ttk.Radiobutton(frame, text="Nord Light", value="light", variable=theme_var).pack(anchor="w")
+        
+        ttk.Button(frame, text="Save & Restart", style="Primary.TButton", 
+                   command=lambda: self._save_settings_logic(fs_var.get(), theme_var.get())).pack(pady=20)
+        
+        ttk.Separator(frame).pack(fill="x", pady=20)
+        ttk.Button(frame, text="Reset Progress Data", command=self._reset_data_logic).pack()
+
+    def _save_settings_logic(self, fs: int, theme: str) -> None:
+        self.app_settings.update({"font_size": fs, "theme": theme})
+        save_settings(self.app_settings)
+        messagebox.showinfo("Restart", "Please restart the application to apply changes.")
+
+    def _reset_data_logic(self) -> None:
+        if messagebox.askyesno("Confirm", "Are you sure you want to delete all historical performance?"):
+            reset_all_data()
+            self._show_dashboard()
+
+    # --- Notes ---
+    def _show_notes(self, specific: Path = None) -> None:
+        win = tk.Toplevel(self)
+        win.title("Study Notes")
+        win.geometry("800x600")
+        win.configure(bg=self.palette["bg"])
+        
+        txt = ScrolledText(win, bg=self.palette["bg"], fg=self.palette["fg"], font=self.ui_font, padx=10, pady=10)
+        txt.pack(fill="both", expand=True)
+        
+        if specific:
+            content = specific.read_text(encoding="utf-8")
         else:
-            self.sub_fb.config(text=f"Some errors found:\n{fb_msg}", foreground="red")
-
-    # --- Notes Viewer (Re-integrated) ---
-
-    def _show_note_window(self, source_path: Path | None) -> None:
-        window = tk.Toplevel(self)
-        window.title("Study Notes")
-        window.geometry("820x620")
-        text = ScrolledText(window, wrap="word")
-        text.pack(fill="both", expand=True, padx=12, pady=12)
-        if source_path is None:
             parts = []
-            notes_dir = PROJECT_ROOT / "notes"
-            for path in sorted(notes_dir.glob("*.txt")):
-                if path.name == "questions.json" or path.name == "flashcards.json": continue
-                parts.append(f"=== {path.name} ===\n{path.read_text(encoding='utf-8')}\n")
+            for p in sorted(NOTES_DIR.glob("*.txt")):
+                if p.name.endswith(".json"): continue
+                parts.append(f"=== {p.name} ===\n{p.read_text()}\n")
             content = "\n".join(parts)
-        else:
-            content = source_path.read_text(encoding="utf-8")
-        text.insert("1.0", content)
-        text.config(state="disabled")
+            
+        txt.insert("1.0", content)
+        txt.config(state="disabled")
 
 def run_gui() -> None:
     app = QuizApp()
