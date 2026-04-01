@@ -1,0 +1,26 @@
+# Cisco Discovery Protocol (CDP)
+Runs on Cisco devices. It is a Layer 2 discovery protocol that sends status announcements over directly
+connected interfaces every 60 seconds by default.
+Each device keeps a cached table compiled from the announcements it has received.
+
+It uses multicast address:
+
+	01:00:0c:cc:cc:cc
+
+The command:
+
+	show cdp neighbors
+
+shows information such as device ID or host name, local interface, platform, and port ID.
+
+For more detail, use:
+
+	show cdp neighbors detail
+
+This can show software version, management addresses, native VLAN information, and PoE details when available.
+
+# Link Layer Discovery Protocol (LLDP)
+Similar to CDP, but LLDP is an IEEE standards-based approach used in multivendor networks.
+Multicast address (LLDP):
+
+	01:80:c2:00:00:0e

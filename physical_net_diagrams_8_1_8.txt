@@ -1,0 +1,34 @@
+- Physical Network Diagrams -
+	Asset and configuration item (CI) documentation makes significant use of diagrams.
+	A diagram is the best way to capture complex relationships between network elements.
+	However, it is better not to include too much information if you want to keep a diagram useful.
+
+- Cable Maps / Floor Plan -
+	Shows how wires are routed through conduit from telecommunications closets to work areas.
+	
+	* Physically accurate floor plans are hard to design and are likely to 
+	require the help of an architect or graphics professional.
+
+Port Naming Conventions
+	Alphanumeric (Identifiers for campus - Building - Telecommunications Space - Space - Port)
+						CB01-01A-D01
+	Main Campus Building (CB01), telecommunications space A on floor 1 (01A), data port 1 (D01)
+
+i) In addition to having a diagram, it can be very useful to have a picture of the current config
+   to provide a visual reference for troubleshooting and identifying unauthorized changes.
+
+- Wiring Diagram -
+	Shows detailed information about the termination of twisted pairs in an RJ45 jack or insulation
+	Displacement Connector (IDC). You might also use a wiring diagram to document how fiber optic strands
+	are terminated.
+
+i) You should document the wiring diagrams used to terminate twisted pairs.
+   
+   Ethernet is wired using T568A or T568B, and the same standard should be used consistently throughout the
+   network.
+
+- Rack Diagrams -
+	Records the position of each appliance in the rack.
+	
+	You can obtain stencils that represent vendor equipment from vendor websites or collections such as
+	VisioCafe.

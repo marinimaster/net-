@@ -1,0 +1,795 @@
+===== IMG_0407.JPG =====
+Routin 4 Logvo and the Default Route,
+
+1 Moke the best mates ofall mutes mn the IP muting table
+‘Reet: ost specho foukt.
+“Best: Rote wir longer) mosh
+
+& IF no rovte matches the pookets destinorhon :
+
+“Dee re default roul®
+
+‘The depautt pul i consdeyed to mater all pockets.
+—lF no rove ests , cheroird dng pack —
+
+5 Defavit mutts can be orected by :
+Roving Projocol 5
+ Stolvu Config (ip roule) with o 0.0.0.0 0.0-:0-0
+
+PR 10-10-20. 0/94 Lol] via 10.10-80-%, 00:00:14 Yeol 403 [4
+
+Pministetve Dishonces ;
+seek by Ve router fy delermine which raving profocal
+
+hag, Prier ty
+
+Terms: :
+" EXORP (Enhanced Interior Galewoy Rooting Protocol ) : Csco Developed
+Dynomnic rovling) erolecol Hhot ovlemofcolly learng rovles
+and calwilrtea best eoth Using) Adar, bandwily relabhhy ond \goiel
+meteius.
+
+===== IMG_0408.JPG =====
+her Veem
+OSPF (geen Shortest Bath Firat): Lik-Stole Dynamo Pouhing Protocol
+thot colcclabes SQ) cost (monly based on banda tal
+
+RiP uve: Distance- Vecler outing (retocels thot we Hop
+Cunt as theac met pre (monsimunr 15 hops).
+
+TIP WA 15 olasddol (no subnet info)
+
+—Bipya SLPPOAS nelmashé ancl autherheashon.
+
+Distancge-Veclor Povling Profocels
+
+‘Debermines the best pah baseol on Axtences (metro)
+
+andl cectiors (net hep lecvaved Prom nerghkonng mutes.
+‘Roulers shore their erhre rovling, tables ot regula intervals
+fad) router trusts whet is neighbors fell it
+
+linh—Stote Rouhna, Vrojocels
+
+‘ Boned on logy, it builds g com le4e, sap kthe oti ®
+network, and calwloles the bes} path by wel P
+
+Roker share inhrrchor about their dlirecly connected links
+
+“Uses shortest eoth Psy loge eines to colo aplima routs
+
+Poukag Meadnce
+
+- Hoe Covet Porting) protorels use A. Prevent
+
+: Baneluivyo metrits
+
+Delay (lajency \ They tromsforn their row mobrice
+Ogg IB 0 meaturale value YSigQ) an
+Doloblidy slaprithens, Gemt pote _sampe lew tan
+‘ Loacl aNhers
+
+‘ Mawmuno Traygmnsioe
+
+Uni (MTU)
+
+===== IMG_0409.JPG =====
+6. Dynamy Rovking Teohnolaqves
+
+° Dynami Routing) Protovol: ‘Learnoo route! . Entry in Ye
+rovlicg toble thal has been leaned fiom onde
+rouier.
+
+° Adapts ty topology ChongeO sun as
+Link Failures New newer ke L- Congeshors
+° Dynanwo Rovking Proyoco\s are clas: Ped ay
+
+Lowionee Vector L Link Bote Liye
+—Resecl on next ho — Uaes enhre2)
+with lowes hoe count topology
+—Te solect most
+
+ia ma \ pas
+Converse ‘ORL
+
+le the praceesy running Aynamic rod ay alogr th res aqvee
+on the newer topology.
+
+Avlonomovs Systems .
+me nelkwor\k Under the ack nistvorue control of a single
+
+Owner.
+
+IGP (Internal Gateway Probecol ): IdenbPes roles within an
+AS
+
+“COP (Gdernal) foverrises routes between autone mous
+
+Sy crema.
+
+===== IMG_0410.JPG =====
+Boulin InLon 109 Preloce|
+—Dislence Vveetor
+
+\ only considers dre rey hop row ben tc reach @ Ger
+network or vector (Subnet) .
+
+It considers only one metrio to vlect the optimal Poth +0
+a gwen networA. The one with the lowest hop Count.
+Limdohons
+
+- Glow convergenok
+
+‘Prone to reutin loge .
+
+- Leited seolab Ty (15- hor lmit)
+
+-(nepecuent Por large neworhs.
+
+Erhanced \ntdenor Goleway ‘Kovhng Prosocol,
+Developed by G&co Due to lmdothons in \GRP
+
+===== IMG_0411.JPG =====
+Three tered Ne wor Higrarchy
+Used! 1 breokelown com lew netuer A clesgns
+‘Uses OSC05 Prncipl<s Por co three- —tered —Wierechy ,
+3. Core,
+& Di§hniovbkon
+4. Process.
+
+Access / Gi er ;
+. Phlows J er dences (printers, Computers, phones J
+Col| nd | wall ports Por wort
+= points For wweless
+d systems connest te scurtvhes
+ri ol ect ink between ane pete
+
+PTR TE ZEn
+
+Didbibvbion [Dg eopict Loy Aa
+- Prond<s Payspiee bey inteconnectons bekween
+Afterent QcLesS blocks or other elietribu hen blocks
+
+Gel oceas surteoh has ful) o- parton mesh \inkS 1,
+
+Each rovl€r oc loner 2 ewitch in ids aor |
+
+lover lplecK core
+
+Prout ney
+
+jor
++ Swideg, _
+seeks Dat qhut_|
+—~ Stes \
+
+aS
+
+===== IMG_0412.JPG =====
+Shroctured Cabling Slanclords
+
+ANS\ Hieleia Soy commertor| Bulloling Telecomms
+Wiring Shonclarch
+
+‘Work Drea E
+
+‘Hor@antal Cabling Connects user werk oee5 to cn
+intecmecade dighsbubon Demme
+
+— (ior)
+
+: Telecomme n esos
+
+Roorn : (OF)
+
+Bauhbone Cabling Connects IPFs 40 @ moin distr frome
+B+ \so refered to as Verkcal ecbling
+
+Exthronce Facilihe s: Special type of conn mark ng
+
+the point at which ecemea)
+bling 1S jeined! do Wheernnral
+
+=
+
+SPD
+
+a
+
+===== IMG_0413.JPG =====
+Y +e loer Wovelen canlt
+be seen through the nthe
+
+Liber eye.
+Dingle ode Fiber.» Sivall Core long wavelength
+(SMF) - Shabtly More expensive
+Uses laser, nem IA (13/0 /1950)
+‘Grades
+OS. Op hicea\ Single O51: pdene
+OSa_: Outdoor
+
+ages Core | shor wovelengt h
+lower speetS
+- Shorter range
+
+‘Mol Node Eber :
+
+Optrea | Mulbimode Gracles:
+
+om1/oma: Lec transmitters
+Qightly larger Core
+
+OMg|OMA « Laser Ophmicest MMF CLoMME )
+Not as fast as Single mode losers
+Carle thar led Gozexd.
+
+Con necto rs
+
+=) Strarght Up
+
+‘SUT Svubsoneer connector
+
+. LC - Loceny Connector
+
+MPO Mutt Fiber Push - On : Compac higher oleng ty
+Using) \eé6 Space.
+
+===== IMG_0414.JPG =====
+OEP — Small forme factor Ploageble
+SEP + {00 Mb - ethernet only SEL 10Gb
+
+(Qb  — Fiber lethemer = —
+SHPaB dH Gb Dae
+Fiber om Dae
+Only
+
+DAC: Diccet Atached Copper
+OF Sa module that aclocks to the cable it
+
+iS Q 4p. .
+
+IL converts the sina 1, moteh, Dbec| ‘ope &
+Insertion, Loss
+
+Signa! log when ib goes thrush a olence.
+
+Mikigaled by USINg less, eotoh Pannels anol
+
+Connéetors :
+
+Vise Ophe Coble Cashes
+
+Reames
+
+Hob PC UPC fined
+Sats Yeh ve
+
+===== IMG_0415.JPG =====
+Wavelength Dinsron Muthplecng (WDM \
+
+-—
+
+BL Ri.
+Using ON, OF two shrancls Provision mulhole
+
+Chany als
+
+Bidirectional Wovelenalh Dison Mathie lexing
+AAlows trangPering and receiving data over
+
+O emgle shrand 2 USING sqporole warerength 2
+
+Coarse, WDM ° Up to 1b wavelengths
+45 bidirechonal channels
+
+Dense WDM: 30,49) JO or 140 channels
+quires Precis® lowers
+Sd, mork €¥pensive
+
+===== IMG_0416.JPG =====
+Three Wey Hondshaka
+S41 LSYN, ACK] LACK
+
+\ Sour sends sequence number ty deshnation
+€
+* Set 19 _10..G- Syn = 15
+Dst © 172 190.6.4
+
+2) sb Senda cS OWN sequence numb Gnel acknow—
+ledges Connectia n.
+
+Desbination cends an achnow|ed num ber equal Te
+Cowra S oouenee. number 1
+
+Sre: {7 120. 67 Sn
+Det - 10. 70-0. | Ach=
+
+===== IMG_0417.JPG =====
+iT) rb Eyltmal
+169 Rovting
+
+Rath Veckerr Bliey Dased
+
+Meanin thot + {LE does! NOT prochze
+Ch hook ike routes speed , lout Mover
+Or" hoe ao? actammodoses the
+
+loeal- to enteypriw™ foher €s
+0S P f a
+
+V6 (OsPra)
+AA om eR
+von Farka Rooting eel
+Hello Yockets “Beolegy “Tables
+Bandwith (ating Information 4¢
+Delay Rouhng Tables
+
+only BEST Rokers
+Du es beak Yor
+PESIQINS quar rankeed \ooe- Pree SuceeSsov.
+
+===== IMG_0418.JPG =====
+Networking Concepts
+
+Server
+Nokes network opelications omol pesources avoilabla
+jo other hosts’.
+
+Client
+
+Congum24 Services Orovicled by Serverd .
+
+Nekwuorhs
+
+Olent-<erver where nodes ack mostly oe eons
+Servers bEing owertu! COMPUTES .
+cotton ey 02 andl thovurvels ave
+provided, mangesl, anol ceourecl in G&G more
+Contre leecl ae ae
+
+Peer-to-peer - hosts act as both chent and server
+Decenalied model, provision, management,
+Sseoonly are, dishabuled Qccres § neA.
+Can alxg be ceRerceal as anal
+
+pphanceo m a .
+(omevlers thot per ‘ho ral
+oy nodevor ky * ™eaeee
+
+Can be d loyed both physically and wrkvaly
+Eearnple: \Fi orl Madhne Running) on A hyperiisor
+
+===== IMG_0419.JPG =====
+Ppphcabons ;
+The hodes ancl Jinks Ore cle loyeo! 40 run
+DHVCRS - File Sharing, emailing
+
+funehions |
+lm le red b Cont ra add hona| hes
+Pee oy Connigpens pepe
+- VPN Ailowne clevices aCross he whined
+* Op}im orton oP G network 4or- diPcrent dale
+aan
+
+“Trpdlog eA:
+Recuna “ee
+fg nh
+a a] fa 7 ne eno I y
+
+Isola
+Data Encapslahon t Qe-encapsulaton
+
+‘Nekeyorlk Proboca\
+Sel of res fore ceMareyng) alien.
+Ina struchured Fork .
+
+Encapslahon:
+Deser bes how messages <holl be packet
+Jor traremssion
+tach layer require tS OWN enue lope.
+
+PDU. The Onunlk of healers thay 4 creolled
+
+VARS), reaps Yon
+
+===== IMG_0420.JPG =====
+Doka Links Layer)
+= Netrwor lr Adopter
+*Bridke
+
+Intermectarle, Spoken Hho Ite S collision domanre
+TOUNte jong Sequins Prom thi Some proadlcas\- olomaw.
+
+y Minmizes performance reduction of having mort nooles
+On the same netevotA
+
+Nekworl Layer F
+
+Precess Control Licks (ACL) Managenven
+‘Collection of Access Conhol Enines
+
+Dekrrmines whch subjects [Aocounts, IP Adldresses)
+aye allovedl or dened access to @ networl
+
+As well as managing privileges (reac! luunle )
+
+Transport Layer (Encl lo- end loyer) LD»
+
+“Reale Oebvey Mechanisms
+
+My thlay ee Switches Worring, as loach Raloncers
+YarQuaile
+
+eee Detection Systems.
+
+‘Data Seaprertakon
+
+===== IMG_0421.JPG =====
+Tresertahor Layer
+Deals with typhon wher Paired with TLS
+
+Tronspork ryan Security (LS \
+Uses cerbihales te der pt and other heate
+‘Comls Dron SSL whic 1S com pletely obs) Ae.
+
+Tip. \cathon Tr ns ork CGeotes OM #@ncryehon
+Stach Ne [ie r tonne) }
+
+*OS| Model: Session | Tresentehon
+
+Con <20re Mor “TOY fhowee lecala such as
+bn sere tony TH opplasbcey pr
+NIP -PGPSTIMPP
+
+The Secure Port Aorrmall USCA di Pheer port thar
+He normal version.
+
+ip authunttcabior is successfol
+: ail irs lent ve the, ey PO va) He
+dal ermal
+ag
+
+o chosery cryplegraphe — Capher suite
+
+Peter Forwarcs Sexxe0y (ers)
+» Mechomignn Pourch in lobesl version of TLS
+‘Allows packets lo SION orcrypled evtn 2
+Server's Rew \s obtemca .
+
+===== IMG_0422.JPG =====
+Network Vim 2 Probecg] (tp) Secure (NTs)
+
+Fore 103/UDP Port 4460 /TUP
+2442, 4442
+
+Used when ol-ent- Mol s4rver need jis be
+Synchronize to the same Hmg, .
+Commands :
+
+ates me chamises W3aLin
+"Auanhing | \ogaina mechansms etc | wtp. con
+: echedol Jd P\icathion s / In
+*Bachup Sofware
+
+ANZ Servers
+
+= Shetum 4 (UU)
+Obtairs the. Coordinaled Universal Tim® vill a
+direct physical link to an accurote Hoe source
+
+° Shafeum 2
+Synchroni2 & theic Aen 2 wih o shroum 4.
+
+Strvér over a network lnk.
+
+Each Strakunn (wel represent a step msery Psa le
+
+accurate clo
+Simple TP (SNTP )
+
+a hos4 thot su perks only SNTP cannot ack as
+Q diner Sourck a other hosts.
+Vovolly used by hosts to obsain. the +mze
+
+===== IMG_0423.JPG =====
+Time ae Nay NTP
+
+Time, drt 6 when the qelems cloth beans fo
+devale. Sdved by applying ether
+
+"Slew method: when time is off by few secondls
+Shor meted: hen tine is off by more thom a few
+Secanas  Howrd Wesettiney it
+
+Atlernaliveo
+iC a \gcal strate 4 sener can not be f olarnonteal
+10 the local networl, time 20ne can be conPioured
+VS One O- More public Nig server Pools:
+
+===== IMG_0424.JPG =====
+Recico Q “limes Pols col (PTP)
+Droundes
+
+‘Nanosecond Treasion
+“General Weplacemen+ of NTP. IEEE 1693 stondard.
+
+Veed In |
+a Industroy| Processes 8 Mecca! Dewees “Fmanca| SUOWale?
+° 0G @tarket Tradling
+
+[| Granch master Cleo |
+
+pO
+
+t melronamber fimelrgnsrat}e E
+
+Lime Recenve C + me Recaver
+Lo, =~ [p conclarry Cooks |
+ssiruaidini in me [ranendte ~
+
+dReteer eves VOn~
+
+[Orders Clocks | } o
+
+===== IMG_0425.JPG =====
+“Port
+Sever Mensace Rook (sme) sige
+
+. Windows Peink| Filo Shon
+
+flows a host to ahare = directones [Blas and Prinbers
+do make then avonlable hy other machines 4p use.
+
+Samba SoPhware Suro
+
+* H\lows Windows chant to access a linus fost
+as well GSAS ':
+* Lnuw Hos} to access Whindlews—hosled print lee
+Semmes :
+Port Pange
+NABIOS a5 4359
+
+Lego protoce| SMB used =) ru”) AS Port as port oF
+
+bs netwarh Sernwces.
+
+IP \eaacy chank SuPPok jenet required . SMB will ron
+norm on Por 449 a
+
+SNB_ should onl mun on local networks
+Trahhic on pots 124 al Si and 44H choulel be
+block ec}
+
+===== IMG_0426.JPG =====
+Nedworlh Phached Storage (NAS)
+Appliance dedicaled 40 Per Forming) a Dl Server role.
+
+: Uses a bespnr operor}in system.
+— Usvaill Pel on Le }
+—Usually operated via a Web Lee
+
+, Accesses Via |? or ddmain name
+
+id Cop Ov bacltup operations are per Farmeot ot Lile
+level USN An ap phoornon grotecol Such, os
+SMB or FTP.
+
+"Most NAS dewces suppor some level of redundant
+Avro oft wclepen dant dicks (At D).
+
+Main clrowbacl, of WAS
+
+* Shares \lbandwrth with other network opplicatione ,
+
+rr: unaccetoble deloyc
+
+ob:
+ON networks writ adeqole bandwith iso Ged Woy
+of add ng Shay ech SHOMA Ge
+
+===== IMG_0427.JPG =====
+Dete base Services
+
+ Daboloose™ provdes deka ino en thet Can be
+(Za Or updates Tacough some Type
+
+of ery language
+Relahena| Dotobase s. Shore dole in
+ZZ Udlureans | Fields
+a ee
+
+OWS
+Decords
+Operated Using SQL \nsecure loy Aehault
+“RDBMS con be matolled
+Common Torl both a cer LPicates
+
+Oracle. “ICR Ov
+Mica aot SQL: Top / (A>
+MySQL MoriabB: [23° b
+Pestgresal: TCP /EASL
+
+Not Orky SQL (Nese)
+
+ Key-value paics
+“Unde columns
+
+Commonly actesseal heovela DP\e over SKTTPs
+
+===== IMG_0428.JPG =====
+Fort
+Swwyple Mail Tronsler Protocol ( AuirP) 25
+
+© \ Bg] ~ =" SMTP
+PC rail Z SMTP - ee] smMyP
+
+Va Sorvec Server
+
+fo
+
+~
+
+\
+
+Loval Mol ‘Yort
+() Chent \ i SAS Demole
+
+|
+J R
+IM\A-P
+Local |MAP Server s.
+Sever ;
+
+J I how Gn Snel 1S clelivered
+
+Fron one sytem to onother
+
+‘The SMTP Server of the sender Demote Za
+discovers the IP addeees of the Marl Cheat io
+reoprent Dy Using The domain name
+part oF the recipienks Breil adolecy
+
+SMTP : Looks of sonaems
+SMTP servers Lor the clomoie and elablicheS
+are or ole recl Wn DNS USin Canhecrions
+
+MX and host records
+
+IMBP ANlows ona download
+and BOVINA COWS
+
+===== IMG_0429.JPG =====
+SMP — 2X6
+Mae = Eelasuibel
+
++“ SMARTTLS (Deprecated, still wiclely vse)
+Upgrades orn eyishng Insecure connechory to vse TLS
++ Inaphiit TES CPeeterred Method)
+Estaloliches a Secure connection bePore any SMTP Command
+; mm sS
+‘Ports ‘Deter led
+-Port QS: Used For MESSAQ, rAciy bekveen SMIP
+
+SOVVLKS
+"fort 465! Used fo 55 ;
+ae cr SMTP submission verse) wmapheit
+
+Cypher
+“Tork Gays Used for
++15 SMTP submission Usin9) expos
+
+Tort SS er messages boy ig not beat practice
+porT 8D 1s typica hy reserved! foc relay between
+
+Servers,
+
+===== IMG_0430.JPG =====
+Insecure fort
+
+Intemet Message Pecess rotoco!| 43
+
+‘ Widely used mar | retnevel protoce |
+6 Supports Permanent Connection te Ga serve,-
+ancl Connect) mulliple hents lo a mai tbox.
+
+It allows Q chien \o manage the. mailbox on tne Server:
+ancl creole mulhele moi loves |
+
+SMP —_ Sendin Deliverin
+* When lth, ang | J
+"Moves mail fween servers
+
+IMAP —> zing | Manan
+* Pecess Renn stocd J oil.
+
+® Used when omen inDor.
+TDemlger thot ports ace
+
+Protaco | \nsecure, Seuure
+IMAP 14 443
+SMTP Ake 4659 Insplicst | Goad
+
+O8> Ewplicit / cd
+
+Iraplient
+Cpl fon 8
+
+===== IMG_0431.JPG =====
+Voice and Video Semces
+
+Vicle (Was UL
+Voice, over |P (VelP), web- conkerenorng , St eleconPereneing
+
+Leppe VOLCe Serviced vse the publvo snintihve.cl tele phone
+network (PSTN) plain ald telephone seruces CPOTS )
+
+Typical Businesse5 requ’ tens oc hundreds of nes
+
+Pre telephone serviced .
+
+= Historically his would’ ve been Loaltated by oO hig rho
+ten a :
+
+—PoPerred a5 Tints Dusion Mulbplexing, 1pm)
+
+A TDM can mulhelee sez parce vores onal data
+
+Channels Foc dL ycosBrs (SSNS over ao singe cable.
+
+Nob to he Beatles oorth VLAN seqmentotor
+Suitchpor+ vaca ylan
+
+su tehport access Vian 16
+Penvorkes ‘Beonch Ce change (PRY)
+
+Audomate suwritohboard Prov din a singlo -connection
+Pont Lor an onganizolen’s vac® |Aek -
+
+TDM based PRY Provides telephony Lecter 26
+Comrects to the Jolacdnare> : {hold
+
+Conner oe a al tel slew. i’ Call ladle
+ner. (Inward Joutward calls eMusio on hold
+
+oVance Mail
+
+===== IMG_0432.JPG =====
+Vo\P enabled PRX
+Replacement to TDM PRY.
+
+TDM P?RY. \S supplied OS verclor_speu: o hardware
+VOIP-PBX con be Implemented os sotwar® runaing
+ON ma Wadows of Linox Server. SoFfevare enarn pres:
+° 5Uy
+0 Aster
+
+Vol? Is normally ploces ot the en edga
+and be prolectee by a Lieewalll.
+
+f\ Vol? Is? end paint COW je. implemented! as software
+OF AS dedicated hard wore etches :
+
+o\ Phones USE VLAN to \ 0 BNSore_
+yell SIP and RTP orotocal Ua) ia sepegoted
+Fron Norma dota SroPic
+
+\lol? Profocels
+
+\loicer and video services can be ohallengng to Seppor}
+becase They requie® response dimes meQg rec! (n
+miliseconds. Leloye response sill result i" peor call
+or Vide quality.
+
+===== IMG_0433.JPG =====
+Proto col :
+S
+SOV CLS shesigned ne suppoct real he
+Functions | me er meres oh Shou
+the Q)lows nA
+, ean Conbol — establish oc
+1 QoS — Sem —_slelivery oo
+COViIc\les invormeohon
+f " =: myolenr about Abe conns Che P
+
+Session \mbiorhe
+\whohow Prolocol (si?)

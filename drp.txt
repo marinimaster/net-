@@ -1,0 +1,19 @@
+# Disaster Recovery Plan (DRP)
+Addresses large-scale network accidents.
+1. Identify Scenarios
+2. Identify Tasks
+3. Train Staff
+
+Tabletop exercises: teams discuss hypothetical scenarios.
+Validation tests: focus on simulating failovers.
+
+# Business Continuity Plan (BCP)
+A collection of processes that allow a business to maintain operations in the face of an 
+adverse event.
+
+# Business Impact Analysis (BIA)
+Identifies mission-essential and primary business functions and the risks that would
+arise if an organization cannot fulfill them.
+
+# IT contingency planning (ITCP)
+Ensures that these functions are supported by resilient IT systems.

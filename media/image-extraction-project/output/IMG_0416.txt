@@ -1,0 +1,16 @@
+Three Wey Hondshaka
+S41 LSYN, ACK] LACK
+
+\ Sour sends sequence number ty deshnation
+€
+* Set 19 _10..G- Syn = 15
+Dst © 172 190.6.4
+
+2) sb Senda cS OWN sequence numb Gnel acknow—
+ledges Connectia n.
+
+Desbination cends an achnow|ed num ber equal Te
+Cowra S oouenee. number 1
+
+Sre: {7 120. 67 Sn
+Det - 10. 70-0. | Ach=

@@ -1,0 +1,21 @@
+# Maximum Tolerable Downtime (MTD)
+Maximum time a business process can be unavailable before the impact becomes unacceptable.
+
+# Recovery Time Objective (RTO)
+Target time to restore the service after a disruption.
+
+# Work Recovery Time (WRT)
+Additional time needed after technical recovery to validate systems and resume normal work.
+
+RTO + WRT cannot be greater than MTD.
+
+# Recovery Point Objective (RPO)
+Maximum acceptable data loss, usually measured as time.
+
+Example:
+
+An RPO of 24 hours means that if a database is destroyed by malware, it should be
+restored from backup to a point not older than 24 hours.
+
+Any data lost between the restored point and the present must either be accepted as a loss
+or be reconstructed.

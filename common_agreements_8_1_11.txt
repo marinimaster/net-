@@ -1,0 +1,14 @@
+Agreements are used between a company and its employees to enforce performance and security objectives.
+
+# Service Level Agreement (SLA)
+Is a contractual agreement setting out the detailed terms under which a service is provided.
+
+# Non-Disclosure Agreement (NDA)
+Is the legal basis for protecting information assets. It defines which uses of sensitive data are
+permitted, what storage and distribution restrictions must be enforced, and what penalties are incurred
+by breaches of the agreement.
+
+# Memorandum of Understanding (MOU)
+Is a preliminary or exploratory agreement to express an intent to work together.
+It is relatively informal because it is usually not a binding contract.
+However, MOUs have clauses stating that parties shall respect confidentiality.

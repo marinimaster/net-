@@ -1,0 +1,38 @@
+- Decommissioning -
+When a server or appliance is retired through resale, donation, recycling, or disposal.
+
+The organization should remove configuration data and restore the device to a factory-default state
+where appropriate.
+
+Even a factory reset may leave data remnants, so storage media must also be sanitized.
+Data remnants may contain confidential, sensitive, or personal data and could be compromised.
+
+This is especially relevant when decommissioning:
+- SSDs
+- HDDs
+- Flash devices
+- CD/DVD-ROMs
+
+Media sanitization: erasing data so it cannot be feasibly recovered.
+	
+	For HDDs, overwriting can be used. Modern guidance focuses on validated sanitization methods rather
+	than multiple overwrite passes.
+	
+	For SSDs and other flash-based media, overwriting is less reliable because of wear leveling, so
+	device-supported sanitize or cryptographic erase methods are preferred.
+
+# - Secure Erase (SE) -
+
+The ATA standard includes a Secure Erase command for supported drives.
+This command can be invoked using drive management utilities or the hdparm command in Linux.
+
+It uses a firmware-based erase process and is generally more reliable than writing through the file system.
+
+# - Instant Secure Erase (ISE)  -
+# - Self-Encrypting Devices (SED) -
+
+Drives that support SEDs offer another option. Invoking a sanitize or crypto erase operation on a supported
+HDD or SSD is often implemented by vendors as Instant Secure Erase (ISE).
+With an SED, all data is encrypted using a media encryption key (MEK).
+
+When the erase command is issued, the MEK is erased as well, rendering the data unrecoverable.

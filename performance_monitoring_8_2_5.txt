@@ -1,0 +1,38 @@
+Performance Monitoring
+
+Network monitoring tools can fulfill a wide range of functions beyond host and 
+service discovery.
+
+As input, they can:
+- Capture and analyze traffic	- Monitor interface and device metrics
+- Consolidate Log Data
+
+As output, they can:
+- Alert you of events happening	- Analyze traffic patterns 
+- Help define baselines	- Generate reports for management
+- Determine upgrade forecasts.
+
+Performance Metrics
+
+- Bandwidth: Rated speeds of interfaces in the device.
+	For Ethernet links, it does not usually vary.
+	For WAN and wireless links, it can vary.
+
+- Utilization/Throughput: The actual amount of data being transferred.
+	Utilization: expressed percentage of the bandwidth.
+	Throughput: amount of data transferred per unit of time.
+
+- CPU and memory: switches and routers can perform a lot of processing. If CPU 
+and/or system memory utilization is very high, an upgrade may be required.
+
+High CPU utilization can also indicate a problem with network traffic.
+
+- Storage: If device runs out of storage, it can cause serious errors.
+	Servers depend on fast Input/Output to run applications efficiently.
+
+Baseline Metrics
+
+Establish the level of resource utilization at a point in time. Such as when the 
+system was first acquired.
+
+Provides a comparison to measure system responsiveness later.

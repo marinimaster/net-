@@ -1,0 +1,46 @@
+# CompTIA Protocols and Ports
+
+The current CompTIA Network+ N10-009 objectives list these common protocols and ports:
+
+- FTP: 20/21
+- SFTP: 22
+- SSH: 22
+- Telnet: 23
+- SMTP: 25
+- DNS: 53
+- DHCP: 67/68
+- TFTP: 69
+- HTTP: 80
+- NTP: 123
+- SNMP: 161/162
+- LDAP: 389
+- HTTPS: 443
+- SMB: 445
+- Syslog: 514
+- SMTPS: 587
+- LDAPS: 636
+- SQL Server: 1433
+- RDP: 3389
+- SIP: 5060/5061
+
+Secure port relationships worth memorizing:
+
+- Telnet uses 23, while SSH uses 22 for secure remote administration.
+- HTTP uses 80, while HTTPS uses 443 for encrypted web traffic.
+- LDAP uses 389, while LDAPS uses 636 for encrypted directory access.
+- SMTP uses 25, while SMTPS commonly uses 587 for secure mail submission in the CompTIA objectives.
+- SIP uses 5060, while SIP over TLS uses 5061.
+- FTP uses 20/21, while SFTP uses 22.
+
+Other common secure mail ports that are useful to know:
+
+- IMAP: 143
+- IMAPS: 993
+- POP3: 110
+- POP3S: 995
+
+Memorization tips:
+
+- Secure alternatives often use a different port rather than simply adding TLS in place.
+- Some protocols share a port because one is the secure replacement for the other, such as SSH and SFTP on 22.
+- For SNMP, 161 is commonly used for queries and 162 for traps.

@@ -1,0 +1,149 @@
+# What is the purpose of using the -sV or -A switch with Nmap?
+
+To increase the speed of the scan
+
+To disable logging of the scan results
+
+Correct: To probe for software versions on each port
+
+To limit the scan to the local network only
+
+# Which Nmap scan type is less stealthy due to its use of the operating system to attempt a full TCP connection?
+
+TCP SYN (-sS)
+
+Correct: TCP connect (-sT)
+
+UDP scans (-sU)
+
+Port range (-p)
+
+# What metric measures the actual amount of data transferred over a network?
+
+Bandwidth
+
+Correct: Throughput
+
+CPU utilization
+
+Memory usage
+
+# What can cause a broadcast storm in a network?
+
+Low CPU utilization
+
+Insufficient storage space on network devices
+
+Correct: Switching loops
+
+High bandwidth availability
+
+# Which feature allows Nmap to work out hop counts?
+
+-sn switch
+
+--script switch
+
+Correct: --traceroute switch
+
+-p switch
+
+# What does Nmap use to determine whether a host is present when used without switches?
+
+It sends an email to the network administrator.
+
+Correct: It pings and sends a TCP ACK packet to ports 80 and 443.
+
+It performs a full database scan.
+
+It listens for any active Bluetooth devices.
+
+# Which type of scanners use specially crafted probes to locate hosts that might be configured not to respond to pings?
+
+Graphic design software
+
+Spreadsheet analysis tools
+
+Correct: Security-oriented scanners
+
+Email management systems
+
+# What does an IP scanner do?
+
+Edits images
+
+Creates spreadsheets
+
+Correct: Establishes the logical topology of the network
+
+Encrypts network traffic
+
+# What is a basic type of IP scanning mentioned in the document?
+
+Correct: Host discovery
+
+Color correction
+
+Spreadsheet analysis
+
+Email filtering
+
+# Which of the following is NOT information that CDP can report?
+
+Device ID/hostname
+
+IOS version
+
+Correct: MAC address table sizes
+
+Power over Ethernet usage
+
+# What is the primary function of Cisco Discovery Protocol (CDP)?
+
+To encrypt data traffic between Cisco devices
+
+To assign IP addresses to devices on a network
+
+Correct: To discover information about directly connected Cisco devices
+
+To provide a secure tunnel for data transmission
+
+# What does a configuration monitor do when there is a change to a device's production configuration?
+
+It automatically reverts the change.
+
+Correct: It generates logs, alerts, or alarms.
+
+It updates the baseline configuration.
+
+It disconnects the device from the network.
+
+# What should you consider doing if a server hosting a service is overloaded?
+
+Decrease the server's memory.
+
+Correct: Throttle client connections.
+
+Increase network congestion.
+
+Disable the Spanning Tree Protocol (STP).
+
+# What is the primary function of an availability monitor?
+
+To increase the speed of a service
+
+Correct: To trigger an alarm for service unscheduled downtime
+
+To update digital certificates
+
+To manage network bandwidth
+
+# What does an availability monitor check for in an HTTP service to confirm availability?
+
+A 404 status code
+
+Correct: A 200 status code
+
+A 500 status code
+
+A 302 status code

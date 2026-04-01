@@ -1,0 +1,19 @@
+# Availability Monitoring
+An availability monitor triggers an alarm if a host or service experiences an outage or unscheduled downtime.
+These tools are also referred to as heartbeat monitors.
+
+Most of them work by sending a probe to the target service and checking for a non-error response.
+
+For example, an HTTP service could return a 200 status code if the resource is available.
+
+Some monitors may be configured to check the expiry date of digital certificates.
+
+When troubleshooting unresponsive service issues, they will usually manifest with hosts being unable to connect.
+There can be any number of underlying causes. But consider some of the following:
+
+- Application OS hosting the service has crashed	- Server hosting the service is overloaded (try throttling connections)
+
+- There is congestion in the network, either at the client or server end.	- A broadcast storm is causing loss of network bandwidth
+  Use `ping` or `traceroute` to check the latency.				  STP communications might not be working correctly between switches.
+
+- DoS: Network congestion could also be caused by Denial of Service attacks.

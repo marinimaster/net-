@@ -1,0 +1,9 @@
+# Configuration Monitoring
+Configuration management processes ensure that all network appliances are in a known state.
+Recall the configuration states:
+
+- Baseline/Golden configuration is a template for the state that a given device should be in.
+- Production configuration is the state the device is actually in.
+- Backup configuration is a point-in-time copy of a running or startup config.
+
+A configuration monitor generates a log, alert or alarm whenever there is a change to a device's production configuration.

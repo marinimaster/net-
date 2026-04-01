@@ -1,0 +1,17 @@
+Each IT system is supported by assets such as:
+- Disk arrays
+- Servers
+- Switches
+- Routers
+
+# Mean Time Between Failures (MTBF)
+Represents the average operating time between failures for a repairable product or system.
+Example:
+- A server that can be restored by replacing a failed hard drive is measured with MTBF.
+
+# Mean Time To Failure (MTTF)
+Similar to MTBF, but used for non-repairable components.
+It represents the expected operating lifetime before failure.
+
+# Mean Time To Repair (MTTR)
+Mean time taken to correct a fault so the system is restored to full operation.

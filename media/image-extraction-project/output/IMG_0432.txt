@@ -1,0 +1,25 @@
+Vo\P enabled PRX
+Replacement to TDM PRY.
+
+TDM P?RY. \S supplied OS verclor_speu: o hardware
+VOIP-PBX con be Implemented os sotwar® runaing
+ON ma Wadows of Linox Server. SoFfevare enarn pres:
+° 5Uy
+0 Aster
+
+Vol? Is normally ploces ot the en edga
+and be prolectee by a Lieewalll.
+
+f\ Vol? Is? end paint COW je. implemented! as software
+OF AS dedicated hard wore etches :
+
+o\ Phones USE VLAN to \ 0 BNSore_
+yell SIP and RTP orotocal Ua) ia sepegoted
+Fron Norma dota SroPic
+
+\lol? Profocels
+
+\loicer and video services can be ohallengng to Seppor}
+becase They requie® response dimes meQg rec! (n
+miliseconds. Leloye response sill result i" peor call
+or Vide quality.

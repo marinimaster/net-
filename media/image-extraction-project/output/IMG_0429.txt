@@ -1,0 +1,23 @@
+SMP — 2X6
+Mae = Eelasuibel
+
++“ SMARTTLS (Deprecated, still wiclely vse)
+Upgrades orn eyishng Insecure connechory to vse TLS
++ Inaphiit TES CPeeterred Method)
+Estaloliches a Secure connection bePore any SMTP Command
+; mm sS
+‘Ports ‘Deter led
+-Port QS: Used For MESSAQ, rAciy bekveen SMIP
+
+SOVVLKS
+"fort 465! Used fo 55 ;
+ae cr SMTP submission verse) wmapheit
+
+Cypher
+“Tork Gays Used for
++15 SMTP submission Usin9) expos
+
+Tort SS er messages boy ig not beat practice
+porT 8D 1s typica hy reserved! foc relay between
+
+Servers,

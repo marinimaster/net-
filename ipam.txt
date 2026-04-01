@@ -1,0 +1,8 @@
+- IP Address Management (IPAM) -
+	Before, IP address assignments were often tracked using static files such as spreadsheets.
+
+	IPAM software provides better automation and oversight than these manually compiled lists.
+
+IPAM scans DHCP and DNS servers and logs IP address usage to a database.
+IPAM software can be used to manage and reconfigure DHCP and DNS servers remotely.
+IPAM provides tools to identify overloaded DHCP scopes and reclaim scarce public IP addresses.
