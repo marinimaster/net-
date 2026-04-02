@@ -1,0 +1,14 @@
+# SNMP Security
+Many network run SNMP v2c which has no robust authentication or encryption.
+
+- Community Strings are sent in plaintext and should not be transmitted over the network.
+- Use difficult-to-guess community strings, no defaults/blanks.
+- Implement access control lists to restrict management operations to known hosts. (restrict to one or two host IP addresses)
+
+SNMPv3 supports encryption and strong user-based authentication. When authentication is required, the SNMP message is signed with a hash 
+of the user's passphrase.
+
+The agent can verify the signature and authenticate the user using its own record of the passphrase.
+
+- authNoPriv does not encrypt packets.
+- authPriv enables encryption using the credential as a key.

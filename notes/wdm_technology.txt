@@ -1,0 +1,12 @@
+IMAGE 9: WAVELENGTH DIVISION MULTIPLEXING (WDM)
+--------------------------------------------------------------------------------
+
+Wavelength Division Multiplexing (WDM)
+Using one or two strands to provision multiple channels.
+Bidirectional Wavelength Division Multiplexing
+* Allows transferring and receiving data over a single strand by using separate wavelengths.
+
+Coarse WDM: Up to 16 wavelengths. 4-8 bidirectional channels.
+Dense WDM: 20, 40, 80 or 160 channels. Requires precise lasers. So, more expensive.
+
+--------------------------------------------------------------------------------

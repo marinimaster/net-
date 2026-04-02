@@ -1,0 +1,14 @@
+IMAGE 6: STRUCTURED CABLING STANDARDS
+--------------------------------------------------------------------------------
+
+Structured Cabling Standards
+
+ANSI / TIA / EIA 568 commercial Building Telecomms Wiring Standard.
+
+* Work Area
+* Horizontal Cabling: Connects user work areas to an Intermediate Distribution Frame (IDF).
+* Telecommunications Room
+* Backbone Cabling: Connects IDFs to a Main Distribution Frame (MDF). Also referred to as vertical cabling.
+* Entrance Facilities: Special type of room marking the point at which external cabling is joined to internal.
+
+--------------------------------------------------------------------------------

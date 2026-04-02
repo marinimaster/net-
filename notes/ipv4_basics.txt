@@ -1,0 +1,15 @@
+IMAGE 13: IP ADDRESSING BASICS
+--------------------------------------------------------------------------------
+
+IP Addressing Basics (IPv4)
+* 32-bit address.
+* Represented in dotted-decimal notation.
+* Divided into four octets (8 bits each).
+
+* Class A: 1 - 126 (Large networks)
+* Class B: 128 - 191 (Medium networks)
+* Class C: 192 - 223 (Small networks)
+* Class D: 224 - 239 (Multicast)
+* Class E: 240 - 255 (Experimental)
+
+--------------------------------------------------------------------------------

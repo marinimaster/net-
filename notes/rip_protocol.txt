@@ -1,0 +1,19 @@
+IMAGE 4: ROUTING INFORMATION PROTOCOL
+--------------------------------------------------------------------------------
+
+Routing Information Protocol
+- Distance Vector
+
+It only considers the next hop router to reach a given network or vector (subnet).
+It considers only one metric to select the optimal path to a given network. The one with the lowest hop count.
+
+Limitations
+* Slow convergence
+* Prone to routing loops
+* Limited scalability (15-hop limit)
+* Inefficient for large networks.
+Enhanced Interior Gateway Routing Protocol
+* Developed by Cisco
+* Due to limitations in IGRP
+
+--------------------------------------------------------------------------------

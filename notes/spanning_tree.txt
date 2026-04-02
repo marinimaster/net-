@@ -1,0 +1,14 @@
+IMAGE 18: SPANNING TREE PROTOCOL (STP)
+--------------------------------------------------------------------------------
+
+* Purpose: Prevents Layer 2 loops in redundant networks.
+* States:
+  - Blocking
+  - Listening
+  - Learning
+  - Forwarding
+  - Disabled
+
+Root Bridge: The central reference point for the STP topology.
+
+--------------------------------------------------------------------------------

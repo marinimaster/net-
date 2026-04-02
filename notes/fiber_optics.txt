@@ -1,0 +1,51 @@
+IMAGE 7: FIBER & CONNECTORS
+--------------------------------------------------------------------------------
+
+Fiber
+*Fiber wavelengths can't be seen through the naked eye.*
+
+* Single Mode Fiber (SMF):
+  - Small core / long wavelength.
+  - Uses laser, near IR (1310 nm / 1550 nm).
+  - Grades (OS: Optical Single):
+    - OS1: Indoor
+    - OS2: Outdoor
+
+* Multi Mode fiber:
+  - Large core / short wavelength.
+  - Lower speeds.
+  - Shorter range.
+
+Optical Multimode Grades:
+* OM1 / OM2: Led transmitters. Slightly larger core.
+* OM3 / OM4: Laser Optimized MMF (LOMMF). Not as fast as single mode lasers, faster than Led based.
+
+Connectors
+* ST - Straight Tip
+* SC - Subscriber connector
+* LC - Lucent Connector
+* MPO - Multi Fiber Push-on: Compact, higher density using less space.
+--------------------------------------------------------------------------------
+IMAGE 8: SFP & INSERTION LOSS
+--------------------------------------------------------------------------------
+
+SFP - Small form-factor Pluggable
+
+* SFP: 100 Mb (ethernet only), 1 Gb (Fiber / ethernet).
+* SFP+: 10 Gb (Fiber, Ethernet, DAC).
+* SFP28: 25 Gb (fiber or DAC only).
+
+DAC: Direct Attached Copper
+SFP is a module that adapts to the cable it is attached to. It converts the signal to match fiber / copper.
+
+Insertion Loss
+Signal lost when it goes through a device.
+Mitigated by using less patch panels and connectors.
+
+Fiber Optic Cable finishes:
+* Flat
+* PC: Slight curve.
+* UPC: High curve.
+* Angled: "Slanted".
+
+--------------------------------------------------------------------------------

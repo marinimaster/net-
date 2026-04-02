@@ -1,0 +1,29 @@
+  - Congestions
+* Dynamic Routing Protocols are classified as:
+  - Distance Vector: Based on next hop with lowest hop count.
+  - Link-State: Maps entire topology to select most optimal paths.
+  - Hybrid
+
+Convergence
+Is the process running dynamic routing algorithms agree on the network topology.
+
+Autonomous Systems
+* A network under the administrative control of a single owner.
+  - IGP (Internal Gateway Protocol): Identifies routes within an AS.
+  - EGP (External): Advertises routes between autonomous systems.
+
+--------------------------------------------------------------------------------
+IMAGE 4: ROUTING INFORMATION PROTOCOL
+--------------------------------------------------------------------------------
+
+Routing Information Protocol
+- Distance Vector
+
+It only considers the next hop router to reach a given network or vector (subnet).
+It considers only one metric to select the optimal path to a given network. The one with the lowest hop count.
+
+Limitations
+* Slow convergence
+* Prone to routing loops
+* Limited scalability (15-hop limit)
+* Inefficient for large networks.

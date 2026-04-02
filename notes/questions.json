@@ -1642,25 +1642,6 @@
         "domain_id": 3
     },
     {
-        "id": "svc-1",
-        "topic": "File and Database Services",
-        "prompt": "Which port is commonly used by SMB?",
-        "choices": [
-            "139",
-            "1433",
-            "445",
-            "5432"
-        ],
-        "answer_indices": [
-            2
-        ],
-        "explanation": "Modern SMB commonly uses port 445.",
-        "source_file": "notes/file_database_services.txt",
-        "difficulty": "standard",
-        "tags": [],
-        "domain_id": 1
-    },
-    {
         "id": "svc-2",
         "topic": "File and Database Services",
         "prompt": "Which port range is associated with legacy NetBIOS services?",
@@ -1955,27 +1936,6 @@
         "domain_id": 1
     },
     {
-        "id": "port-23",
-        "topic": "Protocols and Ports",
-        "prompt": "Which port is commonly associated with PostgreSQL?",
-        "choices": [
-            "25",
-            "445",
-            "993",
-            "5432"
-        ],
-        "answer_indices": [
-            3
-        ],
-        "explanation": "PostgreSQL commonly uses TCP port 5432.",
-        "source_file": "notes/routing_protocols.txt",
-        "difficulty": "standard",
-        "tags": [
-            "ports"
-        ],
-        "domain_id": 1
-    },
-    {
         "id": "port-24",
         "topic": "Protocols and Ports",
         "prompt": "Which port is the insecure default for IMAP?",
@@ -2061,5 +2021,1150 @@
             "topology"
         ],
         "domain_id": 1
+    },
+    {
+        "id": "route-logic-1",
+        "topic": "Routing Logic",
+        "domain_id": 2,
+        "difficulty": "standard",
+        "prompt": "When a router receives a packet, which factor does it use to determine the BEST match in the routing table?",
+        "choices": [
+            "The route with the lowest metric",
+            "The route with the longest prefix mask",
+            "The route with the lowest administrative distance",
+            "The route with the most recent timestamp"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Routers prioritize the most specific route, which is the one with the longest mask (prefix length).",
+        "source_file": "notes/routing_logic.txt"
+    },
+    {
+        "id": "route-logic-2",
+        "topic": "Routing Logic",
+        "domain_id": 2,
+        "difficulty": "hard",
+        "prompt": "A packet is destined for 10.10.10.50. The routing table contains the following entries. Which route will the router select?",
+        "choices": [
+            "10.10.10.0/24 via 192.168.1.1",
+            "10.10.10.32/27 via 192.168.1.2",
+            "10.10.10.48/29 via 192.168.1.3",
+            "0.0.0.0/0 via 192.168.1.254"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "The router selects the longest prefix match. /29 (8 addresses) is more specific than /27 or /24 for the destination 10.10.10.50.",
+        "source_file": "notes/routing_logic.txt"
+    },
+    {
+        "id": "ad-1",
+        "topic": "Administrative Distance",
+        "domain_id": 2,
+        "difficulty": "standard",
+        "prompt": "What is the primary purpose of Administrative Distance (AD)?",
+        "choices": [
+            "To calculate the shortest path to a destination",
+            "To determine the reliability of a specific network link",
+            "To define the priority of different routing protocols",
+            "To prevent routing loops in a distance-vector network"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "AD is used by routers to select which routing protocol to trust when multiple protocols provide a route to the same destination.",
+        "source_file": "notes/administrative_distance.txt"
+    },
+    {
+        "id": "ad-2",
+        "topic": "Administrative Distance",
+        "domain_id": 2,
+        "difficulty": "hard",
+        "prompt": "A router receives a route for 172.16.0.0/16 from both RIP and EIGRP. If the default administrative distances are used, which route will be placed in the routing table?",
+        "choices": [
+            "The RIP route because it has a lower metric",
+            "The EIGRP route because it has a lower AD of 90",
+            "The RIP route because it has a lower AD of 120",
+            "The EIGRP route because it uses a more advanced algorithm"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "EIGRP has a default AD of 90, while RIP has a default AD of 120. The lower AD is preferred.",
+        "source_file": "notes/administrative_distance.txt"
+    },
+    {
+        "id": "fiber-1",
+        "topic": "Fiber Optics",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "Which type of fiber optic cable uses a laser as its light source and is designed for long-distance transmissions?",
+        "choices": [
+            "Multi-mode Fiber (MMF)",
+            "Single-mode Fiber (SMF)",
+            "Optical Multimode 3 (OM3)",
+            "Step-index Fiber"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Single-mode fiber uses lasers and small cores to achieve much longer distances than multi-mode fiber.",
+        "source_file": "notes/fiber_optics.txt"
+    },
+    {
+        "id": "fiber-2",
+        "topic": "Fiber Optics",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "An administrator needs to install outdoor backbone cabling that supports maximum distance. According to the grades listed in the notes, which fiber type should be used?",
+        "choices": [
+            "OS1",
+            "OS2",
+            "OM3",
+            "OM4"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "OS2 is the Optical Single-mode grade designed for outdoor use, while OS1 is for indoor.",
+        "source_file": "notes/fiber_optics.txt"
+    },
+    {
+        "id": "fiber-3",
+        "topic": "Fiber Optics",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "Which of the following Multi-mode Fiber (MMF) grades are classified as Laser Optimized (LOMMF)? (Select TWO)",
+        "choices": [
+            "OM1",
+            "OM2",
+            "OM3",
+            "OM4",
+            "OS1",
+            "OS2"
+        ],
+        "answer_indices": [
+            2,
+            3
+        ],
+        "explanation": "OM3 and OM4 are Laser Optimized Multi-mode Fiber (LOMMF) grades, offering higher bandwidth than OM1/OM2.",
+        "source_file": "notes/fiber_optics.txt"
+    },
+    {
+        "id": "tcp-hs-1",
+        "topic": "TCP Handshake",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "During the TCP three-way handshake, what is the second packet sent?",
+        "choices": [
+            "[SYN]",
+            "[ACK]",
+            "[SYN, ACK]",
+            "[FIN, ACK]"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "The sequence is [SYN] from source, [SYN, ACK] from destination, and [ACK] from source.",
+        "source_file": "notes/tcp_handshake.txt"
+    },
+    {
+        "id": "tcp-hs-2",
+        "topic": "TCP Handshake",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "A source sends a SYN packet with sequence number 15. What acknowledgment number will the destination return in its SYN/ACK response?",
+        "choices": [
+            "15",
+            "16",
+            "0",
+            "1"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The destination acknowledges the connection by sending back an ACK number equal to the source's sequence number + 1.",
+        "source_file": "notes/tcp_handshake.txt"
+    },
+    {
+        "id": "tcp-flag-1",
+        "topic": "TCP Flags",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "Which TCP flag is used to abruptly terminate a connection, often due to an error?",
+        "choices": [
+            "[FIN]",
+            "[RST]",
+            "[PSH]",
+            "[URG]"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The Reset [RST] flag abruptly terminates a connection, whereas [FIN] performs a graceful shutdown.",
+        "source_file": "notes/tcp_flags.txt"
+    },
+    {
+        "id": "tcp-flag-2",
+        "topic": "TCP Flags",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "Which TCP flag instructs the receiver to process the data immediately rather than buffering it?",
+        "choices": [
+            "[SYN]",
+            "[ACK]",
+            "[PSH]",
+            "[URG]"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "The Push [PSH] flag tells the receiving system to pass the data to the application immediately.",
+        "source_file": "notes/tcp_flags.txt"
+    },
+    {
+        "id": "stp-1",
+        "topic": "Spanning Tree",
+        "domain_id": 2,
+        "difficulty": "standard",
+        "prompt": "What is the primary objective of the Spanning Tree Protocol (STP)?",
+        "choices": [
+            "To increase total network bandwidth",
+            "To prevent Layer 2 loops in redundant networks",
+            "To provide Layer 3 path redundancy",
+            "To automate VLAN trunking configuration"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "STP prevents loops at Layer 2 by placing redundant ports into a blocking state.",
+        "source_file": "notes/spanning_tree.txt"
+    },
+    {
+        "id": "stp-2",
+        "topic": "Spanning Tree",
+        "domain_id": 2,
+        "difficulty": "hard",
+        "prompt": "Which of the following are valid port states in the 802.1D Spanning Tree Protocol? (Select THREE)",
+        "choices": [
+            "Blocking",
+            "Forwarding",
+            "Discarding",
+            "Learning",
+            "Syncing",
+            "Backup"
+        ],
+        "answer_indices": [
+            0,
+            1,
+            3
+        ],
+        "explanation": "The 802.1D states are Blocking, Listening, Learning, Forwarding, and Disabled.",
+        "source_file": "notes/spanning_tree.txt"
+    },
+    {
+        "id": "switch-1",
+        "topic": "Switching Fundamentals",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "Which table does a Layer 2 switch use to map MAC addresses to specific physical ports?",
+        "choices": [
+            "ARP Table",
+            "Routing Table",
+            "CAM Table",
+            "Neighbor Table"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Switches use a Content Addressable Memory (CAM) table, also known as a MAC address table.",
+        "source_file": "notes/switching_fundamentals.txt"
+    },
+    {
+        "id": "switch-2",
+        "topic": "Switching Fundamentals",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "What action does a switch take when it receives a frame with a destination MAC address that is NOT present in its CAM table?",
+        "choices": [
+            "Drops the frame immediately",
+            "Sends the frame to the default gateway",
+            "Floods the frame out all ports except the source port",
+            "Stores the frame until the address is learned"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "If the destination MAC is unknown, the switch performs 'unicast flooding' by sending it to all ports except the one it arrived on.",
+        "source_file": "notes/switching_fundamentals.txt"
+    },
+    {
+        "id": "snmp-1",
+        "topic": "SNMP",
+        "domain_id": 3,
+        "difficulty": "standard",
+        "prompt": "Which SNMP component is a data store that holds variables relating to device activity?",
+        "choices": [
+            "SNMP Agent",
+            "Management Information Base (MIB)",
+            "Object Identifier (OID)",
+            "SNMP Trap"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The MIB is the database containing performance and status variables for the managed device.",
+        "source_file": "notes/snmp.txt"
+    },
+    {
+        "id": "snmp-2",
+        "topic": "SNMP",
+        "domain_id": 3,
+        "difficulty": "hard",
+        "prompt": "Which version(s) of SNMP support encryption for management traffic? (Select ONE)",
+        "choices": [
+            "SNMPv1",
+            "SNMPv2",
+            "SNMPv3",
+            "All versions"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Only SNMPv3 provides message integrity, authentication, and encryption.",
+        "source_file": "notes/snmp.txt"
+    },
+    {
+        "id": "snmp-3",
+        "topic": "SNMP",
+        "domain_id": 3,
+        "difficulty": "hard",
+        "prompt": "A technician wants a networking device to proactively send an alert to the management station whenever an error occurs. Which SNMP feature should be configured?",
+        "choices": [
+            "SNMP Get",
+            "SNMP Set",
+            "SNMP Trap",
+            "SNMP Walk"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "A Trap is an unsolicited alarm sent from an agent to the management station when a threshold is met.",
+        "source_file": "notes/snmp.txt"
+    },
+    {
+        "id": "cable-1",
+        "topic": "Structured Cabling",
+        "domain_id": 3,
+        "difficulty": "standard",
+        "prompt": "Which cabling component connects a user's work area to an Intermediate Distribution Frame (IDF)?",
+        "choices": [
+            "Backbone Cabling",
+            "Horizontal Cabling",
+            "Vertical Cabling",
+            "Patch Cabling"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Horizontal cabling connects the work area to the local telecommunications room (IDF).",
+        "source_file": "notes/structured_cabling.txt"
+    },
+    {
+        "id": "connector-1",
+        "topic": "Connectors",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "Which fiber optic connector is preferred for high-density environments because it supports multiple fibers in a single compact housing?",
+        "choices": [
+            "ST",
+            "SC",
+            "LC",
+            "MPO"
+        ],
+        "answer_indices": [
+            3
+        ],
+        "explanation": "MPO (Multi-Fiber Push-on) is designed for high density, supporting many fibers in one connector.",
+        "source_file": "notes/connectors_sfp.txt"
+    },
+    {
+        "id": "sfp-1",
+        "topic": "SFP Modules",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "Which SFP standard is specifically designed to support 25 Gbps speeds?",
+        "choices": [
+            "SFP",
+            "SFP+",
+            "SFP28",
+            "QSFP"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "SFP28 is the standard for 25 Gbps, while SFP+ supports 10 Gbps.",
+        "source_file": "notes/connectors_sfp.txt"
+    },
+    {
+        "id": "wifi-1",
+        "topic": "Wireless Standards",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "Which 802.11 standard operates in the 5 GHz band and supports speeds up to 1.3 Gbps?",
+        "choices": [
+            "802.11g",
+            "802.11n",
+            "802.11ac",
+            "802.11ax"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "802.11ac (Wi-Fi 5) operates exclusively in 5 GHz and supports gigabit speeds.",
+        "source_file": "notes/wireless_standards.txt"
+    },
+    {
+        "id": "wifi-2",
+        "topic": "Wireless Standards",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "Which of the following 802.11 standards can operate in the 2.4 GHz frequency band? (Select THREE)",
+        "choices": [
+            "802.11a",
+            "802.11b",
+            "802.11g",
+            "802.11n",
+            "802.11ac",
+            "802.11af"
+        ],
+        "answer_indices": [
+            1,
+            2,
+            3
+        ],
+        "explanation": "802.11b and 802.11g are 2.4 GHz only; 802.11n is dual-band (2.4/5 GHz).",
+        "source_file": "notes/wireless_standards.txt"
+    },
+    {
+        "id": "hierarchy-1",
+        "topic": "Network Hierarchy",
+        "domain_id": 2,
+        "difficulty": "hard",
+        "prompt": "In a three-tiered network hierarchy, which layer is responsible for providing fault-tolerant interconnections between different access blocks?",
+        "choices": [
+            "Core Layer",
+            "Distribution Layer",
+            "Access Layer",
+            "Edge Layer"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The Distribution (or Aggregation) layer interconnects access blocks and provides policy-based connectivity.",
+        "source_file": "notes/network_hierarchy.txt"
+    },
+    {
+        "id": "wdm-1",
+        "topic": "WDM",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "Which variation of Wavelength Division Multiplexing supports the highest number of channels (up to 160) by using very precise lasers?",
+        "choices": [
+            "WDM",
+            "Bidirectional WDM",
+            "Coarse WDM (CWDM)",
+            "Dense WDM (DWDM)"
+        ],
+        "answer_indices": [
+            3
+        ],
+        "explanation": "DWDM uses narrower spacing and precise lasers to achieve much higher channel counts than CWDM.",
+        "source_file": "notes/wdm_technology.txt"
+    },
+    {
+        "id": "metric-multi-1",
+        "topic": "Routing Metrics",
+        "domain_id": 2,
+        "difficulty": "hard",
+        "prompt": "Which of the following are valid routing metrics used by various dynamic protocols? (Select THREE)",
+        "choices": [
+            "Hop Count",
+            "MAC Address",
+            "Cost",
+            "VLAN ID",
+            "Reliability",
+            "Sequence Number"
+        ],
+        "answer_indices": [
+            0,
+            2,
+            4
+        ],
+        "explanation": "Valid metrics include Hop Count (RIP), Cost (OSPF), Reliability (EIGRP), as well as Bandwidth, Delay, and Load.",
+        "source_file": "notes/routing_metrics.txt"
+    },
+    {
+        "id": "ts-scenario-1",
+        "topic": "Troubleshooting Methodology",
+        "domain_id": 5,
+        "difficulty": "hard",
+        "prompt": "A technician has identified a problem where several users in one department cannot access the local file server. After establishing a theory of probable cause, what should the technician do NEXT according to the CompTIA methodology?",
+        "choices": [
+            "Test the theory to determine the cause",
+            "Establish a plan of action to resolve the problem",
+            "Verify full system functionality",
+            "Document findings, actions, and outcomes"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "After establishing a theory, the NEXT step is to test the theory to determine the actual cause.",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "ts-scenario-2",
+        "topic": "Troubleshooting Methodology",
+        "domain_id": 5,
+        "difficulty": "hard",
+        "prompt": "A technician has implemented a solution to a network connectivity issue. What are the NEXT TWO steps the technician should perform? (Select TWO)",
+        "choices": [
+            "Verify full system functionality",
+            "Establish a theory of probable cause",
+            "Implement preventive measures",
+            "Establish a plan of action",
+            "Document findings, actions, and outcomes",
+            "Question the user"
+        ],
+        "answer_indices": [
+            0,
+            2
+        ],
+        "explanation": "After implementation, the technician must verify functionality (and implement preventive measures) and finally document the outcome.",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "sec-cia-1",
+        "topic": "Security Fundamentals",
+        "domain_id": 4,
+        "difficulty": "hard",
+        "prompt": "An administrator implements hashing on all stored passwords to ensure they haven't been altered. Which component of the CIA triad does this BEST represent?",
+        "choices": [
+            "Confidentiality",
+            "Integrity",
+            "Availability",
+            "Authentication"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Integrity ensures that data has not been changed or tampered with; hashing is a primary tool for verifying integrity.",
+        "source_file": "notes/security_fundamentals.txt"
+    },
+    {
+        "id": "sec-attack-1",
+        "topic": "Security Fundamentals",
+        "domain_id": 4,
+        "difficulty": "hard",
+        "prompt": "Users report receiving emails that appear to be from the IT department asking them to click a link to 'verify' their credentials on a fake portal. Which type of attack is this?",
+        "choices": [
+            "DoS",
+            "Phishing",
+            "Man-in-the-Middle",
+            "VLAN Hopping"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Phishing is a social engineering attack used to trick users into revealing sensitive information.",
+        "source_file": "notes/security_fundamentals.txt"
+    },
+    {
+        "id": "fiber-nuance-1",
+        "topic": "Fiber Optics",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "A network engineer is selecting fiber for a high-speed backbone that will run 400 meters. Which fiber grades would be appropriate for this requirement? (Select TWO)",
+        "choices": [
+            "OM1",
+            "OM2",
+            "OM3",
+            "OM4",
+            "OS1",
+            "OS2"
+        ],
+        "answer_indices": [
+            2,
+            3
+        ],
+        "explanation": "Laser Optimized MMF (OM3/OM4) is required for high speeds at these distances; OM1/OM2 are limited by their larger cores and LED sources.",
+        "source_file": "notes/fiber_optics.txt"
+    },
+    {
+        "id": "tcp-nuance-1",
+        "topic": "TCP Handshake",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "A packet capture shows a sequence number of 1000 in a SYN packet. The responding SYN/ACK packet has an Acknowledgment number of 1001 and its own Sequence number of 5000. What will the sequence number of the final ACK packet be?",
+        "choices": [
+            "1000",
+            "1001",
+            "5000",
+            "5001"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The final ACK packet's sequence number is the acknowledgment number from the previous packet (1001).",
+        "source_file": "notes/tcp_handshake.txt"
+    },
+    {
+        "id": "snmp-v3-1",
+        "topic": "SNMP",
+        "domain_id": 3,
+        "difficulty": "hard",
+        "prompt": "Which features were introduced specifically in SNMPv3 to address security concerns? (Select TWO)",
+        "choices": [
+            "Encryption",
+            "Bulk transfers",
+            "Authentication via username/password",
+            "Community strings",
+            "Structured tables",
+            "UDP port 161"
+        ],
+        "answer_indices": [
+            0,
+            2
+        ],
+        "explanation": "SNMPv3 added encryption and robust authentication; v1 and v2 relied on insecure community strings.",
+        "source_file": "notes/snmp.txt"
+    },
+    {
+        "id": "ntp-nuance-1",
+        "topic": "Time Synchronization",
+        "domain_id": 3,
+        "difficulty": "hard",
+        "prompt": "A system clock is found to be 4 seconds ahead of the stratum 1 source. According to the notes, which NTP correction method is MOST appropriate?",
+        "choices": [
+            "Slew",
+            "Slam",
+            "Drift",
+            "Stratum Reset"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "The Slew method is used for small corrections (a few seconds), while Slam is for larger deviations.",
+        "source_file": "notes/time_synchronization.txt"
+    },
+    {
+        "id": "route-ad-nuance",
+        "topic": "Administrative Distance",
+        "domain_id": 2,
+        "difficulty": "hard",
+        "prompt": "A router is configured with a static route to 10.0.0.0/8 and also learns about the same network via OSPF. Which route will be used, and why?",
+        "choices": [
+            "OSPF, because it is dynamic",
+            "Static, because it has a lower AD of 1",
+            "OSPF, because it has a lower AD of 110",
+            "Static, because it has a lower metric"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Static routes have a default AD of 1, which is lower (more trusted) than OSPF's AD of 110.",
+        "source_file": "notes/administrative_distance.txt"
+    },
+    {
+        "id": "stp-state-1",
+        "topic": "Spanning Tree",
+        "domain_id": 2,
+        "difficulty": "hard",
+        "prompt": "A switch port is in a state where it is processing BPDUs and building its MAC address table but is NOT yet forwarding user data. Which STP state is it in?",
+        "choices": [
+            "Blocking",
+            "Listening",
+            "Learning",
+            "Forwarding"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "In the Learning state, the switch builds the MAC table from frames received but still does not forward data.",
+        "source_file": "notes/spanning_tree.txt"
+    },
+    {
+        "id": "osi-encap-1",
+        "topic": "Data Encapsulation",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "Which of the following correctly pair an OSI layer with its associated PDU? (Select THREE)",
+        "choices": [
+            "Layer 4 - Segment",
+            "Layer 3 - Frame",
+            "Layer 2 - Packet",
+            "Layer 1 - Bits",
+            "Layer 3 - Packet",
+            "Layer 2 - Bits"
+        ],
+        "answer_indices": [
+            0,
+            3,
+            4
+        ],
+        "explanation": "Layer 4 is Segment, Layer 3 is Packet, Layer 2 is Frame, and Layer 1 is Bits.",
+        "source_file": "notes/encapsulation_osi.txt"
+    },
+    {
+        "id": "wifi-multi-1",
+        "topic": "Wireless Standards",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "Which of the following 802.11 standards support MIMO (Multiple Input, Multiple Output) technology? (Select TWO)",
+        "choices": [
+            "802.11a",
+            "802.11b",
+            "802.11g",
+            "802.11n",
+            "802.11ac"
+        ],
+        "answer_indices": [
+            3,
+            4
+        ],
+        "explanation": "MIMO was introduced with 802.11n and expanded in 802.11ac.",
+        "source_file": "notes/wireless_standards.txt"
+    },
+    {
+        "id": "rip-limit-1",
+        "topic": "RIP Protocol",
+        "domain_id": 2,
+        "difficulty": "hard",
+        "prompt": "What are the primary limitations of the Routing Information Protocol (RIP)? (Select THREE)",
+        "choices": [
+            "Maximum hop count of 15",
+            "High administrative distance",
+            "Slow convergence",
+            "Prone to routing loops",
+            "Requires high CPU overhead",
+            "Uses complex algorithms"
+        ],
+        "answer_indices": [
+            0,
+            2,
+            3
+        ],
+        "explanation": "RIP limitations include the 15-hop count, slow convergence, and loop vulnerability.",
+        "source_file": "notes/rip_protocol.txt"
+    },
+    {
+        "id": "sfp-type-1",
+        "topic": "SFP Modules",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "A technician needs to connect two switches 5 meters apart in the same rack using the most cost-effective 10 Gbps connection. Which technology should be used?",
+        "choices": [
+            "SFP+ with SMF",
+            "SFP+ with MMF",
+            "DAC (Direct Attached Copper)",
+            "SFP28"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "DAC is the most cost-effective solution for short-range (in-rack) 10 Gbps connections using SFP+ modules.",
+        "source_file": "notes/connectors_sfp.txt"
+    },
+    {
+        "id": "wdm-detail-1",
+        "topic": "WDM Technology",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "A service provider needs to maximize the capacity of a single-mode fiber link between two cities. Which technology allows for up to 160 bidirectional channels using precise lasers?",
+        "choices": [
+            "CWDM",
+            "DWDM",
+            "BiDi WDM",
+            "TDM"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Dense WDM (DWDM) supports the highest density of channels (up to 160) compared to Coarse WDM (up to 16).",
+        "source_file": "notes/wdm_technology.txt"
+    },
+    {
+        "id": "fiber-connector-1",
+        "topic": "Connectors",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "Which fiber optic connector is designed for high-density backbone links and supports multiple fiber strands in a single 'push-on' style housing?",
+        "choices": [
+            "LC",
+            "SC",
+            "ST",
+            "MPO"
+        ],
+        "answer_indices": [
+            3
+        ],
+        "explanation": "MPO (Multi-Fiber Push-on) is the high-density standard for backbones.",
+        "source_file": "notes/connectors_sfp.txt"
+    },
+    {
+        "id": "fiber-polish-1",
+        "topic": "Fiber Optics",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "Which fiber optic cable finish is characterized by a slanted or 'angled' cut to minimize back-reflection?",
+        "choices": [
+            "Flat",
+            "PC (Physical Contact)",
+            "UPC (Ultra Physical Contact)",
+            "APC (Angled Physical Contact)"
+        ],
+        "answer_indices": [
+            3
+        ],
+        "explanation": "APC connectors have an 8-degree slant to minimize insertion loss and back-reflection.",
+        "source_file": "notes/fiber_optics.txt"
+    },
+    {
+        "id": "hierarchy-nuance-1",
+        "topic": "Network Hierarchy",
+        "domain_id": 2,
+        "difficulty": "hard",
+        "prompt": "In a Cisco-style three-tiered hierarchy, which layer is MOST likely to utilize high-speed switches to interconnect different distribution blocks?",
+        "choices": [
+            "Access Layer",
+            "Distribution Layer",
+            "Core Layer",
+            "Edge Layer"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "The Core Layer is the high-speed backbone responsible for interconnecting distribution layers.",
+        "source_file": "notes/network_hierarchy.txt"
+    },
+    {
+        "id": "route-example-1",
+        "topic": "Routing Metrics",
+        "domain_id": 2,
+        "difficulty": "hard",
+        "prompt": "A technician views a routing table and sees an entry with a code 'R'. Which of the following metrics is this protocol MOST likely to use for path selection?",
+        "choices": [
+            "Cost",
+            "Bandwidth and Delay",
+            "Hop Count",
+            "Reliability"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "The code 'R' indicates RIP, which uses Hop Count as its sole metric.",
+        "source_file": "notes/routing_metrics.txt"
+    },
+    {
+        "id": "switch-cam-1",
+        "topic": "Switching Fundamentals",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "What is the primary method a Layer 2 switch uses to populate its CAM table?",
+        "choices": [
+            "It reads the destination MAC address of incoming frames",
+            "It reads the source MAC address of incoming frames",
+            "It queries the ARP table of the connected router",
+            "It uses BPDUs to learn neighbor addresses"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Switches learn by mapping the *source* MAC address of received frames to the port they arrived on.",
+        "source_file": "notes/switching_fundamentals.txt"
+    },
+    {
+        "id": "tls-nuance-1",
+        "topic": "OSI and TLS",
+        "domain_id": 4,
+        "difficulty": "hard",
+        "prompt": "Which TLS mechanism ensures that even if a server's private key is compromised in the future, past session traffic remains secure?",
+        "choices": [
+            "AES-256",
+            "Perfect Forward Secrecy (PFS)",
+            "STARTTLS",
+            "Implicit TLS"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "PFS creates unique session keys that are not derived from the server's long-term private key.",
+        "source_file": "notes/tls_presentation.txt"
+    },
+    {
+        "id": "sec-attack-multi",
+        "topic": "Security Fundamentals",
+        "domain_id": 4,
+        "difficulty": "hard",
+        "prompt": "Which of the following are common types of network malware? (Select THREE)",
+        "choices": [
+            "Viruses",
+            "Worms",
+            "Phishing",
+            "Trojans",
+            "DoS",
+            "MFA"
+        ],
+        "answer_indices": [
+            0,
+            1,
+            3
+        ],
+        "explanation": "Viruses, Worms, and Trojans are types of malware. Phishing is social engineering; DoS is an attack type.",
+        "source_file": "notes/security_fundamentals.txt"
+    },
+    {
+        "id": "ts-verify-1",
+        "topic": "Troubleshooting Methodology",
+        "domain_id": 5,
+        "difficulty": "hard",
+        "prompt": "A technician has finished fixing a user's printer connection. According to the standard methodology, what are the LAST TWO tasks they should complete? (Select TWO)",
+        "choices": [
+            "Implement preventive measures",
+            "Document findings, actions, and outcomes",
+            "Verify full system functionality",
+            "Establish a plan of action",
+            "Establish a theory",
+            "Question the user"
+        ],
+        "answer_indices": [
+            1,
+            2
+        ],
+        "explanation": "The final steps are verifying functionality (Step 6) and documenting (Step 7).",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "osi-all-1",
+        "topic": "Data Encapsulation",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "Which OSI layers are primarily responsible for 'Data' PDUs (before segments/packets are formed)? (Select THREE)",
+        "choices": [
+            "Application",
+            "Presentation",
+            "Session",
+            "Transport",
+            "Network",
+            "Data Link"
+        ],
+        "answer_indices": [
+            0,
+            1,
+            2
+        ],
+        "explanation": "Layers 5, 6, and 7 all work with 'Data' PDUs.",
+        "source_file": "notes/encapsulation_osi.txt"
+    },
+    {
+        "id": "ts-unique-1",
+        "topic": "Troubleshooting Methodology",
+        "domain_id": 5,
+        "difficulty": "hard",
+        "prompt": "A technician has tested their theory and determined that the problem is a faulty line card in a core switch. However, the fix requires an outage that would affect the entire building. What should the technician do NEXT?",
+        "choices": [
+            "Implement the fix immediately",
+            "Escalate the issue to a senior engineer",
+            "Establish a plan of action and notify stakeholders",
+            "Document the findings and close the ticket"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Once the cause is determined, the technician must establish a plan of action, which includes scheduling maintenance and notifying affected parties.",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "ts-unique-2",
+        "topic": "Troubleshooting Methodology",
+        "domain_id": 5,
+        "difficulty": "hard",
+        "prompt": "A junior technician is unable to establish a theory of probable cause for a complex BGP issue despite researching internal documentation. Which of the following is the BEST next step?",
+        "choices": [
+            "Replace the router",
+            "Conduct external research (e.g., search engines, forums)",
+            "Verify full system functionality",
+            "Document that the issue is unfixable"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "If internal research fails, external research is a key part of establishing a theory.",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "sec-unique-1",
+        "topic": "Security Fundamentals",
+        "domain_id": 4,
+        "difficulty": "hard",
+        "prompt": "An organization wants to ensure that users can log in to multiple distinct cloud services using their corporate credentials without entering them multiple times. Which technology should be implemented?",
+        "choices": [
+            "MFA",
+            "SSO (Single Sign-On)",
+            "LDAPS",
+            "RADIUS"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "SSO allows a user to authenticate once and gain access to multiple related systems.",
+        "source_file": "notes/security_fundamentals.txt"
+    },
+    {
+        "id": "sec-unique-2",
+        "topic": "Security Fundamentals",
+        "domain_id": 4,
+        "difficulty": "hard",
+        "prompt": "Which of the following is a security control that uses deceptive technology to lure attackers away from critical production systems?",
+        "choices": [
+            "IDS",
+            "Honeypot",
+            "Firewall",
+            "DMZ"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "A honeypot is a decoy system designed to be probed, attacked, or compromised.",
+        "source_file": "notes/security_fundamentals.txt"
+    },
+    {
+        "id": "stp-root-1",
+        "topic": "Spanning Tree",
+        "domain_id": 2,
+        "difficulty": "hard",
+        "prompt": "An administrator wants to ensure a specific high-performance switch always becomes the Root Bridge. Which Bridge Priority value should be configured?",
+        "choices": [
+            "0",
+            "4096",
+            "32768",
+            "65535"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "The Root Bridge is the switch with the lowest Bridge ID (Priority + MAC). Setting priority to 0 (the lowest possible) ensures it wins.",
+        "source_file": "notes/spanning_tree.txt"
+    },
+    {
+        "id": "stp-guard-1",
+        "topic": "Spanning Tree",
+        "domain_id": 2,
+        "difficulty": "hard",
+        "prompt": "Which STP feature is designed to immediately disable an access port if it receives a BPDU, preventing unauthorized switches from affecting the topology?",
+        "choices": [
+            "Root Guard",
+            "Loop Guard",
+            "BPDU Guard",
+            "PortFast"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "BPDU Guard shuts down an interface if a BPDU is detected, which is ideal for ports connected to end-user devices.",
+        "source_file": "notes/spanning_tree.txt"
+    },
+    {
+        "id": "stp-port-1",
+        "topic": "Spanning Tree",
+        "domain_id": 2,
+        "difficulty": "hard",
+        "prompt": "After a topology change, a switch port moves through various states. In which state does the port process BPDUs and begin to populate the MAC address table but still NOT forward user traffic?",
+        "choices": [
+            "Blocking",
+            "Listening",
+            "Learning",
+            "Forwarding"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Learning state is when the switch builds the CAM table from source MAC addresses but does not yet forward user data.",
+        "source_file": "notes/spanning_tree.txt"
+    },
+    {
+        "id": "fiber-color-1",
+        "topic": "Fiber Optics",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "A technician is replacing a fiber patch cable and notices the existing connector is Green. Which type of connector polish is being used?",
+        "choices": [
+            "PC (Physical Contact)",
+            "UPC (Ultra Physical Contact)",
+            "APC (Angled Physical Contact)",
+            "Flat Polish"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Green connectors indicate APC (Angled Physical Contact), which minimizes back-reflection. Blue usually indicates UPC.",
+        "source_file": "notes/fiber_optics.txt"
+    },
+    {
+        "id": "fiber-trans-1",
+        "topic": "Connectors",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "A network engineer needs to connect two switches using a 40 Gbps link over a distance of 100 meters. Which transceiver type is MOST appropriate for this task?",
+        "choices": [
+            "SFP+",
+            "SFP28",
+            "QSFP+",
+            "QSFP28"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "QSFP+ (Quad Small Form-factor Pluggable Plus) is the standard for 40 Gbps connections.",
+        "source_file": "notes/connectors_sfp.txt"
+    },
+    {
+        "id": "fiber-db-1",
+        "topic": "Fiber Optics",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "A technician is troubleshooting a fiber link and measures a high amount of attenuation. Which of the following are MOST likely to cause increased decibel (dB) loss? (Select TWO)",
+        "choices": [
+            "Dirty connectors",
+            "Using OS2 instead of OS1",
+            "Excessive bends in the cable",
+            "Using a laser light source",
+            "Using LC instead of SC connectors"
+        ],
+        "answer_indices": [
+            0,
+            2
+        ],
+        "explanation": "Dirty connectors and 'micro-bends' or 'macro-bends' are primary causes of signal loss (attenuation) in fiber.",
+        "source_file": "notes/fiber_optics.txt"
+    },
+    {
+        "id": "fiber-smf-mmf-1",
+        "topic": "Fiber Optics",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "Which of the following is a characteristic unique to Single-mode Fiber (SMF) when compared to Multi-mode Fiber (MMF)?",
+        "choices": [
+            "It has a larger core diameter",
+            "It uses LED light sources",
+            "It is prone to modal dispersion",
+            "It supports much longer distances using a single path for light"
+        ],
+        "answer_indices": [
+            3
+        ],
+        "explanation": "SMF has a very small core (8-10 microns) and uses a single light path (laser), which eliminates modal dispersion and allows for long distances.",
+        "source_file": "notes/fiber_optics.txt"
     }
 ]

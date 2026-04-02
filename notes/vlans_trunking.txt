@@ -1,0 +1,14 @@
+IMAGE 17: VIRTUAL LANS (VLAN)
+--------------------------------------------------------------------------------
+
+VLANs (Virtual Local Area Networks)
+* Logical grouping of devices within the same broadcast domain.
+* Benefits:
+  - Security
+  - Cost reduction
+  - Improved performance
+
+VLAN Trunking (802.1Q):
+* Allows multiple VLANs to traverse a single physical link between switches.
+
+--------------------------------------------------------------------------------

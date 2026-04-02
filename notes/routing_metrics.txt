@@ -1,0 +1,23 @@
+IMAGE 3: DYNAMIC ROUTING TECHNOLOGIES
+--------------------------------------------------------------------------------
+
+5.2 Dynamic Routing Technologies
+
+* Dynamic Routing Protocol: "Learned route". Entry in the routing table that has been learned from another router.
+* Adapts to topology changes such as:
+  - Link failures
+  - Congestions
+* Dynamic Routing Protocols are classified as:
+  - Distance Vector: Based on next hop with lowest hop count.
+  - Link-State: Maps entire topology to select most optimal paths.
+  - Hybrid
+
+Convergence
+Is the process running dynamic routing algorithms agree on the network topology.
+
+Autonomous Systems
+* A network under the administrative control of a single owner.
+  - IGP (Internal Gateway Protocol): Identifies routes within an AS.
+  - EGP (External): Advertises routes between autonomous systems.
+
+--------------------------------------------------------------------------------

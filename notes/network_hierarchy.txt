@@ -1,0 +1,21 @@
+IMAGE 5: THREE-TIERED NETWORK HIERARCHY
+--------------------------------------------------------------------------------
+
+Three-Tiered Network Hierarchy
+* Used to breakdown complex network designs.
+* Uses Cisco's principles for a three-tiered hierarchy.
+  3. Core
+  2. Distribution
+  1. Access
+
+Access / Edge Layer
+* Allows end user devices (printers, computers, phones).
+* Cabling, wall ports for wired.
+* Access points for wireless.
+* End systems connect to switches.
+* No direct link between switches.
+
+Distribution / Aggregation Layer
+* Provides fault-tolerant interconnections between different access blocks or other distribution blocks.
+
+--------------------------------------------------------------------------------

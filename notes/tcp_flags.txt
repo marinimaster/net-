@@ -1,0 +1,14 @@
+IMAGE 11: TCP FLAG TYPES
+================================================================================
+
+TCP Flag Types
+Flags are used to indicate a particular state of a connection or to provide additional information.
+
+* [SYN] - Synchronize: Initial attempt to establish a connection.
+* [ACK] - Acknowledgment: Used to confirm that the data was received.
+* [FIN] - Finished: Indicates that the connection is being closed.
+* [RST] - Reset: Abruptly terminates the connection.
+* [PSH] - Push: Tells the receiver to process the data immediately.
+* [URG] - Urgent: Indicates that the data should be prioritized.
+
+--------------------------------------------------------------------------------

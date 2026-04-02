@@ -1,0 +1,19 @@
+IMAGE 10: THREE WAY HANDSHAKE
+--------------------------------------------------------------------------------
+
+Three Way Handshake
+[SYN] [SYN, ACK] [ACK]
+
+1) Source sends sequence number to destination
+   Ex: 
+   Src: 10.10.0.1
+   Dst: 172.120.6.1
+   Syn = 15
+
+   Destination sends an acknowledge number equal to Source's sequence number + 1.
+   Ex:
+   Src: 172.120.6.1
+   Dst: 10.10.0.1
+   Syn = 0
+   Ack = 16
+================================================================================

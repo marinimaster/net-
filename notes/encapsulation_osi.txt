@@ -1,0 +1,21 @@
+IMAGE 12: DATA ENCAPSULATION & OSI MODEL
+--------------------------------------------------------------------------------
+
+Data Encapsulation
+The process of adding headers and footers to data as it moves down the OSI model.
+* Layer 7-5: Data
+* Layer 4: Segment (TCP/UDP)
+* Layer 3: Packet (IP)
+* Layer 2: Frame (Ethernet)
+* Layer 1: Bits (Physical)
+
+OSI Model Layers:
+7. Application
+6. Presentation
+5. Session
+4. Transport
+3. Network
+2. Data Link
+1. Physical
+
+--------------------------------------------------------------------------------

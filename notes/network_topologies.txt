@@ -1,0 +1,11 @@
+IMAGE 15: NETWORK TOPOLOGIES
+--------------------------------------------------------------------------------
+
+Network Topologies
+
+* Star: All devices connect to a central hub/switch.
+* Mesh: Every device connects to every other device (Full or Partial).
+* Bus: Devices share a single communication line.
+* Ring: Devices connect in a circular path.
+
+--------------------------------------------------------------------------------

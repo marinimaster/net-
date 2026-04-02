@@ -1,0 +1,29 @@
+IMAGE 2: KEY TERMS & ROUTING METRICS
+--------------------------------------------------------------------------------
+
+Key Terms
+* OSPF (Open Shortest Path First): Link-state Dynamic Routing Protocol that calculates using cost [mainly based on bandwidth].
+* RIPv1 / RIPv2: Distance-vector routing protocols that use Hop Count as their metric (maximum 15 hops).
+  - RIPv1 is classful (no subnet info).
+  - RIPv2 supports netmasks and authentication.
+Distance-Vector Routing Protocols
+* Determines the best path based on distance (metric) and directions (next hop) learned from neighboring routers.
+* Routers share their entire routing tables at regular intervals.
+* Each router trusts what its neighbors tell it.
+
+Link-State Routing Protocols
+* Based on topology, it builds a complete map of the entire network and calculates the best path by itself.
+* Routers share information about their directly connected links.
+* Uses shortest path first algorithms to calculate optimal routes.
+
+Routing Metrics
+Routing protocols use different metrics. They transform their raw metrics into a measurable value using an algorithm. Some more complex than others.
+* Hop Count
+* Bandwidth
+* Delay (latency)
+* Cost
+* Reliability
+* Load
+* Maximum Transmission Unit (MTU)
+
+--------------------------------------------------------------------------------

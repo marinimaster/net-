@@ -1,0 +1,30 @@
+# Simple Network Management Protocol
+SNMP agent: a process running in a router, switch, server, or other SNMP compatible network device.
+
+- A device running an SNMP agent is referred to as a `managed device`
+
+- The agent maintains a data store called `management information base (MIB)`.That holds variables relating 
+to the activity of the device, such as the number of frames per second handled by a switch.
+
+- Each parameter stored in a MIB is referred to by a numeric Object Identifier (OID).
+
+SNMPv1: Structured tables, NOT encrypted.
+SNMPv2: Data type enhancements, bulk transfers, NOT encrypted
+SNMPv3: Message integrity, authentication, ENCRYPTED
+
+SNMP Traps:
+Since SNMP respond to polls, error might go unnoticed until next poll.
+
+Alarm sent from networking device to management station, it uses port UDP/162.
+A device might be set up to send an alert for example whenever a CRC error increases by 5.
+
+Authentication:
+Community string - Used in SNMPv1 and SNMPv2
+	- An agent can only pass information to management systems 
+	configured with the same community string
+	- Read only - Read-write - Traps
+	- Public and Private
+	- Non-encrypted
+
+Username and Password - SNMPv3
+	- Transmitted as a password hash.

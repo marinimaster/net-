@@ -1,0 +1,28 @@
+IMAGE: TIME DRIFT (IMG_0423)
+--------------------------------------------------------------------------------
+
+Time Drift in NTP:
+Time drift is when the system's clock begins to deviate. Solved by applying either:
+* Slew method: When time is off by a few seconds.
+* Slam method: When time is off by more than a few seconds. Hard Resetting it.
+
+Alternatives:
+If a local stratum 1 server cannot be implemented in the local network, time zone can be configured using one or more public NTP server pools.
+
+--------------------------------------------------------------------------------
+IMAGE: PRECISION TIME PROTOCOL (PTP) (IMG_0424)
+--------------------------------------------------------------------------------
+
+Precision Time Protocol (PTP):
+* Nanosecond Precision.
+* IEEE 1588 standard.
+
+PTP is used where very high precision is required; it is not simply a general replacement for NTP in every environment.
+
+Used In:
+* Industrial Processes, Medical Devices, Financial Services, 5G, Market Trading.
+
+Hierarchy (Diagram):
+[Grandmaster Clock] -> timeTransmitter -> timeReceiver -> [Boundary Clocks] -> timeTransmitter -> timeReceiver -> [Ordinary Clocks].
+
+--------------------------------------------------------------------------------

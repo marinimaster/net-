@@ -60,3 +60,65 @@ Not Only SQL (NoSQL):
 Commonly accessed through APIs over HTTPs.
 
 --------------------------------------------------------------------------------
+IMAGE: SERVER MESSAGE BLOCK (SMB) (IMG_0425)
+--------------------------------------------------------------------------------
+
+Server Message Block (SMB) - Port 445
+Windows Print/File sharing.
+Allows a host to share its directories/files and printers to make them available for other machines to use.
+
+Samba Software Suite:
+* Allows Windows client to access a Linux host.
+* Linux host to access Windows-hosted print/file services.
+
+NetBIOS (Port Range 137-139):
+Legacy protocol. SMB used to run as part of its network services.
+If legacy client support is not required, SMB will run normally on port 445.
+
+SECURITY NOTE:
+SMB should only run on local networks. Traffic on ports 137-139 and 445 should be blocked.
+
+--------------------------------------------------------------------------------
+IMAGE: NETWORK ATTACHED STORAGE (NAS) (IMG_0426)
+--------------------------------------------------------------------------------
+
+Network Attached Storage (NAS)
+Appliance dedicated to performing a file server role.
+
+* Uses a bespoke operating system: Usually based on Linux, usually operated via a Web App.
+* Accessed via IP or domain name.
+* Copy or backup operations are performed at file level using an application protocol such as SMB or FTP.
+* Most NAS devices support some level of redundant array of independent disks (RAID).
+
+Main drawback of NAS:
+Shares bandwidth with other network applications, causing unacceptable delays.
+But: On networks with adequate bandwidth is a good way of adding shared storage.
+
+--------------------------------------------------------------------------------
+IMAGE: DATABASE SERVICES (IMG_0427)
+--------------------------------------------------------------------------------
+
+Database Services:
+Database: Provides data in a form that can be read or updated through some type of query language.
+
+Relational Databases store data in:
+* Columns / Fields
+* Rows / Records
+
+Operated using SQL:
+* Insecure by default.
+* RDBMS can be installed with a certificate.
+
+Common Ports:
+* Oracle: TCP/1521
+* Microsoft SQL: TCP/1433
+* MySQL / MariaDB: TCP/3306
+* PostgreSQL: TCP/5432
+
+Not Only SQL (NoSQL):
+* Key-value pairs
+* Wide columns
+
+Commonly accessed through APIs over HTTPs.
+
+--------------------------------------------------------------------------------

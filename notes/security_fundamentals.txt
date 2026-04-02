@@ -1,0 +1,14 @@
+IMAGE 20: NETWORK SECURITY FUNDAMENTALS
+--------------------------------------------------------------------------------
+
+Network Security Fundamentals
+* CIA Triad: Confidentiality, Integrity, Availability.
+* Threats:
+  - Malware (Viruses, Worms, Trojans).
+  - Phishing.
+  - DoS / DDoS attacks.
+* Mitigations:
+  - Firewalls.
+  - IPS/IDS.
+  - Strong passwords and MFA.
+================================================================================

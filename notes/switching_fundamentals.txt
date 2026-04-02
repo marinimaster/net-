@@ -1,0 +1,10 @@
+IMAGE 16: SWITCHING FUNDAMENTALS
+--------------------------------------------------------------------------------
+
+Switching Fundamentals
+* Layer 2 devices.
+* Uses MAC Address Table (CAM Table) to forward frames.
+* Learning: Maps source MAC addresses to ports.
+* Forwarding: Sends frames to the destination port.
+
+--------------------------------------------------------------------------------

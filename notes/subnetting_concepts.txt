@@ -1,0 +1,12 @@
+IMAGE 14: SUBNETTING CONCEPTS
+--------------------------------------------------------------------------------
+
+Subnetting Concepts
+* Subnet Mask: Defines which part of the IP address is the network and which is the host.
+* CIDR (Classless Inter-Domain Routing): Uses a slash notation (e.g., /24) to represent the mask.
+
+Benefits of Subnetting:
+* Reduced network traffic (smaller broadcast domains).
+* Optimized network performance.
+* Simplified management.
+

@@ -1,0 +1,10 @@
+# SNMP Monitor
+- Polls SNMP agents at regular intervals for information from their MIBs and displays it for review.
+- Displays trap alerts for the network administrator to assess and act upon as necessary.
+
+	> Get:	Software queries the agent for single OID.
+	> Trap:	Agent informs the monitor of a notable events, such as a port failure. The threshold 
+		triggering traps can be set for each value.
+
+The monitor can be used to change certain variables using the Set command. Monitor can walk and MIB subtree by using multiple Get and 
+Get Next commands, which used to discover the complete layout of an MIB.

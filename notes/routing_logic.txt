@@ -1,0 +1,36 @@
+IMAGE 1: ROUTING LOGIC AND THE DEFAULT ROUTE
+================================================================================
+
+Routing Logic and the Default Route
+
+1. Make the best match of all routes in the IP routing table
+   - Best: Most specific route
+   - Best: Route with longest mask
+
+2. If no route matches the packet's destination:
+   - Use the default route
+   - The default route is considered to match all packets.
+   - — If no route exists, discard the packet —
+
+3. Default routes can be created by:
+   - Routing Protocols
+   - Static Config (ip route) with a 0.0.0.0 0.0.0.0 Subnet ID and mask
+
+ROUTING TABLE EXAMPLE:
+R 10.10.30.0/24 [120/1] via 10.10.50.2, 00:00:14, Serial 0/3/1
+
+* Route Code: R
+* Subnet ID with Prefix length: 10.10.30.0/24
+* Administrative Distance: 120
+* Metric: 1
+* Next Hop (Destination): 10.10.50.2
+* Route Timestamp: 00:00:14
+* Outgoing Interface: Serial 0/3/1
+
+Administrative Distances
+Used by the router to determine which routing protocol has priority.
+
+Key Terms:
+* EIGRP (Enhanced Interior Gateway Routing Protocol): Cisco developed Dynamic routing protocol that automatically learns routes and calculates best path using delay, bandwidth, reliability and load metrics.
+
+--------------------------------------------------------------------------------
