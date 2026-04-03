@@ -1,6 +1,6 @@
 # 🤖 AI-Generated Tool Disclaimer
-**This entire application, including the code, data structures, and study materials, was created with the assistance of Artificial Intelligence.** I am using this tool for my personal study efficiency; please do not attribute the technical implementation or design to me.
-
+**This entire application, including the code, and data structures, were created with the assistance of Artificial Intelligence.** I am using this tool for my personal study efficiency; please do not attribute the technical implementation or design to me.
+# The code based its content on my own study notes.
 ---
 
 # Network+ Study Suite (Nord-CompTIA Edition)
