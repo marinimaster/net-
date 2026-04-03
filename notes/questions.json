@@ -2423,7 +2423,7 @@
             2
         ],
         "explanation": "802.11ac (Wi-Fi 5) operates exclusively in 5 GHz and supports gigabit speeds.",
-        "source_file": "notes/wireless_standards.txt"
+        "source_file": "notes/wifi_standards.txt"
     },
     {
         "id": "wifi-2",
@@ -2445,7 +2445,7 @@
             3
         ],
         "explanation": "802.11b and 802.11g are 2.4 GHz only; 802.11n is dual-band (2.4/5 GHz).",
-        "source_file": "notes/wireless_standards.txt"
+        "source_file": "notes/wifi_standards.txt"
     },
     {
         "id": "hierarchy-1",
@@ -2734,7 +2734,7 @@
             4
         ],
         "explanation": "MIMO was introduced with 802.11n and expanded in 802.11ac.",
-        "source_file": "notes/wireless_standards.txt"
+        "source_file": "notes/wifi_standards.txt"
     },
     {
         "id": "rip-limit-1",
@@ -3166,5 +3166,737 @@
         ],
         "explanation": "SMF has a very small core (8-10 microns) and uses a single light path (laser), which eliminates modal dispersion and allows for long distances.",
         "source_file": "notes/fiber_optics.txt"
+    },
+    {
+        "id": "event-1",
+        "topic": "Event Management",
+        "domain_id": 3,
+        "difficulty": "standard",
+        "prompt": "What is the purpose of the PRI code in a syslog message?",
+        "choices": [
+            "To encrypt the message",
+            "To indicate the message's priority",
+            "To specify the protocol used",
+            "To identify the recipient of the message"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The PRI code in a syslog message is calculated from the facility (which indicates the type of software that generated the message) and the severity level (which indicates how critical the event is). This code helps in categorizing and prioritizing the messages for better management and analysis.",
+        "source_file": "notes/syslog_standard.txt"
+    },
+    {
+        "id": "event-2",
+        "topic": "Event Management",
+        "domain_id": 3,
+        "difficulty": "standard",
+        "prompt": "What does a syslog message comprise?",
+        "choices": [
+            "Only a header containing a timestamp",
+            "Only a message part with content",
+            "A PRI code, a header, and a message part",
+            "A severity level and a message part"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "A syslog message consists of three main components: a PRI code (calculated from the facility and a severity level), a header (containing a timestamp and host name), and a message part (which includes a tag showing the source process plus content).",
+        "source_file": "notes/syslog_standard.txt"
+    },
+    {
+        "id": "event-3",
+        "topic": "Event Management",
+        "domain_id": 3,
+        "difficulty": "standard",
+        "prompt": "What does log aggregation in the context of SIEM refer to?",
+        "choices": [
+            "The physical collection of log files from different devices",
+            "The process of deleting outdated log files to free up storage space",
+            "Normalizing data from different sources to make it consistent",
+            "Encrypting log files for secure storage"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Log aggregation in the context of SIEM refers to the process of normalizing data from different sources so that it is consistent and searchable. This involves condensing repetitive, individual events into summary events and ensuring that data from various devices and applications can be analyzed together effectively.",
+        "source_file": "notes/siem_fundamentals.txt"
+    },
+    {
+        "id": "event-4",
+        "topic": "Event Management",
+        "domain_id": 3,
+        "difficulty": "standard",
+        "prompt": "How do SIEM tools handle differences in date/time zones among various log sources?",
+        "choices": [
+            "By ignoring date/time information to avoid confusion",
+            "By normalizing date/time zone differences to a single timeline",
+            "By only accepting logs in the UTC time zone",
+            "By storing logs in separate databases based on their time zones"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "SIEM tools handle differences in date/time zones among various log sources by normalizing these differences to a single timeline. This ensures that events from different sources can be accurately correlated and analyzed in a coherent manner, regardless of the original time zones of the log sources.",
+        "source_file": "notes/siem_fundamentals.txt"
+    },
+    {
+        "id": "event-5",
+        "topic": "Event Management",
+        "domain_id": 3,
+        "difficulty": "standard",
+        "prompt": "What is a key feature of performance/traffic logs?",
+        "choices": [
+            "They record only security breaches.",
+            "They record metrics for network resources",
+            "They exclusively track user login attempts.",
+            "They serve as backups for application data."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Performance/traffic logs are essential for understanding the utilization and performance of various system resources over defined periods, aiding in capacity planning and troubleshooting.",
+        "source_file": "notes/log_types.txt"
+    },
+    {
+        "id": "event-6",
+        "topic": "Event Management",
+        "domain_id": 3,
+        "difficulty": "standard",
+        "prompt": "What type of events does an audit log generally record?",
+        "choices": [
+            "Success/fail type events related to authentication",
+            "Detailed descriptions of all user activities",
+            "System configuration backups",
+            "Performance metrics for compute resources"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "Audit logs are focused on recording the success or failure of authentication and authorization attempts, providing a clear record of who has accessed or attempted to access the system.",
+        "source_file": "notes/log_types.txt"
+    },
+    {
+        "id": "event-7",
+        "topic": "Event Management",
+        "domain_id": 3,
+        "difficulty": "standard",
+        "prompt": "What distinguishes an application log from a system log?",
+        "choices": [
+            "An application log records data for the entire operating system.",
+            "An application log records data for a single specific service",
+            "An application log is only used for security purposes.",
+            "An application log cannot record errors."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Application logs are specific to a single service or application, recording events and data relevant to its operation, unlike system logs that record events at the OS level.",
+        "source_file": "notes/log_types.txt"
+    },
+    {
+        "id": "event-8",
+        "topic": "Event Management",
+        "domain_id": 3,
+        "difficulty": "standard",
+        "prompt": "Why is plotting data as a graph helpful in log analysis?",
+        "choices": [
+            "It eliminates the need for software analysis.",
+            "It makes it easier to spot trends or spikes in the data",
+            "It reduces the amount of data that needs to be stored.",
+            "It increases the speed of the network."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Visual representations of data, such as graphs, make it significantly easier to identify trends, spikes, or troughs. This visual approach allows analysts to quickly spot patterns or anomalies that might be difficult to discern in raw data.",
+        "source_file": "notes/event_prioritization.txt"
+    },
+    {
+        "id": "event-9",
+        "topic": "Event Management",
+        "domain_id": 3,
+        "difficulty": "standard",
+        "prompt": "How can a high priority alert be communicated in an event management system?",
+        "choices": [
+            "By displaying it on the system dashboard only",
+            "By sending an email to the system administrator",
+            "By increasing the logging level on all hosts",
+            "By generating a detailed report at the end of the month"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "High priority alerts might require active notification methods, such as emailing a system administrator, sending a text message, or triggering a physical alarm, to ensure immediate attention.",
+        "source_file": "notes/event_prioritization.txt"
+    },
+    {
+        "id": "event-10",
+        "topic": "Event Management",
+        "domain_id": 3,
+        "difficulty": "standard",
+        "prompt": "What is an automated event management system configured to generate?",
+        "choices": [
+            "Detailed reports for every event",
+            "Some sort of alert",
+            "A backup of the logging system",
+            "A list of all devices on the network"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "An automated event management system can be configured to generate alerts when certain types of events of a given severity are encountered, indicating potential issues that need attention.",
+        "source_file": "notes/event_prioritization.txt"
+    },
+    {
+        "id": "event-11",
+        "topic": "Event Management",
+        "domain_id": 3,
+        "difficulty": "hard",
+        "prompt": "Which Syslog severity level indicates that the system is unusable, such as during a kernel panic?",
+        "choices": [
+            "[0] Emergency",
+            "[1] Alert",
+            "[2] Critical",
+            "[3] Error"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "Syslog level 0 (Emergency) is the highest severity, indicating the system is unusable.",
+        "source_file": "notes/event_prioritization.txt"
+    },
+    {
+        "id": "event-12",
+        "topic": "Event Management",
+        "domain_id": 3,
+        "difficulty": "hard",
+        "prompt": "A technician sets the logging level for remote forwarding to '4'. Which of the following Syslog levels will NOT be forwarded? (Select THREE)",
+        "choices": [
+            "[3] Error",
+            "[4] Warning",
+            "[5] Notice",
+            "[6] Informational",
+            "[7] Debug",
+            "[2] Critical"
+        ],
+        "answer_indices": [
+            2,
+            3,
+            4
+        ],
+        "explanation": "Logging level determines the maximum level at which events are recorded. If set to 4 (Warning), then levels 5 (Notice), 6 (Informational), and 7 (Debug) will not be forwarded.",
+        "source_file": "notes/event_prioritization.txt"
+    },
+    {
+        "id": "snmp-sec-1",
+        "topic": "SNMP",
+        "domain_id": 3,
+        "difficulty": "hard",
+        "prompt": "Which SNMPv3 security level provides both authentication and encryption using the user's credential as a key?",
+        "choices": [
+            "noAuthNoPriv",
+            "authNoPriv",
+            "authPriv",
+            "privOnly"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "In SNMPv3, 'authPriv' enables both authentication and encryption using the user's credentials.",
+        "source_file": "notes/snmp_security.txt"
+    },
+    {
+        "id": "snmp-sec-2",
+        "topic": "SNMP",
+        "domain_id": 3,
+        "difficulty": "hard",
+        "prompt": "What is a primary security risk when using SNMP v2c?",
+        "choices": [
+            "Passphrases are hashed with weak algorithms",
+            "Community strings are sent in plaintext",
+            "Encryption is limited to AES-128",
+            "It requires a physical console connection"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "SNMP v2c uses community strings for authentication, which are transmitted in plaintext and can be easily intercepted.",
+        "source_file": "notes/snmp_security.txt"
+    },
+    {
+        "id": "poe-1",
+        "topic": "PoE Standards",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "Which IEEE standard defines the original Power over Ethernet (PoE) with a maximum power delivery of 15.4W?",
+        "choices": [
+            "802.3af",
+            "802.3at",
+            "802.3bt",
+            "802.3an"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "IEEE 802.3af is the original PoE standard, delivering up to 15.4W of DC power.",
+        "source_file": "notes/poe_standards.txt"
+    },
+    {
+        "id": "poe-2",
+        "topic": "PoE Standards",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "What is the maximum power delivered by the IEEE 802.3at (PoE+) standard?",
+        "choices": [
+            "15.4W",
+            "30W",
+            "60W",
+            "100W"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "PoE+ (802.3at) provides up to 30W of power, which is double the original 802.3af standard.",
+        "source_file": "notes/poe_standards.txt"
+    },
+    {
+        "id": "poe-3",
+        "topic": "PoE Standards",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "A technician is installing high-power smart lighting that requires 70W of power. Which PoE standard MUST the switch support?",
+        "choices": [
+            "802.3af",
+            "802.3at",
+            "802.3bt Type 3",
+            "802.3bt Type 4"
+        ],
+        "answer_indices": [
+            3
+        ],
+        "explanation": "802.3bt Type 4 (4PPoE) can deliver up to 100W, which is necessary for devices exceeding 60W.",
+        "source_file": "notes/poe_standards.txt"
+    },
+    {
+        "id": "poe-4",
+        "topic": "PoE Standards",
+        "domain_id": 2,
+        "difficulty": "hard",
+        "prompt": "In a PoE environment, what is the difference between an Endspan and a Midspan?",
+        "choices": [
+            "Endspan is a PoE injector; Midspan is a PoE-capable switch",
+            "Endspan is a PoE-capable switch; Midspan is a PoE injector",
+            "Endspan uses spare pairs; Midspan uses data pairs",
+            "Endspan is for fiber; Midspan is for copper"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "An Endspan is a switch with built-in PoE support, while a Midspan is an external injector placed between a non-PoE switch and the device.",
+        "source_file": "notes/poe_standards.txt"
+    },
+    {
+        "id": "poe-multi-1",
+        "topic": "PoE Standards",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "Which of the following are typical use cases for 802.3at (PoE+)? (Select TWO)",
+        "choices": [
+            "Basic VoIP phones",
+            "IP cameras with heaters/ptz",
+            "High-end Wi-Fi Access Points",
+            "Laptops",
+            "Smart Lighting"
+        ],
+        "answer_indices": [
+            1,
+            2
+        ],
+        "explanation": "PoE+ (30W) is commonly used for more demanding devices like PTZ cameras and modern Wi-Fi APs. Basic phones use 802.3af, while laptops/lighting use 802.3bt.",
+        "source_file": "notes/poe_standards.txt"
+    },
+    {
+        "id": "poe-limit-1",
+        "topic": "PoE Standards",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "What is the maximum recommended cable distance for a PoE connection using standard Cat6 cabling?",
+        "choices": [
+            "50 meters",
+            "100 meters",
+            "150 meters",
+            "300 meters"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "PoE follows the standard Ethernet distance limitation of 100 meters (328 feet).",
+        "source_file": "notes/poe_standards.txt"
+    },
+    {
+        "id": "wifi-3",
+        "topic": "Wireless Standards",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "Which 802.11 standard was the first to introduce Multiple-Input Multiple-Output (MIMO)?",
+        "choices": [
+            "802.11g",
+            "802.11n",
+            "802.11ac",
+            "802.11ax"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "802.11n (Wi-Fi 4) introduced MIMO to increase throughput by using multiple antennas.",
+        "source_file": "notes/wifi_standards.txt"
+    },
+    {
+        "id": "wifi-4",
+        "topic": "Wireless Standards",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "Which frequency band(s) does the 802.11ac standard operate in?",
+        "choices": [
+            "2.4 GHz only",
+            "5 GHz only",
+            "2.4 GHz and 5 GHz",
+            "5 GHz and 6 GHz"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "802.11ac (Wi-Fi 5) operates exclusively in the 5 GHz band.",
+        "source_file": "notes/wifi_standards.txt"
+    },
+    {
+        "id": "wifi-5",
+        "topic": "Wireless Standards",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "What is the primary technical enhancement introduced by 802.11ax (Wi-Fi 6)?",
+        "choices": [
+            "MIMO",
+            "MU-MIMO",
+            "OFDMA",
+            "Channel Bonding"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Wi-Fi 6 introduced OFDMA (Orthogonal Frequency Division Multiple Access) to improve efficiency and reduce latency in crowded environments.",
+        "source_file": "notes/wifi_standards.txt"
+    },
+    {
+        "id": "wifi-6",
+        "topic": "Wireless Standards",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "Which Wi-Fi standard is the first to support operation in the 6 GHz frequency band?",
+        "choices": [
+            "802.11ac",
+            "802.11ax (Wi-Fi 6)",
+            "802.11ax (Wi-Fi 6E)",
+            "802.11be (Wi-Fi 7)"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Wi-Fi 6E is the extension of Wi-Fi 6 that adds support for the 6 GHz spectrum.",
+        "source_file": "notes/wifi_standards.txt"
+    },
+    {
+        "id": "wifi-channels-1",
+        "topic": "Wireless Standards",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "In the 2.4 GHz spectrum, which channels are considered non-overlapping in North America? (Select THREE)",
+        "choices": [
+            "1",
+            "3",
+            "6",
+            "9",
+            "11",
+            "13"
+        ],
+        "answer_indices": [
+            0,
+            2,
+            4
+        ],
+        "explanation": "Channels 1, 6, and 11 do not overlap in the 2.4 GHz band, helping to avoid interference.",
+        "source_file": "notes/wifi_standards.txt"
+    },
+    {
+        "id": "wifi-speed-1",
+        "topic": "Wireless Standards",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "A company requires wireless throughput of at least 8 Gbps. Which standard(s) would meet this requirement? (Select TWO)",
+        "choices": [
+            "802.11ac",
+            "802.11n",
+            "802.11ax",
+            "802.11be",
+            "802.11g"
+        ],
+        "answer_indices": [
+            2,
+            3
+        ],
+        "explanation": "802.11ax (9.6 Gbps) and 802.11be (Wi-Fi 7) both support speeds well above 8 Gbps.",
+        "source_file": "notes/wifi_standards.txt"
+    },
+    {
+        "id": "wifi-retro-1",
+        "topic": "Wireless Standards",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "Which older 802.11 standard operated at 54 Mbps but used the 5 GHz band, making it incompatible with 802.11b?",
+        "choices": [
+            "802.11a",
+            "802.11g",
+            "802.11n",
+            "802.11ac"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "802.11a used 5 GHz, while 802.11b and 802.11g used 2.4 GHz. 802.11a offered 54 Mbps but had less range than 802.11b.",
+        "source_file": "notes/wifi_standards.txt"
+    },
+    {
+        "id": "wifi-mimo-1",
+        "topic": "Wireless Standards",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "What does MU-MIMO stand for and which standard first introduced it?",
+        "choices": [
+            "Multi-User Multiple-Input Multiple-Output; 802.11ac",
+            "Multiple-User Multiple-Input Multiple-Output; 802.11n",
+            "Manual-User Multiple-Input Multiple-Output; 802.11ac",
+            "Multi-User Main-Input Main-Output; 802.11ax"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "MU-MIMO allows an AP to communicate with multiple clients simultaneously; it was introduced with 802.11ac (Wi-Fi 5).",
+        "source_file": "notes/wifi_standards.txt"
+    },
+    {
+        "id": "poe-5",
+        "topic": "PoE Standards",
+        "domain_id": 2,
+        "difficulty": "hard",
+        "prompt": "Which PoE implementation mode delivers power over the same wire pairs used for data (1, 2, 3, and 6)?",
+        "choices": [
+            "Mode A",
+            "Mode B",
+            "Mode C",
+            "4PPoE"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "Mode A delivers power over the data pairs (1, 2, 3, and 6), while Mode B uses the spare pairs.",
+        "source_file": "notes/poe_standards.txt"
+    },
+    {
+        "id": "poe-6",
+        "topic": "PoE Standards",
+        "domain_id": 2,
+        "difficulty": "hard",
+        "prompt": "A switch has a total power budget of 200W. If it is already powering 6 PoE+ devices at their maximum potential draw, how much power is remaining for additional devices?",
+        "choices": [
+            "110W",
+            "47W",
+            "20W",
+            "0W (Overloaded)"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "PoE+ (802.3at) has a max draw of 25.5W per device (30W delivered). 6 devices * 25.5W = 153W. 200W - 153W = 47W remaining. (If using 30W delivered: 200 - 180 = 20W). Note: CompTIA often tests budget calculation.",
+        "source_file": "notes/poe_standards.txt"
+    },
+    {
+        "id": "wifi-7",
+        "topic": "Wireless Standards",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "Which technology allows a single 20 MHz channel to be partitioned into smaller sub-channels to serve multiple users simultaneously, as seen in Wi-Fi 6?",
+        "choices": [
+            "MIMO",
+            "OFDMA",
+            "DSSS",
+            "FHSS"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "OFDMA (Orthogonal Frequency Division Multiple Access) allows a channel to be shared by multiple users at once, improving efficiency.",
+        "source_file": "notes/wifi_standards.txt"
+    },
+    {
+        "id": "wifi-8",
+        "topic": "Wireless Standards",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "To achieve maximum speeds in 802.11ac, which feature is used to combine multiple 20 MHz channels into a single 160 MHz channel?",
+        "choices": [
+            "Channel Bonding",
+            "MIMO",
+            "OFDM",
+            "Beamforming"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "Channel bonding combines multiple adjacent channels to increase the overall bandwidth available for data transmission.",
+        "source_file": "notes/wifi_standards.txt"
+    },
+    {
+        "id": "wifi-9",
+        "topic": "Wireless Standards",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "Which of the following best describes the frequency support for 802.11be (Wi-Fi 7)?",
+        "choices": [
+            "2.4 GHz and 5 GHz only",
+            "5 GHz only",
+            "2.4 GHz, 5 GHz, and 6 GHz",
+            "6 GHz only"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Wi-Fi 7 (802.11be) is designed to operate across all three bands: 2.4 GHz, 5 GHz, and 6 GHz.",
+        "source_file": "notes/wifi_standards.txt"
+    },
+    {
+        "id": "wifi-range-1",
+        "topic": "Wireless Standards",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "Comparing the two primary frequency bands, why does 2.4 GHz typically offer better range than 5 GHz?",
+        "choices": [
+            "It has higher power output",
+            "Longer wavelengths penetrate obstacles better",
+            "It uses less bandwidth",
+            "It is less crowded"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The 2.4 GHz band has longer wavelengths, which allow the signal to travel further and penetrate walls/obstacles more effectively than the shorter wavelengths of 5 GHz.",
+        "source_file": "notes/wifi_standards.txt"
+    },
+    {
+        "id": "cable-cat-1",
+        "topic": "Cat Cabling",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "Which twisted-pair cable category was the first to officially support 1 Gbps (Gigabit) Ethernet?",
+        "choices": [
+            "Cat 5",
+            "Cat 5e",
+            "Cat 6",
+            "Cat 3"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Cat 5e (Enhanced) was designed to support 1 Gbps speeds over 100 meters.",
+        "source_file": "notes/cat_cabling.txt"
+    },
+    {
+        "id": "cable-cat-2",
+        "topic": "Cat Cabling",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "An administrator wants to run 10 Gbps Ethernet over copper cabling. What is the maximum distance supported by Cat 6 cable for this speed?",
+        "choices": [
+            "30 meters",
+            "55 meters",
+            "100 meters",
+            "150 meters"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Cat 6 supports 10 Gbps but is limited to roughly 37-55 meters. Cat 6a is required for 10 Gbps at the full 100-meter range.",
+        "source_file": "notes/cat_cabling.txt"
+    },
+    {
+        "id": "cable-cat-3",
+        "topic": "Cat Cabling",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "Which cabling standard is specifically designed for 40 Gbps speeds in data centers over short distances (30m)?",
+        "choices": [
+            "Cat 6a",
+            "Cat 7",
+            "Cat 8",
+            "Cat 5e"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Cat 8 supports 40 Gbps but only for very short distances up to 30 meters.",
+        "source_file": "notes/cat_cabling.txt"
+    },
+    {
+        "id": "cable-cat-4",
+        "topic": "Cat Cabling",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "What is the primary difference between Cat 6 and Cat 6a cabling?",
+        "choices": [
+            "Cat 6a uses fiber; Cat 6 uses copper",
+            "Cat 6a supports 10 Gbps at 100m; Cat 6 is limited to 55m",
+            "Cat 6a is unshielded; Cat 6 is always shielded",
+            "Cat 6a uses RJ-11 connectors; Cat 6 uses RJ-45"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Cat 6a (Augmented) doubles the frequency to 500 MHz, allowing 10 Gbps over the full 100-meter Ethernet distance.",
+        "source_file": "notes/cat_cabling.txt"
+    },
+    {
+        "id": "cable-plenum-1",
+        "topic": "Cat Cabling",
+        "domain_id": 3,
+        "difficulty": "standard",
+        "prompt": "Which type of cable jacket is required by fire codes for installation in air-handling spaces above a drop ceiling?",
+        "choices": [
+            "PVC",
+            "STP",
+            "Plenum-rated",
+            "Coaxial"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Plenum-rated cable uses special insulation that produces minimal smoke and non-toxic fumes in the event of a fire.",
+        "source_file": "notes/cat_cabling.txt"
+    },
+    {
+        "id": "cable-shield-1",
+        "topic": "Cat Cabling",
+        "domain_id": 3,
+        "difficulty": "hard",
+        "prompt": "A technician needs to run network cabling through a factory floor with heavy machinery that produces significant EMI. Which cable type is the BEST choice?",
+        "choices": [
+            "UTP Cat 6",
+            "STP Cat 6",
+            "PVC Cat 5e",
+            "Cat 3"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Shielded Twisted Pair (STP) has a foil or braided shield that protects data from electromagnetic interference (EMI).",
+        "source_file": "notes/cat_cabling.txt"
     }
 ]

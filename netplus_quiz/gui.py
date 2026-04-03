@@ -143,6 +143,9 @@ class QuizApp(tk.Tk):
             ("Dashboard", self._show_dashboard),
             ("Practice Quiz", self._show_quiz_config),
             ("Port Practice", self._show_port_config),
+            ("PoE Practice", self._show_poe_config),
+            ("WiFi Practice", self._show_wifi_config),
+            ("Cabling Practice", self._show_cabling_config),
             ("Flashcards", self._show_fc_config),
             ("Subnetting", self._show_subnetting),
             ("Study Notes", self._show_notes),
@@ -239,6 +242,41 @@ class QuizApp(tk.Tk):
         ttk.Spinbox(opt_frame, from_=5, to=50, textvariable=self.port_q_count, width=5).pack(side="left", padx=10)
         
         ttk.Button(frame, text="Start Drill", style="Primary.TButton", command=self._start_port_drill).pack(pady=20)
+
+    def _show_poe_config(self) -> None:
+        self._show_simple_config("PoE Practice", ["PoE Standards"], "Master Power over Ethernet standards, wattage, and implementation modes.")
+
+    def _show_wifi_config(self) -> None:
+        self._show_simple_config("WiFi Practice", ["Wireless Standards"], "Master 802.11 standards, frequencies, speeds, and MIMO features.")
+
+    def _show_cabling_config(self) -> None:
+        self._show_simple_config("Cabling Practice", ["Cat Cabling"], "Master Category copper cabling speeds, distances, and environmental ratings.")
+
+    def _show_simple_config(self, title: str, topics: list[str], description: str) -> None:
+        self._clear_main()
+        frame = ttk.Frame(self.main_area, padding=40)
+        frame.pack(fill="both", expand=True)
+        
+        ttk.Label(frame, text=title, style="Title.TLabel").pack(anchor="w", pady=(0, 20))
+        ttk.Label(frame, text=description, wraplength=600).pack(anchor="w")
+        
+        opt_frame = ttk.LabelFrame(frame, text="Session Options", padding=20)
+        opt_frame.pack(fill="x", pady=30)
+        
+        ttk.Label(opt_frame, text="Question Count:").pack(side="left")
+        q_count = tk.IntVar(value=10)
+        ttk.Spinbox(opt_frame, from_=5, to=50, textvariable=q_count, width=5).pack(side="left", padx=10)
+        
+        ttk.Button(frame, text="Start Practice", style="Primary.TButton", 
+                   command=lambda: self._start_focused_practice(topics, q_count.get())).pack(pady=20)
+
+    def _start_focused_practice(self, topics: list[str], count: int) -> None:
+        qs = get_questions(topics=topics, limit=count, shuffle=True)
+        if not qs:
+            messagebox.showinfo("No Questions", f"No questions found for {', '.join(topics)} yet.")
+            return
+        self.session = QuizSession(qs)
+        self._render_quiz_view()
 
     def _start_port_drill(self) -> None:
         qs = get_port_drill_questions(secure_only=self.port_secure_only.get(), limit=self.port_q_count.get())

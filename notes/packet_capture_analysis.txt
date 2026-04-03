@@ -1,0 +1,4 @@
+# Packet Capture and Analysis
+
+Protocol analyzers allos the inspection of network passing passing over a network link.
+It depends on a packet sniffer. A sniffer captures frames over a moving medium.

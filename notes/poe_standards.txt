@@ -1,0 +1,21 @@
+1. IEEE 802.3af (PoE)
+    * Power Delivered: 15.4W DC (max 12.95W at device).
+    * Typical Use Cases: VoIP phones, basic IP cameras.
+
+2. IEEE 802.3at (PoE+)
+    * Power Delivered: 30W DC (max 25.5W at device).
+    * Typical Use Cases: Security cameras with heaters, Wi-Fi APs.
+    * Compatibility: PoE+ (802.3at) is backward compatible with PoE (802.3af).
+
+3. IEEE 802.3bt (PoE++ / 4PPoE)
+    * Type 3 (60W): Supports higher-power devices.
+    * Type 4 (100W): Delivers up to 71.3W-100W (max power).
+    * Typical Use Cases: Smart lighting, laptops.
+
+4. Important Exam Concepts
+    * Power Budget: Switches have a total maximum power capacity (e.g., 200W). If devices exceed this total, they will not turn on or the switch will overload.
+    * Modes: Mode A (power on data pairs) or Mode B (power on spare pairs).
+    * Midspan vs Endspan: An Endspan is a switch that supports PoE, while a Midspan is a PoE injector placed between a standard switch and the device.
+
+5. Physical Limitations
+    * Distance: Maximum cable distance is typically 100 meters (328 feet), just like standard Ethernet.

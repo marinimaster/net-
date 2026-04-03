@@ -1,0 +1,10 @@
+# Network Device Logs
+One of the most valuable sources of performance, troubleshooting, and security auditing information.
+A single logged event consists of:
+
+	- Metadata	- Category
+	- Date/Time	- Event ID
+
+	+ A description and contents of error or informational input.
+
+# System Logs

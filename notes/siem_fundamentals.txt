@@ -1,0 +1,18 @@
+There should be some process for acknowleding or dismissing alerts are they are generated.
+A serious alert may need to be processed as an incident and be assigned a job ticket for formal investigation.
+If an alert is a false positive, it can be dismissed.
+
+# Security Information and Event Management (SIEM)
+
+Designed to integrate network and security monitoring through automated collection, aggregation and analysis 
+of logged data.
+
+Its core function is to aggregate logs from multiple sources. In addition to logs from Windows and 
+Linux-based hosts. This could also include devices such as 
+- Switches
+- Routers
+- Intrusion detection sensors
+- Vulnerability scanners
+- Malware scanners
+- Databases
+

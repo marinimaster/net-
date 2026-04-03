@@ -1,0 +1,41 @@
+# Category (Cat) Cabling Standards
+
+1. Cat 5
+    * Speed: 100 Mbps (Fast Ethernet)
+    * Frequency: 100 MHz
+    * Max Distance: 100 meters
+
+2. Cat 5e (Enhanced)
+    * Speed: 1 Gbps (Gigabit Ethernet)
+    * Frequency: 100 MHz
+    * Max Distance: 100 meters
+    * Note: Reduced crosstalk compared to Cat 5.
+
+3. Cat 6
+    * Speed: 1 Gbps (at 100m) / 10 Gbps (at 37-55m)
+    * Frequency: 250 MHz
+    * Max Distance: 100 meters (for 1 Gbps)
+    * Note: Often includes a plastic separator (spline) to reduce interference.
+
+4. Cat 6a (Augmented)
+    * Speed: 10 Gbps
+    * Frequency: 500 MHz
+    * Max Distance: 100 meters
+    * Note: Supports 10 Gbps over the full 100m distance.
+
+5. Cat 7 (Class F)
+    * Speed: 10 Gbps
+    * Frequency: 600 MHz
+    * Max Distance: 100 meters
+    * Note: Individual shielding for each pair (S/FTP) to virtually eliminate crosstalk.
+
+6. Cat 8
+    * Speed: 40 Gbps
+    * Frequency: 2000 MHz
+    * Max Distance: 30 meters
+    * Note: Designed for data centers and short-range high-speed links.
+
+# Important Exam Concepts
+* Shielded (STP) vs Unshielded (UTP): STP has a foil shield to protect against EMI; UTP is more common and flexible.
+* Plenum vs PVC: Plenum-rated cable has special insulation that produces low smoke and non-toxic fumes (required for air-handling spaces).
+* Termination: T568A and T568B wiring standards.

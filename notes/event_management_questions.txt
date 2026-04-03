@@ -1,0 +1,69 @@
+1. What is the purpose of the PRI code in a syslog message?
+    * To encrypt the message
+    * To indicate the message's priority (correct)
+    * To specify the protocol used
+    * To identify the recipient of the message
+    * Explanation: The PRI code in a syslog message is calculated from the facility (which indicates the type of software that generated the message) and the severity level (which indicates how critical the event is)[cite: 18]. This code helps in categorizing and prioritizing the messages for better management and analysis[cite: 19].
+
+2. What does a syslog message comprise?
+    * Only a header containing a timestamp
+    * Only a message part with content
+    * A PRI code, a header, and a message part (correct)
+    * A severity level and a message part
+    * Explanation: A syslog message consists of three main components: a PRI code (calculated from the facility and a severity level), a header (containing a timestamp and host name), and a message part (which includes a tag showing the source process plus content)[cite: 45].
+
+3. What does log aggregation in the context of SIEM refer to?
+    * The physical collection of log files from different devices
+    * The process of deleting outdated log files to free up storage space
+    * Normalizing data from different sources to make it consistent (correct)
+    * Encrypting log files for secure storage
+    * Explanation: Log aggregation in the context of SIEM refers to the process of normalizing data from different sources so that it is consistent and searchable[cite: 73]. This involves condensing repetitive, individual events into summary events and ensuring that data from various devices and applications can be analyzed together effectively[cite: 74].
+
+4. How do SIEM tools handle differences in date/time zones among various log sources?
+    * By ignoring date/time information to avoid confusion
+    * By normalizing date/time zone differences to a single timeline (correct)
+    * By only accepting logs in the UTC time zone
+    * By storing logs in separate databases based on their time zones
+    * Explanation: SIEM tools handle differences in date/time zones among various log sources by normalizing these differences to a single timeline[cite: 104]. This ensures that events from different sources can be accurately correlated and analyzed in a coherent manner, regardless of the original time zones of the log sources[cite: 105].
+
+5. What is a key feature of performance/traffic logs?
+    * They record only security breaches.
+    * They record metrics for network resources (correct)
+    * They exclusively track user login attempts.
+    * They serve as backups for application data.
+    * Explanation: Performance/traffic logs are essential for understanding the utilization and performance of various system resources over defined periods, aiding in capacity planning and troubleshooting[cite: 132].
+
+6. What type of events does an audit log generally record?
+    * Success/fail type events related to authentication (correct)
+    * Detailed descriptions of all user activities
+    * System configuration backups
+    * Performance metrics for compute resources
+    * Explanation: Audit logs are focused on recording the success or failure of authentication and authorization attempts, providing a clear record of who has accessed or attempted to access the system[cite: 155].
+
+7. What distinguishes an application log from a system log?
+    * An application log records data for the entire operating system.
+    * An application log records data for a single specific service (correct)
+    * An application log is only used for security purposes.
+    * An application log cannot record errors.
+    * Explanation: Application logs are specific to a single service or application, recording events and data relevant to its operation, unlike system logs that record events at the OS level[cite: 185].
+
+8. Why is plotting data as a graph helpful in log analysis?
+    * It eliminates the need for software analysis.
+    * It makes it easier to spot trends or spikes in the data (correct)
+    * It reduces the amount of data that needs to be stored.
+    * It increases the speed of the network.
+    * Explanation: Visual representations of data, such as graphs, make it significantly easier to identify trends, spikes, or troughs[cite: 215]. This visual approach allows analysts to quickly spot patterns or anomalies that might be difficult to discern in raw data[cite: 216].
+
+9. How can a high priority alert be communicated in an event management system?
+    * By displaying it on the system dashboard only
+    * By sending an email to the system administrator (correct)
+    * By increasing the logging level on all hosts
+    * By generating a detailed report at the end of the month
+    * Explanation: High priority alerts might require active notification methods, such as emailing a system administrator, sending a text message, or triggering a physical alarm, to ensure immediate attention[cite: 248].
+
+10. What is an automated event management system configured to generate?
+    * Detailed reports for every event
+    * Some sort of alert (correct)
+    * A backup of the logging system
+    * A list of all devices on the network
+    * Explanation: An automated event management system can be configured to generate alerts when certain types of events of a given severity are encountered, indicating potential issues that need attention[cite: 272].

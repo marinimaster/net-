@@ -1,0 +1,17 @@
+
+#Application Logs
+Application logs record data for a single specific service, such as DNS, HTTP, or a database.
+
+* Some complex applications could write to multiple log files, for example:
+	- Apache web server logs errors to one file and access attempts to another.
+
+# Audit Logs
+Audit logs record the use of authentication and authorization privileges.
+
+Generally records succes/fail type events. Also described as an access or security log.
+
+Might be performed at an OS level and at a per-application level.
+
+# Performance/Traffic Logs
+Performance and traffic logs record metrics for compute, storage and network storage over a defined period.
+

@@ -24,8 +24,8 @@
         "total": 3
     },
     "avail-1": {
-        "correct": 2,
-        "total": 2
+        "correct": 3,
+        "total": 3
     },
     "port-21": {
         "correct": 0,
@@ -40,8 +40,8 @@
         "total": 3
     },
     "net-4": {
-        "correct": 1,
-        "total": 1
+        "correct": 2,
+        "total": 2
     },
     "route-1": {
         "correct": 1,
@@ -96,8 +96,8 @@
         "total": 1
     },
     "port-19": {
-        "correct": 1,
-        "total": 2
+        "correct": 2,
+        "total": 3
     },
     "agree-2": {
         "correct": 2,
@@ -120,12 +120,12 @@
         "total": 1
     },
     "port-20": {
-        "correct": 1,
-        "total": 2
+        "correct": 2,
+        "total": 3
     },
     "port-1": {
-        "correct": 1,
-        "total": 1
+        "correct": 2,
+        "total": 2
     },
     "port-2": {
         "correct": 1,
@@ -140,20 +140,20 @@
         "total": 1
     },
     "port-15": {
-        "correct": 3,
-        "total": 3
+        "correct": 4,
+        "total": 4
     },
     "config-3": {
-        "correct": 2,
-        "total": 2
+        "correct": 3,
+        "total": 3
     },
     "route-5": {
         "correct": 3,
         "total": 3
     },
     "drp-2": {
-        "correct": 3,
-        "total": 3
+        "correct": 4,
+        "total": 4
     },
     "fault-4": {
         "correct": 1,
@@ -340,16 +340,16 @@
         "total": 1
     },
     "metric-2": {
-        "correct": 1,
-        "total": 1
+        "correct": 2,
+        "total": 2
     },
     "gen-stp-v3-4": {
         "correct": 1,
         "total": 1
     },
     "port-8": {
-        "correct": 1,
-        "total": 1
+        "correct": 2,
+        "total": 2
     },
     "stp-1": {
         "correct": 2,
@@ -364,8 +364,8 @@
         "total": 1
     },
     "metric-multi-1": {
-        "correct": 1,
-        "total": 1
+        "correct": 2,
+        "total": 2
     },
     "tcp-nuance-1": {
         "correct": 0,
@@ -404,8 +404,8 @@
         "total": 1
     },
     "osi-encap-1": {
-        "correct": 1,
-        "total": 1
+        "correct": 2,
+        "total": 2
     },
     "perf-2": {
         "correct": 1,
@@ -448,8 +448,8 @@
         "total": 1
     },
     "fiber-connector-1": {
-        "correct": 1,
-        "total": 1
+        "correct": 2,
+        "total": 2
     },
     "life-2": {
         "correct": 1,
@@ -496,6 +496,54 @@
         "total": 1
     },
     "life-4": {
+        "correct": 1,
+        "total": 1
+    },
+    "stp-port-1": {
+        "correct": 1,
+        "total": 1
+    },
+    "drp-3": {
+        "correct": 1,
+        "total": 1
+    },
+    "config-2": {
+        "correct": 1,
+        "total": 1
+    },
+    "event-1": {
+        "correct": 1,
+        "total": 1
+    },
+    "event-9": {
+        "correct": 1,
+        "total": 1
+    },
+    "sfp-type-1": {
+        "correct": 0,
+        "total": 1
+    },
+    "wdm-1": {
+        "correct": 0,
+        "total": 1
+    },
+    "time-4": {
+        "correct": 1,
+        "total": 1
+    },
+    "event-8": {
+        "correct": 1,
+        "total": 1
+    },
+    "tcp-hs-1": {
+        "correct": 1,
+        "total": 1
+    },
+    "sec-attack-multi": {
+        "correct": 1,
+        "total": 1
+    },
+    "ad-1": {
         "correct": 1,
         "total": 1
     }

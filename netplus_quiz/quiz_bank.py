@@ -70,9 +70,15 @@ FLASHCARD_BANK: tuple[Flashcard, ...] = _load_flashcards()
 def available_domains() -> tuple[int, ...]:
     return tuple(sorted(set(question.domain_id for question in QUESTION_BANK)))
 
-def get_questions(*, domains: Iterable[int] | None = None, limit: int | None = None, shuffle: bool = True) -> list[Question]:
+def get_questions(*, domains: Iterable[int] | None = None, topics: Iterable[str] | None = None, limit: int | None = None, shuffle: bool = True) -> list[Question]:
     d_filter = set(domains) if domains is not None else None
-    filtered = [q for q in QUESTION_BANK if d_filter is None or q.domain_id in d_filter]
+    t_filter = set(topics) if topics is not None else None
+    
+    filtered = [
+        q for q in QUESTION_BANK 
+        if (d_filter is None or q.domain_id in d_filter)
+        and (t_filter is None or q.topic in t_filter)
+    ]
     if shuffle: Random().shuffle(filtered)
     return filtered[:limit] if limit else filtered
 

@@ -1,0 +1,40 @@
+1. 802.11b (Wi-Fi 1)
+    * Frequency: 2.4 GHz.
+    * Maximum Speed: 11 Mbps.
+    * Range: 150 ft.
+
+2. 802.11a (Wi-Fi 2)
+    * Frequency: 5 GHz.
+    * Maximum Speed: 54 Mbps.
+    * Range: 100 ft.
+
+3. 802.11g (Wi-Fi 3)
+    * Frequency: 2.4 GHz.
+    * Maximum Speed: 54 Mbps.
+    * Range: 150 ft.
+
+4. 802.11n (Wi-Fi 4)
+    * Frequency: 2.4 GHz & 5 GHz.
+    * Maximum Speed: 600 Mbps max (4x4 MIMO).
+    * Key Feature: Introduced Multiple-Input Multiple-Output (MIMO).
+
+5. 802.11ac (Wi-Fi 5)
+    * Frequency: 5 GHz only.
+    * Maximum Speed: Up to 6.9 Gbps.
+    * Key Feature: Uses Multi-User MIMO (MU-MIMO).
+
+6. 802.11ax (Wi-Fi 6 / 6E)
+    * Frequency: 2.4 GHz & 5 GHz (6 GHz in 6E).
+    * Maximum Speed: 9.6 Gbps.
+    * Key Feature: Uses OFDMA for better efficiency.
+
+7. 802.11be (Wi-Fi 7)
+    * Frequency: Operates on 2.4, 5, and 6 GHz.
+    * Key Feature: Designed for ultra-high throughput.
+
+8. Important Exam Concepts
+    * Frequencies: 2.4 GHz provides better range but is crowded; 5 GHz is faster with less range.
+    * MIMO / MU-MIMO: Multiple-Input Multiple-Output uses multiple antennas to increase throughput.
+    * Channel Bonding: Combines 20 MHz channels into 40, 80, or 160 MHz channels to increase speed.
+    * Non-overlapping Channels: 2.4 GHz uses channels 1, 6, and 11 to avoid interference.
+    * Backward Compatibility: Newer standards (like 802.11ax) generally support older devices.
