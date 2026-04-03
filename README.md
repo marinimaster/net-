@@ -1,61 +1,56 @@
-THIS PROJECT IS COMPLETELY AI GENERATED
-MEANT TO MAKE PERSONAL STUDYING MORE EFFICIENT
-# Net-Practice
-Notes and Python Project to practice for CompTIA Network+
-=======
-# Network+ Quiz
+# 🤖 AI-Generated Tool Disclaimer
+**This entire application, including the code, data structures, and study materials, was created with the assistance of Artificial Intelligence.** I am using this tool for my personal study efficiency; please do not attribute the technical implementation or design to me.
 
-Small Python quiz app built from the corrected note files in this directory.
-The question bank now includes both `standard` and `hard` questions.
+---
 
-## Run
+# Network+ Study Suite (Nord-CompTIA Edition)
+A modernized Python-based study application designed to help you prepare for the **CompTIA Network+ (N10-009)** certification. This suite uses a Nord-inspired aesthetic with official CompTIA color palettes and provides multiple interactive modes for efficient learning.
 
-Terminal UI:
+## 🚀 Key Features
+*   **Practice Quiz**: Standard and Hard difficulty questions mapped directly to the 5 CompTIA Domains. Features include "Select TWO/THREE" multi-select formats, countdown timers, and "Flag for Review."
+*   **Port Practice**: Dedicated bidirectional multiple-choice drills for all CompTIA-required protocols and ports, including a "Secure-Only" mode.
+*   **Flashcard Mode**: A "Flip-card" interface for rapid Term-Definition memorization with persistent mastery tracking.
+*   **Subnetting Challenge**: A procedural generator that creates random IPv4 subnetting problems (Mask, Network ID, Broadcast) with real-time text-entry validation.
+*   **System Mastery Dashboard**: Persistent historical analytics showing your accuracy and question bank coverage per Domain.
+*   **Modern GUI**: A responsive sidebar-based layout with Nord Light/Dark themes and dynamic font scaling.
 
-```bash
-python3 main.py --cli
-python3 main.py --ports
-python3 main.py --secure-ports
-```
+## 🛠️ Installation & Run
+### Requirements
+*   Python 3.10+
+*   `tkinter` (Usually bundled with Python; required for GUI)
 
-GUI:
-
+### Launching the Suite
+To open the graphical interface:
 ```bash
 python3 main.py
 ```
 
-If `tkinter` is not installed, the launcher automatically falls back to the terminal UI.
-
-## Verify
-
+### Terminal Fallback
+If you are in a CLI-only environment or don't have Tkinter:
 ```bash
-python3 -m unittest discover -s tests -v
-python3 -m py_compile main.py netplus_quiz/*.py tests/test_quiz.py
+python3 main.py --cli
 ```
 
-## Structure
+## 📂 Project Structure
+*   `notes/`: The heart of the program. Contains:
+    *   `questions.json`: The externalized question bank (175+ items).
+    *   `flashcards.json`: Term-definition pairs for the flashcard module.
+    *   `*.txt`: Topic-specific study notes referenced by the "Source Note" feature.
+    *   `performance.json`: Your local historical quiz data.
+*   `netplus_quiz/`:
+    *   `models.py`: Dataclasses for Questions and Flashcards.
+    *   `engine.py`: Logical engines for quiz sessions and subnet generation.
+    *   `gui.py`: The modernized sidebar-based Tkinter interface.
+    *   `quiz_bank.py`: Data loading and analytics logic.
 
-- `main.py`: launcher and GUI-to-CLI fallback logic.
-- `netplus_quiz/models.py`: core data model for quiz questions.
-- `netplus_quiz/engine.py`: quiz session and scoring logic.
-- `netplus_quiz/quiz_bank.py`: structured question bank tied to the source note files.
-- `netplus_quiz/gui.py`: Tkinter interface.
-- `netplus_quiz/cli.py`: terminal fallback interface.
-- `tests/test_quiz.py`: smoke tests for the quiz bank and engine.
+## ⚙️ Customization
+Use the **Settings** tab in the sidebar to:
+*   Adjust **Base Font Size** for better readability.
+*   Toggle between **Nord Dark** and **Nord Light** themes.
+*   **Reset Progress Data**: Permanently clear your historical accuracy and flashcard mastery to start fresh.
 
-The GUI lets you filter by topic and difficulty before starting a quiz, and it now includes dedicated buttons for CompTIA protocols and ports practice plus secure-ports-only drilling.
-During a GUI quiz, use the `A+` button to increase font size and `Exit Test` to return to the menu after confirmation.
-
-## Upgrade Path
-
-To add more content later:
-
-1. Correct or expand the `.txt` source notes.
-2. Add new `Question(...)` entries in `netplus_quiz/quiz_bank.py`.
-3. Re-run the tests.
-
-To change the interface later:
-
-- Keep quiz logic in `engine.py`.
-- Replace or extend only the UI modules.
->>>>>>> ca7f4ba (Initial Commit)
+## ✅ Verification
+Run the unit tests to ensure the scoring and subnet logic are functioning correctly:
+```bash
+python3 -m unittest tests/test_quiz.py
+```
