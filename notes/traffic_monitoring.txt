@@ -1,0 +1,108 @@
+# Common Performance Issues
+
+QoS protocols and appliances are designed to support real-time services.
+Voice and Video carry real-time data and have different network requirements, than the sort of data represented by file transfer.
+
+With ordinary data, it might be beneficial to transfer a file as quickly as possible, but sequence in which the packets are delivered 
+and the variable intervals between packets arriving do not materially affect the application.
+
+This type of data transfer is described as *bursty*.
+
+Streaming video applications can have a high bandwith in terms of sheer amount of data to be transferred.
+But bandwith on modern networks is typically less of a problem, than packet loss, latency, and jitter.
+
+# Bandwith
+
+- Amount of information that can be transmitted.
+- Measured in bps or some multiple therof.
+
+Bandwidth expresses the available capacity of the link.
+
+When monitoring you need to distinguish between:
+
+- Nominal data link/Ethernet bit rate
+- Throughput of a link at layer 3
+- Goodput available to an application
+
+Bandwidth for audio depends on the sampling frequency (Hertz) and but depth of each sample.
+For example, early telecommunication link were based on 64Kbps channels. Derived from the following calculation:
+
+	- Voice and frequency range is 4,000 Hz. This must be sample at twice the rate to ensure an accurate representation of the 
+	original analog waveform.
+	- The sample size is 8 bits. Therefore:
+
+		8KHz x 8 bits = 64Kbps
+
+For VoIP bandwith requirements for voice calling can vary.
+100Kbps per call upstream and downstream should be sufficient in most cases.
+
+Bandwith required for video is determined by image resolution, color depth, and fps.
+
+# Bottlenecks
+
+Point of poor performance that reduces the productivity of the whole network.
+
+Caused by:
+	- Underpowered or faulty device.
+	- User or application behavior.
+
+To identify cause of battle neck, identify:
+	- Where and when network overutilization or excessive errors occur.
+	
+Continual: device related.
+Intermittent: user or application related.
+
+# Packet loss
+
+Packet loss is expected but only to a degree. The larger the network, the more likely you are to lose packets during heavy traffic periods.
+
+If you run a packet sniffer:
+
+- High numbers of TCP retransmission and duplicate aknowledgements are strong indicators of packet loss.
+
+Reasons packets are dropped can include the following:
+
+	- Server, router, or switch is overloaded.
+	- Power outage occured.
+	- Firewall is blocking packets from a known destination.
+	- Malicious actor is interfering with network transmissions
+	- Faulty firmware is causing packet processing errors.
+
+
+# Latency and Jitter
+Latency (ms): Time taken for a transmission to reach the recipient.
+Jitter: Inconsistent rate of packet delivery.
+	Also uses ms, using an algorithm to calculate the value from a sample of transit times. 
+
+To test latency of a link, some tools are:
+
+- ping
+- pathping
+- mtr *Can also be used to calculate jitter.
+
+When assessing latency, it is important to consider Round Trip Time (RTT).
+VoIP is generally expected to require an RTT of less than 300ms
+
+Jitter should be 30ms or less.
+Link should not exhibit more than 1% packet loss.
+
+Wireshark gives each packet a timestamp relevant to when the last frame was sent from the very first transmitted frame
+Example:
+
+Packet 1 timestamp: 0.0000
+Packet 2 timestamp: 0.0025
+
+Can be used to find delays in a TCP conversation and can be plotted in a graph.
+
+# Interface Statistics
+
+Metrics recorded by a host or switch that enable monitoring of:
+
+	- Link state
+	- Resets
+	- Speed
+	- Duplex setting
+	- Utilization
+	- Error rates
+
+

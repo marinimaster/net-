@@ -3898,5 +3898,1640 @@
         ],
         "explanation": "Shielded Twisted Pair (STP) has a foil or braided shield that protects data from electromagnetic interference (EMI).",
         "source_file": "notes/cat_cabling.txt"
+    },
+    {
+        "id": "tm-1",
+        "topic": "Traffic Monitoring",
+        "domain_id": 3,
+        "difficulty": "standard",
+        "prompt": "What is the primary function of traffic shapers?",
+        "choices": [
+            "To increase the speed of packet delivery",
+            "To delay certain packet types based on their content",
+            "To categorize protocols into different service levels",
+            "To monitor traffic conditions and generate reports"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Traffic shapers, or bandwidth shapers, delay certain packet types based on their content to ensure that other packets have a higher priority. This helps reduce latency for critical applications by managing the flow of traffic more effectively.",
+        "source_file": "notes/traffic_monitoring.txt"
+    },
+    {
+        "id": "tm-2",
+        "topic": "Traffic Monitoring",
+        "domain_id": 3,
+        "difficulty": "hard",
+        "prompt": "What is a potential consequence of using traffic policing devices instead of traffic shapers?",
+        "choices": [
+            "Increased latency for non-critical applications",
+            "More efficient use of available bandwidth",
+            "Fewer lost packets during periods of congestion",
+            "Under-utilization of bandwidth during idle periods"
+        ],
+        "answer_indices": [
+            3
+        ],
+        "explanation": "Traffic policing devices may simply drop packets once a traffic threshold is reached, which can lead to under-utilization of bandwidth during periods when the network is relatively idle.",
+        "source_file": "notes/traffic_monitoring.txt"
+    },
+    {
+        "id": "tm-3",
+        "topic": "Traffic Monitoring",
+        "domain_id": 3,
+        "difficulty": "hard",
+        "prompt": "Which of the following solutions would be MOST effective in achieving the desired improvement in VoIP performance?",
+        "choices": [
+            "Implementing a FIFO queuing discipline across the network.",
+            "Configuring a Random Early Detection (RED) algorithm on all network switches.",
+            "Deploying traffic shaping to prioritize VoIP packets.",
+            "Increasing the bandwidth of the company's internet connection."
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Traffic shaping is the most effective solution for prioritizing VoIP traffic. By delaying certain packet types based on their content, it ensures that VoIP packets, which are sensitive to latency, are given higher priority, reducing latency and jitter.",
+        "source_file": "notes/traffic_monitoring.txt"
+    },
+    {
+        "id": "tm-4",
+        "topic": "Traffic Monitoring",
+        "domain_id": 3,
+        "difficulty": "standard",
+        "prompt": "What advantage do website performance checkers offer for testing site response times?",
+        "choices": [
+            "They can physically repair websites.",
+            "They test from the perspective of customers in different countries.",
+            "They increase website traffic automatically.",
+            "They design websites."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Website performance checkers allow users to test a site's response times from various global locations, simulating the experience of international customers.",
+        "source_file": "notes/traffic_monitoring.txt"
+    },
+    {
+        "id": "tm-5",
+        "topic": "Traffic Monitoring",
+        "domain_id": 3,
+        "difficulty": "standard",
+        "prompt": "What do \"top talkers\" and \"top listeners\" refer to in network analysis?",
+        "choices": [
+            "Top talkers are devices with the highest error rates, while top listeners have the highest packet loss.",
+            "Top talkers are the most secure connections, and top listeners are the least secure.",
+            "Top talkers are interfaces generating the most outgoing traffic, while top listeners are receiving the most incoming traffic.",
+            "Top talkers are the fastest connections, while top listeners are the slowest."
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "In network analysis, top talkers are interfaces that send out the most data (high outgoing traffic), while top listeners are interfaces that receive the most data (high incoming traffic).",
+        "source_file": "notes/traffic_monitoring.txt"
+    },
+    {
+        "id": "tm-6",
+        "topic": "Traffic Monitoring",
+        "domain_id": 5,
+        "difficulty": "standard",
+        "prompt": "What is packet loss?",
+        "choices": [
+            "The encryption of data packets for security purposes",
+            "The intentional slowing down of data transmission",
+            "The discarding of data packets in a network",
+            "The duplication of data packets to ensure delivery"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Packet loss occurs when one or more data packets being transmitted across a network fail to reach their destination, often due to congestion, faulty hardware, or signal degradation.",
+        "source_file": "notes/traffic_monitoring.txt"
+    },
+    {
+        "id": "tm-7",
+        "topic": "Traffic Monitoring",
+        "domain_id": 5,
+        "difficulty": "standard",
+        "prompt": "What are latency and jitter in the context of network performance?",
+        "choices": [
+            "Types of network security protocols",
+            "Measures of network speed and efficiency",
+            "Problems of timing and sequence of packet delivery",
+            "Techniques for optimizing bandwidth usage"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Latency refers to the delay before a transfer of data begins, while jitter is the variation in the delay of received packets. Both affect the quality of real-time applications like VoIP.",
+        "source_file": "notes/traffic_monitoring.txt"
+    },
+    {
+        "id": "tm-8",
+        "topic": "Traffic Monitoring",
+        "domain_id": 3,
+        "difficulty": "standard",
+        "prompt": "What type of data transfer is described as bursty?",
+        "choices": [
+            "Real-time video streaming",
+            "Voice over IP (VOIP)",
+            "File transfer",
+            "Live audio broadcasting"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Bursty data transfer refers to the transmission of data where large amounts are sent in bursts with variable intervals. This is typical of file transfers where the focus is on speed rather than strict timing.",
+        "source_file": "notes/traffic_monitoring.txt"
+    },
+    {
+        "id": "tm-9",
+        "topic": "Traffic Monitoring",
+        "domain_id": 3,
+        "difficulty": "hard",
+        "prompt": "Why is collecting just the packet metadata preferred over recording each frame?",
+        "choices": [
+            "It increases the network speed.",
+            "It imposes a heavy processing overhead.",
+            "It reduces the bandwidth required by the sniffer.",
+            "It enhances the security of the network."
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Collecting only metadata (source/destination addresses, protocol type) instead of entire payloads significantly reduces the amount of data processed and transmitted, lowering the bandwidth required for sniffing.",
+        "source_file": "notes/traffic_monitoring.txt"
+    },
+    {
+        "id": "tm-10",
+        "topic": "Traffic Monitoring",
+        "domain_id": 5,
+        "difficulty": "standard",
+        "prompt": "What is the primary purpose of monitoring individual interface statistics in a network?",
+        "choices": [
+            "To increase the network speed",
+            "To diagnose performance issues",
+            "To reduce the cost of network maintenance",
+            "To enhance the security of network communications"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Monitoring metrics such as bandwidth usage, packet loss, and errors allows administrators to pinpoint and diagnose performance issues to ensure optimal network operation.",
+        "source_file": "notes/traffic_monitoring.txt"
+    },
+    {
+        "id": "tm-11",
+        "topic": "Traffic Monitoring",
+        "domain_id": 3,
+        "difficulty": "hard",
+        "prompt": "What role does a NetFlow exporter play in a network?",
+        "choices": [
+            "It aggregates flows from multiple collectors.",
+            "It analyzes and reports flow information.",
+            "It defines and caches flows.",
+            "It increases the bandwidth of the network."
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "A NetFlow exporter is configured on devices like routers to define traffic flows based on specific characteristics and cache that data for transmission to a collector.",
+        "source_file": "notes/traffic_monitoring.txt"
+    },
+    {
+        "id": "tm-12",
+        "topic": "Traffic Monitoring",
+        "domain_id": 5,
+        "difficulty": "hard",
+        "prompt": "What is the significance of monitoring queue length in network performance?",
+        "choices": [
+            "It indicates the total number of users in the network.",
+            "It helps determine whether the link is a bottleneck.",
+            "It shows the financial cost of data transfer.",
+            "It measures the physical condition of the network interface."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Monitoring queue length can reveal if data is consistently waiting for transmission, which indicates a potential bottleneck in the network.",
+        "source_file": "notes/traffic_monitoring.txt"
+    },
+    {
+        "id": "tm-13",
+        "topic": "Traffic Monitoring",
+        "domain_id": 5,
+        "difficulty": "standard",
+        "prompt": "What is considered an acceptable error rate in general terms?",
+        "choices": [
+            "Under 1 percent",
+            "Exactly 5 percent",
+            "Under 10 percent",
+            "Over 15 percent"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "A general guideline is that error rates should be under 1 percent; higher rates typically indicate serious issues that need to be addressed.",
+        "source_file": "notes/traffic_monitoring.txt"
+    },
+    {
+        "id": "tm-14",
+        "topic": "Traffic Monitoring",
+        "domain_id": 3,
+        "difficulty": "standard",
+        "prompt": "What is the primary purpose of using Quality of Service (QoS) mechanisms in a network?",
+        "choices": [
+            "To decrease network security",
+            "To increase the number of devices that can connect",
+            "To prioritize certain types of traffic over others",
+            "To reduce the cost of network infrastructure"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "QoS mechanisms manage bandwidth to prioritize critical traffic like VoIP or video streaming over less sensitive applications, ensuring performance during congestion.",
+        "source_file": "notes/traffic_monitoring.txt"
+    },
+    {
+        "id": "tm-15",
+        "topic": "Traffic Monitoring",
+        "domain_id": 3,
+        "difficulty": "standard",
+        "prompt": "Which of the following is NOT a traffic class defined by DiffServ?",
+        "choices": [
+            "Best Effort",
+            "Assured Forwarding",
+            "Expedited Forwarding",
+            "Maximum Throughput"
+        ],
+        "answer_indices": [
+            3
+        ],
+        "explanation": "DiffServ defines classes such as Best Effort, Assured Forwarding, and Expedited Forwarding. Maximum Throughput is not a standard traffic class within the DiffServ framework.",
+        "source_file": "notes/traffic_monitoring.txt"
+    },
+    {
+        "id": "cap-1",
+        "topic": "Packet Capture",
+        "domain_id": 3,
+        "difficulty": "hard",
+        "prompt": "Which type of monitoring device is a 'powered' device that performs signal regeneration but becomes a point of failure for the network link if it loses power?",
+        "choices": [
+            "Passive TAP",
+            "Active TAP",
+            "SPAN Port",
+            "NetFlow Exporter"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "An Active TAP is a powered device that regenerates signals. Because it is powered, it becomes a point of failure for the link in the event of power loss.",
+        "source_file": "notes/packet_capture_analysis.txt"
+    },
+    {
+        "id": "cap-2",
+        "topic": "Packet Capture",
+        "domain_id": 3,
+        "difficulty": "hard",
+        "prompt": "A technician needs to capture all network traffic, including frames with errors, on a link that is currently under heavy load. Which method should be used to ensure NO frames are dropped?",
+        "choices": [
+            "SPAN Port / Port Mirroring",
+            "Aggregation TAP",
+            "Passive TAP",
+            "tcpdump with filters"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "A Passive TAP uses an optical splitter or inductor to copy signals. Unlike SPAN or Aggregation TAPs, it makes no logic decisions and is unaffected by load, ensuring every frame (including errors) is captured without drops.",
+        "source_file": "notes/packet_capture_analysis.txt"
+    },
+    {
+        "id": "cap-3",
+        "topic": "Packet Capture",
+        "domain_id": 3,
+        "difficulty": "hard",
+        "prompt": "Which of the following tcpdump commands will capture traffic on all interfaces and write the results to a file named 'capture.pcap'?",
+        "choices": [
+            "tcpdump -r capture.pcap",
+            "tcpdump -i any -w capture.pcap",
+            "tcpdump -i eth0 -e capture.pcap",
+            "tcpdump -vvv capture.pcap"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "-i any substitution listens on all interfaces, and -w writes the output to a file.",
+        "source_file": "notes/packet_capture_analysis.txt"
+    },
+    {
+        "id": "cap-4",
+        "topic": "Packet Capture",
+        "domain_id": 3,
+        "difficulty": "hard",
+        "prompt": "Which feature of a protocol analyzer like Wireshark allows a technician to reconstruct the full contents of a conversation between two hosts?",
+        "choices": [
+            "Top Talkers statistics",
+            "Follow TCP Stream",
+            "Capture Filters",
+            "Packet Metadata extraction"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The 'Follow TCP Stream' context command reconstructs the packet contents for a full TCP session into a human-readable format.",
+        "source_file": "notes/packet_capture_analysis.txt"
+    },
+    {
+        "id": "fiber-wave-1",
+        "topic": "Fiber Optics",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "Which of the following wavelength ranges are typically associated with Single-mode Fiber (SMF) using near-infrared lasers?",
+        "choices": [
+            "850 nm and 1300 nm",
+            "1310 nm and 1550 nm",
+            "400 nm and 700 nm",
+            "10Gbps and 40Gbps"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Single-mode Fiber (SMF) typically uses longer wavelengths in the near-infrared spectrum, specifically 1310 nm and 1550 nm, powered by laser sources.",
+        "source_file": "notes/fiber_optics.txt"
+    },
+    {
+        "id": "fiber-wave-2",
+        "topic": "Fiber Optics",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "Comparing Single-mode and Multi-mode fiber, which of the following statements regarding wavelengths is correct according to the notes?",
+        "choices": [
+            "SMF uses shorter wavelengths than MMF",
+            "MMF uses shorter wavelengths and larger cores than SMF",
+            "Both use visible light wavelengths seen by the naked eye",
+            "Wavelength has no impact on fiber range"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Multi-mode fiber (MMF) uses shorter wavelengths and larger cores, which results in shorter ranges compared to Single-mode fiber (SMF).",
+        "source_file": "notes/fiber_optics.txt"
+    },
+    {
+        "id": "wdm-wave-1",
+        "topic": "WDM Technology",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "How does Bidirectional Wavelength Division Multiplexing achieve data transfer and reception over a single strand of fiber?",
+        "choices": [
+            "By using time-division multiplexing",
+            "By using separate wavelengths for transmitting and receiving",
+            "By converting all signals to copper halfway",
+            "By increasing the wattage of the laser"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Bidirectional WDM allows for simultaneous transmission and reception over a single strand by utilizing separate, distinct wavelengths for each direction.",
+        "source_file": "notes/wdm_technology.txt"
+    },
+    {
+        "id": "mgmt-1",
+        "topic": "Configuration Management",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "What is a golden configuration in network management?",
+        "choices": [
+            "The maximum configuration a device can handle",
+            "A template for the desired state of a device",
+            "The configuration that achieves the highest speed",
+            "The initial configuration of a device when it is first installed"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "A golden configuration, also known as a baseline configuration, serves as a template or standard for the optimal and secure configuration of a network device. It represents approved settings that a device should have to operate effectively and securely. [cite: 1726, 1727]",
+        "source_file": "notes/configuration_monitor_8_2_7.txt"
+    },
+    {
+        "id": "mgmt-2",
+        "topic": "Network Troubleshooting",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "To map the path that the network traffic is taking to reach its destination, which Nmap command option should the security analyst use?",
+        "choices": [
+            "nmap -sn 10.10.1.0/24",
+            "nmap -A 10.10.1.0/24",
+            "nmap --traceroute 10.10.1.0/24",
+            "nmap -p 80,443 10.10.1.0/24"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "The --traceroute option in Nmap is specifically designed to trace the path packets take from the scanner to the target host, allowing for the identification of unexpected devices or routes. [cite: 1748, 1749]",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "mgmt-3",
+        "topic": "Common Performance Issues",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "A company's network administrator notices that during peak hours, the network's performance significantly drops, leading to slow file transfers and delayed email delivery. What is the MOST likely cause of this issue?",
+        "choices": [
+            "Bottleneck",
+            "Excessive bandwidth",
+            "Low jitter",
+            "Efficient packet routing"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "A bottleneck occurs when a specific part of the network becomes overloaded, reducing overall performance. During peak hours, increased demand can lead to overutilization of certain devices or links. [cite: 1771, 1772]",
+        "source_file": "notes/traffic_monitoring.txt"
+    },
+    {
+        "id": "mgmt-4",
+        "topic": "Network Troubleshooting Tools",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "Which tcpdump command should you use to capture only ICMP packets?",
+        "choices": [
+            "tcpdump -i any icmp",
+            "tcpdump -i eth0 -w icmp_packets.pcap",
+            "tcpdump -i eth0 \"protocol icmp\"",
+            "tcpdump -i eth0 \"port 53\""
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "The command 'tcpdump -i any icmp' captures all ICMP packets across all network interfaces. The 'icmp' filter ensures that only that specific protocol traffic is captured. [cite: 1800, 1801]",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "mgmt-5",
+        "topic": "SNMP Management",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "An SNMP monitor is receiving a high volume of trap messages. What action should the administrator take to ensure the monitor can effectively manage and respond to these messages?",
+        "choices": [
+            "Disable all trap messages to reduce the load on the SNMP monitor.",
+            "Configure the SNMP agents to send trap messages only for critical events.",
+            "Increase the polling interval for all SNMP agents.",
+            "Switch to using community strings for device authentication."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "By configuring agents to send traps only for critical events, the administrator reduces the volume of messages, allowing the monitor to focus on significant alerts that require immediate attention. [cite: 1881]",
+        "source_file": "notes/snmp_monitor.txt"
+    },
+    {
+        "id": "mgmt-6",
+        "topic": "Discovery Protocols",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "What is the primary function of Cisco Discovery Protocol (CDP)?",
+        "choices": [
+            "To encrypt data traffic between Cisco devices",
+            "To assign IP addresses to devices on a network",
+            "To discover information about directly connected Cisco devices",
+            "To provide a secure tunnel for data transmission"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "The primary function of CDP is to discover information about directly connected Cisco devices, allowing them to learn about each other to facilitate management and troubleshooting. [cite: 1905, 1906]",
+        "source_file": "notes/cdp_lldp.txt"
+    },
+    {
+        "id": "mgmt-7",
+        "topic": "Network Device Logs",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "Why is it critical that users do not share logon details according to the document?",
+        "choices": [
+            "To prevent the overloading of system resources",
+            "To ensure accurate tracking of actions in the logs",
+            "To keep the system logs from being deleted",
+            "To avoid duplicate entries in the application logs"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Sharing login details undermines log integrity, specifically audit logs, by making it impossible to accurately track actions back to the individual responsible. [cite: 1924]",
+        "source_file": "notes/log_types.txt"
+    },
+    {
+        "id": "mgmt-8",
+        "topic": "Quality of Service",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "A network administrator has identified packet loss as a significant issue for VoIP quality. Which action is MOST likely to reduce packet loss?",
+        "choices": [
+            "Increasing the network's bandwidth",
+            "Implementing QoS protocols",
+            "Upgrading the company's email server",
+            "Decreasing the sampling frequency for audio"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Implementing QoS protocols allows for packet prioritization, ensuring real-time applications like VoIP receive necessary bandwidth and minimal delay over less time-sensitive data. [cite: 1953, 1954]",
+        "source_file": "notes/traffic_monitoring.txt"
+    },
+    {
+        "id": "mgmt-9",
+        "topic": "Protocol Analyzers",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "In Wireshark, what does the 'Follow TCP Stream' context command do?",
+        "choices": [
+            "Encrypts the TCP session for security purposes",
+            "Reconstructs the packet contents for a TCP session",
+            "Disconnects the selected TCP session",
+            "Increases the speed of the TCP session"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The 'Follow TCP Stream' feature allows users to view the entire conversation between two endpoints by reconstructing the packet contents for that session. [cite: 1973]",
+        "source_file": "notes/packet_capture_analysis.txt"
+    },
+    {
+        "id": "mgmt-10",
+        "topic": "Protocol Analyzers",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "Which open-source tool is mentioned as a graphical packet capture and analysis utility?",
+        "choices": [
+            "Nmap",
+            "Wireshark",
+            "Nessus",
+            "Netcat"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Wireshark is an open-source tool with a graphical interface used for capturing and analyzing network traffic, widely used for troubleshooting and protocol development. [cite: 1997, 1998]",
+        "source_file": "notes/packet_capture_analysis.txt"
+    },
+    {
+        "id": "mgmt-11",
+        "topic": "Change Management",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "Which document captures the need or reasons for change and the procedure for implementing the change?",
+        "choices": [
+            "Standard Operating Procedure (SOP)",
+            "Service Request Ticket",
+            "Request for Change (RFC)",
+            "Change Advisory Board (CAB) document"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "The RFC document captures the reasons for a change and the implementation procedure, serving as the central document for the change management process submitted for approval. [cite: 2022]",
+        "source_file": "notes/lifecycle_8_1_6.txt"
+    },
+    {
+        "id": "mgmt-12",
+        "topic": "Backup Management",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "What is a benefit of supporting a version history of previous configurations on network devices?",
+        "choices": [
+            "It allows for easy device replacement.",
+            "It enables changes to be rolled back.",
+            "It reduces the need for backups.",
+            "It simplifies network redesign."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Supporting version history allows changes to be easily rolled back if they cause operational issues, thereby enhancing network stability and recovery. [cite: 2040]",
+        "source_file": "notes/fault_redundancy.txt"
+    },
+    {
+        "id": "mgmt-13",
+        "topic": "SNMP Management",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "An administrator requires a centralized remote management framework for IoT sensors that can perform polling and trigger notifications for events like port failure. Which agent-based framework BEST fulfills this?",
+        "choices": [
+            "Secure Shell",
+            "Remote Desktop Protocol",
+            "Simple Network Management Protocol",
+            "Telnet"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "SNMP is a widely used agent-based framework specifically designed for the remote management and monitoring of network appliances and servers. [cite: 2061]",
+        "source_file": "notes/snmp_monitor.txt"
+    },
+    {
+        "id": "mgmt-14",
+        "topic": "SNMP Security",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "What is the recommended practice when using SNMP v2c regarding community strings?",
+        "choices": [
+            "Transmit them in plaintext over the network.",
+            "Leave the community string set to the default.",
+            "Use difficult to guess community strings.",
+            "Use SNMP v2c for secure environments only."
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Because SNMP v2c transmits community strings in plaintext, it is critical to use difficult-to-guess strings and implement ACLs to secure the environment. [cite: 2084, 2088]",
+        "source_file": "notes/snmp_security.txt"
+    },
+    {
+        "id": "mgmt-15",
+        "topic": "Protocol Analyzers",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "What is the purpose of using display filters in Wireshark?",
+        "choices": [
+            "To increase the capture speed of packets",
+            "To change the color of the interface",
+            "To show only particular frames or sequences of frames",
+            "To delete unwanted packets from the network"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Display filters narrow down the view to specific frames based on user-set criteria, which is essential when analyzing large volumes of data. [cite: 2108, 2109]",
+        "source_file": "notes/packet_capture_analysis.txt"
+    },
+    {
+        "id": "mgmt-16",
+        "topic": "Availability Monitoring",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "What role does the Spanning Tree Protocol (STP) play in preventing network issues?",
+        "choices": [
+            "It increases network speed.",
+            "It encrypts data transfers.",
+            "It prevents switching loops.",
+            "It manages bandwidth allocation."
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "STP prevents switching loops by creating a loop-free logical topology, which stops broadcast frames from circulating indefinitely and causing broadcast storms. [cite: 2134, 2136]",
+        "source_file": "notes/availability_monitoring_8_2_6.txt"
+    },
+    {
+        "id": "mgmt-17",
+        "topic": "Network Device Logs",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "An analyst needs to identify the user behind unauthorized access attempts on a file server. Which type of log should they primarily focus on?",
+        "choices": [
+            "System log",
+            "Application log",
+            "Audit log",
+            "Performance/Traffic log"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Audit logs record success and failure events related to authentication and authorization, providing the necessary account-specific information to track the user responsible. [cite: 2166, 2168]",
+        "source_file": "notes/log_types.txt"
+    },
+    {
+        "id": "mgmt-19",
+        "topic": "Backup Management",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "How can state information be preserved if it needs to be backed up?",
+        "choices": [
+            "By performing a factory reset",
+            "By configuring the appliance to log state data",
+            "By manually documenting the state information",
+            "By using the default configuration"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Dynamic state information can be preserved by configuring the appliance to log that data to a remote server using a protocol such as syslog. [cite: 2214]",
+        "source_file": "notes/fault_redundancy.txt"
+    },
+    {
+        "id": "mgmt-20",
+        "topic": "SNMP Management",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "What is an OID in the context of SNMP?",
+        "choices": [
+            "Object Identifier",
+            "Operational Interface Descriptor",
+            "Optical Interference Device",
+            "Original Internet Domain"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "An OID (Object Identifier) is a numeric identifier used to uniquely identify each parameter stored in a Management Information Base (MIB). [cite: 2231]",
+        "source_file": "notes/snmp_monitor.txt"
+    },
+    {
+        "id": "mgmt-21",
+        "topic": "Event Prioritization",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "Given a critical system service failure, packet loss exceeding 5%, and multiple failed login attempts, which alert should be addressed first?",
+        "choices": [
+            "Packet loss exceeding 5%",
+            "Critical system service failure",
+            "Multiple failed login attempts on a key server",
+            "All alerts should be addressed simultaneously"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "A critical system service failure has the most immediate and widespread impact on operations and business continuity, requiring the highest priority. [cite: 2255, 2256]",
+        "source_file": "notes/event_prioritization.txt"
+    },
+    {
+        "id": "mgmt-23",
+        "topic": "SIEM Management",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "What role do connectors or plug-ins play in SIEM software?",
+        "choices": [
+            "They increase the physical security of the SIEM server.",
+            "They interpret data from distinct types of systems.",
+            "They serve as the primary user interface for SIEM software.",
+            "They encrypt log data for secure transmission."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Connectors are designed to parse and interpret data from distinct system types, accounting for vendor differences to allow for effective log aggregation. [cite: 2317, 2318]",
+        "source_file": "notes/siem_fundamentals.txt"
+    },
+    {
+        "id": "mgmt-24",
+        "topic": "Packet Capture",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "Why might frames with errors not be mirrored in a SPAN/port mirroring setup?",
+        "choices": [
+            "Because the switch is designed to correct errors automatically",
+            "Because frames with errors are encrypted",
+            "Because frames with errors will not be mirrored and may be dropped",
+            "Because the sniffer software filters out errors"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Switch hardware limitations often prevent the mirroring of errored frames, or frames may be dropped entirely under heavy load. [cite: 2350]",
+        "source_file": "notes/packet_capture_analysis.txt"
+    },
+    {
+        "id": "mgmt-25",
+        "topic": "Port Scanning",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "Which Nmap scan type is less stealthy due to its use of the operating system to attempt a full TCP connection?",
+        "choices": [
+            "TCP SYN (-sS)",
+            "TCP connect (-sT)",
+            "UDP scans (-sU)",
+            "Port range (-p)"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "A TCP connect scan (-sT) completes the full 3-way handshake, making it more likely to be logged and therefore less stealthy than a SYN scan. [cite: 2373, 2374]",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "mgmt-26",
+        "topic": "Quality of Service",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "What is the primary purpose of Quality of Service (QoS) protocols and appliances?",
+        "choices": [
+            "To increase the bandwidth of the network",
+            "To support real-time services",
+            "To reduce the cost of network infrastructure",
+            "To eliminate the need for packet switching"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "QoS is designed to support real-time services like voice and video, which require timely and orderly delivery of data to maintain quality. [cite: 2391]",
+        "source_file": "notes/traffic_monitoring.txt"
+    },
+    {
+        "id": "mgmt-27",
+        "topic": "SNMP Management",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "How does an SNMP monitor typically retrieve information from a device?",
+        "choices": [
+            "By using the Set command",
+            "By using the Get command",
+            "By establishing a VPN connection",
+            "By initiating an SSH session"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The 'Get' command is the standard SNMP method used by a monitor to query an agent for a specific piece of information (OID). [cite: 2409, 2414]",
+        "source_file": "notes/snmp_monitor.txt"
+    },
+    {
+        "id": "mgmt-28",
+        "topic": "Traffic Testing",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "What is the primary purpose of using traffic analysis tools in network performance testing?",
+        "choices": [
+            "To increase the network's data rate",
+            "To simulate traffic loads and observe performance",
+            "To physically inspect network cables",
+            "To enhance the graphical interface of network applications"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Traffic analysis tools simulate loads to measure how a network performs under various conditions, helping identify bottlenecks before they impact users. [cite: 2435, 2436]",
+        "source_file": "notes/traffic_monitoring.txt"
+    },
+    {
+        "id": "mgmt-29",
+        "topic": "Lifecycle Management",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "What is the primary reason for making a backup before performing a firmware update?",
+        "choices": [
+            "To increase the device's storage capacity",
+            "To prevent data loss in case the update fails",
+            "To speed up the update process",
+            "To comply with legal requirements"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "A backup ensures the system can be restored to its original configuration if the update fails, preventing total data loss or malfunction. [cite: 2460]",
+        "source_file": "notes/lifecycle_8_1_6.txt"
+    },
+    {
+        "id": "mgmt-30",
+        "topic": "Network Diagrams",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "Where can standard network icons created by Cisco be obtained?",
+        "choices": [
+            "Cisco's official website",
+            "Microsoft Office Online",
+            "Adobe Stock",
+            "AutoCAD Library"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "Cisco provides its standard network icons freely on its official website to ensure professional and consistent network representation. [cite: 2477]",
+        "source_file": "notes/physical_net_diagrams_8_1_8.txt"
+    },
+    {
+        "id": "ip-1",
+        "topic": "IPv6 Addressing",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "What is the significance of a link-local address in IPv6?",
+        "choices": [
+            "It is used for routing packets over the Internet.",
+            "It is only necessary for devices acting as routers.",
+            "It must always be configured on an interface.",
+            "It is an optional configuration for improved network security."
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "In IPv6, every interface must have a link-local address. It is essential for local communication on the network segment and for protocols like the Neighbor Discovery Protocol[cite: 656, 657].",
+        "source_file": "notes/ipv4_basics.txt"
+    },
+    {
+        "id": "phys-1",
+        "topic": "Structured Cabling",
+        "domain_id": 2,
+        "difficulty": "standard",
+        "prompt": "When installing structured cabling, why is it important to leave a service loop at both ends of the cable run?",
+        "choices": [
+            "To ensure that the cable can be easily pulled out for recycling",
+            "To provide extra cable length for future reconnections or changes",
+            "To increase the tension on the cable, ensuring a tighter fit",
+            "To make the installation look more professional and organized"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "A service loop (extra length of cable) allows for adjustments, reconnections, or changes in the future without the need to install entirely new cabling[cite: 673, 674].",
+        "source_file": "notes/structured_cabling.txt"
+    },
+    {
+        "id": "ip-2",
+        "topic": "Network Address Translation",
+        "domain_id": 2,
+        "difficulty": "standard",
+        "prompt": "Which of the following problems does NAT help address?",
+        "choices": [
+            "The shortage of IPv4 addresses",
+            "Registering IP addresses with an ISP",
+            "The shortage of IPv6 addresses",
+            "IPsec not working properly"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "Network Address Translation (NAT) helps address the shortage of registered IPv4 addresses by allowing multiple private addresses to be translated into a single registered public IP address[cite: 701, 702].",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "phys-2",
+        "topic": "Wavelength Division Multiplexing",
+        "domain_id": 2,
+        "difficulty": "hard",
+        "prompt": "During a data center upgrade, a network architect implements WDM to increase capacity. Which consideration is MOST critical for success?",
+        "choices": [
+            "Ensuring all transceivers operate at the same power level",
+            "Selecting transceivers that support the same Ethernet standard",
+            "Choosing transceivers that can operate on multiple wavelengths",
+            "Matching the color of the transceiver casings with the fiber optic cables"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "WDM works by multiplexing multiple optical signals on a single fiber using different wavelengths (colors) of laser light. Transceivers must be capable of transmitting and receiving at these specific wavelengths[cite: 724, 726].",
+        "source_file": "notes/wdm_technology.txt"
+    },
+    {
+        "id": "phys-3",
+        "topic": "Fiber Optic Troubleshooting",
+        "domain_id": 5,
+        "difficulty": "hard",
+        "prompt": "Sections of a fiber network are experiencing high signal attenuation. Which tool is most effective for initially diagnosing if the issue is a dirty connector or physical damage?",
+        "choices": [
+            "Visual Fault Locator (VFL)",
+            "Fusion Splicer",
+            "Spectrum Analyzer",
+            "Cable Certifier"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "A VFL is a practical tool for quickly identifying breaks, bends, and major issues in fiber cables or connectors by using visible light to find faults[cite: 745, 746].",
+        "source_file": "notes/fiber_optics.txt"
+    },
+    {
+        "id": "phys-4",
+        "topic": "Cable Testing Metrics",
+        "domain_id": 5,
+        "difficulty": "standard",
+        "prompt": "What does a higher margin value indicate when measuring insertion loss?",
+        "choices": [
+            "The cable is closer to not meeting acceptable link standards.",
+            "The cable is heavier than standard cables.",
+            "The cable exceeds the maximum allowed insertion loss.",
+            "The cable is further from reaching the maximum allowed insertion loss."
+        ],
+        "answer_indices": [
+            3
+        ],
+        "explanation": "The margin value is the difference between actual loss and the maximum allowed loss. A higher margin indicates the cable is further from the limit, which is desirable[cite: 766, 767].",
+        "source_file": "notes/performance_monitoring_8_2_5.txt"
+    },
+    {
+        "id": "ip-3",
+        "topic": "Address Resolution Protocol",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "What is ARP used for in IPv4 networks?",
+        "choices": [
+            "To determine the Data Link layer address of the destination interface",
+            "To increase the packet's Time to Live (TTL)",
+            "To encrypt the packet's contents",
+            "To find the shortest path to the destination"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "ARP is used to map a known IP address to a physical MAC address (Data Link layer address) for delivery on a local network segment[cite: 788].",
+        "source_file": "notes/network_fundamentals.txt"
+    },
+    {
+        "id": "ip-4",
+        "topic": "IPv4 Addressing",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "How is an IPv4 address MOST commonly formatted for readability?",
+        "choices": [
+            "Hexadecimal notation",
+            "Dotted decimal notation",
+            "Binary notation",
+            "Octal notation"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "IPv4 addresses use dotted decimal notation, where the 32-bit address is divided into four 8-bit octets converted to decimal[cite: 803, 804].",
+        "source_file": "notes/ipv4_basics.txt"
+    },
+    {
+        "id": "ops-1",
+        "topic": "Troubleshooting Documentation",
+        "domain_id": 5,
+        "difficulty": "standard",
+        "prompt": "Which information is MOST critical to include on a troubleshooting ticket? (Select THREE)",
+        "choices": [
+            "Who is responsible",
+            "A complete description of the problem",
+            "A complete description of the solution",
+            "The brand of equipment being used",
+            "The technician's favorite tool",
+            "Personal opinions on the cause"
+        ],
+        "answer_indices": [
+            0,
+            1,
+            2
+        ],
+        "explanation": "Critical ticket items include the responsible party (accountability), a full problem description (clarity), and the solution (knowledge base for future use)[cite: 827, 829, 831].",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "ip-5",
+        "topic": "Subnetting",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "What is the primary purpose of creating logical subnets within an IP network?",
+        "choices": [
+            "To increase the speed of the internet connection for all users",
+            "To enhance the security of the network by encrypting data",
+            "To allow for more efficient use of IP addresses and improve network management",
+            "To replace the need for physical network infrastructure"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Subnetting divides a larger network into smaller ones to control traffic flow, reduce congestion, and allocate IP addresses more efficiently[cite: 859].",
+        "source_file": "notes/subnetting_concepts.txt"
+    },
+    {
+        "id": "dns-1",
+        "topic": "DNS Records",
+        "domain_id": 2,
+        "difficulty": "standard",
+        "prompt": "What does the Start of Authority (SOA) record identify?",
+        "choices": [
+            "The most frequently visited domain in the zone",
+            "The primary authoritative name server for the zone",
+            "The secondary name servers in the zone",
+            "The dynamic resource records in the zone"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The SOA record identifies the primary authoritative name server that maintains the resource records for a specific DNS zone[cite: 880].",
+        "source_file": "notes/protocols_ports_compTIA.txt"
+    },
+    {
+        "id": "dns-2",
+        "topic": "DNS Hierarchy",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "How many root level servers are there in the DNS hierarchy?",
+        "choices": [
+            "7",
+            "10",
+            "13",
+            "15"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "There are 13 root level servers, labeled A to M, which are critical to the internet's infrastructure[cite: 923].",
+        "source_file": "notes/protocols_ports_compTIA.txt"
+    },
+    {
+        "id": "osi-1",
+        "topic": "OSI Model",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "In the OSI model, what is the primary function of the Network layer?",
+        "choices": [
+            "To move data around an internetwork using logical network and host IDs",
+            "To encode data into signals for physical transmission",
+            "To manage connections between applications",
+            "To ensure reliable transmission across a physical link"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "The Network layer (Layer 3) is responsible for logical addressing and the delivery of data across different networks[cite: 968].",
+        "source_file": "notes/osi_layers.txt"
+    },
+    {
+        "id": "phys-5",
+        "topic": "Power Over Ethernet",
+        "domain_id": 2,
+        "difficulty": "standard",
+        "prompt": "What does the IEEE 802.3af standard specify in terms of PoE?",
+        "choices": [
+            "Power is supplied as 350mA@48V and limited to 15.4 W output.",
+            "Supplies at 30 W, with a maximum current of 600 mA.",
+            "Supplies at 60 W (Type 3) or 90 W (Type 4).",
+            "It is a standard for data encryption over PoE connections."
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "IEEE 802.3af specifies power at 350mA@48V with a 15.4W maximum output, suitable for devices requiring up to ~13W[cite: 1004].",
+        "source_file": "notes/poe_standards.txt"
+    },
+    {
+        "id": "ops-2",
+        "topic": "Troubleshooting Strategies",
+        "domain_id": 5,
+        "difficulty": "standard",
+        "prompt": "What should be checked if the cable and connections are not the issue for a single computer's connectivity?",
+        "choices": [
+            "The power supply to the computer",
+            "The network adapter's functionality in Device Manager",
+            "The router's firmware version",
+            "The Ethernet port on the switch"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Checking Device Manager verifies if the OS recognizes the adapter and if it is functioning correctly (drivers, enabled status, etc.)[cite: 1026, 1027].",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "ip-6",
+        "topic": "APIPA",
+        "domain_id": 5,
+        "difficulty": "standard",
+        "prompt": "What happens to a Windows host configured for dynamic addressing if it fails to obtain a lease?",
+        "choices": [
+            "It uses a static IP address from the network configuration.",
+            "It selects an address in the 169.254.0.0/16 range.",
+            "It disconnects from the network.",
+            "It uses the last successful IP address lease."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "If DHCP fails, Windows uses APIPA (Automatic Private IP Addressing) to assign an address in the 169.254.0.0/16 range for local communication[cite: 1045, 1046].",
+        "source_file": "notes/ipv4_basics.txt"
+    },
+    {
+        "id": "sec-1",
+        "topic": "IPv4 Headers",
+        "domain_id": 4,
+        "difficulty": "hard",
+        "prompt": "Which field in the IPv4 datagram header should an analyst focus on to assess the risk of fragmentation attacks?",
+        "choices": [
+            "Total Length field",
+            "Identification field",
+            "Fragment Offset field",
+            "Time to Live (TTL) field"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "The Total Length field specifies the size of the packet; unusually large packets can be indicative of fragmentation exploits[cite: 1071, 1072].",
+        "source_file": "notes/ipv4_basics.txt"
+    },
+    {
+        "id": "osi-2",
+        "topic": "Network Types",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "Hosts are assigned specific roles (file sharing, printing), while other hosts access those resources but host no services. Which network type is this?",
+        "choices": [
+            "Peer-to-peer",
+            "Client-server",
+            "Intranet",
+            "Extranet"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "In a client-server network, some hosts (servers) provide resources, while others (clients) consume them[cite: 1092, 1093].",
+        "source_file": "notes/network_fundamentals.txt"
+    },
+    {
+        "id": "ops-3",
+        "topic": "Power Management",
+        "domain_id": 3,
+        "difficulty": "standard",
+        "prompt": "What actions does a UPS allow for during power anomalies? (Select TWO)",
+        "choices": [
+            "Automatically repair damaged network cables.",
+            "Permanently replace the main power source.",
+            "Shut down the system gracefully.",
+            "Increase the processing power of servers.",
+            "Switch to a secondary power source."
+        ],
+        "answer_indices": [
+            2,
+            4
+        ],
+        "explanation": "UPSs provide temporary power to allow systems to switch to a generator or to perform a graceful shutdown to prevent data corruption[cite: 1123, 1125, 1126].",
+        "source_file": "notes/poe_standards.txt"
+    },
+    {
+        "id": "impl-1",
+        "topic": "VLANs",
+        "domain_id": 2,
+        "difficulty": "standard",
+        "prompt": "Where does VLAN ID configuration take place?",
+        "choices": [
+            "On the end system",
+            "On the switch interface",
+            "On the router",
+            "On the network firewall"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "VLAN IDs are configured on switch interfaces to assign specific ports to designated VLANs[cite: 1146].",
+        "source_file": "notes/vlans_trunking.txt"
+    },
+    {
+        "id": "routing-1",
+        "topic": "Routing Protocols",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "What protocol does BGP use for its operation?",
+        "choices": [
+            "UDP",
+            "ICMP",
+            "TCP",
+            "ARP"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "BGP operates over TCP on port 179 to ensure reliable delivery of routing information[cite: 1167].",
+        "source_file": "notes/routing_protocols.txt"
+    },
+    {
+        "id": "osi-3",
+        "topic": "OSI Model",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "A security engineer configures port security on a firewall. Which OSI layer identifies application ports (e.g., port 80)?",
+        "choices": [
+            "Layer 1",
+            "Layer 2",
+            "Layer 3",
+            "Layer 4"
+        ],
+        "answer_indices": [
+            3
+        ],
+        "explanation": "The Transport layer (Layer 4) uses port numbers to identify specific applications[cite: 1190].",
+        "source_file": "notes/osi_layers.txt"
+    },
+    {
+        "id": "impl-2",
+        "topic": "Link Aggregation",
+        "domain_id": 2,
+        "difficulty": "hard",
+        "prompt": "An admin uses four 1 Gbps ports for link aggregation. Which action ensures the link aggregation group forms automatically?",
+        "choices": [
+            "Configure server ports active and switch ports passive.",
+            "Configure both server and switch ports passive.",
+            "Configure both server and switch ports active.",
+            "Use only one port in active mode."
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Configuring both ends in active mode ensures both participate in LACP, maximizing reliability in forming the logical 4 Gbps link[cite: 1217, 1218].",
+        "source_file": "notes/network_fundamentals.txt"
+    },
+    {
+        "id": "dns-3",
+        "topic": "DNS Configuration",
+        "domain_id": 2,
+        "difficulty": "standard",
+        "prompt": "What port is usually configured for a DNS server to listen for queries?",
+        "choices": [
+            "TCP port 80",
+            "UDP port 53",
+            "TCP port 443",
+            "UDP port 80"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "UDP port 53 is the standard port for DNS queries[cite: 1241].",
+        "source_file": "notes/protocols_ports_compTIA.txt"
+    },
+    {
+        "id": "impl-3",
+        "topic": "VLAN Troubleshooting",
+        "domain_id": 5,
+        "difficulty": "standard",
+        "prompt": "What should be verified if you cannot ping any remote hosts during VLAN troubleshooting?",
+        "choices": [
+            "That the host's firewall is disabled",
+            "The switch and router configuration",
+            "That all devices have static IP addresses",
+            "The subnet mask of all devices in the VLAN"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Verifying the switch and router configuration is essential to ensure inter-VLAN routing is correctly set up[cite: 1258].",
+        "source_file": "notes/vlans_trunking.txt"
+    },
+    {
+        "id": "osi-4",
+        "topic": "Network Devices",
+        "domain_id": 5,
+        "difficulty": "standard",
+        "prompt": "A node in a star topology network is too far from the switch, causing signal degradation. What is the BEST solution?",
+        "choices": [
+            "Replace the switch with a hub.",
+            "Use a repeater to strengthen the signal.",
+            "Implement a mesh topology.",
+            "Increase switch bandwidth."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Repeaters regenerate signals, allowing them to travel further without degradation[cite: 1277].",
+        "source_file": "notes/network_fundamentals.txt"
+    },
+    {
+        "id": "osi-5",
+        "topic": "Transport Layer",
+        "domain_id": 5,
+        "difficulty": "hard",
+        "prompt": "Which scenario indicates a problem with the de-multiplexing process at the Transport layer? (Select TWO)",
+        "choices": [
+            "Slow network speeds due to congestion.",
+            "Unable to connect to web server on port 80.",
+            "An email packet is processed as web traffic.",
+            "A VoIP packet is correctly processed as audio data.",
+            "No packets are received from the network."
+        ],
+        "answer_indices": [
+            2,
+            3
+        ],
+        "explanation": "De-multiplexing involves forwarding packets to the right application based on port. Misprocessing an email packet (port 25) as web traffic (port 80) is a failure, while correctly processing VoIP is a successful example[cite: 1325, 1326, 1328].",
+        "source_file": "notes/osi_layers.txt"
+    },
+    {
+        "id": "phys-6",
+        "topic": "Fiber Optic Safety",
+        "domain_id": 3,
+        "difficulty": "standard",
+        "prompt": "Why should you never look directly at an active transceiver port or the end of a fiber cable?",
+        "choices": [
+            "To avoid data corruption",
+            "To prevent eye injury from powerful light sources",
+            "To prevent disrupting transmission",
+            "To avoid fingerprint contamination"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Powerful light sources in fiber optics can cause serious permanent eye injury if viewed directly[cite: 1353].",
+        "source_file": "notes/fiber_optics.txt"
+    },
+    {
+        "id": "ip-7",
+        "topic": "DHCP",
+        "domain_id": 2,
+        "difficulty": "standard",
+        "prompt": "On which port does the DHCP server listen for client requests?",
+        "choices": [
+            "66",
+            "67",
+            "68",
+            "69"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "DHCP servers listen on UDP port 67; clients listen on port 68[cite: 1368, 1370].",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "phys-7",
+        "topic": "Fiber Optic Cables",
+        "domain_id": 2,
+        "difficulty": "hard",
+        "prompt": "Which of the following is NOT a typical use of MPO cables?",
+        "choices": [
+            "Aggregating 10 Gbps lanes into 40 Gbps",
+            "Field termination of fiber optic cables",
+            "Aggregating 25 Gbps lanes into 100 Gbps",
+            "Aggregating lanes into 400 Gbps"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "MPO cables are typically prefabricated in a factory and are not designed for field termination[cite: 1408].",
+        "source_file": "notes/fiber_optics.txt"
+    },
+    {
+        "id": "ops-4",
+        "topic": "Troubleshooting Methodology",
+        "domain_id": 5,
+        "difficulty": "standard",
+        "prompt": "When troubleshooting a problem, which of the following are typical solutions? (Select THREE)",
+        "choices": [
+            "Escalate",
+            "Repair",
+            "Outsource",
+            "Replace",
+            "Accept",
+            "Ignore",
+            "Postpone"
+        ],
+        "answer_indices": [
+            1,
+            3,
+            4
+        ],
+        "explanation": "Typical solutions include repairing (if cost-effective), replacing (to solve or upgrade), or accepting (if cost/time to fix is too high)[cite: 1429, 1430, 1431].",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "osi-6",
+        "topic": "MAC Addressing",
+        "domain_id": 5,
+        "difficulty": "hard",
+        "prompt": "An engineer captures a packet with destination MAC 01:00:5E:00:00:FB. What can they infer?",
+        "choices": [
+            "It is a unicast packet for a specific device.",
+            "It is a broadcast packet for all devices.",
+            "It is a multicast packet for a group of devices.",
+            "It is a malformed packet."
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "MAC addresses starting with 01:00:5E indicate IPv4 multicast[cite: 1459].",
+        "source_file": "notes/network_fundamentals.txt"
+    },
+    {
+        "id": "dns-4",
+        "topic": "DNS Propagation",
+        "domain_id": 5,
+        "difficulty": "hard",
+        "prompt": "What update can an admin make to allow DNS record changes to propagate through the network more quickly?",
+        "choices": [
+            "Increase the TTL",
+            "Decrease the TTL",
+            "Clear server cache",
+            "Clear client cache"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Decreasing the Time to Live (TTL) value instructs resolvers to refresh their cache more frequently, speeding up propagation[cite: 1486, 1487].",
+        "source_file": "notes/protocols_ports_compTIA.txt"
+    },
+    {
+        "id": "ip-8",
+        "topic": "IP Classes",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "Which IP addresses have a default subnet mask of 255.255.0.0? (Select TWO)",
+        "choices": [
+            "123.254.19.6",
+            "228.62.18.6",
+            "1.6.45.254",
+            "191.168.2.15",
+            "129.0.0.1"
+        ],
+        "answer_indices": [
+            3,
+            4
+        ],
+        "explanation": "Class B networks use a 255.255.0.0 mask and have a first octet range of 128-191[cite: 1536, 1538].",
+        "source_file": "notes/ipv4_basics.txt"
+    },
+    {
+        "id": "dns-5",
+        "topic": "DNS Security",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "Why should internal DNS zones not be accessible from the Internet?",
+        "choices": [
+            "To ensure servers can perform recursive queries",
+            "To prevent DNS spoofing attacks from external sources",
+            "To allow external clients to access internal resources",
+            "To facilitate DNS forwarding"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Restricting internet access to internal zones protects against spoofing and prevents attackers from mapping internal resources[cite: 1553, 1554].",
+        "source_file": "notes/protocols_ports_compTIA.txt"
+    },
+    {
+        "id": "osi-7",
+        "topic": "Legacy Devices",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "How do legacy networking devices like hubs and bridges handle broadcast traffic?",
+        "choices": [
+            "They filter it out to reduce congestion.",
+            "They forward it to specific ports via MAC tables.",
+            "They flood it out of all ports except the source.",
+            "They convert it into unicast traffic."
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Legacy hubs and bridges flood broadcast traffic out of all ports except the source to ensure all devices receive the message[cite: 1597].",
+        "source_file": "notes/network_fundamentals.txt"
+    },
+    {
+        "id": "impl-4",
+        "topic": "Link Aggregation",
+        "domain_id": 3,
+        "difficulty": "standard",
+        "prompt": "What is the role of LACP in link aggregation?",
+        "choices": [
+            "To decrease the data transfer rate",
+            "To configure wireless connections",
+            "To detect configuration errors and recover from physical link failures",
+            "To encrypt data packets"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "LACP automatically configures aggregation and provides redundancy by detecting physical link failures[cite: 1621].",
+        "source_file": "notes/network_fundamentals.txt"
+    },
+    {
+        "id": "phys-8",
+        "topic": "Cable Termination",
+        "domain_id": 2,
+        "difficulty": "hard",
+        "prompt": "What type of termination is used with twinaxial cables for 10/40 GbE?",
+        "choices": [
+            "RJ-45 connectors",
+            "HDMI connectors",
+            "Direct Attach Copper (DAC) transceivers",
+            "USB connectors"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "High-speed twinaxial cables for data centers are terminated using DAC transceivers[cite: 1638].",
+        "source_file": "notes/cat_cabling.txt"
+    },
+    {
+        "id": "sec-2",
+        "topic": "Firewalls",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "Which firewall is MOST suitable for a large-scale data center hosting critical services with high traffic volumes?",
+        "choices": [
+            "A high-capacity appliance firewall",
+            "A router firewall in a SOHO setup",
+            "Multiple distributed small-capacity firewalls",
+            "A basic software firewall on each server"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "High-capacity appliances are optimized for performance and centralized security management, preventing bottlenecks in large data centers[cite: 1664, 1666].",
+        "source_file": "notes/security_fundamentals.txt"
+    },
+    {
+        "id": "ip-9",
+        "topic": "IPv6 Unicast",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "Which of the following is NOT part of an IPv6 global unicast address?",
+        "choices": [
+            "Starts with 001",
+            "Network ID",
+            "Starts with fe80",
+            "Subnet"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Addresses starting with fe80 are link-local, while global unicast addresses start with 001 (prefix 2 or 3 in hex)[cite: 1699, 1703].",
+        "source_file": "notes/ipv4_basics.txt"
     }
 ]

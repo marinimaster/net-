@@ -1,4 +1,86 @@
 # Packet Capture and Analysis
 
-Protocol analyzers allos the inspection of network passing passing over a network link.
-It depends on a packet sniffer. A sniffer captures frames over a moving medium.
+A `Protocol analyzer` allows the inspection of network passing passing over a network link.
+It depends on a packet sniffer.
+
+A `sniffer` captures frames over a moving medium.
+
+- These terms can be used interchangeably.
+
+# Switched Port Analyzer (SPAN) / Port mirroring
+- A sensor is attached to a specially configured port on the switch.
+- It receives copies of frames addressed to nominated access ports (or all other ports).
+- Frames with errors will not be mirorred.
+- Frames may be dropped under heavy load.
+
+* Usually more convenient due to not needing an extra appliance and can be configured on the switch.
+
+# Test Access Point (TAP)
+
+# Passive TAP
+- Box with ports for incoming and outgoing network cabling.
+- Inductor or optical splitter copies the signal from cabling to a monitor port.
+- Unlike SPAN, no logic decisions are made so the monitor port receives every frame, including errors.
+- Unaffected by load.
+
+# Active TAP
+- *Powered* device that performs signal regeneration.
+- Gigabit signaling over copper is too complex for a passive TAP to monitor.
+- Some types of fiber links may be adversely affected by optical splitting.
+- Since it is powered, active TAPs become a point of failure for the links in the event of power loss.
+
+TAPs usually output two streams to monitor a full duplex link.
+There are `aggregation TAPS`, which rebuild the stream into a single channel.
+Can Drop frames under heavy load.
+
+# tcpdump
+
+Command line packet utility for Linux, providing a user interface to the libpcap library.
+
+	tcpdump -i eth0
+
+You can substitute 'eth0' with the keyword 'any' to listen on all interfaces of a multi-homed host.
+
+Command switches:
+
+-w : writes output to a file
+-r : reads content of a capture file
+
+-v | -vv | -vvv : increases the amount of detail shown about each frame
+
+-e : shows Ethernet header
+
+tcpdump is often used with some sort of filter expression:
+
+	- Type:		host, net, port, portrange
+	- Direction:	by (src) or (dst) parameters (host, network, port)
+	- Protocl:	by named protocol rather than port number (arp, icmp, ip, ip6, tcp, udp)
+
+Filter expressions can be combined by using boolean operators. 
+
+	- and	(&&)
+	- or	(||)
+	- not	(!)
+
+Filter syntax can be even more detailed by using parentheses to group expresisons.
+Complex filter expressions should be enclosed by quotes.
+
+	tcpdump -i et0 "src host 10.1.0.100 and (dst port 53 or dst port 80)"
+
+# Protocol Analyzers
+In a stream of traffic:
+
+- Parses each frame
+- Reveals header and payload contents
+- In a *readable* format
+
+Given that there might be hundreds of thousands in a live stream or capture file
+
+- Filters can be used to show particular frames or sequences of frames.
+- Follow TCP stream context command to reconstruct the packet contensts for a TCP session.
+
+Another funciton of protocol analyzers is to perform traffic analysis.
+
+- Using the tool to monitor statistics related to communication flows.
+
+Tools in wireshark can be found in the statistics tab.

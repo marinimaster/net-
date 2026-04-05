@@ -1,0 +1,104 @@
+1. What is the primary function of traffic shapers?
+    * To increase the speed of packet delivery
+    * To delay certain packet types based on their content (correct)
+    * To categorize protocols into different service levels
+    * To monitor traffic conditions and generate reports
+    * Explanation: Traffic shapers, or bandwidth shapers, delay certain packet types based on their content to ensure that other packets have a higher priority. This helps reduce latency for critical applications by managing the flow of traffic more effectively[cite: 306, 307, 308].
+
+2. What is a potential consequence of using traffic policing devices instead of traffic shapers?
+    * Increased latency for non-critical applications
+    * More efficient use of available bandwidth
+    * Fewer lost packets during periods of congestion
+    * Under-utilization of bandwidth during idle periods (correct)
+    * Explanation: Traffic policing devices may simply drop packets once a traffic threshold is reached, which can lead to under-utilization of bandwidth during periods when the network is relatively idle[cite: 324].
+
+3. Which of the following solutions would be MOST effective in achieving the desired improvement in VoIP performance?
+    * Implementing a First-In, First-Out (FIFO) queuing discipline across the network.
+    * Configuring a Random Early Detection (RED) algorithm on all network switches.
+    * Deploying traffic shaping to prioritize VoIP packets. (correct)
+    * Increasing the bandwidth of the company's internet connection.
+    * Explanation: Traffic shaping is the most effective solution for prioritizing VoIP traffic. By delaying certain packet types based on their content, it ensures that VoIP packets, which are sensitive to latency, are given higher priority, reducing latency and jitter[cite: 346, 347, 348].
+
+4. What advantage do website performance checkers offer for testing site response times?
+    * They can physically repair websites.
+    * They test from the perspective of customers in different countries. (correct)
+    * They increase website traffic automatically.
+    * They design websites.
+    * Explanation: Website performance checkers allow users to test a site's response times from various global locations, simulating the experience of international customers[cite: 368, 369].
+
+5. What do "top talkers" and "top listeners" refer to in network analysis?
+    * Top talkers are devices with the highest error rates in the network, while top listeners are devices with the highest packet loss rates.
+    * Top talkers are the most secure connections in a network, and top listeners are the least secure connections.
+    * Top talkers are interfaces generating the most outgoing traffic, while top listeners are the interfaces receiving the most incoming traffic. (correct)
+    * Top talkers are the fastest network connections, while top listeners are the slowest network connections.
+    * Explanation: In network analysis, top talkers are interfaces that send out the most data (high outgoing traffic), while top listeners are interfaces that receive the most data (high incoming traffic)[cite: 396, 397, 399].
+
+6. What is packet loss?
+    * The encryption of data packets for security purposes
+    * The intentional slowing down of data transmission
+    * The discarding of data packets in a network (correct)
+    * The duplication of data packets to ensure delivery
+    * Explanation: Packet loss occurs when one or more data packets being transmitted across a network fail to reach their destination, often due to congestion, faulty hardware, or signal degradation[cite: 430, 431, 432].
+
+7. What are latency and jitter in the context of network performance?
+    * Types of network security protocols
+    * Measures of network speed and efficiency
+    * Problems of timing and sequence of packet delivery (correct)
+    * Techniques for optimizing bandwidth usage
+    * Explanation: Latency refers to the delay before a transfer of data begins, while jitter is the variation in the delay of received packets. Both affect the quality of real-time applications like VoIP[cite: 448, 452, 453].
+
+8. What type of data transfer is described as bursty?
+    * Real-time video streaming
+    * Voice over IP (VOIP)
+    * File transfer (correct)
+    * Live audio broadcasting
+    * Explanation: Bursty data transfer refers to the transmission of data where large amounts are sent in bursts with variable intervals. This is typical of file transfers where the focus is on speed rather than strict timing[cite: 471, 472].
+
+9. Why is collecting just the packet metadata preferred over recording each frame?
+    * It increases the network speed.
+    * It imposes a heavy processing overhead.
+    * It reduces the bandwidth required by the sniffer. (correct)
+    * It enhances the security of the network.
+    * Explanation: Collecting only metadata (source/destination addresses, protocol type) instead of entire payloads significantly reduces the amount of data processed and transmitted, lowering the bandwidth required for sniffing[cite: 489, 493].
+
+10. What is the primary purpose of monitoring individual interface statistics in a network?
+    * To increase the network speed
+    * To diagnose performance issues (correct)
+    * To reduce the cost of network maintenance
+    * To enhance the security of network communications
+    * Explanation: Monitoring metrics such as bandwidth usage, packet loss, and errors allows administrators to pinpoint and diagnose performance issues to ensure optimal network operation[cite: 510, 515, 516].
+
+11. What role does a NetFlow exporter play in a network?
+    * It aggregates flows from multiple collectors.
+    * It analyzes and reports flow information.
+    * It defines and caches flows. (correct)
+    * It increases the bandwidth of the network.
+    * Explanation: A NetFlow exporter is configured on devices like routers to define traffic flows based on specific characteristics and cache that data for transmission to a collector[cite: 532, 539, 540].
+
+12. What is the significance of monitoring queue length in network performance?
+    * It indicates the total number of users in the network.
+    * It helps determine whether the link is a bottleneck. (correct)
+    * It shows the financial cost of data transfer.
+    * It measures the physical condition of the network interface.
+    * Explanation: Monitoring queue length can reveal if data is consistently waiting for transmission, which indicates a potential bottleneck in the network[cite: 556, 562].
+
+13. What is considered an acceptable error rate in general terms?
+    * Under 1 percent (correct)
+    * Exactly 5 percent
+    * Under 10 percent
+    * Over 15 percent
+    * Explanation: A general guideline is that error rates should be under 1 percent; higher rates typically indicate serious issues that need to be addressed[cite: 576, 582].
+
+14. What is the primary purpose of using Quality of Service (QoS) mechanisms in a network?
+    * To decrease network security
+    * To increase the number of devices that can connect to the network
+    * To prioritize certain types of traffic over others (correct)
+    * To reduce the cost of network infrastructure
+    * Explanation: QoS mechanisms manage bandwidth to prioritize critical traffic like VoIP or video streaming over less sensitive applications, ensuring performance during congestion[cite: 600, 603, 604].
+
+15. Which of the following is NOT a traffic class defined by DiffServ?
+    * Best Effort
+    * Assured Forwarding
+    * Expedited Forwarding
+    * Maximum Throughput (correct)
+    * Explanation: DiffServ defines classes such as Best Effort, Assured Forwarding, and Expedited Forwarding. Maximum Throughput is not a standard traffic class within the DiffServ framework[cite: 621, 624, 625].

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import random
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -39,6 +40,19 @@ class Question:
     @property
     def is_multi_select(self) -> bool:
         return len(self.answer_indices) > 1
+
+    def get_shuffled_data(self) -> tuple[list[str], list[int]]:
+        """Returns (shuffled_choices, new_correct_indices)."""
+        data = list(enumerate(self.choices))
+        random.shuffle(data)
+        
+        shuffled_choices = [item[1] for item in data]
+        new_indices = []
+        for new_idx, (old_idx, _) in enumerate(data):
+            if old_idx in self.answer_indices:
+                new_indices.append(new_idx)
+        
+        return shuffled_choices, new_indices
 
 
 @dataclass

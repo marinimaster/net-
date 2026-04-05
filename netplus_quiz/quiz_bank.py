@@ -73,13 +73,30 @@ def available_domains() -> tuple[int, ...]:
 def get_questions(*, domains: Iterable[int] | None = None, topics: Iterable[str] | None = None, limit: int | None = None, shuffle: bool = True) -> list[Question]:
     d_filter = set(domains) if domains is not None else None
     t_filter = set(topics) if topics is not None else None
-    
     filtered = [
         q for q in QUESTION_BANK 
         if (d_filter is None or q.domain_id in d_filter)
         and (t_filter is None or q.topic in t_filter)
     ]
     if shuffle: Random().shuffle(filtered)
+    return filtered[:limit] if limit else filtered
+
+def get_weak_questions(*, limit: int | None = None) -> list[Question]:
+    """Returns questions marked as weak (consecutive_correct < 3)."""
+    perf = {}
+    if PERFORMANCE_JSON.exists():
+        with open(PERFORMANCE_JSON, "r") as f:
+            perf = json.load(f)
+    
+    # A question is weak if it exists in perf and has < 3 consecutive correct,
+    # OR if it has more than 0 total attempts but 0 correct (never gotten right).
+    weak_ids = {
+        qid for qid, stats in perf.items() 
+        if stats.get("consecutive_correct", 0) < 3 and stats.get("total", 0) > 0
+    }
+    
+    filtered = [q for q in QUESTION_BANK if q.id in weak_ids]
+    Random().shuffle(filtered)
     return filtered[:limit] if limit else filtered
 
 def get_flashcards(*, domains: Iterable[int] | None = None, limit: int | None = None, shuffle: bool = True) -> list[Flashcard]:
@@ -95,15 +112,6 @@ def get_port_questions(*, secure_only: bool = False, limit: int | None = None) -
     return filtered[:limit] if limit else filtered
 
 def get_port_drill_questions(*, secure_only: bool = False, limit: int = 20) -> list[Question]:
-    """Generates synthetic bidirectional port questions for drill mode."""
-    # Find all questions in "Protocols and Ports" topic
-    base_qs = [q for q in QUESTION_BANK if q.topic == "Protocols and Ports"]
-    if secure_only:
-        base_qs = [q for q in base_qs if "secure" in q.tags]
-    
-    # Extract pairs of (Protocol, Port) from prompts/explanations/etc
-    # This is a bit complex since data is unstructured in prompt. 
-    # Let's use a hardcoded reference for the drill to ensure 100% accuracy.
     PORT_DATA = [
         ("FTP", "20/21"), ("SSH", "22"), ("Telnet", "23"), ("SMTP", "25"),
         ("DNS", "53"), ("DHCP", "67/68"), ("TFTP", "69"), ("HTTP", "80"),
@@ -113,58 +121,36 @@ def get_port_drill_questions(*, secure_only: bool = False, limit: int = 20) -> l
         ("POP3S", "995"), ("SQL Server", "1433"), ("Oracle", "1521"),
         ("RDP", "3389"), ("MySQL", "3306"), ("PostgreSQL", "5432"), ("SIP", "5060"), ("SIPS (TLS)", "5061")
     ]
-    
     if secure_only:
         secure_names = {"SSH", "HTTPS", "SMTPS", "LDAPS", "IMAPS", "POP3S", "SIPS (TLS)", "SFTP"}
         PORT_DATA = [p for p in PORT_DATA if p[0] in secure_names or "S" in p[0]]
-
     drill_qs = []
-    all_ports = [p[1] for p in PORT_DATA]
-    all_names = [p[0] for p in PORT_DATA]
-
+    all_ports = [p[1] for p in PORT_DATA]; all_names = [p[0] for p in PORT_DATA]
     for _ in range(limit):
-        pair = random.choice(PORT_DATA)
-        direction = random.choice(["to_port", "to_name"])
-        
+        pair = random.choice(PORT_DATA); direction = random.choice(["to_port", "to_name"])
         if direction == "to_port":
-            prompt = f"What is the default port for {pair[0]}?"
-            correct = pair[1]
-            # Get 3 random decoys
-            others = [p for p in all_ports if p != correct]
-            decoys = random.sample(others, min(3, len(others)))
-            choices = decoys + [correct]
-            random.shuffle(choices)
-            drill_qs.append(Question(
-                id=f"drill-p-{pair[0]}", topic="Port Drill", prompt=prompt,
-                choices=tuple(choices), answer_indices=(choices.index(correct),),
-                explanation=f"{pair[0]} uses port {pair[1]}.",
-                source_file=PROJECT_ROOT / "notes/protocols_ports_compTIA.txt",
-                domain_id=1
-            ))
+            prompt = f"What is the default port for {pair[0]}?"; correct = pair[1]
+            others = [p for p in all_ports if p != correct]; decoys = random.sample(others, min(3, len(others)))
+            choices = decoys + [correct]; random.shuffle(choices)
+            drill_qs.append(Question(id=f"drill-p-{pair[0]}", topic="Port Drill", prompt=prompt, choices=tuple(choices), answer_indices=(choices.index(correct),), explanation=f"{pair[0]} uses port {pair[1]}.", source_file=PROJECT_ROOT / "notes/protocols_ports_compTIA.txt", domain_id=1))
         else:
-            prompt = f"Which protocol uses port {pair[1]}?"
-            correct = pair[0]
-            others = [n for n in all_names if n != correct]
-            decoys = random.sample(others, min(3, len(others)))
-            choices = decoys + [correct]
-            random.shuffle(choices)
-            drill_qs.append(Question(
-                id=f"drill-n-{pair[1]}", topic="Port Drill", prompt=prompt,
-                choices=tuple(choices), answer_indices=(choices.index(correct),),
-                explanation=f"Port {pair[1]} is used by {pair[0]}.",
-                source_file=PROJECT_ROOT / "notes/protocols_ports_compTIA.txt",
-                domain_id=1
-            ))
-            
+            prompt = f"Which protocol uses port {pair[1]}?"; correct = pair[0]
+            others = [n for n in all_names if n != correct]; decoys = random.sample(others, min(3, len(others)))
+            choices = decoys + [correct]; random.shuffle(choices)
+            drill_qs.append(Question(id=f"drill-n-{pair[1]}", topic="Port Drill", prompt=prompt, choices=tuple(choices), answer_indices=(choices.index(correct),), explanation=f"Port {pair[1]} is used by {pair[0]}.", source_file=PROJECT_ROOT / "notes/protocols_ports_compTIA.txt", domain_id=1))
     return drill_qs
 
 def save_performance(question_id: str, is_correct: bool) -> None:
     perf = {}
     if PERFORMANCE_JSON.exists():
         with open(PERFORMANCE_JSON, "r") as f: perf = json.load(f)
-    stats = perf.get(question_id, {"correct": 0, "total": 0})
+    stats = perf.get(question_id, {"correct": 0, "total": 0, "consecutive_correct": 0})
     stats["total"] += 1
-    if is_correct: stats["correct"] += 1
+    if is_correct: 
+        stats["correct"] += 1
+        stats["consecutive_correct"] = stats.get("consecutive_correct", 0) + 1
+    else:
+        stats["consecutive_correct"] = 0
     perf[question_id] = stats
     with open(PERFORMANCE_JSON, "w") as f: json.dump(perf, f, indent=4)
 
