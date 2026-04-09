@@ -1,0 +1,50 @@
+# Access Control Model
+
+Principles that govern how authorization works to give user's rights on network systems and data.
+
+# Discretionary Access Control (DAC)
+
+In DAC, every resource has an owner.
+The owner has full control over the resource, and they can modify its ACL to gran rights to others.
+
+# Role-Based Access Control (RBAC)
+
+An organization describes its authorizations in terms of the tasks that an employee or service must be able 
+to perform.
+
+# Privileged Access Management (PAM)
+
+Policies, procedures, and technical controls to prevent the malicious abuse of privileged accounts.
+
+	- Least Privilege:	means that a user is granted sufficient rights to perform their jobs and no more. 
+
+
+	- Separation of duties: is a means of establishing checks and balances against the possiblity that 
+				critical systems or procedures can be compromised by insider threats.
+				
+				Duties and responsibilities should be divided among inidividuals.
+
+# Lightweight Directory Access Protocol (LDAP)
+[PORT 389/Secure 636]
+
+The main directory standard is the X.500 standard.
+As X.500 is a complex standard so most directory services are implementations of LDAP.
+LDAP is not a directory standard but a protocol used to query and update a X.500-like directory
+
+In an X.500 each object has a unique object identifier called a distinguished name.
+
+A distinguished name is made up of attribute value pairs, separated by commas.
+The most specific attribute is listed first, while successive attributes become progressively broader.
+
+The most specific attribute is referred to as the relative distinguished name, as it uniquely identifies the 
+object within the context successive (parent) attribute values.
+
+CN=WIDGET, OU=MARKETING, L=LONDON, ST=LONDON, C=UK, DC=widget, DC=example
+
+# Simple Authentication and Security Layer (SASL)
+
+Makes a LDAP connection over port 389 secure using the STARTTLS command
+
+# LDAP Secure
+[PORT 636]
+

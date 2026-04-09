@@ -1,0 +1,181 @@
+# Authentication
+Modern access control is typically implemented as
+
+Identity and access management (IAM)
+
+Identification - Account or ID that uniquely represents the user.
+
+Authentication - Comparing hashes or verifying that there is a valid certificate.
+
+Authorization  - Determining what rights subjects should have on each resource.
+
+Accounting - Tracking authorized usage of a resource or use of rights by a subject and alerting when 
+authorized use is detected or attempted.
+
+Applies to both people an systems.
+
+# Windows Authentication
+
+Windows local sign-in: Local Security Authority (LSA) - compares submitted credentials to a hash stored in 
+the Security Accounts Manager (SAM) database. Also referred as `Interactive Logon`.
+
+Windows network sign-in: The LSA can pass the credentials for authentication to a network service. The 
+preferred system for authentication is based on kerberos. But legacy systems might us NT LAN Manager (NTLM) 
+for authentication.
+
+Remote sign-in.
+
+# Linux Authentication
+
+In linux, local user account names are stored in
+
+	/etc/passwd
+
+When a users logs in using an interactive shell, the password is checked against a hash stored in
+
+	/etc/shadow
+
+A `pluggable authentication module (PAM)`.
+
+# Single Sign-on (SSO)
+
+Kerberos provides single sign on for active directory
+
+Kerberos named after Cerberos a three headed dog, consists of three parts
+	
+	- Client 
+	- Server
+	- Key Distribution Center (KDC)
+
+Ticket Granting Ticket: Is provided from the client to the TGS to request a service ticket.
+
+Service Ticket: Token that provides access to a target service
+
+# Asymmetric Encryption
+
+Public keys are used to encrypt a message, but due to how asymmetric encryption works, they can't decrypt a 
+message
+
+Messages can be decrypted with a private key with should only be kept to oneself.
+
+Encryption using a public key is relatively slow. So it is used to encrypt a symmetric encryption key for use 
+in a single session and exchange it securely. The symmetric encryption key is then used to encrypt the actual 
+message and can be used to decrypt a message as well.
+
+# Public Key Infrastructure (PKI)
+
+A framework for certificate authorities, digital certificates, sofware, services and other components 
+deployed for the purpose of validating subject identities.
+
+Self-signed certifcate: a certificate signed by the entity that issued it, rather than a certificate authority.
+
+# Key Management
+
+Refers to operational considerations for the various stages of lifecycle of an encryption key or key pair.
+
+- Key Generation: creates an asymmetric key pair or symmetric secret key of the required strength
+
+- Storage: prevents unauthorized access to a private or secret key and protects against loss or damage.
+
+- Revocation: Prevents use of the key if it is compromised. If a key is revoked, any data that was encrypted using it should be 
+re-encrypted using a new key.
+
+- Expiration and renewal: gives the certificate that validates a key a "shelf-life" to increase security. Certificates can be renewed 
+with the same key pair or a new key pair.
+
+A decentralized model means that keys are generated and managed directly on the computer or user account that will use the certificate.
+- Ease to deploy, harder to detect if a key is compromised.
+
+Some organizations prefer to centralize key management using a tool such as a Key Management System.
+
+In a cryptographic key management system, a dedicated server or appliance is used to generate and store keys.
+
+When a device or app needs to perform a cryptographic operation, it uses the Key Management Interoperability Protocol (KMIP)
+to communicate with the server.
+
+# Federated Identity and SAML
+
+Federation: making a network accessible to external entities, such as suppliers, partners, and customers.
+Means that the company trusts accounts created and managed by a different network.
+
+Logging in to Facebook using Google.
+
+- On-promises networks can use Active Directory and Kerberos.
+
+When implementing federation, authentication and authorization design comes with more constraints and additional requirements to ensure 
+interoperability between different platforms.
+
+Web applications might not support Kerberos, while third-party networks might not support direct federation with Active Directory.
+
+Other standard protocols or frameworks might be required for interoperability between web applications.
+
+These protocols use claims-based identity.
+
+1. A service provider (SP) establishes a trus relationship with an identity provider (IdP)
+2. The principal attempts to access a service provider
+3. The service provider redirects the principal to the IdP
+4. The principal authenticates with the IdP
+5. If authentication is successful, the principal obtains a claim, in the form of some sort of token or document signed by the IdP
+6. The principal presents the claim to the service provider
+
+# Security Assertion Markup Language (SAML)
+
+A XML-base data format use to exchange authentication information between a client and a service
+
+SAML assertions are written in eXtensible Markup Language (XML)
+Communications are established during HTTP/HTTPs and the Simple Object Access Protocol (SOAP)
+The secure tokens are signed using the XML signature specification
+
+The use of a digital signature allows the relying party to trust the identity provider.
+
+i) Other federated identity frameworks such as OAuth, use the SP terminology.
+   SAML uses the term relying party (RP)
+
+# Remote authentication
+
+Remote authentication methods
+
+Cloud: connecting to remote access server
+
+Different host over a private network: using SSH or RDP, target must be running these services to be able to 
+connect.
+
+Storing credentials on the remote access server is a risk.
+The AAA (authentication, authorization, and accounting) architecture helps mitigate these type of issues. It consists of:
+
+- Supplicant: The device requesting access, such as a user's laptops.
+- Network Access Server (NAS) or (NAP): Edge network appliances such as switches, access points and VPN gateways.
+  Also referred to as AAA clients or authenticators
+
+- AAA Server: The authentication server, positioned within the local network. This server either holds a 
+database of accounts and credentials. Or has access to a directory server that can authenticate requests or 
+issue SSO authorizations.
+
+# Remote Authentication Dial-In User Service (RADIUS)
+[UDP/PORTS 1812, 1813]
+Widely used for client device access over VPNs, uses UDP ports 1812 and 1813
+
+# Terminal Access Controller Access Control System (TACACS)
+[TCP/PORT 49]
+
+Similar to RADIUS but more flexible and reliable.
+Developed by Cisco but is also supported on many other third-party and open-source RADIUS implementations.
+
+- RADIUS is often used for network access control over END USER devices.
+
+- TACACS+ is often used in authenticating administrative access to routers and switches.
+
+It does a better job at maintaining authentication, authorization and accounting more discrete. Provides more granular control over 
+these aspects.
+
+TACACS+ supports reauthentication workflows better than RADIUS.
+
+i) sudo in Linux
+   UAC in Windows
+
+# Extra notes
+
+Authentication factors are criteria used to verify an entity's identity.
+It can be:
+
+- Something the entity knows (password), has (token) or is (biometrics).

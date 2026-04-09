@@ -5533,5 +5533,999 @@
         ],
         "explanation": "Addresses starting with fe80 are link-local, while global unicast addresses start with 001 (prefix 2 or 3 in hex)[cite: 1699, 1703].",
         "source_file": "notes/ipv4_basics.txt"
+    },
+    {
+        "id": "sec-3",
+        "topic": "Vulnerabilities",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "What poses a greater threat than zero-day vulnerabilities?",
+        "choices": [
+            "Newly released software",
+            "Unpatched or legacy systems",
+            "Strong password policies",
+            "Encrypted data storage"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Unpatched or legacy systems contain known vulnerabilities and are more common and exploitable than rare zero-day exploits[cite: 2501, 2502].",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "sec-4",
+        "topic": "Vulnerabilities",
+        "domain_id": 4,
+        "difficulty": "hard",
+        "prompt": "What can the most serious vulnerabilities allow an attacker to do?",
+        "choices": [
+            "Increase system performance",
+            "Execute arbitrary code on the system",
+            "Improve application security",
+            "Encrypt system files for data protection"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Serious vulnerabilities can allow for arbitrary code execution, giving attackers total control over a victim's system[cite: 2520].",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "sec-5",
+        "topic": "CIA Triad",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "What does 'integrity' in the context of the CIA Triad mean?",
+        "choices": [
+            "The data is stored and transferred as intended and that any modification is authorized.",
+            "Information is accessible to those authorized to view or modify it.",
+            "Certain information should only be known to certain people.",
+            "The system is protected against unauthorized access and attacks."
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "Integrity ensures that data remains accurate and consistent, preventing or detecting unauthorized modifications[cite: 2540, 2541].",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "sec-6",
+        "topic": "CIA Triad",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "What does 'availability' in the CIA Triad refer to?",
+        "choices": [
+            "The data is stored and transferred as intended and that any modification is authorized.",
+            "Information and resources are accessible to those authorized when needed.",
+            "Information is protected from unauthorized access except to those with the proper permissions.",
+            "The system is protected against unauthorized access, attacks, and disclosure."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Availability ensures that authorized users have reliable access to data, systems, and services when required[cite: 2564].",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "sec-7",
+        "topic": "Security Controls",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "What is the difficulty in implementing security controls?",
+        "choices": [
+            "They are always too complex to implement.",
+            "They can be expensive.",
+            "They are not supported by IT service frameworks.",
+            "They only address low-level risks."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "While essential, security controls can be expensive, requiring a balance between implementation cost and risk mitigation[cite: 2581, 2582].",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "sec-8",
+        "topic": "Risk Assessment",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "What does a risk assessment involve?",
+        "choices": [
+            "Auditing the company's financial statements for fraud",
+            "Auditing the company's systems for risk factors",
+            "Conducting physical security checks on company premises",
+            "Reviewing employee performance and productivity"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Risk assessment involves auditing systems and procedures to identify and evaluate risks to information assets[cite: 2597, 2598].",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "sec-9",
+        "topic": "Security Audits",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "What is the purpose of a cybersecurity audit?",
+        "choices": [
+            "To assess the organization's IT budget",
+            "To ensure a security posture aligns with established standards",
+            "To train employees on cybersecurity best practices",
+            "To install security software on all company devices"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Audits are comprehensive reviews ensuring that security measures align with established standards and best practices[cite: 2620].",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "sec-10",
+        "topic": "PII",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "What is Personally Identifiable Information (PII)?",
+        "choices": [
+            "Any data that can be publicly accessed",
+            "Data that can identify, contact, or locate an individual",
+            "Information related to a company's financial status",
+            "Data that is encrypted and stored securely"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "PII is any data that can identify, contact, or locate a single person, such as SSNs, names, or biometric data[cite: 2642, 2643].",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "sec-11",
+        "topic": "Compliance",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "Under what condition can an organization process credit card transactions directly?",
+        "choices": [
+            "If they use cloud storage",
+            "If they have an internet presence",
+            "If they adopt the PCI DSS standard",
+            "If they have encrypted all their emails"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Compliance with PCI DSS is mandatory for any organization directly processing credit card transactions[cite: 2663, 2664].",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "sec-12",
+        "topic": "Data Sovereignty",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "What does data locality require?",
+        "choices": [
+            "Data to be stored in the cloud",
+            "Data to be encrypted at all times",
+            "Data storage within certain geographical boundaries",
+            "Unlimited data transfer between countries"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Data locality requires storing and processing data within specific geographical borders to protect privacy or comply with sovereignty laws[cite: 2682, 2683].",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "sec-13",
+        "topic": "Encryption",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "What is meant by 'data at rest'?",
+        "choices": [
+            "Data being transmitted over a network",
+            "Data stored on a persistent storage media",
+            "Data present in volatile memory",
+            "Data being actively processed by a computer"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Data at rest refers to data residing on persistent storage media like hard drives or SSDs, not currently being processed or transmitted[cite: 2699].",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "sec-14",
+        "topic": "Encryption",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "What does a ciphertext represent in the context of encryption?",
+        "choices": [
+            "The original human-readable information",
+            "The encrypted version of plaintext",
+            "The key used to encrypt the plaintext",
+            "The conversion of plaintext into a hash"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Ciphertext is the unreadable, encrypted output of the encryption process applied to human-readable plaintext[cite: 2721].",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "sec-15",
+        "topic": "Encryption",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "What is the role of encryption in an access control solution?",
+        "choices": [
+            "To physically secure devices and resources",
+            "To serve as the only method of access control",
+            "To convert plaintext into ciphertext",
+            "To give readable access to data"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Encryption is a logical security tool that converts readable data into unreadable ciphertext to ensure confidentiality[cite: 2746, 2747].",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "sec-16",
+        "topic": "Deception",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "What is a honeypot in the context of cybersecurity?",
+        "choices": [
+            "A type of malware designed to steal data",
+            "A computer system set up to attract attackers",
+            "A software tool used for encrypting data",
+            "A firewall configuration technique"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "A honeypot is a decoy system designed to lure attackers so their behavior and strategies can be studied[cite: 2768, 2769].",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "sec-17",
+        "topic": "Deception",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "What is one of the key benefits of using a honeypot or honeynet in cybersecurity?",
+        "choices": [
+            "Completely eliminating cyber threats",
+            "Providing an early warning of attacks",
+            "Increasing the encryption strength",
+            "Reducing the need for other security measures"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Honeypots provide early warning of attack attempts, allowing teams to respond before critical systems are impacted[cite: 2788, 2789].",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "sec-spoof-1",
+        "topic": "DNS Spoofing",
+        "domain_id": 4,
+        "difficulty": "hard",
+        "prompt": "You are the IT security manager for a mid-sized corporation. One morning, several employees report that when they try to access the company's internal portal, they are redirected to an external website that looks similar but asks for their credentials in a suspicious manner. Upon investigation, you suspect a DNS spoofing attack. What would be the MOST immediate and effective actions to take? (Select two.)",
+        "choices": [
+            "Increase the security settings on the corporate firewall.",
+            "Inspect DNS traffic for anomalies.",
+            "Instruct all employees to restart their computers.",
+            "Scan the network for rogue DHCP servers.",
+            "Update antivirus software on all employee computers."
+        ],
+        "answer_indices": [
+            1,
+            3
+        ],
+        "explanation": "Scanning for rogue DHCP servers and inspecting DNS traffic help identify the source of spoofed responses, which may be caused by ARP poisoning or rogue devices configuring clients with malicious DNS resolver addresses.",
+        "source_file": "notes/security_fundamentals.txt"
+    },
+    {
+        "id": "dns-zone-1",
+        "topic": "DNS Zones",
+        "domain_id": 2,
+        "difficulty": "standard",
+        "prompt": "What is the primary function of external DNS zones?",
+        "choices": [
+            "To facilitate security for DNS management",
+            "To facilitate internal clients' access to internal resources",
+            "To provide name resolution for Internet clients accessing public services",
+            "To perform recursive queries for internal DNS servers"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "External DNS zones host resource records that must be accessible to public Internet clients, such as records for web servers or external-facing mail servers.",
+        "source_file": "notes/protocols_ports_compTIA.txt"
+    },
+    {
+        "id": "qos-802-1",
+        "topic": "Traffic Management",
+        "domain_id": 2,
+        "difficulty": "hard",
+        "prompt": "How does IEEE 802.1p work in conjunction with VLANs for traffic management?",
+        "choices": [
+            "By encrypting data traffic",
+            "By segregating voice and data traffic into different VLANs",
+            "By prioritizing internet access",
+            "By assigning IP addresses to devices"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "IEEE 802.1p allows for traffic prioritization at the MAC layer. When used with VLANs, it enables the segregation of voice and data traffic, ensuring time-sensitive voice packets receive higher priority.",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "osi-layer3-1",
+        "topic": "Network Layer",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "Which of the following BEST describes a datagram used in Layer 3 of the OSI model?",
+        "choices": [
+            "A protocol used to establish secure connections",
+            "A physical device that amplifies signals",
+            "A type of memory buffer for storing data",
+            "A self-contained packet sent without pre-established sessions"
+        ],
+        "answer_indices": [
+            3
+        ],
+        "explanation": "At the Network layer (Layer 3), a datagram is a self-contained unit of data that is routed from source to destination without needing a pre-established connection or session between the nodes.",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "mgmt-audit-1",
+        "topic": "Change Management",
+        "domain_id": 3,
+        "difficulty": "hard",
+        "prompt": "A company's network has experienced several outages due to unauthorized changes to device configurations. Which of the following actions should the network administrator prioritize to address this issue and ensure compliance with security policies?",
+        "choices": [
+            "Regularly update the configuration management system with production configurations.",
+            "Implement a strict change management process.",
+            "Increase the frequency of performance monitoring.",
+            "Conduct regular training sessions for IT staff."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "A strict change management process ensures that all modifications to network devices are authorized, tested, and documented, which directly prevents unauthorized changes and related outages.",
+        "source_file": "notes/lifecycle_8_1_6.txt"
+    },
+    {
+        "id": "sec-apt-1",
+        "topic": "Threats",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "What does the term 'advanced persistent threat (APT)' refer to?",
+        "choices": [
+            "A sophisticated malware attack that remains undetected",
+            "A basic form of malware easily removed",
+            "A type of antivirus software",
+            "A firewall feature that blocks all traffic"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "An APT refers to a sophisticated and prolonged cyberattack where an intruder gains access to a network and remains undetected for an extended period, often to steal sensitive data.",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "balance-1",
+        "topic": "Load Balancers",
+        "domain_id": 2,
+        "difficulty": "hard",
+        "prompt": "Which type of load balancer can make forwarding decisions based on URL requests or specific data types?",
+        "choices": [
+            "Layer 2 switch",
+            "Layer 4 switch",
+            "Layer 7 switch",
+            "NIC teaming"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "A Layer 7 load balancer (content switch) operates at the Application layer and can inspect data such as URLs or cookie headers to make advanced traffic distribution decisions.",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "voip-data-1",
+        "topic": "VoIP",
+        "domain_id": 2,
+        "difficulty": "hard",
+        "prompt": "What happens to data traffic from a PC in a VoIP configuration with an embedded handset switch?",
+        "choices": [
+            "It is encrypted and sent through a separate VLAN.",
+            "It is forwarded to the access switch as untagged frames.",
+            "It is converted to tagged frames and prioritized.",
+            "It is blocked to ensure voice bandwidth."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "In this setup, the PC's data traffic is typically forwarded as untagged frames, while the phone's voice traffic is tagged with a VLAN ID, allowing the access switch to differentiate and prioritize them.",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "smtp-sec-1",
+        "topic": "SMTP",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "Which port should be configured for secure SMTP submission with explicit TLS?",
+        "choices": [
+            "Port 25",
+            "Port 993",
+            "Port 587",
+            "Port 80"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Port 587 is the standard port for client-to-server SMTP submission using STARTTLS (explicit TLS) to secure email transmission.",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "class-c-1",
+        "topic": "Addressing",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "Which of the following IP addresses are Class C? (Select TWO)",
+        "choices": [
+            "125.166.11.0",
+            "240.0.0.0",
+            "223.16.5.0",
+            "192.15.5.55",
+            "189.189.5.2"
+        ],
+        "answer_indices": [
+            2,
+            3
+        ],
+        "explanation": "Class C IPv4 addresses have a first octet range of 192 to 223.",
+        "source_file": "notes/ipv4_basics.txt"
+    },
+    {
+        "id": "rack-u-1",
+        "topic": "Racks",
+        "domain_id": 2,
+        "difficulty": "standard",
+        "prompt": "How is rack height measured?",
+        "choices": [
+            "In inches",
+            "In centimeters",
+            "In 'U' units",
+            "In meters"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Rack height is measured in 'U' units, where 1U represents a standardized height of 1.75 inches.",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "fiber-ont-1",
+        "topic": "FTTP",
+        "domain_id": 2,
+        "difficulty": "standard",
+        "prompt": "What is the purpose of an ONT in FTTP?",
+        "choices": [
+            "To convert the optical signal to an electrical one",
+            "To amplify the fiber optic signal",
+            "To split the fiber optic signal into multiple directions",
+            "To encrypt the data transmitted over fiber"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "The Optical Network Terminal (ONT) converts the optical signals from a fiber optic link into electrical signals that a standard router can process.",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "show-route-1",
+        "topic": "Routing Table",
+        "domain_id": 5,
+        "difficulty": "standard",
+        "prompt": "What command checks for a specific route to an IP network in a routing table?",
+        "choices": [
+            "ping w.x.y.z",
+            "traceroute w.x.y.z",
+            "show ip route w.x.y.z",
+            "netstat -r"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "The 'show ip route [address]' command is used on Cisco devices to display the specific routing entry for a given destination address.",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "eth-frame-1",
+        "topic": "Frames",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "Which of the following is NOT a component of a standard Ethernet frame header?",
+        "choices": [
+            "EtherType field",
+            "Error checking field",
+            "Payload size indicator",
+            "MAC address fields"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "A standard Ethernet frame header includes MAC addresses and an EtherType field. Error checking (FCS) is in the trailer. It does not have a dedicated payload size indicator; that is part of the overall frame structure.",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "sol-change-1",
+        "topic": "Troubleshooting",
+        "domain_id": 5,
+        "difficulty": "standard",
+        "prompt": "What is MOST likely recommended when troubleshooting requires a change to the environment?",
+        "choices": [
+            "Ignoring procedures and making the change immediately.",
+            "Following a change management plan.",
+            "Making all changes at once to save time.",
+            "Only making changes without notification."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "When a troubleshooting solution requires environmental changes, following a change management plan ensures the fix is documented and minimizes the risk of new issues.",
+        "source_file": "notes/vlans_trunking.txt"
+    },
+    {
+        "id": "netstat-ip-1",
+        "topic": "netstat",
+        "domain_id": 5,
+        "difficulty": "standard",
+        "prompt": "Which netstat switch filters sockets by IPv4 or IPv6 on Linux?",
+        "choices": [
+            "-4 or -6",
+            "-a",
+            "-n",
+            "-p"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "In Linux, the -4 and -6 switches are used with netstat to filter results specifically for IPv4 or IPv6 sockets.",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "ipconfig-gw-1",
+        "topic": "ipconfig",
+        "domain_id": 5,
+        "difficulty": "standard",
+        "prompt": "Which utility views default gateway info on a Windows system?",
+        "choices": [
+            "tcpdump",
+            "ipconfig",
+            "ifconfig",
+            "netstat"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "On Windows, 'ipconfig' is the primary command-line tool used to view current network configuration details, including the default gateway.",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "voip-sess-1",
+        "topic": "VoIP",
+        "domain_id": 2,
+        "difficulty": "standard",
+        "prompt": "What is the primary function of session control protocols in VoIP?",
+        "choices": [
+            "Encrypting voice data",
+            "Compressing video files",
+            "Establishing communications sessions",
+            "Increasing internet speed"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Session control protocols (like SIP) are responsible for establishing, managing, and terminating real-time communication sessions between endpoints.",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "eth-type-1",
+        "topic": "Frames",
+        "domain_id": 1,
+        "difficulty": "hard",
+        "prompt": "How is the EtherType value used to distinguish between payload type and length?",
+        "choices": [
+            "Values of 0x0600 or greater indicate protocol type; less indicate length.",
+            "Always used for length regardless of value.",
+            "Always used for type regardless of value.",
+            "Values less than 0x0600 indicate protocol type."
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "EtherType values of 0x0600 (1536 decimal) or higher identify the protocol in the payload; smaller values are interpreted as the payload length.",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "mgmt-audit-1_new_0",
+        "topic": "Change Management",
+        "domain_id": 3,
+        "difficulty": "hard",
+        "prompt": "A company experiences outages due to unauthorized changes. Which action should be prioritized to address this and ensure compliance?",
+        "choices": [
+            "Regularly update the configuration management system with production configurations.",
+            "Implement a strict change management process.",
+            "Increase the frequency of performance monitoring.",
+            "Conduct regular training sessions for IT staff."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "A strict change management process ensures that all modifications to network devices are authorized, tested, and documented, which directly prevents unauthorized changes and related outages.",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "phys-9",
+        "topic": "Gigabit Ethernet Connectors",
+        "domain_id": 2,
+        "difficulty": "standard",
+        "prompt": "For Gigabit Ethernet and better, why is the performance of connectors increasingly critical?",
+        "choices": [
+            "Because Gigabit Ethernet uses more power.",
+            "Because it uses all four pairs for transmission.",
+            "Because it requires fiber optic connectors.",
+            "Because it only works with wireless connections."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Gigabit Ethernet and higher standards use all four pairs of wires in a cable for transmission, which significantly increases sensitivity to crosstalk. This makes high-performance connectors essential to maintain signal integrity and minimize interference.",
+        "source_file": "notes/connectors_sfp.txt"
+    },
+    {
+        "id": "impl-5",
+        "topic": "High Availability",
+        "domain_id": 2,
+        "difficulty": "hard",
+        "prompt": "What is the primary benefit of using a redundancy protocol like the Common Address Redundancy Protocol (CARP) in a high availability cluster?",
+        "choices": [
+            "It reduces the overall cost of the cluster.",
+            "It allows for unlimited scalability of the cluster.",
+            "It enables failover to a passive node if the active one fails.",
+            "It increases the processing power of each node in the cluster."
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "The primary benefit of redundancy protocols like CARP is providing failover capabilities. This ensures that if an active node fails, a passive node can automatically take over the virtual IP and workload to maintain service availability.",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "mgmt-41",
+        "topic": "Network Troubleshooting Tools",
+        "domain_id": 5,
+        "difficulty": "standard",
+        "prompt": "A network engineer needs to identify all services on a Linux-based server that are currently listening for incoming connections. Which netstat command should the network engineer use?",
+        "choices": [
+            "netstat -l",
+            "netstat -at",
+            "netstat -s",
+            "netstat -p"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "The -l switch with netstat is used specifically to list only the ports that are currently in a 'listening' state, helping identify active services waiting for connections.",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "routing-2",
+        "topic": "Routing Table",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "What does a router configured as a default gateway use to determine the best path for forwarding packets?",
+        "choices": [
+            "Its MAC address table",
+            "Its routing table",
+            "Its ARP cache",
+            "Its DHCP leases"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "A router uses its routing table, which contains paths to various network destinations, to make informed decisions on the best route for forwarding packets across different networks.",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "osi-8",
+        "topic": "TCP Segmentation",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "What does TCP use to divide data from the Application layer?",
+        "choices": [
+            "Frames",
+            "Packets",
+            "Segments",
+            "Bits"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "TCP operates at the Transport layer and divides the stream of data from the Application layer into manageable units called segments.",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "mgmt-42",
+        "topic": "Lifecycle Management",
+        "domain_id": 3,
+        "difficulty": "standard",
+        "prompt": "Why might downgrading software or firmware be necessary?",
+        "choices": [
+            "To improve the system's security",
+            "To fix a problem caused by a recent update",
+            "To increase the system's processing speed",
+            "To reduce the cost of IT maintenance"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Downgrading is often a troubleshooting step used to restore system stability if a recent update or upgrade introduced bugs or performance issues.",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "impl-6",
+        "topic": "SOHO Routers",
+        "domain_id": 2,
+        "difficulty": "standard",
+        "prompt": "Which of the following BEST describes the primary function of a SOHO router?",
+        "choices": [
+            "A device that exclusively manages internal storage solutions for small offices.",
+            "A device that primarily forwards traffic between the LAN and the WAN, while also providing additional functionalities.",
+            "A device designed solely for enhancing the security of personal devices within a home network.",
+            "A device that increases the range of wireless signals for devices connected to a MAN."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "A SOHO router's primary job is to route traffic between the local network (LAN) and the internet (WAN), though it often integrates other features like switches, access points, and firewalls.",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "sec-18",
+        "topic": "Data in Transit",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "A network engineer needs to ensure that data transmitted between a main office and a remote branch cannot be intercepted or tampered with. Which solution should be implemented?",
+        "choices": [
+            "Use cryptographic hash algorithms to hash all data before transmission.",
+            "Implement TLS encryption for the data being transmitted.",
+            "Apply database encryption to the data before sending it over the network.",
+            "Encrypt the data using a symmetric key algorithm and send the key along with the data."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "TLS (Transport Layer Security) is designed to secure data in transit by providing encryption and integrity checks, preventing unauthorized interception or modification during transmission.",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "phys-10",
+        "topic": "Modular Transceivers",
+        "domain_id": 2,
+        "difficulty": "standard",
+        "prompt": "Which type of connectors do SFP transceivers use?",
+        "choices": [
+            "RJ-45",
+            "LC",
+            "SC",
+            "MPO"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Small Form Factor Pluggable (SFP) transceivers typically use LC (Lucent Connector) connectors for fiber optic connections due to their small size and high performance.",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "ops-5",
+        "topic": "Power Management",
+        "domain_id": 3,
+        "difficulty": "standard",
+        "prompt": "Which of the following ensures that power is supplied to a server or device during short power outages?",
+        "choices": [
+            "Uninterruptible power supply",
+            "Surge protector",
+            "Line conditioner",
+            "Backup generator"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "A UPS provides near-instantaneous power from a battery backup during short outages, preventing system crashes and data loss.",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "phys-11",
+        "topic": "Ethernet Adapters",
+        "domain_id": 2,
+        "difficulty": "standard",
+        "prompt": "What type of cabling do most Ethernet adapters designed for use with copper cabling now support?",
+        "choices": [
+            "Coaxial cable",
+            "Gigabit Ethernet",
+            "HDMI cable",
+            "USB cable"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Modern copper Ethernet adapters are standardized to support Gigabit Ethernet (1000BASE-T) over twisted-pair cabling.",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "mgmt-43",
+        "topic": "Troubleshooting Tools",
+        "domain_id": 5,
+        "difficulty": "standard",
+        "prompt": "What is the default probe message type used by the traceroute command on most non-Windows systems?",
+        "choices": [
+            "ICMP Echo Request",
+            "TCP SYN",
+            "UDP",
+            "ARP Request"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "While the Windows 'tracert' tool uses ICMP Echo Requests, the standard 'traceroute' utility (found on Linux and macOS) uses UDP packets by default to probe the path to a destination.",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "mgmt-44",
+        "topic": "Windows Configuration",
+        "domain_id": 2,
+        "difficulty": "hard",
+        "prompt": "Which netsh command should you use to configure a Windows server's Ethernet adapter with a static IP of 192.168.1.100, mask 255.255.255.0, and gateway 192.168.1.1?",
+        "choices": [
+            "netsh interface ip set address 'Ethernet' dhcp",
+            "netsh interface ip set address 'Ethernet' static 192.168.1.100 255.255.255.0 192.168.1.1",
+            "netsh interface ip renew 'Ethernet'",
+            "netsh interface ip show config 'Ethernet'"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The 'netsh interface ip set address' command with the 'static' parameter allows for the manual configuration of IP, subnet, and gateway information on a specific interface.",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "mgmt-45",
+        "topic": "Switch Commands",
+        "domain_id": 3,
+        "difficulty": "standard",
+        "prompt": "What does the show config command display on a switch?",
+        "choices": [
+            "The switch's IP address",
+            "The switch's current configuration",
+            "The list of connected devices",
+            "The switch's version information"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The 'show config' (or 'show running-config') command is used to display the active operational parameters and settings of a network switch.",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "ip-10",
+        "topic": "Internet Infrastructure",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "Which of the following BEST describes the major infrastructure of the Internet?",
+        "choices": [
+            "A network of personal computers connected via Bluetooth.",
+            "High bandwidth trunks connecting Internet eXchange Points (IXPs).",
+            "A series of underground tunnels used exclusively for fiber-optic cables.",
+            "Satellite constellations providing global wireless access."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The Internet backbone consists of high-capacity data trunks that link global Internet Exchange Points (IXPs), allowing different ISPs and networks to interconnect.",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "ip-11",
+        "topic": "DHCPv6",
+        "domain_id": 2,
+        "difficulty": "hard",
+        "prompt": "What is the difference between stateless and stateful modes in DHCPv6?",
+        "choices": [
+            "Stateless mode provides a routable IP address, while stateful mode does not.",
+            "Stateless mode uses multicast for discovery, while stateful mode uses broadcast.",
+            "Stateful mode provides a routable IP address and additional options, while stateless mode only provides additional options.",
+            "Stateful mode is used exclusively for IPv4 networks, while stateless mode is used for IPv6 networks."
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "In stateful DHCPv6, the server assigns and tracks IP addresses. In stateless DHCPv6, the server only provides configuration options (like DNS) while the client auto-configures its own IP address.",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "osi-9",
+        "topic": "Common Ports",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "prompt": "A server is running Microsoft SQL Server and is replicating data. Which principal port is the application service using?",
+        "choices": [
+            "TCP 1433",
+            "TCP 1521",
+            "TCP 3306",
+            "TCP 5432"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "Microsoft SQL Server uses TCP port 1433 for client connections and data replication.",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "mgmt-46",
+        "topic": "Troubleshooting Tools",
+        "domain_id": 5,
+        "difficulty": "hard",
+        "prompt": "Which switch can be used with the Windows tracert command to specify a timeout in milliseconds?",
+        "choices": [
+            "-d",
+            "-h",
+            "-w",
+            "-6"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "The -w switch in the Windows tracert command allows the user to define the timeout period (in milliseconds) for each probe response.",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "ops-6",
+        "topic": "Switching Issues",
+        "domain_id": 5,
+        "difficulty": "standard",
+        "prompt": "What can cause a broadcast storm in a network?",
+        "choices": [
+            "Low CPU utilization",
+            "Insufficient storage space on network devices",
+            "Switching loops",
+            "High bandwidth availability"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Switching loops occur when multiple paths exist between switches without STP, causing frames to circulate indefinitely and flood the network, resulting in a broadcast storm.",
+        "source_file": "notes/comptia_network_objectives.txt"
+    },
+    {
+        "id": "sec-19",
+        "topic": "Security Controls",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "What is a security control?",
+        "choices": [
+            "A tool designed to eliminate all risks in an IT system.",
+            "A procedure or tool designed to give a system properties (like CIA).",
+            "A policy that restricts employee use of company IT resources.",
+            "A legal requirement for data protection."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Security controls are technical or administrative measures (tools, procedures, or activities) designed to protect assets and ensure the CIA (Confidentiality, Integrity, Availability) of a system.",
+        "source_file": "notes/security_fundamentals.txt"
     }
 ]

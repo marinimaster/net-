@@ -12,30 +12,32 @@
         "total": 2
     },
     "port-24": {
-        "correct": 3,
-        "total": 3,
-        "consecutive_correct": 1
+        "correct": 4,
+        "total": 4,
+        "consecutive_correct": 2
     },
     "svc-1": {
         "correct": 3,
         "total": 3
     },
     "diagram-2": {
-        "correct": 3,
-        "total": 3
-    },
-    "avail-1": {
         "correct": 4,
         "total": 4,
         "consecutive_correct": 1
+    },
+    "avail-1": {
+        "correct": 5,
+        "total": 5,
+        "consecutive_correct": 2
     },
     "port-21": {
         "correct": 0,
         "total": 1
     },
     "mail-1": {
-        "correct": 2,
-        "total": 2
+        "correct": 3,
+        "total": 3,
+        "consecutive_correct": 1
     },
     "metric-3": {
         "correct": 3,
@@ -46,9 +48,9 @@
         "total": 2
     },
     "route-1": {
-        "correct": 2,
-        "total": 2,
-        "consecutive_correct": 1
+        "correct": 3,
+        "total": 3,
+        "consecutive_correct": 2
     },
     "net-2": {
         "correct": 3,
@@ -56,8 +58,9 @@
         "consecutive_correct": 1
     },
     "route-2": {
-        "correct": 1,
-        "total": 1
+        "correct": 2,
+        "total": 2,
+        "consecutive_correct": 1
     },
     "disc-3": {
         "correct": 0,
@@ -104,8 +107,9 @@
         "total": 1
     },
     "port-19": {
-        "correct": 2,
-        "total": 3
+        "correct": 3,
+        "total": 4,
+        "consecutive_correct": 1
     },
     "agree-2": {
         "correct": 3,
@@ -118,17 +122,18 @@
     },
     "port-26": {
         "correct": 3,
-        "total": 3,
-        "consecutive_correct": 1
+        "total": 4,
+        "consecutive_correct": 0
     },
     "port-10": {
-        "correct": 1,
-        "total": 1
-    },
-    "life-5": {
         "correct": 2,
         "total": 2,
         "consecutive_correct": 1
+    },
+    "life-5": {
+        "correct": 4,
+        "total": 4,
+        "consecutive_correct": 3
     },
     "port-20": {
         "correct": 2,
@@ -148,21 +153,23 @@
         "consecutive_correct": 1
     },
     "fault-3": {
-        "correct": 1,
-        "total": 1
+        "correct": 2,
+        "total": 2,
+        "consecutive_correct": 1
     },
     "port-15": {
-        "correct": 5,
-        "total": 5,
-        "consecutive_correct": 1
+        "correct": 6,
+        "total": 6,
+        "consecutive_correct": 2
     },
     "config-3": {
         "correct": 3,
         "total": 3
     },
     "route-5": {
-        "correct": 3,
-        "total": 3
+        "correct": 4,
+        "total": 4,
+        "consecutive_correct": 1
     },
     "drp-2": {
         "correct": 4,
@@ -353,8 +360,8 @@
     },
     "wifi-1": {
         "correct": 1,
-        "total": 2,
-        "consecutive_correct": 1
+        "total": 3,
+        "consecutive_correct": 0
     },
     "route-example-1": {
         "correct": 1,
@@ -374,8 +381,9 @@
         "total": 2
     },
     "stp-1": {
-        "correct": 2,
-        "total": 2
+        "correct": 3,
+        "total": 3,
+        "consecutive_correct": 1
     },
     "wifi-2": {
         "correct": 1,
@@ -391,20 +399,23 @@
         "total": 2
     },
     "tcp-nuance-1": {
-        "correct": 0,
-        "total": 1
+        "correct": 1,
+        "total": 2,
+        "consecutive_correct": 1
     },
     "svc-5": {
-        "correct": 2,
-        "total": 2
+        "correct": 3,
+        "total": 3,
+        "consecutive_correct": 1
     },
     "metric-1": {
         "correct": 1,
         "total": 1
     },
     "tls-nuance-1": {
-        "correct": 1,
-        "total": 1
+        "correct": 2,
+        "total": 2,
+        "consecutive_correct": 1
     },
     "wifi-multi-1": {
         "correct": 2,
@@ -421,8 +432,9 @@
         "consecutive_correct": 1
     },
     "port-16": {
-        "correct": 2,
-        "total": 2
+        "correct": 3,
+        "total": 3,
+        "consecutive_correct": 1
     },
     "gen-stp-v3-5": {
         "correct": 1,
@@ -433,8 +445,9 @@
         "total": 2
     },
     "perf-2": {
-        "correct": 2,
-        "total": 2
+        "correct": 3,
+        "total": 3,
+        "consecutive_correct": 1
     },
     "gen-stp-v3-9": {
         "correct": 1,
@@ -512,8 +525,9 @@
         "total": 1
     },
     "config-1": {
-        "correct": 1,
-        "total": 1
+        "correct": 2,
+        "total": 2,
+        "consecutive_correct": 1
     },
     "switch-cam-1": {
         "correct": 1,
@@ -524,8 +538,9 @@
         "total": 1
     },
     "life-4": {
-        "correct": 1,
-        "total": 1
+        "correct": 2,
+        "total": 2,
+        "consecutive_correct": 1
     },
     "stp-port-1": {
         "correct": 1,
@@ -537,9 +552,9 @@
         "consecutive_correct": 1
     },
     "config-2": {
-        "correct": 2,
-        "total": 2,
-        "consecutive_correct": 1
+        "correct": 3,
+        "total": 3,
+        "consecutive_correct": 2
     },
     "event-1": {
         "correct": 2,
@@ -559,8 +574,9 @@
         "total": 1
     },
     "time-4": {
-        "correct": 2,
-        "total": 2
+        "correct": 3,
+        "total": 3,
+        "consecutive_correct": 1
     },
     "event-8": {
         "correct": 1,
@@ -588,8 +604,9 @@
         "total": 3
     },
     "poe-6": {
-        "correct": 0,
-        "total": 2
+        "correct": 1,
+        "total": 3,
+        "consecutive_correct": 1
     },
     "poe-multi-1": {
         "correct": 3,
@@ -602,29 +619,31 @@
     },
     "poe-4": {
         "correct": 2,
-        "total": 2
+        "total": 3,
+        "consecutive_correct": 0
     },
     "poe-limit-1": {
         "correct": 2,
         "total": 2
     },
     "poe-3": {
-        "correct": 1,
-        "total": 2
+        "correct": 2,
+        "total": 3,
+        "consecutive_correct": 1
     },
     "wifi-6": {
         "correct": 1,
         "total": 2
     },
     "wifi-3": {
-        "correct": 3,
-        "total": 4,
-        "consecutive_correct": 2
+        "correct": 4,
+        "total": 5,
+        "consecutive_correct": 3
     },
     "wifi-mimo-1": {
-        "correct": 1,
-        "total": 2,
-        "consecutive_correct": 0
+        "correct": 2,
+        "total": 3,
+        "consecutive_correct": 1
     },
     "wifi-speed-1": {
         "correct": 2,
@@ -632,27 +651,28 @@
         "consecutive_correct": 1
     },
     "wifi-range-1": {
-        "correct": 1,
-        "total": 1
+        "correct": 2,
+        "total": 2,
+        "consecutive_correct": 1
     },
     "wifi-4": {
-        "correct": 1,
-        "total": 3,
-        "consecutive_correct": 1
+        "correct": 2,
+        "total": 4,
+        "consecutive_correct": 2
     },
     "wifi-retro-1": {
-        "correct": 2,
-        "total": 3,
-        "consecutive_correct": 1
+        "correct": 3,
+        "total": 4,
+        "consecutive_correct": 2
     },
     "wifi-9": {
         "correct": 1,
         "total": 1
     },
     "wifi-8": {
-        "correct": 1,
-        "total": 2,
-        "consecutive_correct": 1
+        "correct": 2,
+        "total": 3,
+        "consecutive_correct": 2
     },
     "route-logic-1": {
         "correct": 0,
@@ -686,9 +706,9 @@
         "total": 1
     },
     "disc-4": {
-        "correct": 2,
-        "total": 2,
-        "consecutive_correct": 1
+        "correct": 3,
+        "total": 3,
+        "consecutive_correct": 2
     },
     "port-6": {
         "correct": 1,
@@ -696,7 +716,8 @@
     },
     "port-22": {
         "correct": 0,
-        "total": 1
+        "total": 2,
+        "consecutive_correct": 0
     },
     "tm-14": {
         "correct": 2,
@@ -704,8 +725,9 @@
         "consecutive_correct": 1
     },
     "port-3": {
-        "correct": 1,
-        "total": 1
+        "correct": 3,
+        "total": 3,
+        "consecutive_correct": 2
     },
     "mail-2": {
         "correct": 1,
@@ -805,14 +827,14 @@
         "consecutive_correct": 1
     },
     "phys-8": {
-        "correct": 1,
-        "total": 1,
-        "consecutive_correct": 1
+        "correct": 2,
+        "total": 2,
+        "consecutive_correct": 2
     },
     "tm-13": {
-        "correct": 1,
-        "total": 1,
-        "consecutive_correct": 1
+        "correct": 2,
+        "total": 2,
+        "consecutive_correct": 2
     },
     "dns-3": {
         "correct": 1,
@@ -835,9 +857,9 @@
         "consecutive_correct": 1
     },
     "wifi-7": {
-        "correct": 1,
-        "total": 1,
-        "consecutive_correct": 1
+        "correct": 2,
+        "total": 2,
+        "consecutive_correct": 2
     },
     "snmp-sec-1": {
         "correct": 1,
@@ -863,5 +885,125 @@
         "correct": 1,
         "total": 1,
         "consecutive_correct": 1
+    },
+    "class-c-1": {
+        "correct": 1,
+        "total": 1,
+        "consecutive_correct": 1
+    },
+    "svc-2": {
+        "correct": 0,
+        "total": 1,
+        "consecutive_correct": 0
+    },
+    "sec-4": {
+        "correct": 1,
+        "total": 1,
+        "consecutive_correct": 1
+    },
+    "mgmt-2": {
+        "correct": 1,
+        "total": 1,
+        "consecutive_correct": 1
+    },
+    "metric-4": {
+        "correct": 1,
+        "total": 1,
+        "consecutive_correct": 1
+    },
+    "fiber-smf-mmf-1": {
+        "correct": 1,
+        "total": 1,
+        "consecutive_correct": 1
+    },
+    "event-10": {
+        "correct": 1,
+        "total": 1,
+        "consecutive_correct": 1
+    },
+    "routing-2": {
+        "correct": 1,
+        "total": 1,
+        "consecutive_correct": 1
+    },
+    "osi-3": {
+        "correct": 1,
+        "total": 1,
+        "consecutive_correct": 1
+    },
+    "osi-4": {
+        "correct": 1,
+        "total": 1,
+        "consecutive_correct": 1
+    },
+    "snmp-v3-1": {
+        "correct": 1,
+        "total": 1,
+        "consecutive_correct": 1
+    },
+    "net-5": {
+        "correct": 1,
+        "total": 1,
+        "consecutive_correct": 1
+    },
+    "impl-5": {
+        "correct": 1,
+        "total": 1,
+        "consecutive_correct": 1
+    },
+    "tcp-flag-1": {
+        "correct": 1,
+        "total": 1,
+        "consecutive_correct": 1
+    },
+    "diagram-1": {
+        "correct": 1,
+        "total": 1,
+        "consecutive_correct": 1
+    },
+    "tm-7": {
+        "correct": 1,
+        "total": 1,
+        "consecutive_correct": 1
+    },
+    "ip-11": {
+        "correct": 1,
+        "total": 1,
+        "consecutive_correct": 1
+    },
+    "sec-unique-2": {
+        "correct": 1,
+        "total": 1,
+        "consecutive_correct": 1
+    },
+    "mgmt-46": {
+        "correct": 2,
+        "total": 2,
+        "consecutive_correct": 2
+    },
+    "mgmt-14": {
+        "correct": 1,
+        "total": 1,
+        "consecutive_correct": 1
+    },
+    "time-1": {
+        "correct": 1,
+        "total": 1,
+        "consecutive_correct": 1
+    },
+    "dns-1": {
+        "correct": 1,
+        "total": 1,
+        "consecutive_correct": 1
+    },
+    "event-11": {
+        "correct": 0,
+        "total": 1,
+        "consecutive_correct": 0
+    },
+    "hierarchy-1": {
+        "correct": 0,
+        "total": 1,
+        "consecutive_correct": 0
     }
 }

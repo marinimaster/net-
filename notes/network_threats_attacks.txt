@@ -1,0 +1,220 @@
+# External vs Internal Threats
+
+- External actor: one that has no account or authorized access to the target system.
+
+- Internal actor (insider): one that has been granted permissions on the system.
+
+# Threat research
+
+It is a Counter Intelligence Gathering Effort in which security companies and researchers attempt to discover the 
+tactics, techniques, and procedures (TTP) of threat actors.
+
+The outputs from the primary research undertaken by security solutions providers and academics can take three 
+main forms:
+
+	- Behavioral threat research: Narritive commentary describing examples of attacks and TTPs gathered 
+	through primary research sources.
+
+	- Reputational threat intelligence: Lists of IP addresses and domains associated to with malicious 
+	behavior, plus signatures of known file-based malware.
+	
+	- Threat data: computer data that can correlate events observed on a customer's own networs and logs 
+	with known TTP and threat actor indicators.
+
+# Attack types
+
+Goals of adversaries will consist of:
+
+	- Exfiltrating: to steal data or information from the network.
+	- Misuse: fraud
+	- Compromise availability
+# Footprinting and Fingerprinting Attacks
+
+Footprinting allows a threat actor to discover topology and general configuration of the network and security 
+systems. Can be done through:
+
+	- Social engineering
+	- Dumpster diving
+	- Port scanning
+
+Fingerprinting is about identifying OS types and versions. Which can be used to probe for known 
+vulnerabilities.
+
+# Spoofing Attacks
+
+Can include:
+
+	- Identity disguisal
+	- Forging an ilegimate source of information appear legitimate
+	- Inject false or modified data onto a network through protocol abuse
+
+* ARP and DNS are commonly used as vectors for this type of attack.
+
+# DoS
+
+Resource exhaustion DoS: overloading a service by using up CPU, system RAM, disk space or network bandwidth.
+
+They may be motivated by the malicious desire to cause trouble
+
+Could also be part of a wider attack to divert attention from the real target.
+
+	- Blinding attack: attemps to overload a logging or alerting system with events.
+
+* Shadow IT: Devices or apps used in the workplace without authorization
+
+#DDoS
+
+Launched simultaneosly by multiple hosts. Often aimed to consume bandwith, denying it to legitimate hosts.
+
+# SYN Flood Attack
+
+Withholds the client ACK packet during TCP-3WH. The client's IP address is spoofed, causing the SYN/ACK 
+packet to be misdirected.
+
+Servers can maintain a queue of pending connections. When it doesn't receive an ACK packet from the client, 
+it resends the SYN/ACK packet a set number of times before timing out the connections. The problem is that 
+the server may only be able to manage a limited number of pending connections. Which the DoS attack quickly 
+fills up.
+
+Meaning that the server is unable to respond to genuine requests.
+
+# Distributed Reflection Dos/Amplification Attacks (DRDoS)
+
+A more powerful SYN flood attack is DRDoS which is an amplification attack.
+
+	- Adversary spoofs victim's IP address and attempts to open connections with multiple servers.
+	- Servers direct their SYN/ACK to the victim server. Which rapidly consumes the victim's bandwith.
+
+# Botnet
+
+Group of compromised hosts that can be used to launch DDoS and DRDoS attacks.
+
+Compromise one or to machines first to use as handlers or herders. Which will be used to compromise even more 
+machines. (Hundreds, thousands, to millions)
+
+To compromise a host, the attacker must install malware that opens a backdoor remote conneciton. The attacker 
+can then use the malware to to install bots an trigger the zombies to launch the attack at the same time.
+
+The network established between handlers and the bots is called a command and control (C2 or C&C) network.
+
+# Malware attacks
+
+No rigorous classification for malware. Trojans, virus and worms focuts on the vector used by the malware.
+Vector is the method by which the malware executes on a computer and potentially spreads to other network hosts.
+
+	- Viruses: infect files
+	- Worms: infects services running in system memory
+	- Trojan: malware concealed within an installer package that appears to be legitimate
+	- Potentially Unwanted Program (PUP) / Potentially Unwanted Application (PUA):
+	  Not automatically malicious, but installed without active consent from a purposelly confusing 
+	  license agreement.
+
+Classifications by payload content: spyware, rootkit, remote access Trojan or backdoor, ransomware.
+
+# Fileless Malware
+
+More sofisticated malware type. It describes a collection of common behaviors and techniques.
+
+	- Does not write its code to disk uses memory resident technique to run in its own process, withing a 
+	host process or dynamic-link library (DLL), or within a scripting host.
+
+	- Lightweight shellcode (block of malicious code that explots a software vulnerability)
+
+	- "Live off the land" techniques. Uses legitimate scripting tools such as PowerShell and windows 
+	management instrumentation (WMI) to execute payload actions.
+
+Can be categorized as Advanced Persistent Threat (APT) or Advanced Volatile Threat (AVT)
+
+# On-Path Attacks
+
+Comprimising the connection between tho hosts, intercepting and relaying all communications between them.
+Modifying the traffic before relaying it is also possible.
+
+Known as MitM (deprecated term) also known as:
+
+	- Manipulator in the middle
+	- Adversary in the middle
+	- Machine in the middle
+
+Unlike DoS attacks, On-Path does care about relaying packets so receiving replies is essential.
+
+# MAC and IP spoofing
+
+MAC addressess even though they are burned-in in an interface. They can be changed to any arbitrary value 
+using packet crafting software.
+
+Can be exploted to impersonate a legitimate server or circumvent an Access Control List.
+
+# ARP Spoofing
+
+Common means of perpetrating an on-path attack.
+
+Broadcasts unsolicited ARP reply packets (gratuitous ARP replies). With a source address that spoofs a 
+legitimate host or router interface.
+
+Because ARP has no security, all devices in the same broadcast domain as the rogue host trust this 
+communication and update their MAC:IP address cache table with the spoofed address.
+
+ARP Spoofing can cause unreachable default gateways.
+
+# MAC Flooding
+
+ARP is directed to hosts.
+MAC Flooding is directed to exhaust a switch's memory.
+
+Causes the switch to work as a hub since it will stop applying MAC-based forwarding.
+
+# VLAN Hopping
+
+Double Tagging: adds two tags to a VLAN header so whenever the switch strips the first VLAN tag, the second 
+one remains, thus allowing the packet to be sent to that VLAN.
+
+To prevent it, native VLAN should be disabled from the switch. To allow trunk lines in switches to apply 
+their own tags instead.
+
+# Rogue Devices and Services
+
+Rogue: device that is not under administrative control of the network staff
+Often completely malicious.
+
+Sole purpose: stealing sensitive information
+
+Rogue devices could include:
+
+	- WAPs
+	- DHCP
+	- DNS
+	- and so on...
+
+Unintentional rogues: Shadow IT (unauthorized devices in the workplace)
+
+# Rogue DHCP
+
+Clients have no means of preferring a DHCP server.
+
+If two DHCP servers are running on the same network, clients could end up with an incorrect IP configuration 
+because they have obtained a lease from a rogue server.
+
+DHCP Starvation used bogus requests to use up leases and exhaust DHCP pools. So no more IP addresses can be 
+leased.
+
+# DNS Attacks
+
+Can be exploted via DRDoS
+Typosquatting: technique to confuse malicious sites with legitimate ones.
+
+On a private network, a DNS attack is likely to mean some sort of DNS spoofing and/or poisoning.
+
+# DNS-Based On-Path Attacks
+If the threat actor has access to the same local network as the victim.
+The attacker can use ARP poisoning to respond to DNS queries from the victim with spoofed replies.
+
+This might be combined with a DoS attack on the victim's DNS server.
+
+Rogue DHCPs can be used to configure clients with the address of a DNS resolver controlled by a DNS actor.
+
+# DNS Client Cache Poisoning
+
+Poisoning the HOSTS files in /etc/hosts in Linux or %SystemRoot%\System32\Drivers\etc\hosts in Windows.
+
+
