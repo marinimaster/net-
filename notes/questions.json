@@ -6527,5 +6527,1134 @@
         ],
         "explanation": "Security controls are technical or administrative measures (tools, procedures, or activities) designed to protect assets and ensure the CIA (Confidentiality, Integrity, Availability) of a system.",
         "source_file": "notes/security_fundamentals.txt"
+    },
+    {
+        "id": "event-json-1",
+        "topic": "Event Management",
+        "prompt": "What is the purpose of the PRI code in a syslog message?",
+        "choices": [
+            "To encrypt the message",
+            "To indicate the message's priority",
+            "To specify the protocol used",
+            "To identify the recipient of the message"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The PRI code indicates priority and is calculated from the facility and severity level.",
+        "source_file": "notes/event_management_questions.txt",
+        "domain_id": 3
+    },
+    {
+        "id": "event-json-2",
+        "topic": "Event Management",
+        "prompt": "What does a syslog message comprise?",
+        "choices": [
+            "Only a header",
+            "Only a message part",
+            "A PRI code, a header, and a message part",
+            "A severity level and a message part"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "A syslog message consists of a PRI code, a header (timestamp/host), and the message part.",
+        "source_file": "notes/event_management_questions.txt",
+        "domain_id": 3
+    },
+    {
+        "id": "event-json-3",
+        "topic": "Event Management",
+        "prompt": "What does log aggregation in the context of SIEM refer to?",
+        "choices": [
+            "Physical collection of files",
+            "Deleting outdated logs",
+            "Normalizing data from different sources",
+            "Encrypting log files"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Log aggregation involves normalizing data from disparate sources to make it consistent.",
+        "source_file": "notes/event_management_questions.txt",
+        "domain_id": 3
+    },
+    {
+        "id": "event-json-4",
+        "topic": "Event Management",
+        "prompt": "How do SIEM tools handle differences in date/time zones among various log sources?",
+        "choices": [
+            "By ignoring date/time info",
+            "By normalizing them to a single timeline",
+            "By only accepting UTC",
+            "By storing in separate databases"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "SIEM tools normalize time zones to a single timeline for accurate correlation.",
+        "source_file": "notes/event_management_questions.txt",
+        "domain_id": 3
+    },
+    {
+        "id": "event-json-5",
+        "topic": "Event Management",
+        "prompt": "What is a key feature of performance/traffic logs?",
+        "choices": [
+            "They record only security breaches",
+            "They record metrics for network resources",
+            "They exclusively track login attempts",
+            "They serve as backups"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Performance logs record metrics like bandwidth and resource utilization.",
+        "source_file": "notes/event_management_questions.txt",
+        "domain_id": 3
+    },
+    {
+        "id": "event-json-6",
+        "topic": "Event Management",
+        "prompt": "What type of events does an audit log generally record?",
+        "choices": [
+            "Success/fail type events related to authentication",
+            "Detailed descriptions of all user activities",
+            "System configuration backups",
+            "Performance metrics"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "Audit logs record authentication and authorization successes/failures.",
+        "source_file": "notes/event_management_questions.txt",
+        "domain_id": 3
+    },
+    {
+        "id": "event-json-7",
+        "topic": "Event Management",
+        "prompt": "What distinguishes an application log from a system log?",
+        "choices": [
+            "OS level vs single service",
+            "Application logs record OS data",
+            "Application logs only for security",
+            "Application logs cannot record errors"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "Application logs are specific to a single service, while system logs are OS-level.",
+        "source_file": "notes/event_management_questions.txt",
+        "domain_id": 3
+    },
+    {
+        "id": "event-json-8",
+        "topic": "Event Management",
+        "prompt": "Why is plotting data as a graph helpful in log analysis?",
+        "choices": [
+            "Eliminates software analysis",
+            "Easier to spot trends or spikes",
+            "Reduces storage",
+            "Increases network speed"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Graphs allow analysts to quickly identify patterns and anomalies visually.",
+        "source_file": "notes/event_management_questions.txt",
+        "domain_id": 3
+    },
+    {
+        "id": "event-json-9",
+        "topic": "Event Management",
+        "prompt": "How can a high priority alert be communicated in an event management system?",
+        "choices": [
+            "Dashboard only",
+            "Email to administrator",
+            "Increasing log level",
+            "Monthly report"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Critical alerts use active notification like email, SMS, or physical alarms.",
+        "source_file": "notes/event_management_questions.txt",
+        "domain_id": 3
+    },
+    {
+        "id": "event-json-10",
+        "topic": "Event Management",
+        "prompt": "What is an automated event management system configured to generate when thresholds are met?",
+        "choices": [
+            "Detailed reports",
+            "Alerts",
+            "Backups",
+            "Device lists"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Automated systems generate alerts when specific severity thresholds are triggered.",
+        "source_file": "notes/event_management_questions.txt",
+        "domain_id": 3
+    },
+    {
+        "id": "traffic-json-1",
+        "topic": "Traffic Monitoring",
+        "prompt": "What is the primary function of traffic shapers?",
+        "choices": [
+            "Increase packet delivery speed",
+            "Delay certain packet types based on content",
+            "Categorize protocols into service levels",
+            "Generate traffic reports"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Traffic shapers delay certain packets to prioritize others and reduce latency for critical apps.",
+        "source_file": "notes/traffic_monitoring_questions.txt",
+        "domain_id": 3
+    },
+    {
+        "id": "traffic-json-2",
+        "topic": "Traffic Monitoring",
+        "prompt": "What is a potential consequence of using traffic policing instead of traffic shaping?",
+        "choices": [
+            "Increased latency",
+            "More efficient bandwidth use",
+            "Fewer lost packets",
+            "Under-utilization during idle periods"
+        ],
+        "answer_indices": [
+            3
+        ],
+        "explanation": "Policing drops packets immediately when thresholds are met, which can cause under-utilization.",
+        "source_file": "notes/traffic_monitoring_questions.txt",
+        "domain_id": 3
+    },
+    {
+        "id": "traffic-json-3",
+        "topic": "Traffic Monitoring",
+        "prompt": "Which solution is MOST effective for improving VoIP performance during congestion?",
+        "choices": [
+            "FIFO queuing",
+            "Random Early Detection (RED)",
+            "Traffic shaping/prioritization",
+            "Increasing total bandwidth"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Traffic shaping is ideal for prioritizing latency-sensitive VoIP traffic.",
+        "source_file": "notes/traffic_monitoring_questions.txt",
+        "domain_id": 3
+    },
+    {
+        "id": "traffic-json-4",
+        "topic": "Traffic Monitoring",
+        "prompt": "What advantage do website performance checkers offer?",
+        "choices": [
+            "Physically repair sites",
+            "Test from global customer perspectives",
+            "Increase traffic",
+            "Design websites"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "They simulate the user experience from various geographical locations.",
+        "source_file": "notes/traffic_monitoring_questions.txt",
+        "domain_id": 3
+    },
+    {
+        "id": "traffic-json-5",
+        "topic": "Traffic Monitoring",
+        "prompt": "In network analysis, what are 'top talkers'?",
+        "choices": [
+            "Devices with highest error rates",
+            "Most secure connections",
+            "Interfaces generating the most outgoing traffic",
+            "Fastest connections"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Top talkers are the nodes sending the most data out into the network.",
+        "source_file": "notes/traffic_monitoring_questions.txt",
+        "domain_id": 3
+    },
+    {
+        "id": "traffic-json-6",
+        "topic": "Traffic Monitoring",
+        "prompt": "What is packet loss?",
+        "choices": [
+            "Encryption of data",
+            "Intentional slowing of speed",
+            "Discarding of data packets in a network",
+            "Duplication of packets"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Packet loss is when data fails to reach its destination, often due to congestion or hardware issues.",
+        "source_file": "notes/traffic_monitoring_questions.txt",
+        "domain_id": 3
+    },
+    {
+        "id": "traffic-json-7",
+        "topic": "Traffic Monitoring",
+        "prompt": "What is jitter in the context of network performance?",
+        "choices": [
+            "Total delay (latency)",
+            "Encryption protocol",
+            "Variation in delay of received packets",
+            "Optimization technique"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Jitter is the variance in latency, which can disrupt real-time traffic like voice/video.",
+        "source_file": "notes/traffic_monitoring_questions.txt",
+        "domain_id": 3
+    },
+    {
+        "id": "traffic-json-8",
+        "topic": "Traffic Monitoring",
+        "prompt": "Which type of data transfer is typically described as 'bursty'?",
+        "choices": [
+            "Video streaming",
+            "VoIP",
+            "File transfer",
+            "Live audio"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "File transfers use available bandwidth in bursts rather than needing strict timing.",
+        "source_file": "notes/traffic_monitoring_questions.txt",
+        "domain_id": 3
+    },
+    {
+        "id": "traffic-json-9",
+        "topic": "Traffic Monitoring",
+        "prompt": "Why is collecting only packet metadata preferred over recording entire frames for long-term monitoring?",
+        "choices": [
+            "Increases speed",
+            "Reduces sniffer bandwidth/storage requirements",
+            "Prevents all security breaches",
+            "Allows physical repair"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Metadata collection is much less resource-intensive than full packet capture.",
+        "source_file": "notes/traffic_monitoring_questions.txt",
+        "domain_id": 3
+    },
+    {
+        "id": "traffic-json-10",
+        "topic": "Traffic Monitoring",
+        "prompt": "What is the primary purpose of monitoring individual interface statistics?",
+        "choices": [
+            "Increase speed",
+            "Diagnose performance issues",
+            "Reduce costs",
+            "Enhance security"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Interface stats (errors, drops, utilization) help pinpoint where issues are occurring.",
+        "source_file": "notes/traffic_monitoring_questions.txt",
+        "domain_id": 3
+    },
+    {
+        "id": "traffic-json-11",
+        "topic": "Traffic Monitoring",
+        "prompt": "What role does a NetFlow exporter play?",
+        "choices": [
+            "Aggregates flows",
+            "Reports/visualizes data",
+            "Defines and caches flows",
+            "Provides bandwidth"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "The exporter (e.g., a router) identifies and caches flow data before sending it to a collector.",
+        "source_file": "notes/traffic_monitoring_questions.txt",
+        "domain_id": 3
+    },
+    {
+        "id": "traffic-json-12",
+        "topic": "Traffic Monitoring",
+        "prompt": "What does a consistently high queue length on a network interface indicate?",
+        "choices": [
+            "Total users",
+            "A potential bottleneck",
+            "Financial cost",
+            "Physical condition"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "High queue length means packets are waiting, suggesting the link is at or over capacity.",
+        "source_file": "notes/traffic_monitoring_questions.txt",
+        "domain_id": 3
+    },
+    {
+        "id": "traffic-json-13",
+        "topic": "Traffic Monitoring",
+        "prompt": "What is generally considered an acceptable error rate for a network link?",
+        "choices": [
+            "Under 1 percent",
+            "Exactly 5 percent",
+            "Under 10 percent",
+            "Over 15 percent"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "Error rates should be minimal; anything over 1% usually warrants investigation.",
+        "source_file": "notes/traffic_monitoring_questions.txt",
+        "domain_id": 3
+    },
+    {
+        "id": "traffic-json-14",
+        "topic": "Traffic Monitoring",
+        "prompt": "What is the primary goal of Quality of Service (QoS)?",
+        "choices": [
+            "Decrease security",
+            "Increase device limit",
+            "Prioritize certain traffic over others",
+            "Reduce hardware costs"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "QoS manages congestion by ensuring critical traffic gets handled first.",
+        "source_file": "notes/traffic_monitoring_questions.txt",
+        "domain_id": 3
+    },
+    {
+        "id": "traffic-json-15",
+        "topic": "Traffic Monitoring",
+        "prompt": "Which of these is NOT a standard traffic class defined by DiffServ?",
+        "choices": [
+            "Best Effort",
+            "Assured Forwarding",
+            "Expedited Forwarding",
+            "Maximum Throughput"
+        ],
+        "answer_indices": [
+            3
+        ],
+        "explanation": "Maximum Throughput is not a formal DiffServ traffic class name.",
+        "source_file": "notes/traffic_monitoring_questions.txt",
+        "domain_id": 3
+    },
+    {
+        "id": "auth-1",
+        "topic": "Access Control Models",
+        "prompt": "Which access control model grants resource owners full control over their files, including the ability to modify ACLs?",
+        "choices": [
+            "RBAC",
+            "DAC",
+            "MAC",
+            "PAM"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "In Discretionary Access Control (DAC), every resource has an owner who can grant rights to others.",
+        "source_file": "notes/authorization_account_management.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "auth-2",
+        "topic": "Access Control Principles",
+        "prompt": "Ensuring that duties and responsibilities are divided among individuals to prevent insider threats is known as:",
+        "choices": [
+            "Least Privilege",
+            "Separation of Duties",
+            "Job Rotation",
+            "Implicit Deny"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Separation of duties establishes checks and balances by dividing critical responsibilities.",
+        "source_file": "notes/authorization_account_management.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "ldap-1",
+        "topic": "LDAP",
+        "prompt": "Which port is used by LDAP Secure (LDAPS) by default?",
+        "choices": [
+            "389",
+            "443",
+            "636",
+            "3268"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Standard LDAP uses 389; LDAPS uses 636.",
+        "source_file": "notes/authorization_account_management.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "routing-dyn-1",
+        "topic": "Dynamic Routing",
+        "prompt": "Which type of dynamic routing protocol maps the entire network topology to select the most optimal path?",
+        "choices": [
+            "Distance Vector",
+            "Link-State",
+            "Static",
+            "Exterior Gateway Protocol"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Link-State protocols (like OSPF) maintain a full map of the network topology.",
+        "source_file": "notes/dynamic_routing_types.txt",
+        "domain_id": 2
+    },
+    {
+        "id": "hardening-1",
+        "topic": "Device Hardening",
+        "prompt": "Which of the following is a common step in service hardening?",
+        "choices": [
+            "Enabling all available protocols",
+            "Disabling unneeded network services",
+            "Using default admin passwords",
+            "Allowing all incoming ICMP traffic"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Disabling unneeded services reduces the attack surface of a device.",
+        "source_file": "notes/network_hardening.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "threats-1",
+        "topic": "Threat Actors",
+        "prompt": "An internal actor (insider threat) is defined as:",
+        "choices": [
+            "A competitor attempting to steal data",
+            "A hacker with no account access",
+            "Someone who has been granted permissions on the system",
+            "A script kiddie using automated tools"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Internal actors are authorized users who abuse their access.",
+        "source_file": "notes/network_threats_attacks.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "attacks-1",
+        "topic": "DDoS Attacks",
+        "prompt": "A 'Distributed Reflection DoS' (DRDoS) attack is a form of:",
+        "choices": [
+            "Phishing attack",
+            "Amplification attack",
+            "Password cracking",
+            "On-path attack"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "DRDoS is an amplification attack where spoofed requests cause multiple servers to overwhelm a victim.",
+        "source_file": "notes/network_threats_attacks.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "attacks-2",
+        "topic": "Malware",
+        "prompt": "Which type of malware uses 'live off the land' techniques like PowerShell to execute in memory without writing to disk?",
+        "choices": [
+            "Worm",
+            "Trojan",
+            "Fileless Malware",
+            "Ransomware"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Fileless malware remains in memory and uses legitimate tools (PowerShell/WMI) to avoid detection.",
+        "source_file": "notes/network_threats_attacks.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "attacks-3",
+        "topic": "Spoofing",
+        "prompt": "What attack uses unsolicited ARP replies to update a victim's MAC:IP cache table with a rogue address?",
+        "choices": [
+            "DNS Poisoning",
+            "MAC Flooding",
+            "ARP Spoofing",
+            "VLAN Hopping"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "ARP Spoofing involves sending gratuitous ARP replies to associate the attacker's MAC with a legitimate IP.",
+        "source_file": "notes/network_threats_attacks.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "top-1",
+        "topic": "Network Topologies",
+        "prompt": "In which topology do all devices connect to a central hub or switch?",
+        "choices": [
+            "Mesh",
+            "Bus",
+            "Star",
+            "Ring"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "The star topology uses a central point of connection for all nodes.",
+        "source_file": "notes/network_topologies.txt",
+        "domain_id": 1
+    },
+    {
+        "id": "ipv6-adv-1",
+        "topic": "IPv6 Address Scopes",
+        "prompt": "A technician is troubleshooting a network device and observes an IPv6 address starting with 'fe80::'. Which of the following is TRUE about this address? (Select TWO)",
+        "choices": [
+            "It is a Global Unicast Address.",
+            "It is a Link-Local Address.",
+            "It is routable across the public internet.",
+            "It is mandatory on every IPv6 interface.",
+            "It is a Unique Local Address."
+        ],
+        "answer_indices": [
+            1,
+            3
+        ],
+        "explanation": "Addresses in the fe80::/10 range are Link-Local Addresses, which are mandatory for every IPv6 interface but are not routable beyond the local subnet.",
+        "source_file": "notes/ipv6_advanced.txt",
+        "domain_id": 1
+    },
+    {
+        "id": "ipv6-adv-2",
+        "topic": "Neighbor Discovery Protocol",
+        "prompt": "Which ICMPv6 message type is used by a host to request a Neighbor's MAC address, effectively replacing the IPv4 ARP Request?",
+        "choices": [
+            "Router Solicitation (RS)",
+            "Router Advertisement (RA)",
+            "Neighbor Solicitation (NS)",
+            "Neighbor Advertisement (NA)"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Neighbor Solicitation (NS) messages [Type 135] are used to request a neighbor's Link-Layer (MAC) address.",
+        "source_file": "notes/ipv6_advanced.txt",
+        "domain_id": 1
+    },
+    {
+        "id": "ipv6-adv-3",
+        "topic": "Neighbor Discovery Protocol",
+        "prompt": "A router sends a message to provide local hosts with the network prefix and configuration flags. Which NDP message is this?",
+        "choices": [
+            "Router Solicitation",
+            "Router Advertisement",
+            "Neighbor Solicitation",
+            "Redirect"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Router Advertisement (RA) messages provide configuration details, network prefixes, and M/O flags to hosts on the link.",
+        "source_file": "notes/ipv6_advanced.txt",
+        "domain_id": 1
+    },
+    {
+        "id": "ipv6-adv-4",
+        "topic": "EUI-64 Calculation",
+        "prompt": "A technician needs to calculate the EUI-64 Interface ID for a device with the MAC address '00-AA-11-BB-22-CC'. What is the resulting Interface ID?",
+        "choices": [
+            "02AA:11FF:FEBB:22CC",
+            "00AA:11FF:FEBB:22CC",
+            "02AA:11BB:22CC:FFFE",
+            "00AA:11BB:22CC:FFFE"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "To calculate EUI-64: 1. Split MAC (00AA11 | BB22CC). 2. Insert FFFE (00AA:11FF:FEBB:22CC). 3. Invert 7th bit of 1st byte (00 becomes 02). Result: 02AA:11FF:FEBB:22CC.",
+        "source_file": "notes/ipv6_advanced.txt",
+        "domain_id": 1
+    },
+    {
+        "id": "ipv6-adv-5",
+        "topic": "IPv6 Configuration",
+        "prompt": "In an IPv6 environment, a host uses SLAAC to generate its own IP address but contacts a DHCPv6 server for DNS and NTP information. Which configuration mode is this?",
+        "choices": [
+            "Stateful DHCPv6",
+            "Stateless DHCPv6",
+            "SLAAC only",
+            "Dynamic NAT64"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "In Stateless DHCPv6, the host uses SLAAC for its address but queries DHCPv6 for 'other' options (DNS/NTP).",
+        "source_file": "notes/ipv6_advanced.txt",
+        "domain_id": 1
+    },
+    {
+        "id": "ipv6-adv-6",
+        "topic": "RA Flags",
+        "prompt": "A network administrator wants hosts to obtain ALL their IPv6 configuration, including their IP address, from a central DHCPv6 server. Which flag must be set in the Router Advertisement (RA)?",
+        "choices": [
+            "The 'O' (Other) flag",
+            "The 'M' (Managed) flag",
+            "The 'S' (Static) flag",
+            "The 'L' (Link) flag"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The 'M' (Managed) flag in the RA informs hosts to use Stateful DHCPv6 for address assignment.",
+        "source_file": "notes/ipv6_advanced.txt",
+        "domain_id": 1
+    },
+    {
+        "id": "ipv6-adv-7",
+        "topic": "IPv6 Address Scopes",
+        "prompt": "Which of the following IPv6 addresses is specifically used for one-to-nearest delivery, where multiple devices share the same address?",
+        "choices": [
+            "Multicast",
+            "Unicast",
+            "Anycast",
+            "Broadcast"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Anycast is a one-to-nearest delivery method. It allows multiple devices to share an address, with the network routing traffic to the nearest instance.",
+        "source_file": "notes/ipv6_advanced.txt",
+        "domain_id": 1
+    },
+    {
+        "id": "ipv6-adv-8",
+        "topic": "NDP Troubleshooting",
+        "prompt": "A host sends a Neighbor Solicitation to find a MAC address but receives no Neighbor Advertisement. Which of the following is a possible outcome? (Select TWO)",
+        "choices": [
+            "The host cannot communicate with that neighbor.",
+            "Duplicate Address Detection (DAD) succeeds.",
+            "The host assumes the address is unique if checking itself.",
+            "The host falls back to using broadcast ARP.",
+            "The router will automatically send a Redirect."
+        ],
+        "answer_indices": [
+            0,
+            2
+        ],
+        "explanation": "If no NA is received for a neighbor, communication fails. If performing DAD for its own address and no NA is received, the host assumes the address is unique.",
+        "source_file": "notes/ipv6_advanced.txt",
+        "domain_id": 5
+    },
+    {
+        "id": "ipv6-adv-9",
+        "topic": "IPv6 Addressing",
+        "prompt": "Which of the following represents the correct shorthand for the IPv6 address '2001:0db8:0000:0000:0000:ff00:0042:8329'?",
+        "choices": [
+            "2001:db8:0:0:0:ff00:42:8329",
+            "2001:db8::ff00:42:8329",
+            "2001:db8:ff00:42:8329",
+            "2001:db8:::ff00:42:8329"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The address can be shortened by removing leading zeros and replacing one consecutive block of zeros with '::'.",
+        "source_file": "notes/ipv6_advanced.txt",
+        "domain_id": 1
+    },
+    {
+        "id": "ipv6-adv-10",
+        "topic": "Unique Local Address",
+        "prompt": "A company wants to implement private IPv6 addressing that is routable within their internal sites but not on the public internet. Which address prefix should they use?",
+        "choices": [
+            "fe80::/10",
+            "fc00::/7",
+            "2000::/3",
+            "ff00::/8"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Unique Local Addresses (ULA), range fc00::/7 (typically fd00::/8), are used for private internal routing.",
+        "source_file": "notes/ipv6_advanced.txt",
+        "domain_id": 1
+    },
+    {
+        "id": "ipv6-adv-11",
+        "topic": "IPv6 Multicast",
+        "prompt": "Which IPv6 multicast address is used to reach ALL routers on the local link?",
+        "choices": [
+            "ff02::1",
+            "ff02::2",
+            "ff02::5",
+            "ff02::9"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "ff02::1 is for all nodes; ff02::2 is for all routers on the link.",
+        "source_file": "notes/ipv6_advanced.txt",
+        "domain_id": 1
+    },
+    {
+        "id": "ipv6-adv-12",
+        "topic": "IPv6 Troubleshooting",
+        "prompt": "A user reports they can access local servers but cannot reach any websites. An ipconfig shows an IPv6 address starting with 'fe80::' but no address starting with '2001:'. What is the MOST likely cause?",
+        "choices": [
+            "The local switch is down.",
+            "The client is not receiving Router Advertisements (RA).",
+            "The DHCPv6 server has run out of addresses.",
+            "The client's MAC address is invalid for EUI-64."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Link-Local addresses (fe80::) are automatic. If the client has no Global Unicast (2001::), it is likely not receiving the prefix information from a router via RA.",
+        "source_file": "notes/ipv6_advanced.txt",
+        "domain_id": 5
+    },
+    {
+        "id": "ipv6-adv-13",
+        "topic": "IPv6 Transition",
+        "prompt": "Which transition mechanism allows IPv6 traffic to be encapsulated within IPv4 packets to traverse an older network? (Select THREE)",
+        "choices": [
+            "Dual Stack",
+            "6to4",
+            "Teredo",
+            "NAT64",
+            "ISATAP"
+        ],
+        "answer_indices": [
+            1,
+            2,
+            4
+        ],
+        "explanation": "6to4, Teredo, and ISATAP are all tunneling mechanisms that encapsulate IPv6 in IPv4. Dual Stack runs both natively, and NAT64 is translation.",
+        "source_file": "notes/ipv6_advanced.txt",
+        "domain_id": 2
+    },
+    {
+        "id": "ipv6-adv-14",
+        "topic": "Neighbor Discovery Protocol",
+        "prompt": "What is the primary purpose of Duplicate Address Detection (DAD) in IPv6?",
+        "choices": [
+            "To verify the MAC address of the default gateway.",
+            "To ensure no other host on the link is using the same IPv6 address.",
+            "To prevent MAC spoofing on the local switch.",
+            "To update the neighbor cache of all local routers."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "DAD is used by a host to ensure that its newly generated or assigned IPv6 address is unique on the local link before it is used.",
+        "source_file": "notes/ipv6_advanced.txt",
+        "domain_id": 1
+    },
+    {
+        "id": "ipv6-adv-15",
+        "topic": "EUI-64 Calculation",
+        "prompt": "In EUI-64, what does 'inverting the 7th bit' signify in the first byte of the MAC address?",
+        "choices": [
+            "It marks the address as Multicast.",
+            "It indicates whether the address is Universally or Locally administered.",
+            "It identifies the address as a Link-Local address.",
+            "It provides a checksum for the Interface ID."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The 7th bit of the first byte is the U/L (Universal/Local) bit. Inverting it is a required step in the EUI-64 process.",
+        "source_file": "notes/ipv6_advanced.txt",
+        "domain_id": 1
+    },
+    {
+        "id": "sample-82-1",
+        "topic": "Security Scanning",
+        "prompt": "What is the purpose of using the -sV or -A switch with Nmap?",
+        "choices": [
+            "To increase the speed of the scan",
+            "To disable logging of the scan results",
+            "To probe for software versions on each port",
+            "To limit the scan to the local network only"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "The -sV switch is used for version detection, and -A enables OS detection, version detection, script scanning, and traceroute.",
+        "source_file": "notes/sample_questions_lesson_8_2.txt",
+        "domain_id": 5
+    },
+    {
+        "id": "sample-82-2",
+        "topic": "Security Scanning",
+        "prompt": "Which Nmap scan type is less stealthy due to its use of the operating system to attempt a full TCP connection?",
+        "choices": [
+            "TCP SYN (-sS)",
+            "TCP connect (-sT)",
+            "UDP scans (-sU)",
+            "Port range (-p)"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "A TCP connect scan (-sT) completes the 3-way handshake using the OS stack, making it easier to log.",
+        "source_file": "notes/sample_questions_lesson_8_2.txt",
+        "domain_id": 5
+    },
+    {
+        "id": "sample-82-3",
+        "topic": "Network Performance",
+        "prompt": "What metric measures the actual amount of data transferred over a network, as opposed to the theoretical maximum?",
+        "choices": [
+            "Bandwidth",
+            "Throughput",
+            "CPU utilization",
+            "Memory usage"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Throughput is the actual measure of successful data transfer, while bandwidth is the theoretical maximum capacity.",
+        "source_file": "notes/sample_questions_lesson_8_2.txt",
+        "domain_id": 1
+    },
+    {
+        "id": "sample-82-4",
+        "topic": "Network Troubleshooting",
+        "prompt": "What can cause a broadcast storm in a network?",
+        "choices": [
+            "Low CPU utilization",
+            "Insufficient storage space",
+            "Switching loops",
+            "High bandwidth availability"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Switching loops (layer 2 loops) cause broadcast frames to circulate indefinitely, leading to a broadcast storm.",
+        "source_file": "notes/sample_questions_lesson_8_2.txt",
+        "domain_id": 5
+    },
+    {
+        "id": "sample-82-5",
+        "topic": "Network Discovery",
+        "prompt": "Which tool or feature establishes the logical topology of the network by identifying active hosts and services?",
+        "choices": [
+            "Image editor",
+            "Spreadsheet",
+            "IP scanner / Security scanner",
+            "Email client"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "IP scanners and security scanners (like Nmap) are used to map out the network's logical topology.",
+        "source_file": "notes/sample_questions_lesson_8_2.txt",
+        "domain_id": 5
+    },
+    {
+        "id": "sample-82-6",
+        "topic": "Discovery Protocols",
+        "prompt": "Which of the following is NOT information that Cisco Discovery Protocol (CDP) can typically report?",
+        "choices": [
+            "Device ID/hostname",
+            "IOS version",
+            "MAC address table sizes",
+            "Power over Ethernet usage"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "CDP reports device details, versions, and power info, but does not typically transmit the entire MAC address table.",
+        "source_file": "notes/sample_questions_lesson_8_2.txt",
+        "domain_id": 3
+    },
+    {
+        "id": "sample-82-7",
+        "topic": "Monitoring",
+        "prompt": "What is the primary function of an availability monitor?",
+        "choices": [
+            "To increase the speed of a service",
+            "To trigger an alarm for service unscheduled downtime",
+            "To update digital certificates",
+            "To manage network bandwidth"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Availability monitors track uptime and alert administrators if a service or host becomes unreachable.",
+        "source_file": "notes/sample_questions_lesson_8_2.txt",
+        "domain_id": 3
+    },
+    {
+        "id": "sec-feat-1",
+        "topic": "Access Control",
+        "prompt": "In the IAM framework, what is the difference between Identification and Authentication?",
+        "choices": [
+            "Identification determines rights; Authentication tracks usage.",
+            "Identification uniquely represents a user (Account/ID); Authentication verifies identity (Hashes/Certificates).",
+            "Identification is for systems; Authentication is for people.",
+            "There is no difference between the two."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Identification is who you claim to be (ID); Authentication is proving it (Password/Certificate).",
+        "source_file": "notes/security_features.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "sec-feat-2",
+        "topic": "Authentication",
+        "prompt": "Where are local user account hashes stored on a Linux system?",
+        "choices": [
+            "/etc/passwd",
+            "/etc/shadow",
+            "/usr/bin/auth",
+            "/var/log/secure"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "/etc/passwd stores user info, but the sensitive password hashes are stored in /etc/shadow.",
+        "source_file": "notes/security_features.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "sec-feat-3",
+        "topic": "Single Sign-On",
+        "prompt": "Which component of Kerberos is responsible for issuing Ticket Granting Tickets (TGT)?",
+        "choices": [
+            "The Supplicant",
+            "The Service Provider",
+            "The Key Distribution Center (KDC)",
+            "The RADIUS Server"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "The KDC manages the authentication service and ticket-granting service in a Kerberos environment.",
+        "source_file": "notes/security_features.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "sec-feat-4",
+        "topic": "Federated Identity",
+        "prompt": "Which XML-based data format is used to exchange authentication and authorization information in a federated identity environment?",
+        "choices": [
+            "RADIUS",
+            "SAML",
+            "TACACS+",
+            "SASL"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "SAML (Security Assertion Markup Language) is the standard XML-based framework for federation.",
+        "source_file": "notes/security_features.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "sw-sec-1",
+        "topic": "Switch Security",
+        "prompt": "Which switchport violation mode drops frames from invalid sources and generates a log/alert, but keeps the interface open?",
+        "choices": [
+            "Protect",
+            "Restrict",
+            "Shutdown",
+            "Disabled"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Restrict mode drops traffic and alerts; Protect mode only drops traffic; Shutdown disables the port entirely.",
+        "source_file": "notes/switch_security.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "sw-sec-2",
+        "topic": "Switch Security",
+        "prompt": "What mechanism prevents a host from flooding the segment with rogue/spoofed gratuitous ARP replies?",
+        "choices": [
+            "DHCP Snooping",
+            "Dynamic ARP Inspection (DAI)",
+            "BPDU Guard",
+            "Root Guard"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "DAI inspects ARP packets and discards those that don't match trusted IP-to-MAC bindings.",
+        "source_file": "notes/switch_security.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "sw-sec-3",
+        "topic": "Switch Security",
+        "prompt": "How does DHCP Snooping prevent rogue DHCP servers from operating on a network?",
+        "choices": [
+            "By encrypting all DHCP traffic.",
+            "By disabling DHCP globally on the switch.",
+            "By only accepting DHCP 'Offer' packets from specifically configured trusted ports.",
+            "By assigning static IPs to all devices automatically."
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "DHCP Snooping treats all access ports as untrusted and blocks server-side messages like 'Offers' from them.",
+        "source_file": "notes/switch_security.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "sw-sec-4",
+        "topic": "Switch Security",
+        "prompt": "Which feature causes a switch port to transition to a blocking state immediately if it receives an unexpected spanning tree packet from a host?",
+        "choices": [
+            "Port Mirroring",
+            "Sticky MAC",
+            "BPDU Guard",
+            "VLAN Pruning"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "BPDU Guard protects the spanning tree topology by shutting down ports that shouldn't be receiving BPDUs (like those connected to end-user PCs).",
+        "source_file": "notes/switch_security.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "eap-1",
+        "topic": "EAP",
+        "prompt": "What is the primary purpose of the Extensible Authentication Protocol (EAP)?",
+        "choices": [
+            "To encrypt data at rest on file servers.",
+            "To provide a framework for various authentication methods (certificates, passwords, etc.).",
+            "To replace the IPv4 header with a more secure version.",
+            "To manage routing tables between different autonomous systems."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "EAP is an authentication framework that supports multiple authentication technologies like smart cards and digital certificates.",
+        "source_file": "notes/extensible_authentication_protocol.txt",
+        "domain_id": 4
     }
 ]

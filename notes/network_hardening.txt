@@ -1,0 +1,18 @@
+# Defense in Depth
+
+Firewalls try to establish a secure barrier at network perimeter. Mean to subject any connections between the internal private 
+network and external public or third-party networks to access controls.
+
+Perimeter security model:	Trusting everything that has connected via internal switches.
+				Network perimeter is the border between the private netowork and the external.
+
+# Device and Service Hardening
+
+	Hardening
+
+- Change default password complexity/length requirements.
+- Enforce password complexity/length requirements.
+- Configure role-based access
+- Disable unneeded network services
+- Disable insecure network protocols
+

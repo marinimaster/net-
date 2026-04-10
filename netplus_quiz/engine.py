@@ -177,16 +177,50 @@ class FlashcardSession:
 
 class SubnetEngine:
     @staticmethod
-    def generate_challenge(difficulty: str = "standard") -> dict:
-        cidr = random.randint(24, 30) if difficulty == "standard" else random.randint(8, 23)
-        octets = [random.randint(1, 254) for _ in range(4)]
-        if octets[0] == 127: octets[0] = 126
+    def generate_challenge() -> dict:
+        import ipaddress
+        # Range: 16 to 30 as requested
+        cidr = random.randint(16, 30)
+        
+        # Determine address space (Tricky ranges included)
+        # 1: Private Class A, 2: Private Class B, 3: Private Class C, 4: APIPA, 5: Random Public
+        pool = random.randint(1, 5)
+        if pool == 1: # 10.x.x.x
+            octets = [10, random.randint(0, 255), random.randint(0, 255), random.randint(1, 254)]
+        elif pool == 2: # 172.16.x.x - 172.31.x.x
+            octets = [172, random.randint(16, 31), random.randint(0, 255), random.randint(1, 254)]
+        elif pool == 3: # 192.168.x.x
+            octets = [192, 168, random.randint(0, 255), random.randint(1, 254)]
+        elif pool == 4: # 169.254.x.x (APIPA)
+            octets = [169, 254, random.randint(0, 255), random.randint(1, 254)]
+        else: # Random Public (avoiding 127.0.0.0/8 and 0.0.0.0/8)
+            octets = [random.choice([r for r in range(1, 224) if r not in {10, 127, 169, 172, 192}]), 
+                      random.randint(0, 255), random.randint(0, 255), random.randint(1, 254)]
+        
         ip_str = ".".join(map(str, octets))
-        mask_int = (0xFFFFFFFF << (32 - cidr)) & 0xFFFFFFFF
-        mask_str = ".".join(str((mask_int >> i) & 0xFF) for i in (24, 16, 8, 0))
-        ip_int = (octets[0] << 24) | (octets[1] << 16) | (octets[2] << 8) | octets[3]
-        net_int = ip_int & mask_int
-        net_str = ".".join(str((net_int >> i) & 0xFF) for i in (24, 16, 8, 0))
-        broad_int = net_int | (~mask_int & 0xFFFFFFFF)
-        broad_str = ".".join(str((broad_int >> i) & 0xFF) for i in (24, 16, 8, 0))
-        return {"ip": ip_str, "cidr": cidr, "mask": mask_str, "network": net_str, "broadcast": broad_str}
+        try:
+            # Create a network object based on the random IP and CIDR
+            # strict=False allows the IP to not be the network address
+            iface = ipaddress.IPv4Interface(f"{ip_str}/{cidr}")
+            net = iface.network
+            
+            # For /31 and /32 there are no usable hosts in the traditional sense, 
+            # but the user requested /16-/30.
+            hosts = list(net.hosts())
+            first_usable = str(hosts[0]) if hosts else "N/A"
+            last_usable = str(hosts[-1]) if hosts else "N/A"
+            num_hosts = net.num_addresses - 2 if net.num_addresses > 2 else 0
+            
+            return {
+                "ip": ip_str,
+                "cidr": cidr,
+                "mask": str(net.netmask),
+                "network": str(net.network_address),
+                "broadcast": str(net.broadcast_address),
+                "first_usable": first_usable,
+                "last_usable": last_usable,
+                "num_hosts": num_hosts
+            }
+        except ValueError:
+            # Fallback if something goes wrong (though with 16-30 it shouldn't)
+            return SubnetEngine.generate_challenge()

@@ -1,0 +1,69 @@
+# Network Access Control (NAC)
+
+Is a system for authenticating endpoints before they can fully connect to the network.
+This is principally designed to mitigate risks from rogue devices and services.
+
+# Port Security Mechanisms
+
+Access to the physical switch ports and switch hardware should be restricted to authorized staff.
+
+To prevent the attachment of unauthorized devices, a switchport can be disabled using the management software or isolated to a 
+VLAN with no route to the network.
+
+# MAC Filtering
+
+Defining which MAC addresses are permitted to connect to a particular port.
+Can be done by creating a static lock list of valid MAC addresses or by specifying a limit to the number of permitted addresses.
+
+Sticky MACs: when there is a maximum amount of MAC addresses. If there is a maximum of two MAC addresses.
+
+	- The switch will record the first two devices that connect and drop any traffic from machines with different Network IDs 
+	that try to connect.
+
+Protect mode: means the port drops frames from the invalid sources but keeps the interface open, can onlly be used with STICKY MACS
+
+Restrict mode: drops frames, logs and alerts violations but also keeps the interface open.
+
+Shutdown mode: disables the port and sends alerts, must be manually re-enable using no shutdown mode.
+		This is the default mode
+
+Commands
+
+	int fa0/2
+	switchport port-security maximum 2
+	switchport port-security mac-address 	sticky
+	switchport port-security violation 	restrict
+
+# Port Guards
+# Dynamic ARP Inspections (DAI)
+
+Prevents a host attached to an untrusted port of flooding the segment with gratuitous ARP replies. ARP Inspections: maintains a 
+list of trusted IP:ARP mapping. It also ensures that ARP packets are validly contructed and use valid IP addresses.
+
+# DHCP Snooping
+
+Causes the switch to inspect traffic arriving on access ports to ensure that a host is not trying to spoof their IP address. 
+Prevents rogue DHCP server from operating in the network. DHCP Snooping only accepts DHCP offers from ports configured as trusted 
+are accepted.
+
+# ND and RA Guards are IPv6 alternatives
+
+Ensure default VLAN is different from other VLANS.
+
+# Bridge Protocol Data Units
+
+Used to mitigate risks from spanning tree and root bridge section.
+Make sure attackers can't easily guess which bridge ID number is being used by the legitimate root bridge.
+
+Setting up an interface with Bridge Protocol Data Units Guard, it makes it put itself into blocking state when it receives a BPDU 
+meant to change the root bridge switch.
+
+# Port Mirroring
+
+Used with switched port analyzers (SPANs)
+Copies traffic sent to one or more source ports to a mirror or destination port.
+
+i) Requires a lot of processing and can lead to the switch to become overloaded and consequently crashing.
+   Test performance on typical loads before deploying.
+
+  Port mirroring can filter packets based on specific criteria.

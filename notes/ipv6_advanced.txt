@@ -1,0 +1,67 @@
+================================================================================
+ADVANCED IPv6 CONCEPTS (CompTIA N10-009)
+================================================================================
+
+1. IPv6 ADDRESS TYPES & SCOPES
+--------------------------------------------------------------------------------
+* Global Unicast Address (GUA): 
+  - Equivalent to public IPv4. Routable on the internet.
+  - Range: 2000::/3 (Currently 2001, 2002, 2003 prefixes).
+* Link-Local Address (LLA): 
+  - Required on every IPv6 interface. Used for local subnet communication.
+  - Range: fe80::/10 (Always starts fe80:0000:0000:0000...).
+  - Not routable beyond the local link. Used by NDP.
+* Unique Local Address (ULA): 
+  - Equivalent to private IPv4 (RFC 1918). Routable within an organization.
+  - Range: fc00::/7 (fd00::/8 is most common).
+* Multicast: 
+  - Replaces IPv4 broadcast. One-to-many.
+  - Range: ff00::/8.
+  - Common: ff02::1 (All nodes), ff02::2 (All routers), ff02::1:ffxx:xxxx (Solicited-node).
+* Anycast: 
+  - One-to-nearest. Shared address across multiple devices.
+* Loopback: ::1/128.
+* Unspecified: ::/128.
+
+2. NEIGHBOR DISCOVERY PROTOCOL (NDP)
+--------------------------------------------------------------------------------
+Operates via ICMPv6 to manage local link communication.
+* Router Solicitation (RS): [ICMPv6 Type 133] Sent by hosts to locate routers.
+* Router Advertisement (RA): [ICMPv6 Type 134] Sent by routers to provide prefixes and flags (M/O flags).
+* Neighbor Solicitation (NS): [ICMPv6 Type 135] Replaces ARP Request. Requests a neighbor's MAC.
+* Neighbor Advertisement (NA): [ICMPv6 Type 136] Replaces ARP Reply. Provides the MAC address.
+* Redirect: [ICMPv6 Type 137] Informs hosts of a better next-hop router.
+
+3. ADDRESS CONFIGURATION MECHANISMS
+--------------------------------------------------------------------------------
+* SLAAC (Stateless Address Autoconfiguration):
+  - Host generates its own GUA/ULA using a prefix from an RA.
+  - Uses Duplicate Address Detection (DAD) before finalizing.
+* Stateless DHCPv6:
+  - SLAAC provides the IP address.
+  - DHCPv6 provides "options" (DNS, NTP, Domain Name).
+  - Indicated by the 'O' flag (Other Configuration) in the RA.
+* Stateful DHCPv6:
+  - DHCPv6 server assigns the IP address and options.
+  - Server maintains a database of leases (state).
+  - Indicated by the 'M' flag (Managed Address) in the RA.
+
+4. EUI-64 (EXTENDED UNIQUE IDENTIFIER)
+--------------------------------------------------------------------------------
+A method to automatically create a 64-bit Interface ID from a 48-bit MAC address.
+1. Take the 48-bit MAC (e.g., 00-11-22-33-44-55).
+2. Split it in half: 00-11-22 | 33-44-55.
+3. Insert FFFE in the middle: 0011:22FF:FE33:4455.
+4. Invert the 7th bit of the first byte (U/L bit).
+   - 00 in hex is 00000000 in binary.
+   - Invert 7th bit: 00000010 (02 in hex).
+5. Result: 0211:22FF:FE33:4455.
+
+5. IPv6 TRANSITION & COEXISTENCE
+--------------------------------------------------------------------------------
+* Dual Stack: Running both IPv4 and IPv6 simultaneously on a device.
+* Tunneling: Wrapping IPv6 packets inside IPv4 packets to traverse IPv4 networks.
+  - 6to4, Teredo (NAT traversal), ISATAP.
+* NAT64: Translates between IPv6 and IPv4 addresses (Carrier-Grade NAT).
+
+================================================================================
