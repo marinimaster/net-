@@ -7656,5 +7656,559 @@
         "explanation": "EAP is an authentication framework that supports multiple authentication technologies like smart cards and digital certificates.",
         "source_file": "notes/extensible_authentication_protocol.txt",
         "domain_id": 4
+    },
+    {
+        "id": "sw-sec-5",
+        "topic": "Port Security",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "What does the MAC limiting feature in port security primarily control?",
+        "choices": [
+            "The speed at which a MAC address is learned by the switch.",
+            "The number of unique MAC addresses allowed on a single switch port.",
+            "The total number of MAC addresses stored in the switch's CAM table.",
+            "The encryption level of data sent to a specific MAC address."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "MAC limiting, a part of port security, allows an administrator to define the maximum number of unique MAC addresses that can be used on a single switch port. This prevents attackers from connecting multiple devices or launching a MAC flooding attack to overwhelm the switch's address table.",
+        "source_file": "notes/placeholder.txt"
+    },
+    {
+        "id": "sw-sec-6",
+        "topic": "Port Security",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "What is the 'shutdown' action in port security designed to do when a violation occurs?",
+        "choices": [
+            "Disable the port entirely and require manual intervention to re-enable it.",
+            "Only drop packets from the unauthorized MAC address.",
+            "Log the violation but continue to allow all traffic.",
+            "Reset the switch to its factory default configuration."
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "When a port security violation occurs and the action is set to 'shutdown', the switch will immediately disable the port (putting it into an error-disabled state). To restore connectivity, an administrator usually must manually re-enable the port after addressing the cause of the violation.",
+        "source_file": "notes/placeholder.txt"
+    },
+    {
+        "id": "sw-sec-7",
+        "topic": "VLAN Security",
+        "domain_id": 4,
+        "difficulty": "hard",
+        "prompt": "Which of the following is a recommended practice to prevent VLAN hopping attacks?",
+        "choices": [
+            "Using the default VLAN (VLAN 1) for all management traffic.",
+            "Disabling Dynamic Trunking Protocol (DTP) on all non-trunking ports.",
+            "Allowing all VLANs to pass through every trunk port.",
+            "Assigning all unused ports to the default VLAN."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "To prevent VLAN hopping, it is recommended to disable the Dynamic Trunking Protocol (DTP) on ports that are not intended to be trunks. This prevents an attacker from spoofing a switch and negotiating a trunk link, which would otherwise give them access to all VLANs traversing that trunk.",
+        "source_file": "notes/placeholder.txt"
+    },
+    {
+        "id": "sw-sec-8",
+        "topic": "Network Access Control",
+        "domain_id": 4,
+        "difficulty": "hard",
+        "prompt": "In the context of IEEE 802.1X, what is the role of the supplicant?",
+        "choices": [
+            "The device that controls physical access to the network.",
+            "The server that performs the actual authentication.",
+            "The client device that is requesting access to the network.",
+            "The protocol used to encrypt the authentication data."
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "In an 802.1X environment, the supplicant is the client device (such as a laptop or workstation) that requests access to the network and provides credentials when prompted by the authenticator.",
+        "source_file": "notes/placeholder.txt"
+    },
+    {
+        "id": "sw-sec-9",
+        "topic": "Network Access Control",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "What is the role of a switch in an IEEE 802.1X configuration using RADIUS?",
+        "choices": [
+            "It acts as the authentication server itself.",
+            "It acts as a RADIUS client and an authenticator.",
+            "It manages network storage for all authenticated users.",
+            "It performs deep packet inspection on all user traffic."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "In an 802.1X setup, the switch acts as the authenticator (RADIUS client). It facilitates communication between the supplicant (client device) and the authentication server (RADIUS server), forwarding authentication data but not performing the authentication itself.",
+        "source_file": "notes/placeholder.txt"
+    },
+    {
+        "id": "sw-sec-10",
+        "topic": "Network Access Control",
+        "domain_id": 4,
+        "difficulty": "hard",
+        "prompt": "What does a health policy in NAC solutions typically require from a client?",
+        "choices": [
+            "A financial report",
+            "An attestation report",
+            "A user activity log",
+            "A network performance analysis"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "A health policy in Network Access Control (NAC) solutions typically requires a client to submit an attestation report. This report provides proof that the client meets specific security requirements, such as having an authorized OS, up-to-date patches, and current antivirus definitions, before being granted network access.",
+        "source_file": "notes/placeholder.txt"
+    },
+    {
+        "id": "sw-sec-1-parsed",
+        "topic": "STP Security",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "What does enabling Root Guard on ports not used as trunk lines accomplish?",
+        "choices": [
+            "It allows for faster convergence of the spanning tree.",
+            "It prevents unauthorized changes to the root bridge selection.",
+            "It encrypts BPDU packets for secure transmission.",
+            "It increases the number of allowable VLANs on a port."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Root Guard is used on ports not designated as trunk lines to maintain the network's spanning tree topology by preventing unauthorized changes to the root bridge selection. If a Root Guard-enabled port receives a BPDU that could alter the root bridge, it blocks that port, thus maintaining the integrity of the spanning tree structure.",
+        "source_file": "notes/placeholder.txt"
+    },
+    {
+        "id": "sw-sec-2-parsed",
+        "topic": "STP Security",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "What is the primary function of BPDU Guard on an access port?",
+        "choices": [
+            "To encrypt all outgoing BPDU packets.",
+            "To shut down the port if a BPDU is received.",
+            "To allow the port to become a root bridge.",
+            "To increase the speed of the spanning tree convergence."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "BPDU Guard is designed to protect the spanning tree topology by shutting down an access port if it receives a Bridge Protocol Data Unit (BPDU). Since access ports are intended for end-user devices, receiving a BPDU suggests that another switch or a rogue device has been connected, which could cause a loop or unauthorized topology changes.",
+        "source_file": "notes/placeholder.txt"
+    },
+    {
+        "id": "sw-sec-3-parsed",
+        "topic": "DHCP Security",
+        "domain_id": 4,
+        "difficulty": "hard",
+        "prompt": "How does DHCP snooping protect against rogue DHCP servers?",
+        "choices": [
+            "By encrypting DHCP messages between clients and servers.",
+            "By limiting the number of DHCP leases an individual port can have.",
+            "By distinguishing between trusted and untrusted ports and dropping DHCP server responses from untrusted ports.",
+            "By automatically assigning static IP addresses to all devices on the network."
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "DHCP snooping works by categorizing switch ports as either trusted or untrusted. Trusted ports are those connected to legitimate DHCP servers, while untrusted ports are those connected to end-user devices. The switch will drop any DHCP server responses (like DHCPOFFER or DHCPACK) that arrive on an untrusted port, preventing rogue servers from assigning incorrect IP information.",
+        "source_file": "notes/placeholder.txt"
+    },
+    {
+        "id": "sw-sec-4-parsed",
+        "topic": "ARP Security",
+        "domain_id": 4,
+        "difficulty": "hard",
+        "prompt": "What is the role of Dynamic ARP Inspection (DAI) in a network?",
+        "choices": [
+            "To automatically resolve MAC addresses to IP addresses.",
+            "To intercept and validate ARP packets before forwarding them.",
+            "To increase the size of the ARP cache on a switch.",
+            "To encrypt ARP requests for secure transmission."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Dynamic ARP Inspection (DAI) is a security feature that intercepts ARP packets on a network. It validates these packets by checking the IP-to-MAC address binding against a trusted database (typically the one created by DHCP snooping) before forwarding them, thereby preventing ARP poisoning and man-in-the-middle attacks.",
+        "source_file": "notes/placeholder.txt"
+    },
+    {
+        "id": "sw-sec-5-parsed",
+        "topic": "Port Security",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "What does the MAC limiting feature in port security primarily control?",
+        "choices": [
+            "The speed at which a MAC address is learned by the switch.",
+            "The number of unique MAC addresses allowed on a single switch port.",
+            "The total number of MAC addresses stored in the switch's CAM table.",
+            "The encryption level of data sent to a specific MAC address."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "MAC limiting, a part of port security, allows an administrator to define the maximum number of unique MAC addresses that can be used on a single switch port. This prevents attackers from connecting multiple devices or launching a MAC flooding attack to overwhelm the switch's address table.",
+        "source_file": "notes/placeholder.txt"
+    },
+    {
+        "id": "sw-sec-6-parsed",
+        "topic": "Port Security",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "What is the 'shutdown' action in port security designed to do when a violation occurs?",
+        "choices": [
+            "Disable the port entirely and require manual intervention to re-enable it.",
+            "Only drop packets from the unauthorized MAC address.",
+            "Log the violation but continue to allow all traffic.",
+            "Reset the switch to its factory default configuration."
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "When a port security violation occurs and the action is set to 'shutdown', the switch will immediately disable the port (putting it into an error-disabled state). To restore connectivity, an administrator usually must manually re-enable the port after addressing the cause of the violation.",
+        "source_file": "notes/placeholder.txt"
+    },
+    {
+        "id": "sw-sec-7-parsed",
+        "topic": "VLAN Security",
+        "domain_id": 4,
+        "difficulty": "hard",
+        "prompt": "Which of the following is a recommended practice to prevent VLAN hopping attacks?",
+        "choices": [
+            "Using the default VLAN (VLAN 1) for all management traffic.",
+            "Disabling Dynamic Trunking Protocol (DTP) on all non-trunking ports.",
+            "Allowing all VLANs to pass through every trunk port.",
+            "Assigning all unused ports to the default VLAN."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "To prevent VLAN hopping, it is recommended to disable the Dynamic Trunking Protocol (DTP) on ports that are not intended to be trunks. This prevents an attacker from spoofing a switch and negotiating a trunk link, which would otherwise give them access to all VLANs traversing that trunk.",
+        "source_file": "notes/placeholder.txt"
+    },
+    {
+        "id": "sw-sec-8-parsed",
+        "topic": "Network Access Control",
+        "domain_id": 4,
+        "difficulty": "hard",
+        "prompt": "In the context of IEEE 802.1X, what is the role of the supplicant?",
+        "choices": [
+            "The device that controls physical access to the network.",
+            "The server that performs the actual authentication.",
+            "The client device that is requesting access to the network.",
+            "The protocol used to encrypt the authentication data."
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "In an 802.1X environment, the supplicant is the client device (such as a laptop or workstation) that requests access to the network and provides credentials when prompted by the authenticator.",
+        "source_file": "notes/placeholder.txt"
+    },
+    {
+        "id": "sw-sec-9-parsed",
+        "topic": "Network Access Control",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "What is the role of a switch in an IEEE 802.1X configuration using RADIUS?",
+        "choices": [
+            "It acts as the authentication server itself.",
+            "It acts as a RADIUS client and an authenticator.",
+            "It manages network storage for all authenticated users.",
+            "It performs deep packet inspection on all user traffic."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "In an 802.1X setup, the switch acts as the authenticator (RADIUS client). It facilitates communication between the supplicant (client device) and the authentication server (RADIUS server), forwarding authentication data but not performing the authentication itself.",
+        "source_file": "notes/placeholder.txt"
+    },
+    {
+        "id": "sw-sec-10-parsed",
+        "topic": "Network Access Control",
+        "domain_id": 4,
+        "difficulty": "hard",
+        "prompt": "What does a health policy in NAC solutions typically require from a client?",
+        "choices": [
+            "A financial report",
+            "An attestation report",
+            "A user activity log",
+            "A network performance analysis"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "A health policy in Network Access Control (NAC) solutions typically requires a client to submit an attestation report. This report provides proof that the client meets specific security requirements, such as having an authorized OS, up-to-date patches, and current antivirus definitions, before being granted network access.",
+        "source_file": "notes/placeholder.txt"
+    },
+    {
+        "id": "dyn-route-2",
+        "topic": "Dynamic Routing",
+        "prompt": "What is 'Convergence' in the context of dynamic routing?",
+        "choices": [
+            "The process where all routers agree on the network topology.",
+            "The initial boot-up phase of a router.",
+            "The intentional slowing of data transmission.",
+            "The translation of IPv6 to IPv4."
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "Convergence is the process where dynamic routing algorithms agree on the network topology.",
+        "source_file": "notes/dynamic_routing_types.txt",
+        "domain_id": 2
+    },
+    {
+        "id": "dyn-route-3",
+        "topic": "Autonomous Systems",
+        "prompt": "Which type of protocol is used to advertise routes BETWEEN different Autonomous Systems (AS)?",
+        "choices": [
+            "IGP (Interior Gateway Protocol)",
+            "EGP (Exterior Gateway Protocol)",
+            "Distance Vector",
+            "Link-State"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "EGP is used for routing between autonomous systems, while IGP is for routing within an AS.",
+        "source_file": "notes/dynamic_routing_types.txt",
+        "domain_id": 2
+    },
+    {
+        "id": "dyn-route-4",
+        "topic": "Dynamic Routing",
+        "prompt": "How does a Link-State routing protocol differ from a Distance Vector protocol?",
+        "choices": [
+            "It only uses hop count as a metric.",
+            "It maps the entire topology to select the most optimal path.",
+            "It is prone to slower convergence.",
+            "It is only used in extremely small networks."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Link-State protocols map the entire topology, whereas Distance Vector only looks at the next hop and hop count.",
+        "source_file": "notes/dynamic_routing_types.txt",
+        "domain_id": 2
+    },
+    {
+        "id": "rip-2",
+        "topic": "RIP Protocol",
+        "prompt": "What is the maximum hop limit for the Routing Information Protocol (RIP)?",
+        "choices": [
+            "5 hops",
+            "15 hops",
+            "30 hops",
+            "Unlimited"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "RIP has a 15-hop limit, making it unsuitable for large networks.",
+        "source_file": "notes/rip_protocol.txt",
+        "domain_id": 2
+    },
+    {
+        "id": "rip-3",
+        "topic": "RIP Protocol",
+        "prompt": "Which of the following is a limitation of RIP? (Select THREE)",
+        "choices": [
+            "Slow convergence",
+            "Prone to routing loops",
+            "Inefficient for large networks",
+            "High processor overhead",
+            "Complex configuration"
+        ],
+        "answer_indices": [
+            0,
+            1,
+            2
+        ],
+        "explanation": "RIP is limited by slow convergence, routing loops, and its 15-hop scale.",
+        "source_file": "notes/rip_protocol.txt",
+        "domain_id": 2
+    },
+    {
+        "id": "log-intro-1",
+        "topic": "Network Device Logs",
+        "prompt": "Which of the following are standard components of a single logged event? (Select THREE)",
+        "choices": [
+            "Metadata (Category/ID)",
+            "Date/Time",
+            "Description of error/info",
+            "The MAC address of the destination",
+            "The user's password hash"
+        ],
+        "answer_indices": [
+            0,
+            1,
+            2
+        ],
+        "explanation": "Logged events typically include metadata, date/time, and a description of the event.",
+        "source_file": "notes/network_device_logs_intro.txt",
+        "domain_id": 3
+    },
+    {
+        "id": "hardening-2",
+        "topic": "Device Hardening",
+        "prompt": "A security administrator is hardening a network switch. Which of the following should they perform? (Select TWO)",
+        "choices": [
+            "Change default passwords",
+            "Disable unneeded network services",
+            "Enable all legacy protocols",
+            "Use the same password for all users",
+            "Decrease password complexity"
+        ],
+        "answer_indices": [
+            0,
+            1
+        ],
+        "explanation": "Hardening includes changing defaults and disabling unnecessary services/protocols.",
+        "source_file": "notes/network_hardening.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "topo-2",
+        "topic": "Network Topologies",
+        "prompt": "In which topology is every device connected to every other device?",
+        "choices": [
+            "Mesh",
+            "Star",
+            "Bus",
+            "Ring"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "In a full mesh topology, every node connects to every other node.",
+        "source_file": "notes/network_topologies.txt",
+        "domain_id": 1
+    },
+    {
+        "id": "topo-3",
+        "topic": "Network Topologies",
+        "prompt": "A technician observes a network where all devices share a single communication line. Which topology is being used?",
+        "choices": [
+            "Mesh",
+            "Star",
+            "Bus",
+            "Ring"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "A bus topology uses a single shared cable for communication.",
+        "source_file": "notes/network_topologies.txt",
+        "domain_id": 1
+    },
+    {
+        "id": "eap-2",
+        "topic": "Authentication Protocols",
+        "prompt": "Which of the following describes the Extensible Authentication Protocol (EAP)?",
+        "choices": [
+            "A specific encryption algorithm for Wi-Fi.",
+            "A framework for deploying multiple authentication methods.",
+            "A protocol for assigning IP addresses.",
+            "A hardware component in a network switch."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "EAP provides a framework for deploying various authentication methods like smart cards and certificates.",
+        "source_file": "notes/extensible_authentication_protocol.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "subnet-concepts-2",
+        "topic": "Subnetting",
+        "prompt": "What are the primary benefits of subnetting a network? (Select THREE)",
+        "choices": [
+            "Reduced network traffic (smaller broadcast domains)",
+            "Optimized network performance",
+            "Simplified management",
+            "Increased number of public IP addresses",
+            "Automatic encryption of all traffic"
+        ],
+        "answer_indices": [
+            0,
+            1,
+            2
+        ],
+        "explanation": "Subnetting reduces broadcast traffic, optimizes performance, and simplifies IP management.",
+        "source_file": "notes/subnetting_concepts.txt",
+        "domain_id": 1
+    },
+    {
+        "id": "subnet-concepts-3",
+        "topic": "Subnetting",
+        "prompt": "What does CIDR (Classless Inter-Domain Routing) notation (e.g., /24) represent?",
+        "choices": [
+            "The number of users on the network",
+            "The number of bits used for the network prefix",
+            "The physical length of the cable",
+            "The version of the IP protocol"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "CIDR notation indicates the number of bits that make up the network portion of the address.",
+        "source_file": "notes/subnetting_concepts.txt",
+        "domain_id": 1
+    },
+    {
+        "id": "encap-3",
+        "topic": "Data Encapsulation",
+        "prompt": "Which of the following is the correct order of data encapsulation as it moves DOWN the OSI model?",
+        "choices": [
+            "Data, Segments, Packets, Frames, Bits",
+            "Bits, Frames, Packets, Segments, Data",
+            "Data, Packets, Segments, Frames, Bits",
+            "Segments, Data, Packets, Bits, Frames"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "As data moves down, it becomes segments (Transport), packets (Network), frames (Data Link), and bits (Physical).",
+        "source_file": "notes/encapsulation_osi.txt",
+        "domain_id": 1
+    },
+    {
+        "id": "route-metrics-3",
+        "topic": "Routing Metrics",
+        "prompt": "Which routing metric represents the number of intermediate routers between the source and destination?",
+        "choices": [
+            "Bandwidth",
+            "Latency",
+            "Hop Count",
+            "MTU"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Hop count is the number of routers a packet must pass through to reach its destination.",
+        "source_file": "notes/routing_metrics.txt",
+        "domain_id": 2
+    },
+    {
+        "id": "admin-dist-4",
+        "topic": "Administrative Distance",
+        "prompt": "What is the primary purpose of Administrative Distance (AD) in a router?",
+        "choices": [
+            "To measure the speed of a link.",
+            "To rate the trustworthiness of the source of routing information.",
+            "To count the number of users on a subnet.",
+            "To encrypt the routing table."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "AD is used by routers to select the best path when there are multiple routes to the same destination from different protocols.",
+        "source_file": "notes/administrative_distance.txt",
+        "domain_id": 2
     }
 ]

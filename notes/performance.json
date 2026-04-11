@@ -149,9 +149,9 @@
         "total": 1
     },
     "route-4": {
-        "correct": 4,
-        "total": 4,
-        "consecutive_correct": 1
+        "correct": 5,
+        "total": 5,
+        "consecutive_correct": 2
     },
     "fault-3": {
         "correct": 2,
@@ -316,7 +316,8 @@
     },
     "port-18": {
         "correct": 0,
-        "total": 1
+        "total": 2,
+        "consecutive_correct": 0
     },
     "gen-stp-v3-7": {
         "correct": 1,
@@ -380,8 +381,9 @@
         "total": 1
     },
     "port-8": {
-        "correct": 2,
-        "total": 2
+        "correct": 3,
+        "total": 3,
+        "consecutive_correct": 1
     },
     "stp-1": {
         "correct": 3,
@@ -398,8 +400,9 @@
         "total": 1
     },
     "metric-multi-1": {
-        "correct": 2,
-        "total": 2
+        "correct": 3,
+        "total": 3,
+        "consecutive_correct": 1
     },
     "tcp-nuance-1": {
         "correct": 1,
@@ -690,9 +693,9 @@
         "consecutive_correct": 1
     },
     "cable-plenum-1": {
-        "correct": 2,
-        "total": 2,
-        "consecutive_correct": 1
+        "correct": 3,
+        "total": 3,
+        "consecutive_correct": 2
     },
     "fiber-db-1": {
         "correct": 2,
@@ -780,8 +783,8 @@
     },
     "route-logic-2": {
         "correct": 1,
-        "total": 1,
-        "consecutive_correct": 1
+        "total": 2,
+        "consecutive_correct": 0
     },
     "tm-12": {
         "correct": 2,
@@ -1109,6 +1112,21 @@
         "consecutive_correct": 1
     },
     "ip-5": {
+        "correct": 1,
+        "total": 1,
+        "consecutive_correct": 1
+    },
+    "osi-2": {
+        "correct": 1,
+        "total": 1,
+        "consecutive_correct": 1
+    },
+    "sw-sec-7-parsed": {
+        "correct": 0,
+        "total": 1,
+        "consecutive_correct": 0
+    },
+    "avail-4": {
         "correct": 1,
         "total": 1,
         "consecutive_correct": 1
