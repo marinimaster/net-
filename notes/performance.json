@@ -36,9 +36,9 @@
         "total": 1
     },
     "mail-1": {
-        "correct": 3,
-        "total": 3,
-        "consecutive_correct": 1
+        "correct": 4,
+        "total": 4,
+        "consecutive_correct": 2
     },
     "metric-3": {
         "correct": 3,
@@ -60,9 +60,9 @@
         "consecutive_correct": 1
     },
     "route-2": {
-        "correct": 2,
-        "total": 2,
-        "consecutive_correct": 1
+        "correct": 3,
+        "total": 3,
+        "consecutive_correct": 2
     },
     "disc-3": {
         "correct": 1,
@@ -275,9 +275,9 @@
         "total": 2
     },
     "fault-1": {
-        "correct": 4,
-        "total": 4,
-        "consecutive_correct": 2
+        "correct": 5,
+        "total": 5,
+        "consecutive_correct": 3
     },
     "gen-hard-sec-5": {
         "correct": 1,
@@ -375,9 +375,9 @@
         "total": 2
     },
     "wifi-1": {
-        "correct": 1,
-        "total": 3,
-        "consecutive_correct": 0
+        "correct": 2,
+        "total": 4,
+        "consecutive_correct": 1
     },
     "route-example-1": {
         "correct": 2,
@@ -413,9 +413,9 @@
         "total": 1
     },
     "metric-multi-1": {
-        "correct": 3,
-        "total": 3,
-        "consecutive_correct": 1
+        "correct": 4,
+        "total": 4,
+        "consecutive_correct": 2
     },
     "tcp-nuance-1": {
         "correct": 1,
@@ -437,9 +437,9 @@
         "consecutive_correct": 1
     },
     "wifi-multi-1": {
-        "correct": 2,
-        "total": 2,
-        "consecutive_correct": 1
+        "correct": 4,
+        "total": 4,
+        "consecutive_correct": 3
     },
     "sec-cia-1": {
         "correct": 1,
@@ -505,9 +505,9 @@
         "consecutive_correct": 1
     },
     "hierarchy-nuance-1": {
-        "correct": 3,
-        "total": 4,
-        "consecutive_correct": 2
+        "correct": 4,
+        "total": 5,
+        "consecutive_correct": 3
     },
     "fiber-connector-1": {
         "correct": 2,
@@ -550,9 +550,9 @@
         "total": 1
     },
     "config-1": {
-        "correct": 2,
-        "total": 2,
-        "consecutive_correct": 1
+        "correct": 3,
+        "total": 3,
+        "consecutive_correct": 2
     },
     "switch-cam-1": {
         "correct": 1,
@@ -661,7 +661,8 @@
     },
     "wifi-6": {
         "correct": 1,
-        "total": 2
+        "total": 3,
+        "consecutive_correct": 0
     },
     "wifi-3": {
         "correct": 5,
@@ -669,38 +670,39 @@
         "consecutive_correct": 4
     },
     "wifi-mimo-1": {
-        "correct": 2,
-        "total": 3,
-        "consecutive_correct": 1
+        "correct": 3,
+        "total": 4,
+        "consecutive_correct": 2
     },
     "wifi-speed-1": {
         "correct": 3,
-        "total": 3,
-        "consecutive_correct": 2
+        "total": 4,
+        "consecutive_correct": 0
     },
     "wifi-range-1": {
-        "correct": 4,
-        "total": 4,
-        "consecutive_correct": 3
+        "correct": 5,
+        "total": 5,
+        "consecutive_correct": 4
     },
     "wifi-4": {
-        "correct": 2,
-        "total": 4,
-        "consecutive_correct": 2
+        "correct": 3,
+        "total": 5,
+        "consecutive_correct": 3
     },
     "wifi-retro-1": {
-        "correct": 3,
-        "total": 4,
-        "consecutive_correct": 2
+        "correct": 4,
+        "total": 5,
+        "consecutive_correct": 3
     },
     "wifi-9": {
-        "correct": 1,
-        "total": 1
+        "correct": 2,
+        "total": 2,
+        "consecutive_correct": 1
     },
     "wifi-8": {
-        "correct": 2,
-        "total": 3,
-        "consecutive_correct": 2
+        "correct": 3,
+        "total": 4,
+        "consecutive_correct": 3
     },
     "route-logic-1": {
         "correct": 0,
@@ -839,13 +841,13 @@
     },
     "wifi-channels-1": {
         "correct": 1,
-        "total": 2,
+        "total": 3,
         "consecutive_correct": 0
     },
     "wifi-5": {
-        "correct": 2,
-        "total": 2,
-        "consecutive_correct": 2
+        "correct": 3,
+        "total": 3,
+        "consecutive_correct": 3
     },
     "mgmt-15": {
         "correct": 2,
@@ -878,9 +880,9 @@
         "consecutive_correct": 1
     },
     "phys-3": {
-        "correct": 1,
-        "total": 1,
-        "consecutive_correct": 1
+        "correct": 2,
+        "total": 2,
+        "consecutive_correct": 2
     },
     "mgmt-16": {
         "correct": 2,
@@ -913,9 +915,9 @@
         "consecutive_correct": 1
     },
     "ip-9": {
-        "correct": 1,
-        "total": 1,
-        "consecutive_correct": 1
+        "correct": 2,
+        "total": 2,
+        "consecutive_correct": 2
     },
     "class-c-1": {
         "correct": 2,
@@ -978,9 +980,9 @@
         "consecutive_correct": 1
     },
     "impl-5": {
-        "correct": 1,
-        "total": 1,
-        "consecutive_correct": 1
+        "correct": 2,
+        "total": 2,
+        "consecutive_correct": 2
     },
     "tcp-flag-1": {
         "correct": 1,
@@ -1093,9 +1095,9 @@
         "consecutive_correct": 0
     },
     "ops-4": {
-        "correct": 1,
-        "total": 2,
-        "consecutive_correct": 1
+        "correct": 2,
+        "total": 3,
+        "consecutive_correct": 2
     },
     "cable-cat-4": {
         "correct": 0,
@@ -1168,9 +1170,9 @@
         "consecutive_correct": 1
     },
     "sec-feat-4": {
-        "correct": 1,
-        "total": 1,
-        "consecutive_correct": 1
+        "correct": 2,
+        "total": 2,
+        "consecutive_correct": 2
     },
     "snmp-2": {
         "correct": 1,
@@ -1193,9 +1195,9 @@
         "consecutive_correct": 1
     },
     "sec-1": {
-        "correct": 1,
-        "total": 1,
-        "consecutive_correct": 1
+        "correct": 2,
+        "total": 2,
+        "consecutive_correct": 2
     },
     "ops-1": {
         "correct": 1,
@@ -1283,9 +1285,9 @@
         "consecutive_correct": 1
     },
     "sec-design-10": {
-        "correct": 1,
-        "total": 1,
-        "consecutive_correct": 1
+        "correct": 2,
+        "total": 2,
+        "consecutive_correct": 2
     },
     "fw-8-parsed": {
         "correct": 1,
@@ -1363,9 +1365,9 @@
         "consecutive_correct": 1
     },
     "sec-design-12": {
-        "correct": 1,
-        "total": 1,
-        "consecutive_correct": 1
+        "correct": 2,
+        "total": 2,
+        "consecutive_correct": 2
     },
     "top-1": {
         "correct": 1,
@@ -1438,6 +1440,26 @@
         "consecutive_correct": 1
     },
     "wifi-adv-6": {
+        "correct": 1,
+        "total": 1,
+        "consecutive_correct": 1
+    },
+    "wifi-adv-1": {
+        "correct": 1,
+        "total": 1,
+        "consecutive_correct": 1
+    },
+    "wifi-hard-5": {
+        "correct": 0,
+        "total": 1,
+        "consecutive_correct": 0
+    },
+    "wifi-hard-11": {
+        "correct": 0,
+        "total": 1,
+        "consecutive_correct": 0
+    },
+    "wifi-adv-8": {
         "correct": 1,
         "total": 1,
         "consecutive_correct": 1

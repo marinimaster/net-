@@ -67,12 +67,54 @@ def _load_flashcards() -> tuple[Flashcard, ...]:
 QUESTION_BANK: tuple[Question, ...] = _load_questions()
 FLASHCARD_BANK: tuple[Flashcard, ...] = _load_flashcards()
 
+TOPIC_MAPPING = {
+    "Monitoring & Management": ["Traffic Monitoring", "Event Management", "SNMP", "SNMP Management", "Performance Monitoring", "Availability Monitoring", "Packet Capture", "Time Synchronization", "Network Documentation", "Discovery Protocols", "Syslog", "IPAM", "IP Address Management", "Network Discovery", "Monitoring", "Configuration Monitoring", "Log Types", "Network Device Logs", "SIEM Management"],
+    "Security": ["Security Fundamentals", "Security Zones", "Switch Security", "Port Security", "Firewalls", "Network Access Control", "Hardening", "Authentication", "Remote Access Security", "Spoofing", "DDoS Attacks", "Malware", "Vulnerabilities", "Threats", "Threat Actors", "Intrusion Detection", "Intrusion Prevention", "IDS", "IPS", "VLAN Security", "ARP Security", "STP Security", "Device Hardening", "BYOD Security", "Physical Security Controls", "CIA Triad", "Access Control"],
+    "Routing & Switching": ["Routing Protocols", "Routing Metrics", "RIP Protocol", "Administrative Distance", "Switching Fundamentals", "Spanning Tree", "VLANs", "Trunking", "Switching Mechanics", "Link Aggregation", "Routing Table", "Routing Logic", "Dynamic Routing", "Switching Issues", "VLAN Troubleshooting", "LACP"],
+    "Infrastructure & Cabling": ["Cat Cabling", "Fiber Optics", "PoE Standards", "Decommissioning", "Structured Cabling", "Connectors", "SFP", "Modular Transceivers", "Racks", "Cable Testing Metrics", "Cable Termination", "Power Management", "WDM", "WDM Technology", "Fiber Optic Safety"],
+    "Fundamentals": ["Network Fundamentals", "OSI and TLS", "TCP Handshake", "Subnetting", "Encapsulation", "TCP Flags", "IPv4 Basics", "IPv6 Advanced", "Address Resolution Protocol", "ARP", "NDP", "Neighbor Discovery Protocol", "NAT", "Network Address Translation", "Protocols and Ports", "Common Ports", "IPv4 Addressing", "IPv6 Addressing", "IPv4 Headers", "OSI Model", "Network Layers", "MAC Addressing", "IP Classes"],
+    "WAN & Remote Access": ["WAN Fundamentals", "Cable and DOCSIS", "Fiber Technologies", "DSL Variants", "IPSec Modes", "IKE Phases", "VPN Tunneling", "Split vs Full Tunnel", "Generic Routing Encapsulation", "Clientless VPNs", "IPSec Protocols", "IPSec vs TLS", "Remote Management Tools", "Out-of-band Management", "SSH Security", "SSH Authentication", "Jump Servers", "API Security", "Remote File Transfer", "Console Connections", "WAN Demarcation", "T-Carrier and DS0", "Symmetrical vs Asymmetrical DSL"],
+    "Wireless": ["Wireless Standards", "Wireless Troubleshooting", "Enterprise Wireless Design", "Wireless Security", "Wireless Power", "Antenna Troubleshooting", "RF Interference", "Channel Bonding", "MIMO", "MU-MIMO", "Beamforming", "Wireless Infrastructure"],
+    "Business & Reliability": ["Reliability Metrics", "Recovery Metrics", "Continuity Planning", "Business Agreements", "Troubleshooting Methodology", "Lifecycle", "DR Metrics", "Common Agreements", "Change Management", "Configuration Management", "High Availability", "Disaster Recovery"],
+    "Services": ["Email and Voice Services", "File and Database Services", "IoT", "DNS", "DHCP", "DNS Records", "DNS Configuration", "DNS Security", "DNS Zones", "DHCPv6", "DHCP Security", "VoIP", "SIP", "NTP", "HTTP", "HTTPS", "LDAP", "Proxy Servers", "Load Balancers"]
+}
+
 def available_domains() -> tuple[int, ...]:
     return tuple(sorted(set(question.domain_id for question in QUESTION_BANK)))
 
+def available_topics() -> tuple[str, ...]:
+    """Returns broad categories derived from granular topics."""
+    categories = set()
+    for q in QUESTION_BANK:
+        categories.add(_get_category(q.topic))
+    return tuple(sorted(categories))
+
+def _get_category(topic: str) -> str:
+    for cat, topics in TOPIC_MAPPING.items():
+        if topic in topics or topic == cat:
+            return cat
+    return "Other"
+
 def get_questions(*, domains: Iterable[int] | None = None, topics: Iterable[str] | None = None, limit: int | None = None, shuffle: bool = True) -> list[Question]:
     d_filter = set(domains) if domains is not None else None
-    t_filter = set(topics) if topics is not None else None
+    
+    # Expand categories into their constituent topics
+    t_filter = None
+    if topics is not None:
+        t_filter = set()
+        for t in topics:
+            if t == "Other":
+                # Find all topics in the bank that are NOT in our mapping
+                mapped_topics = set()
+                for sub_list in TOPIC_MAPPING.values():
+                    mapped_topics.update(sub_list)
+                bank_topics = {q.topic for q in QUESTION_BANK}
+                t_filter.update(bank_topics - mapped_topics)
+            elif t in TOPIC_MAPPING:
+                t_filter.update(TOPIC_MAPPING[t])
+            else:
+                t_filter.add(t)
+
     filtered = [
         q for q in QUESTION_BANK 
         if (d_filter is None or q.domain_id in d_filter)

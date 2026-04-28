@@ -13,10 +13,12 @@ from .quiz_bank import (
     NOTES_DIR,
     PROJECT_ROOT,
     QUESTION_BANK,
+    available_topics,
     get_flashcards,
     get_global_stats,
     get_port_drill_questions,
     get_questions,
+    get_weak_questions,
     load_settings,
     reset_all_data,
     save_flashcard_mastery,
@@ -139,6 +141,26 @@ class QuizApp(tk.Tk):
         for i in range(1, 6):
             d_stats = stats[i]; acc = (d_stats["correct"] / d_stats["total"] * 100) if d_stats["total"] > 0 else 0
             row = ttk.Frame(frame); row.pack(fill="x", pady=10); ttk.Label(row, text=f"Domain {i}: {DOMAIN_NAMES[i]}", width=30).pack(side="left"); pb = ttk.Progressbar(row, length=400, mode="determinate", value=acc); pb.pack(side="left", padx=20); ttk.Label(row, text=f"{acc:.0f}% Accurate").pack(side="left")
+
+        # Topic Practice Section
+        topic_frame = ttk.LabelFrame(frame, text="Focused Topic Practice", padding=15)
+        topic_frame.pack(fill="x", pady=20)
+        
+        self.topic_selector = ttk.Combobox(topic_frame, values=available_topics(), state="readonly", font=self.ui_font)
+        self.topic_selector.set("Choose a specific topic...")
+        self.topic_selector.pack(side="left", padx=10, fill="x", expand=True)
+        
+        ttk.Button(topic_frame, text="Start Topic Quiz", style="Primary.TButton", 
+                   command=lambda: self._start_focused_practice([self.topic_selector.get()], 15)).pack(side="left", padx=10)
+
+        # Smart Practice Section
+        smart_frame = ttk.Frame(frame); smart_frame.pack(fill="x", pady=10)
+        def start_weak():
+            qs = get_weak_questions(limit=15)
+            if not qs: messagebox.showinfo("Smart Quiz", "No weak areas identified yet. Complete some standard quizzes first!")
+            else: self.session = QuizSession(qs); self._render_quiz_view()
+            
+        ttk.Button(smart_frame, text="Practice Weakest Questions", command=start_weak).pack(side="left")
 
     def _show_quiz_config(self) -> None:
         self._clear_main(); frame = ttk.Frame(self.main_area, padding=40); frame.pack(fill="both", expand=True); ttk.Label(frame, text="Practice Quiz", style="Title.TLabel").pack(anchor="w", pady=(0, 20))
