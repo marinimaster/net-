@@ -1,0 +1,143 @@
+# Internet of Things
+
+Global network of embedded systems used as or in:
+
+	- Personal devices
+	- Home appliances
+	- Home control systems
+	- Vehicles
+	- and other items that have been equipped with sensors, software, and network connectivity.
+
+This is often referred to as machine to machine (M2M) communication.
+
+
+Components:
+
+	- Hub/Control system: IoT devices usually require a communications hub to facilitate wireless networking. 
+	There must also be a control system as most IoT devices are headless, meaning that they have no terminal 
+	interface. Smart speaker operated by voice control or smartphone/app companion.
+
+	- Smart devices: IoT endpoints implement the function. Such as smart light bulb, refrigerator, 
+	thermostat/heating control. 
+	
+	These devices are capable of compute storage and network functions that are all 
+	vulnerable to exploits.
+	
+	Most use a linux or Android kernel. Since they are run mini-computers, they are 
+	vulnerable to some of the standard attacks associated with web applications and network functions.
+	
+	Integrated peripherals such as cameras or microphones could be compromised to facilitate surveillance.
+
+# Physical Access Control Systems and Smart Buildings
+
+A physical access control system (PACS) is a network of:
+
+	- Monitored Locks
+	- Intruder alarms
+	- Video surveillance cameras
+
+Building automation systems (BAS) or smart building for offices and datacenters can include PACS.
+As well as network-based configuration and monitoring of heating, ventilation, and air conditioning (HVAC).
+
+These subsystems are implemented by programmable logic controllers (PLCs) and varios type of sensors that measure 
+temprature, air pressure, humidty room occupancy, and so on.
+
+# Industrial Internet of Things (IIoT)
+
+Have different priorities than IT systems.
+Hazardous electromechanical components are involved.
+Focusing on safety is the overriding priority.
+Reverses the CIA triad to AIC triad, since it priotizes availability and integrity over confidentiality.
+
+Industrial Control Systems (ICS)
+
+Provide mechanisms for workflow and process automation. An ICS controls machinery 
+used in *critical infrastructure*.
+
+Distributed Control System (DCS)
+Refers to the ICS that manage process automation withing a single suite.
+
+Human-machine interfaces (HM)
+Used to configure PLCs, it can be a local control panel or software running on a computing host.
+
+# Supervisory Control and Data Acquisition (SCADA)
+
+Takes the place of a control server in large-scale, multiple-site ICSs
+
+Typically runs as software on ordindary computers, gathering data from and managing plant devices and equipment with 
+embedded PLCs.
+
+Gathers data from plant devices and equipment with embedded PLCs, referred to as field devices.
+
+
+# IoT Networks
+
+Each IoT device is identifed by some sort of serial number or code embedded within its won operating or control system.
+
+These devices tend to be small, unpowered or dependent on battery power, standard Thernet, cellular and Wi-Fi 
+networking products that connect computers are not always suitable for use.
+
+# Operational Technology Networks
+
+Communications network designed to implement an industrial control system rather than data networking.
+
+OT networks typically either serial data protocols or industrial Ethernet.
+
+Industrial Ethernet is optimized for real-time, deterministic tranfers. OT networks could also use vendor-developed 
+data link and networking protocols, as well as specialist application protocols.
+
+# Cellular Networks
+
+Also called baseband radio. Enables long-distance communication between IoTs.
+There are several baseband radio technologies:
+
+	- Narrowband-IoT (NB-IoT): This refered to a low-power version of LTE (Long Term Evolution) or 4G 
+	cellular standard.
+	The signal occupies less bandwidth than regular cellular. 20-100kbps.
+
+	Narrowband has a greater penetrating power, making it more suitable for use in inaccesible 
+	locations, such as tunnels or deep within buildings, where ordinary cellular connectivity would be 
+	impossible.
+
+	- LTE Machine Type Communication (LTE-M): Low poer system but supports higher bandwidth
+	Up to about 1Mbps
+
+# Iot Network Security
+
+Placement and segmentation issues for embedded and IoT systems are best considered by diving them into 
+three principal groups:
+
+	- Consumer-grade devices
+	- Smart Building Technology
+	- Industrial Systems
+
+# Consumer-Grade Smart Devices
+
+Consumer-grade devices can be poorly documented, and patch management/security response of vendors can be 
+inadequate.
+
+When designed for residential use, they can be configured with weak defaults.
+May be configured to "work" with minimum configuration effort.
+
+In a corporate workspace, the main risk of smart device placement is that of shadow IT.
+Where employees deploy a network-enabled device without a change and configuration management process.
+
+Can be mitigated by regular audits and through employee security awareness training.
+* Include all IoT devices in patch and vulnerability management audits.
+
+# Smart Buildings
+
+Compared to consumer-grade components, there should be less scope for compromise in the entry mechanisms 
+and climate lighting components of a properly designed smart building system.
+
+Configuration management and change control processes should ensure that no weak configurations are 
+introduced and that vendor advisories are tracked for any known vulnerabilties or explots so that these can 
+be patched or mitigated.
+
+# ICS/SCADA
+
+While ICS or SCADA are typically implemented as dedicated OT or wireless WANs. There may be points where 
+these networks might be connected to a corporate data network.
+
+There are risks both to embededd systems from the data network and to corporate that assets from the 
+embedded network.

@@ -1,0 +1,111 @@
+# Wireless Encryption
+
+Wired Equivalent Privacy (WEP)
+	- Replaced by Wifi Protected Access (WPA) due to its multiple vulnerabilities.
+
+Wifi Protected Access (WPA)
+	- Uses the RC4 stream cipher to encrypt traffic but adds a mechanism called Temporal Key Integrity Protocol (TKIP)
+
+Neither WEP nor the original WEP are considered secure enough for continued use.
+
+WPA2 uses Advanced Encryption Standard (AES) to replace RC4 and Counter Mode with Cipher Block Chaining Message Authentication Code Protocol (CCMP) to replace TKIP, designed to make replay attacks harder.
+
+Weaknesses in WPA3 lead to the creation of WPA3
+WPA3 main features:
+
+	- Simultaneous Authentication of Equals (SAE)
+		WPA2 uses a 4-way handshake to authneticate its credential, which is vulnerable.
+	- Updated cryptographic protocols
+		WPA3 replaces AES-CCMP with AES Galois Counter Mode.
+	- Protected Management Frames
+		Management frames are used for association and authentication and for disassociation and deauthentication messages as devices join and leave the network
+	- Wifi Enhanced Open
+		In WPA2, wireless networks with no passphrases transport unencrypted traffic,
+		WPA3 encrypts this traffic 
+
+# Personal Authentication
+
+WPA2 Pre-shared Key Authentication
+	Uses a passphrase to generate a key that is used to encrypt communications. It is also referred to as gorup authentication because a group of users share the same secret.
+
+WPA3 Personal Authentication
+	WPA3 still uses passphrases to authenticate stations, but it changes the method by which this secret is used to agree session keys. Referred to as Password Authentication Key Exchange.
+	In WPA3 Simultaneous Authentication of Equals (SAE) protocol replaces the 4-way handshake.
+
+# Enterprise Authentication
+
+Implements 802.1X wireless standard to use Extensible Authentication Protocol (EAP)
+802.1X defines Extensible Authentication Protocol over Wireless (EAPoW)
+	- Allows an access point to forward authentication data without allowing any other type of network access.
+
+With Enterprise Authentication, the wireless device requests an association, the AP enables EAPoW traffic.
+	- The wireless device is referred to as a supplicant device.
+	- The AP then passes the credentials of a supplicant to a AAA (RADIUS or TACACS+) server on the wired network for validation.
+	- When the supplicant has been authenticated, the server sends a Master Key (ML) to the supplicant.
+	- Supplicant and Authentication Server then derive a pairwise master key (PMK)
+	- The AAA server transmits the PMK to the access point
+	- The wireless station and access point then use the PMK to derive session keys.
+
+# Guest Networks and Captive Portals
+
+Access points with open authentication means that the client is not required to authenticate
+	WPA2
+		Open networks will be unencrypted
+	WPA3
+		Uses Wifi Enhanced Open mechanism to encrypt open authentication traffic.
+
+Open authentication will be enabled on public APs or on a private network to facilitate guest connections
+In the latter scenario, different SSIDs are created for employee and guest access, to keep traffic between them separate.
+
+Open authentication can be combined with a secondary authentication mechanism managed via a browser.
+When the client associates with an open network and launches de browser, the client is redirected to a captive portal
+
+Captive Portals allow a client to authenticate to the hotspot's provide network over HTTPS, so the login is secure.
+
+i) Captive portal issues may arise when the redirect does not work.
+   The captive portal should use HTTPS
+   Most modern browsers will block redirection to sites that do not use TLS.
+
+If using open networks, ensure to only be using HTTPS, or to use a VPN
+Ensure that the VPN uses certificated-based tunneling to set up the innet authentication method.
+
+# BYOD Issues
+
+BYOD is a personal device allowed to interact with network services and cloud apps.
+These can present some compatibility, support, and security challenges.
+
+	- Compatibility/Support
+	- Security: BYODs are not under control of the IT department, and unpatched devices could present a security issue.
+				An inside threat actor could install apps that might pose a risk to corporate data or misuse the device to exfiltrate data.
+
+Impact of these issues can be mitigated through the use of enterprise mobility management (EMM).
+EMM or mobile device management is a type of network access control solution.
+
+	- Enforces security policies while the device is connected.
+	- Might restrict the use of device functions or personal apps.
+
+Acceptable use policies within EMM include: 
+
+	- No rooting/jailbreaking devices
+	- Keeping the device up to date with patches
+
+# Wireless Network Attacks
+
+> Rogue Access Points
+	- Unauthorized access point installed on the network, malicious or not.
+	- Can be enabled by accident
+	- It can create a backdoor through which to attack the network.
+
+> Evil Twins
+	- Rogue access points masquerading as legitimate ones.
+	- Can advertise a similar network name
+	- Can also spoof the SSID or BSSID (MAC address) of an authorized/legitimate AP
+	- When a user connects to an evil twin, it may be able to harvest authentication information
+
+	- If the Evil Twin can provide wider network or internet access, execute an on-path attack to snoop on connections established with servers or websites.
+
+> Deauth Attacks
+	- Sends a stream of spoofed management frames to cause a client to deauth from an AP
+	- Can allow the attacker to interprose an evil twin, sniff information about the authenticaion process
+
+	Can be mitigated with Management Frame Protection (MFP/802.11w). Both the AP and clients must be configured to support MFP.

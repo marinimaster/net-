@@ -1,0 +1,50 @@
+# IEEE 802.11
+
+Better known as Wi-Fi, define the physical layer in which data is encoded into a radio carrier signal using a 
+modulation scheme.
+
+Properties of radio waves:
+
+	- Amplitude: height of peaks and troughs
+	- Frequency: number of peaks per unit of time
+	- Phase: angle of a wave at a point in time
+
+
+802.11 uses CDMA/CA (Carrier Sense Multiple Access with Collision Avoidance)
+
+	When a station receives a frame, it performs error checking. If the frame is intact, the stations responds 
+	with an acknowldgement.
+	
+
+Since a Wireless Network can't detect if there are any collisions happening
+A computer will first sense if there are any other transmissions happening.
+
+It will check the channel again, and if there are no active transmissions, it wait a random period of time before 
+transmitting again.
+
+Once the destination device received the data, it will send an acknowledgement
+
+If the sending computer does not receive an acknowledgement, it will assume that it did not get the data.
+
+802.11 also defines a virtual carrier sense flow control mechanism to reduce the incidence of collisions.
+
+Request to Send (RTS) is sent by a station, and the receiving station responds with clear to send (CTS), and all 
+other stations within that range do not attempt to transmit within that period.
+
+# IEEE 802.11a and 5GHz Channel Bandwith
+
+Wireless radios are configured to use frequency bands. (2.4GHz / 5GHz)
+
+Channels are subdivisions of frequencies to allow multiple networks to operate at the same location without 
+interfering with each other.
+
+802.11a uses 5GHz and introduced Orthogonal Division Multiplexing (OFDM).
+
+*) Accompanied by 802.11h which used Dynamic Frequency Selection (DFS) method to scan for radar signals and prevent 
+   access points from using channels that would cause interference.
+
+5GHz is subdivided into 24-25 non-overlapping channels, each of wich is 20Mhz wide.
+
+802.11b standard uses the 2.4GHz frequency band, released in parallel with 802.11a.
+It standardized the use of the carrier method Direct Sequence Spread Spectrum (DSSS)
+

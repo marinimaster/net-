@@ -1,0 +1,71 @@
+# Network Security Zones
+
+Zone: an area where all hosts share the same security configuration.
+Network traffic between zones should be restricted by policies and rules.
+Typically enforced by an appliance (firewall or proxy).
+
+General Security Zones:
+
+	
+	- Private server administrative networks: Devices are subject to strict hardening and configuration management policies. 
+						  Hosts, user accounts, and traffic with permission to operate in the zone are 
+						  continually monitored to ensure compliance with security policies.
+
+	- Private client network: Devices are subject to security policies and monitoring. but the diverse range of technologies
+				  and permissions to use public networks make the zone less than fully trusted.
+
+	- Guest: Unmanaged devices are allowed to connect, subject to some restrictions and monitoring.
+		 Typically untrusted and would not be allowed to access trusted networks.
+
+	- Public Server Network: Devices are fully managed but accept connections from unmanaged clients. Making the zone 
+				 partially trusted.
+
+	- Public: This zone is managed and therefore untrusted.
+
+Perimeter networks
+
+One important distinction between different security zones is whether a host is Internet facing.
+
+# Screened subnets
+
+Use two firewalls placed on either side of the perimeter network zone.
+
+Screening firewall
+
+	Restricts traffic on the external/public interface and allows permitted traffic on hosts in the perimeter 
+	zone subnet.
+
+Internal Firewall
+
+	Filters communications between hosts in the perimeter and hosts on the LAN.
+
+# ID and IP Systems
+
+IDSs
+
+	Analysis of either network traffic or system and application logs.
+
+	Where a firewall or proxy applies security rules, an IDS is configured with signature patterns.
+
+	Each pattern represents a known type of malicious activity. Like antiviruses, an IDS should be kept up to date with 
+	the latest signature patterns.
+
+Can also be configured between anomaly-based detections.
+Anomaly based detection defines a baseline of normal network traffic and then monitors it.
+*) Generates high levels of false positives.
+
+Like a packet analyzer, an IDS must be configured with a packet sniffer to be able to read frames from a mirrored 
+port or TAP.
+
+IDS should be positioned behind a firewall to monitor traffic entering and exiting a security zone.
+Passive sensors are undetectable by the attacker since it does not have an IP address.
+
+IPSs
+
+	Provides an active response to any network threats that it matches.
+	Example: sending a TCP reset packet to the attacking host.
+
+It is now very commonly built into firewall appliacnes and proxy servers.
+
+IPS-enabled firewalls are inline with the network, meaning that all traffic passes through it (also making them a 
+single point of failure if there is no fault tolerance mechanism).

@@ -1,0 +1,6 @@
+# Review Checkpoint 4
+
+> Review STP protocol deep
+> Review LDAP
+> Review DiffServ Code Point concept
+> TCP SYN SYN/ACK ACK

@@ -1,0 +1,77 @@
+What can an organization use geofencing for?
+answer
+
+To increase the speed of their internet connection
+
+To monitor the productivity of their employees
+
+Correct: To control the use of camera functions on devices
+
+To improve the accuracy of their GPS systems
+
+Ex: The correct answer is to control the use of camera or video functions on devices. Organizations can use 
+geofencing to create a virtual perimeter around a specific area, such as their office property, and limit the 
+functionality of devices that exceed this boundary. This includes controlling the use of camera or video functions 
+for security or privacy reasons.
+
+What feature allows a security camera to survey a large room and pick out individual faces?
+answer
+
+Fixed positioning
+
+Narrow focal length
+
+Correct: Pan-Tilt-Zoom (PTZ) controls
+
+Coaxial cabling
+
+Ex: The correct answer is Pan-Tilt-Zoom (PTZ) controls. PTZ controls allow a camera to pan (move horizontally), tilt 
+(move vertically), and zoom in on specific areas or subjects. This capability is essential for surveying large rooms 
+and picking out individual faces, providing flexibility and detailed surveillance that fixed cameras cannot offer.
+
+Due to an increase in foot traffic from outside groups throughout the building, the organization asks their security office to employ equipment that will allow visual monitoring across the organization.
+
+What equipment would best be suited to manage this request?
+answer
+
+Circuit
+
+Correct: Cameras
+
+Motion Detection
+
+Asset Tag
+
+Ex: security camera is either fixed or operated using Pan-Tilt-Zoom (PTZ) controls. Different cameras suit different 
+purposes. A fixed, narrow focal length camera positioned on the doorway is adequate to record images of individuals 
+entering through an access control vestibule.
+
+How is a user's biometric data used in a biometric lock system?
+answer
+
+It is sent to a remote server for storage.
+
+It is recorded and stored on an authentication server.
+
+Correct: It is stored on the user's badge.
+
+It is deleted immediately after each use for privacy reasons.
+
+Ex: In a biometric lock system, a user's biometric data is recorded as a template and stored on an authentication 
+server. When the user attempts to gain access, their biometric is scanned and compared to the stored template for 
+authentication
+
+
+What is a badge reader used for in building security?
+answer
+
+To detect motion at entry points
+
+Correct: To authenticate users quickly at access points
+
+To record the time employees leave the building
+
+To provide lighting at entry points
+
+Ex: A badge reader is a type of access control hardware used to authenticate users quickly at access points. Users 
+present a photographic ID badge, possibly with an integrated chip for additional security, to gain access

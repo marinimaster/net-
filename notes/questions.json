@@ -8210,5 +8210,1887 @@
         "explanation": "AD is used by routers to select the best path when there are multiple routes to the same destination from different protocols.",
         "source_file": "notes/administrative_distance.txt",
         "domain_id": 2
+    },
+    {
+        "id": "fw-1-parsed",
+        "topic": "Proxy Servers",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "What is a reverse proxy used for?",
+        "choices": [
+            "Managing outbound traffic",
+            "Directly connecting clients to the Internet",
+            "Managing inbound traffic",
+            "Storing data permanently"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "A reverse proxy is positioned at the edge of the network to manage inbound traffic from the Internet to internal servers. It provides security, load balancing, and caching services by acting as an intermediary for external requests.",
+        "source_file": "notes/network_security_rules.txt"
+    },
+    {
+        "id": "fw-2-parsed",
+        "topic": "Proxy Servers",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "What is a forward proxy primarily used for?",
+        "choices": [
+            "Inbound traffic management",
+            "Outbound traffic management",
+            "Data encryption only",
+            "Data storage"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "A forward proxy manages outbound traffic from a private network to the Internet. It allows organizations to control and monitor the traffic exiting the internal network while providing security and caching for internal clients.",
+        "source_file": "notes/network_security_rules.txt"
+    },
+    {
+        "id": "fw-3-parsed",
+        "topic": "Proxy Servers",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "What does a transparent proxy NOT require from a client?",
+        "choices": [
+            "An Internet connection",
+            "Specific configuration on the client device",
+            "A network interface card",
+            "Authentication credentials"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "A transparent proxy intercepts client traffic at the network level without requiring any specific configuration on the client's device or software. This is in contrast to non-transparent proxies, which require the client to be configured with the proxy's IP and port.",
+        "source_file": "notes/network_security_rules.txt"
+    },
+    {
+        "id": "fw-4-parsed",
+        "topic": "Content Filtering",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "What is the primary purpose of content filtering in a network?",
+        "choices": [
+            "To increase the speed of the Internet connection",
+            "To restrict access to certain types of websites or content",
+            "To provide unlimited access to all online resources",
+            "To encrypt all data transmitted over the Internet"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Content filtering is used to restrict or block access to specific websites, applications, or types of content based on organizational policies, security requirements, or regulatory compliance.",
+        "source_file": "notes/network_security_rules.txt"
+    },
+    {
+        "id": "fw-5-parsed",
+        "topic": "Content Filtering",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "Which method is commonly used for content filtering based on the reputation of a website?",
+        "choices": [
+            "URL filtering",
+            "IP address filtering",
+            "MAC address filtering",
+            "Payload inspection"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "URL filtering allows administrators to block or permit access to websites based on their reputation or category (e.g., social media, gambling, or known malicious sites) by checking the requested URL against a database.",
+        "source_file": "notes/network_security_rules.txt"
+    },
+    {
+        "id": "fw-6-parsed",
+        "topic": "Firewalls",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "What characterizes a stateful inspection firewall?",
+        "choices": [
+            "It only inspects the header of individual packets.",
+            "It monitors the state of active connections and makes decisions based on the context of the traffic.",
+            "It blocks all incoming traffic by default.",
+            "It is used exclusively for encrypting data."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Stateful inspection firewalls track the state of active network connections (sessions). They analyze the context of traffic, ensuring that incoming packets are part of an established and valid session before allowing them through.",
+        "source_file": "notes/network_security_rules.txt"
+    },
+    {
+        "id": "fw-7-parsed",
+        "topic": "Firewalls",
+        "domain_id": 4,
+        "difficulty": "hard",
+        "prompt": "How does an application-aware firewall differ from a traditional stateful firewall?",
+        "choices": [
+            "It cannot inspect encrypted traffic.",
+            "It only works at the Network layer of the OSI model.",
+            "It can identify and control specific applications and their features.",
+            "It is less secure than a traditional stateful firewall."
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Application-aware firewalls (Next-Generation Firewalls or NGFWs) can inspect traffic at the Application layer (Layer 7). This allows them to distinguish between different applications using the same port (like port 80 or 443) and apply granular rules based on application behavior.",
+        "source_file": "notes/network_security_rules.txt"
+    },
+    {
+        "id": "fw-8-parsed",
+        "topic": "Firewalls",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "Where is a network-based firewall typically located?",
+        "choices": [
+            "On each individual host in the network",
+            "At the edge of a network to protect the entire segment",
+            "In the cloud only",
+            "On the physical network cables"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Network-based firewalls are usually deployed as dedicated appliances at the perimeter or edge of a network to filter traffic entering or leaving the entire network segment or organization.",
+        "source_file": "notes/network_security_rules.txt"
+    },
+    {
+        "id": "fw-9-parsed",
+        "topic": "Firewalls",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "What is the primary function of a host-based firewall?",
+        "choices": [
+            "To protect the entire network from external threats",
+            "To protect a single host from unauthorized access and attacks",
+            "To manage traffic for multiple networks",
+            "To serve as a central point for all network security policies"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "A host-based firewall is a software application installed on an individual device (like a server or workstation) to provide a localized layer of protection specifically for that host.",
+        "source_file": "notes/network_security_rules.txt"
+    },
+    {
+        "id": "fw-10-parsed",
+        "topic": "Security Rules",
+        "domain_id": 4,
+        "difficulty": "hard",
+        "prompt": "Which of the following describes an Access Control List (ACL) in the context of a firewall?",
+        "choices": [
+            "A list of all users authorized to use the network",
+            "A set of rules that define which traffic is allowed or denied based on specific criteria",
+            "A log of all security incidents that have occurred on the network",
+            "A database of all devices connected to the network"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "An ACL is a series of rules (permit or deny) used by firewalls and routers to filter traffic based on criteria such as source/destination IP addresses, port numbers, and protocol types.",
+        "source_file": "notes/network_security_rules.txt"
+    },
+    {
+        "id": "fw-11-parsed",
+        "topic": "Security Rules",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "What does the 'implicit deny' principle in firewall configuration ensure?",
+        "choices": [
+            "That all traffic is explicitly allowed by default",
+            "That any traffic not matching an explicit allow rule is automatically blocked",
+            "That the firewall only denies traffic during peak hours",
+            "That only traffic from specific countries is blocked"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The 'implicit deny' rule is a default security stance placed at the end of an ACL. It ensures that if traffic does not match any of the preceding 'allow' rules, it is automatically dropped, preventing unauthorized or unexpected access.",
+        "source_file": "notes/network_security_rules.txt"
+    },
+    {
+        "id": "rules-1",
+        "topic": "URL Filtering",
+        "prompt": "Which of the following is a component of a Uniform Resource Locator (URL) that a content filter might analyze? (Select THREE)",
+        "choices": [
+            "Protocol",
+            "Server Path",
+            "MAC Address",
+            "Domain Name",
+            "TTL Value"
+        ],
+        "answer_indices": [
+            0,
+            1,
+            3
+        ],
+        "explanation": "A URL contains the protocol (http/https), domain name, server path, and optional query parameters, all of which can be used for filtering.",
+        "source_file": "notes/network_security_rules.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "rules-2",
+        "topic": "TLS Inspection",
+        "prompt": "How does a proxy server perform TLS inspection on encrypted traffic without causing browser certificate warnings on client devices?",
+        "choices": [
+            "By sharing the website's private key with the client.",
+            "By generating a certificate for the domain signed by an internal enterprise CA trusted by the client.",
+            "By disabling encryption between the proxy and the website.",
+            "By using a transparent proxy that doesn't affect the handshake."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "To inspect TLS, the proxy acts as a 'man-in-the-middle' by issuing its own certificates for external sites, which clients must trust via an enterprise CA.",
+        "source_file": "notes/network_security_rules.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "rules-3",
+        "topic": "Content Filtering",
+        "prompt": "A content filter uses a 'reputation-based' system. What does this typically rely on?",
+        "choices": [
+            "Manual entry of every forbidden IP by the administrator.",
+            "A continually updated database that scores websites based on observed history and behavior.",
+            "The physical location of the server hosting the content.",
+            "The speed of the website's response time."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Reputation-based filtering leverages external databases that track and score the safety and reliability of domains and IPs over time.",
+        "source_file": "notes/network_security_rules.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "sec-design-6",
+        "topic": "Security Zones",
+        "prompt": "Which security zone is described as fully managed but accepting connections from unmanaged clients, making it 'partially trusted'?",
+        "choices": [
+            "Private server administrative network",
+            "Private client network",
+            "Public Server Network",
+            "Guest zone"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "The Public Server Network (or DMZ) contains managed devices that are accessible to unmanaged external clients, placing it in a partially trusted state.",
+        "source_file": "notes/network_security_design.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "sec-design-7",
+        "topic": "Intrusion Detection",
+        "prompt": "Which detection method defines a baseline of normal network traffic and monitors for deviations, but is known for generating high levels of false positives?",
+        "choices": [
+            "Signature-based detection",
+            "Anomaly-based detection",
+            "Rule-based detection",
+            "Heuristic analysis"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Anomaly-based detection looks for deviations from a defined baseline. While effective at finding new threats, it often flags legitimate but unusual traffic as malicious.",
+        "source_file": "notes/network_security_design.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "sec-design-8",
+        "topic": "Intrusion Detection",
+        "prompt": "What is a key security advantage of using a 'passive sensor' for network intrusion detection?",
+        "choices": [
+            "It can actively block TCP sessions.",
+            "It is undetectable by an attacker because it does not have an IP address.",
+            "It automatically encrypts mirrored traffic.",
+            "It replaces the need for a perimeter firewall."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Passive sensors operate by reading frames from a mirrored port or TAP. Because they don't have an IP address on the monitored segment, they cannot be targeted or detected by an attacker.",
+        "source_file": "notes/network_security_design.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "sec-design-9",
+        "topic": "Intrusion Prevention",
+        "prompt": "Which of the following is an example of an 'active response' provided by an Intrusion Prevention System (IPS)?",
+        "choices": [
+            "Sending a TCP reset packet to the attacking host",
+            "Logging the event to a SIEM",
+            "Generating an email alert for the administrator",
+            "Visualizing the attack on a dashboard"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "An active response involves taking immediate action to stop an attack, such as terminating a connection with a TCP reset packet.",
+        "source_file": "notes/network_security_design.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "sec-design-1-parsed",
+        "topic": "Network Security Zones",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "What is the role of the screening firewall in a screened subnet?",
+        "choices": [
+            "To connect directly to the LAN",
+            "To filter communications between hosts in the perimeter and the LAN",
+            "To restrict traffic on the external/public interface",
+            "To provide unrestricted access to the Internet"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "The screening firewall acts as the first line of defense in a screened subnet by restricting traffic on the external or public-facing interface, only allowing permitted traffic into the perimeter network zone.",
+        "source_file": "notes/network_security_design.txt"
+    },
+    {
+        "id": "sec-design-2-parsed",
+        "topic": "Network Security Zones",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "What is a perimeter network also known as?",
+        "choices": [
+            "A neutral zone",
+            "A Demilitarized Zone (DMZ)",
+            "An internal network segment",
+            "A secure gateway"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "A perimeter network is commonly referred to as a Demilitarized Zone (DMZ) or screened subnet, acting as a buffer zone between the public internet and the private internal network.",
+        "source_file": "notes/network_security_design.txt"
+    },
+    {
+        "id": "sec-design-3-parsed",
+        "topic": "Intrusion Detection and Prevention",
+        "domain_id": 4,
+        "difficulty": "standard",
+        "prompt": "What is the primary difference between an IDS and an IPS?",
+        "choices": [
+            "An IDS is hardware-based, while an IPS is software-based.",
+            "An IDS only detects and alerts, while an IPS can actively block or stop a threat.",
+            "An IDS is used for internal traffic, while an IPS is for external traffic.",
+            "An IDS encrypts data, while an IPS decrypts it."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "An Intrusion Detection System (IDS) focuses on monitoring and alerting administrators to suspicious activity, whereas an Intrusion Prevention System (IPS) has the additional capability to take action, such as blocking traffic, to stop a detected threat.",
+        "source_file": "notes/network_security_design.txt"
+    },
+    {
+        "id": "sec-design-4-parsed",
+        "topic": "Intrusion Detection and Prevention",
+        "domain_id": 4,
+        "difficulty": "hard",
+        "prompt": "Which IDS traffic assessment indicates that the system identified harmless traffic as offensive and generated an alarm?",
+        "choices": [
+            "Positive",
+            "Negative",
+            "False positive",
+            "False negative"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "A false positive occurs when legitimate, harmless traffic is incorrectly identified as a threat by the security system, triggering an unnecessary alert or action.",
+        "source_file": "notes/network_security_design.txt"
+    },
+    {
+        "id": "sec-design-5-parsed",
+        "topic": "Intrusion Detection and Prevention",
+        "domain_id": 4,
+        "difficulty": "hard",
+        "prompt": "Which traffic assessment describes a scenario where harmful traffic passes through the system without any alerts being generated?",
+        "choices": [
+            "Positive",
+            "False positive",
+            "Negative",
+            "False negative"
+        ],
+        "answer_indices": [
+            3
+        ],
+        "explanation": "A false negative is considered the worst-case scenario in security monitoring; it occurs when the system fails to detect an actual attack, allowing malicious traffic to pass through unnoticed.",
+        "source_file": "notes/network_security_design.txt"
+    },
+    {
+        "id": "sec-design-10",
+        "topic": "Security Zones",
+        "prompt": "Which of the following describes a 'Private Server Administrative Network' zone?",
+        "choices": [
+            "A zone where unmanaged guest devices connect with minimal restrictions.",
+            "A zone subject to strict hardening where all traffic and accounts are continually monitored for compliance.",
+            "A zone that accepts connections from unmanaged clients but is partially trusted.",
+            "The default untrusted zone for all internet-facing traffic."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Administrative zones require the highest level of trust and are subject to the strictest hardening and monitoring policies.",
+        "source_file": "notes/network_security_design.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "sec-design-11",
+        "topic": "Security Zones",
+        "prompt": "How is a 'Guest' security zone typically treated in a corporate network environment?",
+        "choices": [
+            "It is fully trusted and has unrestricted access to the LAN.",
+            "It is partially trusted and allowed to access private server networks.",
+            "It is typically untrusted and restricted from accessing internal trusted networks.",
+            "It is the zone where all administrative tools are hosted."
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Guest zones host unmanaged devices and are therefore untrusted, meaning they should be isolated from sensitive internal segments.",
+        "source_file": "notes/network_security_design.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "sec-design-12",
+        "topic": "Intrusion Detection",
+        "prompt": "What must an IDS be configured with in order to read frames from a mirrored port or TAP?",
+        "choices": [
+            "A packet sniffer",
+            "A DHCP server",
+            "A proxy auto-config (PAC) file",
+            "An enterprise certificate authority"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "To analyze traffic from a mirror port or TAP, the IDS must have a packet sniffer to capture and read the raw frames.",
+        "source_file": "notes/network_security_design.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "sec-design-13",
+        "topic": "Intrusion Prevention",
+        "prompt": "What is a significant risk of deploying an IPS-enabled firewall 'inline' without a fault tolerance mechanism?",
+        "choices": [
+            "It will generate more false negatives.",
+            "It cannot perform signature-based detection.",
+            "It becomes a single point of failure for the network.",
+            "It will be unable to send TCP reset packets."
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Inline appliances process all traffic; if they fail and there is no bypass or redundancy, all network communication through that point will stop.",
+        "source_file": "notes/network_security_design.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "sec-design-14",
+        "topic": "Security Zones",
+        "prompt": "What is the primary difference between the 'Screening Firewall' and the 'Internal Firewall' in a screened subnet?",
+        "choices": [
+            "The screening firewall is software-based; the internal is hardware-based.",
+            "The screening firewall restricts external traffic; the internal filters communication between the perimeter and the LAN.",
+            "The screening firewall manages DHCP; the internal manages DNS.",
+            "There is no difference; they perform identical roles."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "In a screened subnet (DMZ), the external screening firewall protects the perimeter from the internet, while the internal firewall protects the private LAN from the perimeter.",
+        "source_file": "notes/network_security_design.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "iot-1",
+        "topic": "IIoT Principles",
+        "prompt": "In Industrial Internet of Things (IIoT) environments, safety is the overriding priority. How does this affect the traditional CIA triad?",
+        "choices": [
+            "It maintains the CIA triad as is.",
+            "It replaces it with the AIC triad, prioritizing Availability and Integrity over Confidentiality.",
+            "It prioritizes Confidentiality above all else to protect trade secrets.",
+            "It eliminates the need for Integrity checks."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "IIoT systems prioritize safety and the AIC triad (Availability, Integrity, Confidentiality) because the failure of electromechanical components can have hazardous physical consequences.",
+        "source_file": "notes/internet_of_things.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "iot-2",
+        "topic": "Industrial Control Systems",
+        "prompt": "Which component in an Industrial Control System (ICS) typically gathered data from and manages plant devices with embedded PLCs in a large-scale, multiple-site environment?",
+        "choices": [
+            "DCS (Distributed Control System)",
+            "SCADA (Supervisory Control and Data Acquisition)",
+            "HMI (Human-Machine Interface)",
+            "A consumer-grade communications hub"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "SCADA takes the place of a control server in large-scale, multi-site ICSs, managing field devices and gathering data from embedded PLCs.",
+        "source_file": "notes/internet_of_things.txt",
+        "domain_id": 1
+    },
+    {
+        "id": "iot-3",
+        "topic": "Cellular IoT",
+        "prompt": "A company needs to deploy IoT sensors deep within a building where standard cellular signals are weak. Which technology is specifically designed for high penetrating power and low bandwidth (20-100kbps)?",
+        "choices": [
+            "LTE-M",
+            "5G Ultra Wideband",
+            "NB-IoT (Narrowband-IoT)",
+            "Industrial Ethernet"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "NB-IoT is a low-power version of LTE with high penetrating power, making it ideal for inaccessible locations like tunnels or deep building interiors.",
+        "source_file": "notes/internet_of_things.txt",
+        "domain_id": 1
+    },
+    {
+        "id": "iot-4",
+        "topic": "IoT Security",
+        "prompt": "What is the primary security risk associated with 'headless' IoT devices in a corporate network?",
+        "choices": [
+            "They lack a physical network port.",
+            "They have no terminal interface, requiring a separate control system/app that can be a point of compromise.",
+            "They cannot run Linux-based kernels.",
+            "They are immune to standard web application attacks."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Headless devices have no UI and rely on external hubs or apps for control, which expands the attack surface if those control mechanisms are exploited.",
+        "source_file": "notes/internet_of_things.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "iot-5",
+        "topic": "Operational Technology",
+        "prompt": "Operational Technology (OT) networks differ from standard data networks primarily because they are:",
+        "choices": [
+            "Optimized for high-throughput video streaming.",
+            "Designed to implement industrial control systems rather than general data networking.",
+            "Only capable of using wireless serial protocols.",
+            "Encrypted by default at the Physical layer."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "OT networks are purpose-built for ICS and process automation, often using industrial Ethernet or serial protocols for real-time control.",
+        "source_file": "notes/internet_of_things.txt",
+        "domain_id": 1
+    },
+    {
+        "id": "iot-6",
+        "topic": "IoT Vulnerabilities",
+        "prompt": "Many IoT devices run on modified Linux or Android kernels. What is a direct security implication of this design?",
+        "choices": [
+            "They are immune to malware.",
+            "They are vulnerable to standard attacks associated with web applications and network functions.",
+            "They do not require patch management.",
+            "They cannot be connected to wireless hubs."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Because they are essentially mini-computers running common kernels, they share many of the same vulnerabilities as larger servers and mobile devices.",
+        "source_file": "notes/internet_of_things.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "iot-7",
+        "topic": "Industrial Automation",
+        "prompt": "In an industrial suite, which system manages process automation within a single location?",
+        "choices": [
+            "SCADA",
+            "DCS (Distributed Control System)",
+            "PACS",
+            "NB-IoT"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "DCS refers to the ICS that manage process automation within a single suite or site, whereas SCADA handles larger, multi-site deployments.",
+        "source_file": "notes/internet_of_things.txt",
+        "domain_id": 1
+    },
+    {
+        "id": "iot-8",
+        "topic": "Smart Buildings",
+        "prompt": "A Physical Access Control System (PACS) typically includes which of the following components? (Select THREE)",
+        "choices": [
+            "Monitored Locks",
+            "Intruder Alarms",
+            "HVAC configuration tools",
+            "Video Surveillance Cameras",
+            "BGP routing tables"
+        ],
+        "answer_indices": [
+            0,
+            1,
+            3
+        ],
+        "explanation": "A PACS specifically manages physical security via locks, alarms, and cameras. HVAC is part of a broader BAS (Building Automation System).",
+        "source_file": "notes/internet_of_things.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "iot-9",
+        "topic": "IoT Security",
+        "prompt": "What is the term for the risk where employees deploy IoT devices without going through official change and configuration management processes?",
+        "choices": [
+            "Zombies",
+            "Shadow IT",
+            "Botnet",
+            "Lateral Movement"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Shadow IT occurs when unmanaged and unauthorized devices are introduced to the network, bypassing security audits.",
+        "source_file": "notes/internet_of_things.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "iot-10",
+        "topic": "IIoT Protocols",
+        "prompt": "Which low-power cellular technology supports higher bandwidth (up to 1Mbps) for machine-type communication?",
+        "choices": [
+            "NB-IoT",
+            "LTE-M",
+            "Industrial Ethernet",
+            "Z-Wave"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "LTE-M (Machine Type Communication) provides more bandwidth (up to 1Mbps) than NB-IoT while remaining a low-power cellular option.",
+        "source_file": "notes/internet_of_things.txt",
+        "domain_id": 1
+    },
+    {
+        "id": "iot-11",
+        "topic": "Industrial Control Systems",
+        "prompt": "A technician uses a local control panel or software on a computing host to configure a PLC. What is this interface called?",
+        "choices": [
+            "DCS",
+            "HMI (Human-Machine Interface)",
+            "SCADA Hub",
+            "Baseband Radio"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The HMI is the interface used by human operators to interact with and configure Industrial Control Systems and PLCs.",
+        "source_file": "notes/internet_of_things.txt",
+        "domain_id": 1
+    },
+    {
+        "id": "iot-12",
+        "topic": "IoT Networking",
+        "prompt": "Why is 'Industrial Ethernet' preferred in Operational Technology (OT) networks over standard Ethernet?",
+        "choices": [
+            "It is always wireless.",
+            "It is optimized for real-time, deterministic transfers.",
+            "It does not use the MAC address system.",
+            "It is slower and more reliable for battery-powered devices."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Industrial Ethernet is designed for real-time communication where data must be delivered within a precise, deterministic timeframe for process control.",
+        "source_file": "notes/internet_of_things.txt",
+        "domain_id": 1
+    },
+    {
+        "id": "phys-sec-1-parsed",
+        "topic": "Physical Security Controls",
+        "domain_id": 2,
+        "difficulty": "standard",
+        "prompt": "What can an organization use geofencing for in a high-security environment?",
+        "choices": [
+            "To increase the speed of their internet connection",
+            "To monitor the productivity of their employees",
+            "To control the use of camera functions on devices",
+            "To improve the accuracy of their GPS systems"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Organizations can use geofencing to create a virtual perimeter around a specific area, such as office property, and limit device functionality\u2014such as disabling camera or video functions\u2014for security or privacy reasons once that boundary is crossed.",
+        "source_file": "notes/placeholder.txt"
+    },
+    {
+        "id": "phys-sec-2-parsed",
+        "topic": "Surveillance",
+        "domain_id": 2,
+        "difficulty": "standard",
+        "prompt": "What feature allows a security camera to survey a large room and pick out individual faces effectively?",
+        "choices": [
+            "Fixed positioning",
+            "Narrow focal length",
+            "Pan-Tilt-Zoom (PTZ) controls",
+            "Coaxial cabling"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "PTZ (Pan-Tilt-Zoom) controls allow a camera to move horizontally and vertically and zoom in on specific subjects, providing the flexibility needed to survey large areas and identify specific details like faces.",
+        "source_file": "notes/internet_of_things.txt"
+    },
+    {
+        "id": "phys-sec-3-parsed",
+        "topic": "Surveillance",
+        "domain_id": 2,
+        "difficulty": "standard",
+        "prompt": "An organization needs visual monitoring across its entire building due to increased foot traffic. What equipment is best suited for this request?",
+        "choices": [
+            "Circuit breakers",
+            "Cameras",
+            "Motion Detection",
+            "Asset Tags"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Security cameras (fixed or PTZ) are the standard equipment for visual monitoring. Fixed cameras with narrow focal lengths are ideal for specific points like doorways, while others manage broader areas.",
+        "source_file": "notes/internet_of_things.txt"
+    },
+    {
+        "id": "phys-sec-4-parsed",
+        "topic": "Access Control",
+        "domain_id": 2,
+        "difficulty": "hard",
+        "prompt": "How is a user's biometric data typically managed in a biometric lock system?",
+        "choices": [
+            "It is sent to a remote public server for storage.",
+            "It is recorded and stored on an authentication server.",
+            "It is stored only on the user's physical ID badge.",
+            "It is deleted immediately after each use for privacy reasons."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "In most biometric systems, a user's data is recorded as a template and stored on an internal authentication server. When access is attempted, the live scan is compared against this stored template.",
+        "source_file": "notes/internet_of_things.txt"
+    },
+    {
+        "id": "phys-sec-5-parsed",
+        "topic": "Access Control",
+        "domain_id": 2,
+        "difficulty": "standard",
+        "prompt": "What is the primary purpose of a badge reader in building security?",
+        "choices": [
+            "To detect motion at entry points",
+            "To authenticate users quickly at access points",
+            "To record the time employees leave the building",
+            "To provide lighting at entry points"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Badge readers are access control hardware used to quickly authenticate users. Users present a photo ID badge, often containing an integrated chip, to gain entry through a secured point.",
+        "source_file": "notes/internet_of_things.txt"
+    },
+    {
+        "id": "wifi-adv-1",
+        "topic": "Wireless Troubleshooting",
+        "prompt": "A technician measures a wireless signal at -65 dBm with a noise floor of -80 dBm. A second location measures -65 dBm with a noise floor of -90 dBm. Which of the following is TRUE?",
+        "choices": [
+            "Both locations will perform identically because the signal strength is the same.",
+            "The first location has a better Signal-to-Noise Ratio (SNR).",
+            "The second location has a better SNR (25 dB) and will likely have better throughput.",
+            "Both locations are below the minimum receiver sensitivity of -80 dBm."
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "SNR is the difference between signal and noise. Location 2: |-65 - (-90)| = 25 dB. Location 1: |-65 - (-80)| = 15 dB. A higher SNR means the signal is clearer relative to background noise.",
+        "source_file": "notes/enterprise_wireless_network_design.txt",
+        "domain_id": 5
+    },
+    {
+        "id": "wifi-adv-2",
+        "topic": "802.11ax Mechanics",
+        "prompt": "How does Orthogonal Frequency Division Multiple Access (OFDMA) in Wi-Fi 6 improve efficiency compared to standard OFDM?",
+        "choices": [
+            "It increases the transmit power of the omnidirectional antenna.",
+            "It allows a single channel to be subdivided into Resource Units (RUs) to serve multiple users in parallel.",
+            "It eliminates the need for a 6 GHz frequency band.",
+            "It forces all clients to use the 2.4GHz band for better penetration."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "OFDMA allows a channel to be carved into smaller sub-channels (Resource Units), enabling the AP to communicate with multiple clients simultaneously within a single transmission window.",
+        "source_file": "notes/wireless_standards.txt",
+        "domain_id": 1
+    },
+    {
+        "id": "wifi-adv-3",
+        "topic": "Enterprise Wireless",
+        "prompt": "An administrator is deploying 'lightweight' access points across a campus. Which protocol is MOST likely used for communication between these APs and the central wireless controller?",
+        "choices": [
+            "LWAPP or CAPWAP",
+            "SNMPv3",
+            "BGP",
+            "802.11r"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "Lightweight APs require a controller and typically use LWAPP (Lightweight Access Point Protocol) or the vendor-neutral CAPWAP derivative for management and data tunneling.",
+        "source_file": "notes/enterprise_wireless_network_design.txt",
+        "domain_id": 2
+    },
+    {
+        "id": "wifi-adv-4",
+        "topic": "MIMO Notation",
+        "prompt": "A wireless station is identified as having a '2x3:2' radio chain. What does the ':2' specifically represent in this notation?",
+        "choices": [
+            "The number of transmit antennae.",
+            "The number of receive antennae.",
+            "The number of supported spatial streams.",
+            "The number of frequency bands supported."
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "In AxB:C notation, A is transmit antennae, B is receive antennae, and C is the number of spatial streams. A 2x3:2 device has 2 transmit, 3 receive, and can handle 2 spatial streams.",
+        "source_file": "notes/wireless_standards.txt",
+        "domain_id": 1
+    },
+    {
+        "id": "wifi-adv-5",
+        "topic": "Wireless Design",
+        "prompt": "A technician needs to provide Wi-Fi coverage in a warehouse with very high ceilings. Which antenna configuration would BEST minimize signal loss for users on the floor?",
+        "choices": [
+            "Standard Omnidirectional mounted at 30 feet.",
+            "Downtilt Omnidirectional antennae.",
+            "Unidirectional Yagi pointed at the ceiling.",
+            "Standard Omnidirectional mounted behind metal shelving."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Downtilt antennae are designed for high-ceiling environments to focus the signal downward toward the users rather than wasting energy propagating horizontally at high altitudes.",
+        "source_file": "notes/enterprise_wireless_network_design.txt",
+        "domain_id": 2
+    },
+    {
+        "id": "wifi-adv-6",
+        "topic": "Channel Bonding",
+        "prompt": "Why is 40MHz or 80MHz channel bonding rarely implemented in the 2.4GHz band?",
+        "choices": [
+            "2.4GHz does not support OFDM.",
+            "The 2.4GHz band lacks sufficient non-overlapping channels to support wide bonded channels without causing massive interference.",
+            "Bonded channels in 2.4GHz have shorter ranges than 5GHz.",
+            "Regulatory bodies (like the FCC) have banned channel bonding below 5GHz."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The 2.4GHz band only has three non-overlapping 20MHz channels (1, 6, 11). Bonding them into 40MHz or 80MHz would leave no room for other networks and cause extreme co-channel interference.",
+        "source_file": "notes/wireless_standards.txt",
+        "domain_id": 1
+    },
+    {
+        "id": "wifi-adv-7",
+        "topic": "Wireless Roaming",
+        "prompt": "Which 802.11 amendment specifically facilitates 'fast roaming' by pre-authenticating clients to new APs before they disassociate from their current one?",
+        "choices": [
+            "802.11ac",
+            "802.11r",
+            "802.11h",
+            "802.11ax"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "802.11r (Fast Basic Service Set Transition) reduces the handover time by allowing the client to pre-establish security credentials with a target AP.",
+        "source_file": "notes/enterprise_wireless_network_design.txt",
+        "domain_id": 2
+    },
+    {
+        "id": "wifi-adv-8",
+        "topic": "Wireless Troubleshooting",
+        "prompt": "A client device keeps 'flapping' or rapidly switching between two different access points in the same ESS. Which setting on the client's wireless adapter should be adjusted to mitigate this?",
+        "choices": [
+            "Transmit Power",
+            "Beacon Interval",
+            "Roaming Aggressiveness",
+            "Channel Width"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Roaming Aggressiveness (or Sensitivity) determines how quickly a client decides to look for a better AP. Lowering this can prevent 'flapping' between two APs with similar signal strengths.",
+        "source_file": "notes/enterprise_wireless_network_design.txt",
+        "domain_id": 5
+    },
+    {
+        "id": "wifi-adv-9",
+        "topic": "MU-MIMO",
+        "prompt": "How does MU-MIMO in 802.11ax (Wi-Fi 6) differ from the implementation in 802.11ac (Wi-Fi 5)?",
+        "choices": [
+            "802.11ax supports MU-MIMO for both 2.4GHz and 5GHz, and for both uplink and downlink.",
+            "802.11ax only supports MU-MIMO in the 6GHz band.",
+            "802.11ac supports more spatial streams than 802.11ax.",
+            "There is no difference; the implementations are identical."
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "802.11ac only supported MU-MIMO on the 5GHz band for downlink traffic. 802.11ax expands this to both bands and adds uplink support.",
+        "source_file": "notes/wireless_standards.txt",
+        "domain_id": 1
+    },
+    {
+        "id": "wifi-adv-10",
+        "topic": "Beamforming",
+        "prompt": "In the context of Multiple Input Multiple Output (MIMO), what is the primary goal of 'Beamforming'?",
+        "choices": [
+            "To broadcast a signal in all directions equally.",
+            "To focus spatial streams into a single direction toward a specific client for better signal strength.",
+            "To combine multiple 20MHz channels into a 160MHz channel.",
+            "To encrypt the management frames (beacons) of an AP."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Beamforming uses phase shifting to focus the radio energy toward a specific client, improving the SNR and data rates for that connection.",
+        "source_file": "notes/wireless_standards.txt",
+        "domain_id": 1
+    },
+    {
+        "id": "wifi-adv-11",
+        "topic": "Wireless Infrastructure",
+        "prompt": "An administrator needs to extend a wireless network to a location where cabling is impossible. They configure one AP as a 'base station' and others as 'remote stations' in repeater mode. What is this called?",
+        "choices": [
+            "BSS",
+            "ESS",
+            "WDS (Wireless Distribution System)",
+            "LWAPP"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "WDS allows for the creation of wireless-only network segments by using APs in repeater/bridge mode to forward traffic wirelessly.",
+        "source_file": "notes/enterprise_wireless_network_design.txt",
+        "domain_id": 2
+    },
+    {
+        "id": "wifi-adv-12",
+        "topic": "Collision Avoidance",
+        "prompt": "Which virtual carrier sense mechanism is used in 802.11 to reserve the medium and reduce collisions before data transmission begins?",
+        "choices": [
+            "RTS/CTS (Request to Send / Clear to Send)",
+            "CSMA/CD",
+            "Token Passing",
+            "BGP Keepalive"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "RTS/CTS is a handshake used to reserve the channel, informing other stations to remain silent while the exchange takes place, thus avoiding 'hidden node' collisions.",
+        "source_file": "notes/wireless_standards.txt",
+        "domain_id": 1
+    },
+    {
+        "id": "wifi-hard-1",
+        "topic": "Wireless Power Settings",
+        "prompt": "An administrator is configuring an AP for a segment where the weakest client has an EIRP of 14 dBm. Following the 'two-thirds power' rule of thumb to minimize packet errors due to asymmetric power, what should the AP's transmit power be set to?",
+        "choices": [
+            "14 dBm",
+            "21 dBm",
+            "9-10 dBm",
+            "4 dBm"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "To avoid asymmetric power issues where a client can hear the AP but the AP cannot hear the client, the AP's power should be roughly 2/3 of the weakest client's power. 2/3 of 14 is approximately 9.3 dBm.",
+        "source_file": "notes/wireless_troubleshooting.txt",
+        "domain_id": 5
+    },
+    {
+        "id": "wifi-hard-2",
+        "topic": "Wireless Performance",
+        "prompt": "A technician reports a 'Goodput' issue on a WLAN. How does Goodput differ from Throughput in this context?",
+        "choices": [
+            "Goodput measures the bit rate at the Physical layer.",
+            "Goodput is throughput minus the protocol overhead of layers 1 and 2.",
+            "Goodput represents the actual data transfer rate achieved at the Application layer.",
+            "Goodput is the theoretical maximum bandwidth of the 802.11 standard."
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Goodput is the term used to describe the actual useful data transfer achieved at the Application layer, discarding all lower-layer overheads.",
+        "source_file": "notes/wireless_troubleshooting.txt",
+        "domain_id": 5
+    },
+    {
+        "id": "wifi-hard-3",
+        "topic": "Signal Attenuation",
+        "prompt": "An administrator observes that a specific internal wall is causing a signal drop from -60 dBm to -75 dBm. What is the approximate attenuation value of this wall?",
+        "choices": [
+            "5 dB",
+            "15 dB",
+            "6 dB",
+            "25 dB"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Attenuation is the loss in signal. -60 dBm - (-75 dBm) = 15 dB of loss.",
+        "source_file": "notes/wireless_troubleshooting.txt",
+        "domain_id": 5
+    },
+    {
+        "id": "wifi-hard-4",
+        "topic": "RF Interference",
+        "prompt": "A user reports intermittent connectivity issues near a breakroom. A Wi-Fi analyzer shows no other SSIDs on the same channel, but a Spectrum Analyzer shows high energy in the 2.4GHz band. What is the MOST likely cause?",
+        "choices": [
+            "Adjacent Channel Interference (ACI)",
+            "Co-Channel Interference (CCI)",
+            "Non-Wi-Fi EMI from a microwave oven",
+            "A hidden node problem"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Wi-Fi analyzers only detect 802.11 signals. Spectrum analyzers detect all RF energy, including EMI from non-Wi-Fi sources like microwave ovens or cordless phones.",
+        "source_file": "notes/wireless_troubleshooting.txt",
+        "domain_id": 5
+    },
+    {
+        "id": "wifi-hard-5",
+        "topic": "Wireless Standards",
+        "prompt": "Which 802.11 standard assists roaming by pushing clients to associate with less congested access points?",
+        "choices": [
+            "802.11k",
+            "802.11r",
+            "802.11v",
+            "802.11w"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "802.11v (Wireless Network Management) allows the network to steer clients toward less congested APs.",
+        "source_file": "notes/wireless_troubleshooting.txt",
+        "domain_id": 2
+    },
+    {
+        "id": "wifi-hard-6",
+        "topic": "Wireless Infrastructure",
+        "prompt": "A company is experiencing performance degradation on an AP with 45 connected clients. What is the recommended maximum number of clients per half-duplex AP to maintain acceptable performance?",
+        "choices": [
+            "10",
+            "30",
+            "100",
+            "254"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Because Wi-Fi is half-duplex, a rule of thumb is a maximum of 30 clients per AP. Beyond this, the CSMA/CA wait times become noticeable.",
+        "source_file": "notes/wireless_troubleshooting.txt",
+        "domain_id": 2
+    },
+    {
+        "id": "wifi-hard-7",
+        "topic": "Antenna Troubleshooting",
+        "prompt": "A technician replaces a 2-meter antenna cable (0.6 dB/m loss) with a 2-meter high-grade cable (0.22 dB/m loss). What is the total gain in the EIRP calculation from this change alone?",
+        "choices": [
+            "0.38 dB",
+            "0.76 dB",
+            "1.2 dB",
+            "0.44 dB"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Old loss: 2 * 0.6 = 1.2 dB. New loss: 2 * 0.22 = 0.44 dB. Gain: 1.2 - 0.44 = 0.76 dB.",
+        "source_file": "notes/wireless_troubleshooting.txt",
+        "domain_id": 5
+    },
+    {
+        "id": "wifi-hard-8",
+        "topic": "Roaming Issues",
+        "prompt": "A client device stays connected to a distant AP with -82 dBm signal even when standing directly under a closer AP with -35 dBm signal. What is this client behavior called?",
+        "choices": [
+            "Flapping",
+            "Sticky Client",
+            "Channel Drift",
+            "Deauthentication"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Sticky clients fail to reassociate with a closer, stronger AP even when their current signal is significantly degraded.",
+        "source_file": "notes/wireless_troubleshooting.txt",
+        "domain_id": 5
+    },
+    {
+        "id": "wifi-hard-9",
+        "topic": "RF Mathematics",
+        "prompt": "In RF signal measurement, what does a 6 dB increase in the level of a source represent in terms of physical distance on a spectrum analyzer?",
+        "choices": [
+            "Doubling the distance",
+            "Halving the distance",
+            "No change in distance",
+            "Increasing distance by 6 meters"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "A 6 dB change in the level of a source represents either halving or doubling the distance between the analyzer and the RF source.",
+        "source_file": "notes/wireless_troubleshooting.txt",
+        "domain_id": 5
+    },
+    {
+        "id": "wifi-hard-10",
+        "topic": "Wireless Overcapacity",
+        "prompt": "Which of the following traffic types consumes the MOST wireless bandwidth directly from an AP's capacity?",
+        "choices": [
+            "Casual Web Browsing",
+            "Streaming a 1080p video from YouTube",
+            "A local client-server database backup",
+            "Receiving a plain-text email"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Local client-server transfers (like backups) eat wireless bandwidth directly, whereas web/cloud traffic is often bottlenecked by the WAN/Internet speed first.",
+        "source_file": "notes/wireless_troubleshooting.txt",
+        "domain_id": 5
+    },
+    {
+        "id": "wifi-hard-11",
+        "topic": "Wireless Troubleshooting",
+        "prompt": "A technician observes 'Flapping' behavior on a client device. Which 802.11 amendment provides topology information to the client to help mitigate this?",
+        "choices": [
+            "802.11r",
+            "802.11k",
+            "802.11v",
+            "802.11ac"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "802.11k (Radio Resource Management) assists by transmitting wireless topology information to the client, reducing flapping and sticky client issues.",
+        "source_file": "notes/wireless_troubleshooting.txt",
+        "domain_id": 5
+    },
+    {
+        "id": "wifi-hard-12",
+        "topic": "Wireless Power",
+        "prompt": "What is the formula for calculating Effective Isotropic Radiated Power (EIRP)?",
+        "choices": [
+            "transmitPower + cableLoss + antennaGain",
+            "transmitPower - cableLoss + antennaGain",
+            "receivedSignalStrength + freeSpaceLoss",
+            "signalPower * antennaGain"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "EIRP = Transmit Power - Cable/Connector Loss + Antenna Gain.",
+        "source_file": "notes/wireless_troubleshooting.txt",
+        "domain_id": 2
+    },
+    {
+        "id": "wifi-sec-hard-1",
+        "topic": "WPA3 Features",
+        "prompt": "WPA3 replaces the vulnerable 4-way handshake of WPA2 with which protocol to prevent offline dictionary attacks?",
+        "choices": [
+            "AES-CCMP",
+            "TKIP",
+            "Simultaneous Authentication of Equals (SAE)",
+            "EAP-TLS"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "SAE replaces the 4-way handshake in WPA3 Personal, providing forward secrecy and protection against dictionary attacks.",
+        "source_file": "notes/wireless_security.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "wifi-sec-hard-2",
+        "topic": "Enterprise Wireless",
+        "prompt": "During 802.1X Enterprise Authentication, what is the specific standard that allows an AP to forward authentication data to a RADIUS server before full network access is granted?",
+        "choices": [
+            "EAPoW (EAP over Wireless)",
+            "SAML",
+            "LWAPP",
+            "LDAPS"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "802.1X defines EAP over Wireless (EAPoW), allowing the supplicant and AAA server to communicate via the AP.",
+        "source_file": "notes/wireless_security.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "wifi-sec-hard-3",
+        "topic": "Wireless Security",
+        "prompt": "What is the primary function of 'Wi-Fi Enhanced Open' in a WPA3 environment?",
+        "choices": [
+            "It requires all guests to use a digital certificate.",
+            "It provides encryption for open (no passphrase) networks.",
+            "It automatically redirects all users to a captive portal.",
+            "It disables the SSID broadcast for increased security."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Wi-Fi Enhanced Open (based on Opportunistic Wireless Encryption) provides individual data encryption for open networks that have no passphrase.",
+        "source_file": "notes/wireless_security.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "wifi-sec-hard-4",
+        "topic": "Wireless Attacks",
+        "prompt": "An attacker sends spoofed management frames to a victim's MAC address to force them off the network. Which mechanism can mitigate this specific attack?",
+        "choices": [
+            "WPA2-Enterprise",
+            "802.11w (Management Frame Protection)",
+            "Disabling DHCP",
+            "MAC Filtering"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "802.11w (MFP) encrypts management frames, preventing attackers from successfully spoofing disassociation/deauthentication notifications.",
+        "source_file": "notes/wireless_security.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "wifi-sec-hard-5",
+        "topic": "Wireless Security",
+        "prompt": "In an 802.1X exchange, which key is transmitted from the AAA server to the Access Point after a successful supplicant authentication?",
+        "choices": [
+            "Master Key (MK)",
+            "Pairwise Master Key (PMK)",
+            "Temporal Key (TK)",
+            "Public Key"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The AAA server transmits the Pairwise Master Key (PMK) to the AP, which is then used by the AP and station to derive session keys.",
+        "source_file": "notes/wireless_security.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "wifi-sec-hard-6",
+        "topic": "BYOD Security",
+        "prompt": "Which solution is BEST suited for enforcing security policies on unpatched personal devices (BYOD) trying to access corporate resources?",
+        "choices": [
+            "WPA3-Personal",
+            "Enterprise Mobility Management (EMM / MDM)",
+            "A Spectrum Analyzer",
+            "Omnidirectional antennae"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "EMM/MDM solutions enforce policies (like patch levels or jailbreak detection) on mobile devices as a condition of network access.",
+        "source_file": "notes/wireless_security.txt",
+        "domain_id": 4
+    },
+    {
+        "id": "sw-fund-hard-1",
+        "topic": "Switching Mechanics",
+        "prompt": "A switch receives a frame with a source MAC that is not in its CAM table. What is the immediate first step the switch performs?",
+        "choices": [
+            "It floods the frame out of all ports.",
+            "It maps the source MAC address to the incoming port in the CAM table.",
+            "It drops the frame and sends an ICMP unreachable message.",
+            "It queries the DNS server for the host's IP address."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Switches perform 'Learning' by mapping the source MAC address of every incoming frame to the port it was received on.",
+        "source_file": "notes/switching_fundamentals.txt",
+        "domain_id": 1
+    },
+    {
+        "id": "sw-fund-hard-2",
+        "topic": "Switching Mechanics",
+        "prompt": "What happens when a switch receives a frame destined for a MAC address that is NOT present in its CAM table?",
+        "choices": [
+            "The switch drops the frame.",
+            "The switch performs unicast flooding out of all ports except the source port.",
+            "The switch buffers the frame until the destination host sends a frame.",
+            "The switch sends an ARP request to find the owner of the MAC."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "If a destination MAC is unknown, the switch floods the frame out of all ports (except the source) to ensure it reaches the target.",
+        "source_file": "notes/switching_fundamentals.txt",
+        "domain_id": 1
+    },
+    {
+        "id": "wan-hard-1",
+        "topic": "WAN Fundamentals",
+        "prompt": "Which statement best describes the complexity of Data Link layer protocols in Enterprise WANs compared to LANs?",
+        "choices": [
+            "WAN protocols are more complex because they must handle distance-related signal attenuation.",
+            "WAN protocols are often simpler (e.g., PPP) due to the Point-to-Point nature of the links, requiring less addressing logic than multi-access LANs.",
+            "WAN protocols are more complex because they must encapsulate Layer 3 traffic into frames for service provider infrastructure.",
+            "WAN protocols are identical to LAN protocols to ensure seamless end-to-end communication."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Because WAN links are often Point-to-Point, they do not require the complex collision detection or multi-access logic found in LAN protocols like Ethernet, leading to simpler Data Link layer implementations.",
+        "source_file": "notes/comparing_remote_access_methods.txt",
+        "domain_id": 1,
+        "difficulty": "hard"
+    },
+    {
+        "id": "wan-hard-2",
+        "topic": "Cable and DOCSIS",
+        "prompt": "A company is upgrading their cable broadband and requires multi-gigabit symmetrical speeds. Which version of the DOCSIS standard MUST be supported by their equipment?",
+        "choices": [
+            "DOCSIS 2.0",
+            "DOCSIS 3.0",
+            "DOCSIS 3.1",
+            "DOCSIS 4.0"
+        ],
+        "answer_indices": [
+            3
+        ],
+        "explanation": "While DOCSIS 3.1 supports multi-gigabit speeds, DOCSIS 4.0 is specifically designed to provide high-bandwidth symmetrical speeds (up to 10 Gbps down).",
+        "source_file": "notes/comparing_remote_access_methods.txt",
+        "domain_id": 2,
+        "difficulty": "hard"
+    },
+    {
+        "id": "wan-hard-3",
+        "topic": "Fiber Technologies",
+        "prompt": "In a Passive Optical Network (PON) implementation of FTTP, which device is responsible for converting the optical signal back into an electrical signal at the customer premises?",
+        "choices": [
+            "OLT (Optical Line Terminal)",
+            "CMTS (Cable Modem Termination System)",
+            "ONT (Optical Network Terminal)",
+            "VDSL Modem"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "The ONT (Optical Network Terminal) is installed at the customer premises to convert optical signals from the provider's fiber into electrical signals for the internal router.",
+        "source_file": "notes/comparing_remote_access_methods.txt",
+        "domain_id": 2,
+        "difficulty": "hard"
+    },
+    {
+        "id": "wan-hard-4",
+        "topic": "DSL Variants",
+        "prompt": "A technician is troubleshooting a VDSL connection that is only reaching 52 Mbps download despite being advertised at 100 Mbps. What is the most likely physical layer cause?",
+        "choices": [
+            "The customer is using an ADSL2+ modem instead of a VDSL modem.",
+            "The distance from the communications cabinet (FTTC) is approximately 300 meters.",
+            "The provider has configured the link as Symmetrical DSL (SDSL).",
+            "The line is experiencing crosstalk from a nearby T1 line."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "VDSL is highly distance-sensitive. At 300 meters, speeds typically drop from the 100 Mbps peak to around 52 Mbps download and 6 Mbps upload.",
+        "source_file": "notes/comparing_remote_access_methods.txt",
+        "domain_id": 1,
+        "difficulty": "hard"
+    },
+    {
+        "id": "vpn-hard-1",
+        "topic": "IPSec Modes",
+        "prompt": "When implementing a Site-to-Site VPN using IPSec and ESP, why is 'Tunnel Mode' typically selected over 'Transport Mode'?",
+        "choices": [
+            "Tunnel Mode is faster because it does not encrypt the IP header.",
+            "Tunnel Mode encrypts both the original IP header and the payload, creating a new IP header for routing between gateways.",
+            "Transport Mode cannot be used with ESP; it is restricted to Authentication Header (AH).",
+            "Tunnel Mode is required for IPv6 compatibility, whereas Transport Mode is for IPv4 only."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Tunnel Mode encapsulates the entire original packet (header + payload), making it ideal for gateway-to-gateway (Site-to-Site) VPNs where the internal network addresses must be hidden.",
+        "source_file": "notes/comparing_remote_access_methods.txt",
+        "domain_id": 4,
+        "difficulty": "hard"
+    },
+    {
+        "id": "vpn-hard-2",
+        "topic": "IKE Phases",
+        "prompt": "During the establishment of an IPSec VPN, which specific tasks are performed during IKE Phase 1? (Select TWO)",
+        "choices": [
+            "Selection of ciphers for the actual AH/ESP data session.",
+            "Establishment of a secure channel using the Diffie-Hellman algorithm.",
+            "Mutual authentication of the two peers.",
+            "Encryption of the actual user data traffic."
+        ],
+        "answer_indices": [
+            1,
+            2
+        ],
+        "explanation": "IKE Phase 1 focuses on establishing a secure management channel by authenticating peers and performing a Diffie-Hellman key exchange.",
+        "source_file": "notes/comparing_remote_access_methods.txt",
+        "domain_id": 4,
+        "difficulty": "hard"
+    },
+    {
+        "id": "vpn-hard-3",
+        "topic": "VPN Tunneling",
+        "prompt": "An organization requires a VPN solution that allows remote users to keep their IPSec connection active even when switching between Wi-Fi and Cellular networks. Which protocol provides this 'MOBIKE' feature?",
+        "choices": [
+            "IKEv1",
+            "L2TP",
+            "IKEv2",
+            "GRE"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "IKEv2 supports multihoming (MOBIKE), which allows a VPN session to remain active during a client IP address change (e.g., roaming between networks).",
+        "source_file": "notes/comparing_remote_access_methods.txt",
+        "domain_id": 2,
+        "difficulty": "hard"
+    },
+    {
+        "id": "vpn-hard-4",
+        "topic": "Split vs Full Tunnel",
+        "prompt": "A security auditor recommends switching from Split Tunneling to Full Tunneling for all remote workers. What is the primary security justification for this change?",
+        "choices": [
+            "It reduces the bandwidth overhead on the corporate VPN concentrator.",
+            "It ensures that all remote traffic, including general internet browsing, is mediated and inspected by the corporate firewall/proxy.",
+            "It allows remote users to access local network resources like home printers while connected to the VPN.",
+            "It prevents the VPN client from using DNS servers managed by their local ISP."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Full Tunneling forces all traffic through the corporate network, ensuring security policies and monitoring are applied to all remote user activity, though it increases bandwidth usage.",
+        "source_file": "notes/comparing_remote_access_methods.txt",
+        "domain_id": 4,
+        "difficulty": "hard"
+    },
+    {
+        "id": "vpn-hard-5",
+        "topic": "Generic Routing Encapsulation",
+        "prompt": "Which of the following are characteristics of GRE (Generic Routing Encapsulation)? (Select TWO)",
+        "choices": [
+            "It provides strong native encryption and authentication.",
+            "It uses IP Protocol 47.",
+            "It can encapsulate a wide variety of Layer 3 protocols within an IP tunnel.",
+            "It operates at the Session layer (Layer 5) of the OSI model."
+        ],
+        "answer_indices": [
+            1,
+            2
+        ],
+        "explanation": "GRE uses protocol number 47 and is a versatile tunneling protocol, but it lacks native security (encryption/authentication), often requiring IPSec for protection.",
+        "source_file": "notes/comparing_remote_access_methods.txt",
+        "domain_id": 2,
+        "difficulty": "hard"
+    },
+    {
+        "id": "vpn-hard-6",
+        "topic": "Clientless VPNs",
+        "prompt": "How does a 'Clientless' VPN (like Apache Guacamole) facilitate a persistent connection without the overhead of repeated HTTP requests?",
+        "choices": [
+            "By using the TLS Session ID to resume connections.",
+            "By implementing WebSockets to keep an open bi-directional communication channel.",
+            "By using UDP-based DTLS instead of TCP-based TLS.",
+            "By installing a temporary Java applet in the browser's cache."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Clientless VPNs typically use HTML5 features like WebSockets to maintain a persistent, open connection for transmitting data in real-time between the browser and the gateway.",
+        "source_file": "notes/comparing_remote_access_methods.txt",
+        "domain_id": 2,
+        "difficulty": "hard"
+    },
+    {
+        "id": "vpn-hard-7",
+        "topic": "IPSec Protocols",
+        "prompt": "You are configuring a firewall to allow IPSec traffic. Which protocol numbers must be permitted if both Authentication Header (AH) and Encapsulating Security Payload (ESP) are used?",
+        "choices": [
+            "UDP 500 and 4500",
+            "IP Protocols 50 and 51",
+            "TCP 443 and UDP 1194",
+            "IP Protocols 47 and 50"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "ESP uses IP Protocol 50, and AH uses IP Protocol 51. (UDP 500/4500 are for IKE and NAT-T, but the question asks for the core IPSec protocols).",
+        "source_file": "notes/comparing_remote_access_methods.txt",
+        "domain_id": 4,
+        "difficulty": "hard"
+    },
+    {
+        "id": "vpn-hard-8",
+        "topic": "IPSec vs TLS",
+        "prompt": "What is a significant disadvantage of using a TLS-based VPN compared to an IPSec-based VPN?",
+        "choices": [
+            "TLS is much harder to configure on client devices.",
+            "TLS operates at the Session layer, leading to higher packet overhead due to the addition of multiple headers (inner and outer).",
+            "TLS does not support strong encryption algorithms like AES.",
+            "TLS cannot be used to encapsulate IP packets, only Ethernet frames."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Because TLS operates higher in the OSI model (Session/Application layers), encapsulating lower-layer packets within it results in significant header overhead compared to the Network-layer IPSec.",
+        "source_file": "notes/comparing_remote_access_methods.txt",
+        "domain_id": 3,
+        "difficulty": "hard"
+    },
+    {
+        "id": "vpn-hard-9",
+        "topic": "Remote Access Security",
+        "prompt": "An organization is deploying a Remote Access Server (RAS). According to standard best practices, which of the following should be included in the RAS documentation? (Select THREE)",
+        "choices": [
+            "Authorized users of the service.",
+            "Identification of security risks and countermeasures.",
+            "The specific brand and model of every client laptop.",
+            "Clearly defined uses of the service."
+        ],
+        "answer_indices": [
+            0,
+            1,
+            3
+        ],
+        "explanation": "Proper RAS documentation focuses on security policy: who can use it, what it's for, and how risks are mitigated. Specific client hardware models are typically managed via asset tracking, not RAS service documentation.",
+        "source_file": "notes/comparing_remote_access_methods.txt",
+        "domain_id": 4,
+        "difficulty": "hard"
+    },
+    {
+        "id": "vpn-hard-10",
+        "topic": "IPSec Mechanisms",
+        "prompt": "Which component of IPSec provides confidentiality by encrypting the packet payload?",
+        "choices": [
+            "Authentication Header (AH)",
+            "Generic Routing Encapsulation (GRE)",
+            "Encapsulating Security Payload (ESP)",
+            "Internet Key Exchange (IKE)"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "ESP (Encapsulating Security Payload) is the IPSec component that provides encryption/confidentiality. AH only provides authentication and integrity.",
+        "source_file": "notes/comparing_remote_access_methods.txt",
+        "domain_id": 4,
+        "difficulty": "hard"
+    },
+    {
+        "id": "mgmt-hard-1",
+        "topic": "SSH Security",
+        "prompt": "An SSH server's 'host key' has been potentially compromised. What is the correct remediation step?",
+        "choices": [
+            "Users must update their local passwords immediately.",
+            "The server's public/private key pair must be changed, and clients must be notified to verify the new fingerprint.",
+            "The ssh-agent service on all client machines must be restarted.",
+            "The server must be switched to use Telnet temporarily while the keys are audited."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The host key identifies the server. If compromised, the server's key pair must be regenerated. Clients will see a warning when connecting because the fingerprint won't match their cached value.",
+        "source_file": "notes/comparing_remote_access_methods.txt",
+        "domain_id": 4,
+        "difficulty": "hard"
+    },
+    {
+        "id": "mgmt-hard-2",
+        "topic": "SSH Authentication",
+        "prompt": "In Public Key Authentication for SSH, what is the role of the 'authorized_keys' file on the server?",
+        "choices": [
+            "It stores the server's private host key.",
+            "It contains a list of public keys from remote users who are permitted to log in to a specific account.",
+            "It acts as a temporary buffer for keys stored by the ssh-agent.",
+            "It logs every successful login attempt for auditing purposes."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The 'authorized_keys' file (typically in ~/.ssh/) contains the public keys of users allowed to access that specific user account via public-key authentication.",
+        "source_file": "notes/comparing_remote_access_methods.txt",
+        "domain_id": 4,
+        "difficulty": "hard"
+    },
+    {
+        "id": "mgmt-hard-3",
+        "topic": "Remote Management Tools",
+        "prompt": "A technician needs to perform GUI-based remote administration on a Windows server but wants to prevent the system from configuring a desktop session before the user is authenticated. Which feature must be enabled?",
+        "choices": [
+            "Network Level Authentication (NLA) for RDP",
+            "SSH Tunneling for VNC",
+            "Kerberos GSSAPI for SSH",
+            "Out-of-band management via the AUX port"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "NLA (Network Level Authentication) requires the user to authenticate before the RDP server creates a full desktop session, reducing the attack surface for unauthenticated users.",
+        "source_file": "notes/comparing_remote_access_methods.txt",
+        "domain_id": 4,
+        "difficulty": "hard"
+    },
+    {
+        "id": "mgmt-hard-4",
+        "topic": "Out-of-band Management",
+        "prompt": "Which scenario best illustrates 'Out-of-band' (OOB) management?",
+        "choices": [
+            "A technician connects to a switch via a dedicated management VLAN on the production network.",
+            "An administrator uses an analog modem to connect to the AUX port of a router that has lost its primary WAN link.",
+            "A developer uses SSH to access a web server through the public internet.",
+            "A monitoring tool uses SNMP to gather statistics over the corporate Ethernet backbone."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Out-of-band management uses a physical or logical path that is completely separate from the production traffic (like a serial console or AUX port connection).",
+        "source_file": "notes/comparing_remote_access_methods.txt",
+        "domain_id": 3,
+        "difficulty": "hard"
+    },
+    {
+        "id": "mgmt-hard-5",
+        "topic": "SSH Utilities",
+        "prompt": "What is the primary purpose of the 'ssh-agent' utility?",
+        "choices": [
+            "To automatically generate new RSA/Ed25519 key pairs for the server.",
+            "To store decrypted private keys in memory so the user doesn't have to enter their passphrase for every new connection.",
+            "To provide a GUI-based file transfer interface using the SCP protocol.",
+            "To act as a proxy for SSH traffic to bypass corporate firewalls."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The ssh-agent holds private keys in memory (after the user provides the passphrase once), allowing for a single-sign-on (SSO) like experience when connecting to multiple hosts.",
+        "source_file": "notes/comparing_remote_access_methods.txt",
+        "domain_id": 3,
+        "difficulty": "hard"
+    },
+    {
+        "id": "mgmt-hard-6",
+        "topic": "Jump Servers",
+        "prompt": "Which of the following describes the ideal configuration for a 'Jump Server' or 'Jump Box'?",
+        "choices": [
+            "A high-performance workstation with all common development tools and compilers installed.",
+            "A hardened computer with a minimal attack surface that serves as a single entry point for managing servers in a DMZ or internal network.",
+            "A router configured to allow all RDP and SSH traffic from the public internet.",
+            "A server that runs the root account for all automated scripting tasks."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "A Jump Server should be heavily hardened (minimal apps) and act as the sole bridge between a low-trust and high-trust zone for administrative tasks.",
+        "source_file": "notes/comparing_remote_access_methods.txt",
+        "domain_id": 4,
+        "difficulty": "hard"
+    },
+    {
+        "id": "mgmt-hard-7",
+        "topic": "API Security",
+        "prompt": "When implementing API-based automation for network appliances, which security principles should be followed? (Select TWO)",
+        "choices": [
+            "Use the root user account for all scripts to ensure they have sufficient permissions.",
+            "Always use HTTPS for API communications to ensure confidentiality and integrity.",
+            "Grant automation accounts least privilege access rather than full administrative rights.",
+            "Disable API authentication for internal scripts to improve execution speed."
+        ],
+        "answer_indices": [
+            1,
+            2
+        ],
+        "explanation": "API security requires using encrypted channels (HTTPS) and strictly limiting the permissions of the automation accounts (least privilege).",
+        "source_file": "notes/comparing_remote_access_methods.txt",
+        "domain_id": 4,
+        "difficulty": "hard"
+    },
+    {
+        "id": "mgmt-hard-8",
+        "topic": "Remote File Transfer",
+        "prompt": "You need to copy a file from a local Linux machine to a remote server using a command-line interface that mimics the 'rcp' syntax but provides SSH security. Which command should you use?",
+        "choices": [
+            "sftp",
+            "scp",
+            "ssh-copy-id",
+            "rsync --telnet"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The 'scp' (Secure Copy) command provides a remote copy interface over the secure SSH protocol.",
+        "source_file": "notes/comparing_remote_access_methods.txt",
+        "domain_id": 3,
+        "difficulty": "hard"
+    },
+    {
+        "id": "mgmt-hard-9",
+        "topic": "Console Connections",
+        "prompt": "A technician needs to configure a 'headless' managed switch for the first time. Which port is most likely to be used for initial setup?",
+        "choices": [
+            "Management Port (RJ45)",
+            "Physical Console Port",
+            "Any standard PoE Ethernet port",
+            "SFP+ Uplink port"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Managed switches typically require initial configuration via the physical console port (serial) before remote management via IP (Management Port) can be enabled.",
+        "source_file": "notes/comparing_remote_access_methods.txt",
+        "domain_id": 2,
+        "difficulty": "hard"
+    },
+    {
+        "id": "mgmt-hard-10",
+        "topic": "Secure Administrative Workstations",
+        "prompt": "What is the primary purpose of a 'Secure Administrative Workstation' (SAW)?",
+        "choices": [
+            "To provide a backup workstation for users whose primary computers are being repaired.",
+            "To reduce the risk of credential theft by ensuring privileged tasks are only performed from a computer with a very low attack surface.",
+            "To allow administrators to browse the internet safely while waiting for server tasks to complete.",
+            "To act as a central repository for all server logs."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "A SAW is a dedicated, hardened computer used exclusively for sensitive administrative tasks to prevent malware on a daily-use machine from capturing privileged credentials.",
+        "source_file": "notes/comparing_remote_access_methods.txt",
+        "domain_id": 4,
+        "difficulty": "hard"
+    },
+    {
+        "id": "wan-hard-5",
+        "topic": "T-Carrier and DS0",
+        "prompt": "How many 64 kbps DS0 channels are multiplexed to form a single T1 (DS1) line, and what is the resulting total bandwidth?",
+        "choices": [
+            "12 channels; 768 kbps",
+            "24 channels; 1.544 Mbps",
+            "48 channels; 3.088 Mbps",
+            "64 channels; 4.096 Mbps"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "A T1 line multiplexes 24 DS0 (64 kbps) channels, resulting in a total bandwidth of 1.544 Mbps.",
+        "source_file": "notes/comparing_remote_access_methods.txt",
+        "domain_id": 1,
+        "difficulty": "hard"
+    },
+    {
+        "id": "wan-hard-6",
+        "topic": "Symmetrical vs Asymmetrical DSL",
+        "prompt": "Which DSL variant is most appropriate for a branch office that needs to support both high-speed cloud backups (uplink) and large file downloads (downlink) equally?",
+        "choices": [
+            "ADSL2+",
+            "VDSL (Consumer profile)",
+            "Symmetric DSL (SDSL)",
+            "Analog Dial-up"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Symmetric DSL offers identical uplink and downlink speeds, making it better suited for business operations like backups or hosting services compared to consumer-grade Asymmetrical DSL.",
+        "source_file": "notes/comparing_remote_access_methods.txt",
+        "domain_id": 2,
+        "difficulty": "hard"
+    },
+    {
+        "id": "vpn-hard-11",
+        "topic": "Remote Access Protocols",
+        "prompt": "If an organization MUST use Telnet to manage a legacy system, what is the best practice to mitigate the inherent security risks?",
+        "choices": [
+            "Change the Telnet port from 23 to a high-numbered port.",
+            "Deploy the legacy system and the management station to a dedicated, secure network segment.",
+            "Use a very long, complex password for the Telnet login.",
+            "Disable Telnet and use VNC instead, as it is natively encrypted."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Telnet is unencrypted and should be avoided. If mandatory for legacy gear, it must be isolated to a secure, restricted segment to prevent packet sniffing on the main network.",
+        "source_file": "notes/comparing_remote_access_methods.txt",
+        "domain_id": 4,
+        "difficulty": "hard"
+    },
+    {
+        "id": "vpn-hard-12",
+        "topic": "IPSec and IPv6",
+        "prompt": "How does IPSec implementation differ between IPv4 and IPv6?",
+        "choices": [
+            "IPSec is only available for IPv6.",
+            "In IPv4, IPSec requires a third-party application, while in IPv6 it is built into the OS kernel.",
+            "In IPv6, IPSec utilizes extension headers for AH and ESP, whereas in IPv4 it modifies the IP header or encapsulates the packet.",
+            "IPv6 only supports Transport Mode, while IPv4 supports both Tunnel and Transport."
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "The core principles are the same, but IPv6 leverages its 'extension header' architecture to integrate AH/ESP, whereas IPv4 must insert headers into or around the existing IP packet structure.",
+        "source_file": "notes/comparing_remote_access_methods.txt",
+        "domain_id": 1,
+        "difficulty": "hard"
+    },
+    {
+        "id": "vpn-hard-13",
+        "topic": "VPN Authentication",
+        "prompt": "Most enterprise VPN solutions (like L2TP/IPSec or SSTP) integrate with which type of architecture to handle user authentication and accounting?",
+        "choices": [
+            "DNSSEC",
+            "AAA/RADIUS",
+            "BGP/OSPF",
+            "DHCP Snooping"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "VPN gateways typically act as RADIUS clients, forwarding authentication requests to a central AAA (Authentication, Authorization, and Accounting) server like RADIUS or TACACS+.",
+        "source_file": "notes/comparing_remote_access_methods.txt",
+        "domain_id": 4,
+        "difficulty": "hard"
+    },
+    {
+        "id": "wan-hard-7",
+        "topic": "WAN Demarcation",
+        "prompt": "Which terms refer to the point where the service provider's network ends and the customer's responsibility begins? (Select TWO)",
+        "choices": [
+            "MPOE (Minimum Point of Entry)",
+            "CMTS (Cable Modem Termination System)",
+            "Demarcation Point",
+            "Entrance Facility"
+        ],
+        "answer_indices": [
+            0,
+            2
+        ],
+        "explanation": "The 'Demarcation Point' and 'MPOE' (Minimum Point of Entry) both describe the physical location where provider responsibility terminates.",
+        "source_file": "notes/comparing_remote_access_methods.txt",
+        "domain_id": 1,
+        "difficulty": "hard"
     }
 ]

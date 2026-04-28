@@ -1,0 +1,31 @@
+# Content Filtering 
+
+Most firewells and proxies now supoprt some level of content filtering.
+
+Can restrict access based on various criteria.
+
+- Uniform Resource Locator Filtering (URL) Filtering
+  A URL Contains
+	- Protocl	- Server Path	 
+	- Domain Name	- Optional Query Parameters
+
+ It can use regular expressions to filter by keywords and query parameters.
+
+- Content and reputation-based filtering 
+  
+  This filtering leverages continually updated databases that score websites based on their 
+  observed behavior and history.
+
+  * IPFire
+
+  TLS poses issues with proxies and content filters.
+  Proxies can't analyze data from encypted traffic.
+  It cannot decrypt the traffic without breaking the TLS handshake between client and website.
+  
+  To perform TLS inspection, a proxy has to generate an enterprise certificate for each domain. The 
+  client trusts this certificate as it is issued by an enterprise CA, and it still matches the 
+  domain it has requested.
+
+  The proxy establishes its own TLS tunnel with the website, forwarding client's requests.
+
+# Misconfigured ACL and firewall issues

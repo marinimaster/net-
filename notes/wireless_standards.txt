@@ -1,0 +1,157 @@
+# IEEE 802.11
+
+Better known as Wi-Fi, define the physical layer in which data is encoded into a radio carrier signal using a 
+modulation scheme.
+
+Properties of radio waves:
+
+	- Amplitude: height of peaks and troughs
+	- Frequency: number of peaks per unit of time
+	- Phase: angle of a wave at a point in time
+
+
+802.11 uses CDMA/CA (Carrier Sense Multiple Access with Collision Avoidance)
+
+	When a station receives a frame, it performs error checking. If the frame is intact, the stations responds 
+	with an acknowldgement.
+	
+
+Since a Wireless Network can't detect if there are any collisions happening
+A computer will first sense if there are any other transmissions happening.
+
+It will check the channel again, and if there are no active transmissions, it wait a random period of time before 
+transmitting again.
+
+Once the destination device received the data, it will send an acknowledgement
+
+If the sending computer does not receive an acknowledgement, it will assume that it did not get the data.
+
+802.11 also defines a virtual carrier sense flow control mechanism to reduce the incidence of collisions.
+
+Request to Send (RTS) is sent by a station, and the receiving station responds with clear to send (CTS), and all 
+other stations within that range do not attempt to transmit within that period.
+
+# IEEE 802.11a and 5GHz Channel Bandwith
+
+Wireless radios are configured to use frequency bands. (2.4GHz / 5GHz)
+
+Channels are subdivisions of frequencies to allow multiple networks to operate at the same location without 
+interfering with each other.
+
+802.11a uses 5GHz and introduced Orthogonal Division Multiplexing (OFDM).
+
+*) Accompanied by 802.11h which used Dynamic Frequency Selection (DFS) method to scan for radar signals
+	and prevent access points from using channels that would cause interference.
+
+5GHz is subdivided into 24-25 non-overlapping channels, each of wich is 20Mhz wide.
+
+The 802.11g standard offered a relatively straightforward upgrade path from 802.11b. Like 802.11g uses ODFM, but in 
+the 2.4GHz band used by 802.11b and with the same channel layout.
+
+802.11g - 2.4GHz - Like 802.11a (5GHz), Uses OFDM - Backwards compatible
+Meaning that if used with 802.11b, it drops back to using DSSS (Direct Sequence Spread Spectrum)
+
+# 802.11n (WIFI 4), MIMO, and Channel Bonding
+
+11n increases bandwith by multiplexing the signals from two to four separate antennae. Using a collection fo 
+technologies generally referred to as: Multiple Input Multiple Output (MIMO)
+
+The configuration of an 802.11n radio chain is identified by AxB:C notation.
+Maximum is 4x4:4, but common configurations are 2x2:3 or 3x3:2.
+
+Example: a 4x4:4 access point could allocate two streams carrying data to a 2x2:2 client. Increasing bandwith. This is 
+referred to as spatial multiplexing.
+
+Having multiple transmit and receive antannea can improve signal reliability, rather than boosting bandwidth.
+
+
+If the same data stream is sent by two or three tansmit antennae, the receiver can derive a stronger signal, and increase range at a given data rate.
+
+Spacial diversity: when multiple receive antennae are used to derive a stronger signal, even if there is only one transmit stream.
+
+Example:
+
+2x2:2 and 2x3:2 radio chains have the same throughput, but the 2x3:2 chain could make more use of spatial diversity to increase range.
+
+802.11n uses 2.4 and 5 GHz. It also allows two adjacent 20Mhz channels to be combined into a 40 MHz channel.
+
+	This is referred to as: channel bonding.
+	
+	- Only practical in 5GHz due to the limited bandwidth and frequency range of 2.4GHz
+
+5GHz can provide up to 25 non-overlapping channels.
+
+	*) It is worth nothing that these channels are not necessarily coniguous, meaninng that it can slightly reduce the options for bonded channels.
+
+DFS and local regulatory requirements can also impact channel availability.
+
+802.11n's data rate is 72Mbps per stream.
+
+	- Assuming the maximum number of four spatial streams and optimum conditions. The nominal data rate could be as high as 600Mbps for a 40MHz bonded channel.
+
+Can either run in High Throughput (HT)/Greenfield mode or HT mixed mode for compatibility with older standards (11b, 11a, 11g)
+
+# 802.11ac and 802.11ax (Wifi 5 and Wifi 6)
+
+Wifi 5 is designed to work only in the 5GHz band. The 2.4GHz band can be used for legacy standards (802.11g/n mixed mode)
+
+	- Support 80MHz and 160Mhz channel bondings.
+	- Up to 8 spatial streams rather than 4
+
+Wifi 5 aims to achieve 1Gbs connection speeds.
+
+# Wifi 6 (802.11ax)
+
+	- Improves the amount of data send per packet by about 40%.
+	- The way it uses that radio spectrum is designated as High Efficiency (HE) to reflect the improvements.
+
+Wifi 6 aims to approximate to 10Gbs connection speeds (AX10000).
+Wifi 6 products are branded using combined throughput.
+
+	- AX6000 is nominally 1,148Mbps on the 2.4GHz radio and 4,804 over 5GHz.
+
+Wifi 6 introduces the 6GHz frequency band, required to achieve the highest data rates.
+
+# Orthogonal Frequency Division with Multiple Access (OFDMA)
+
+Allows sub-carriers or tones to be allocated in groups of different sizes.
+	- Referred to as Resource Units (RUs)
+Each of which can communicate in parallel.
+
+Where small RUs are used, throughput is reduced but allows more devices to be connected.
+	- This technology allows data to be sent to different users using the same frequencies.
+	- Where as OFDM allocated all data to a single subcarrier (frequency)
+
+It provides better support for IoT devices.
+Stationss that require more bandwidth can be assigned larger RUs.
+RUs can also be assigned based on class of service parameters, such as prioritizing VoIP traffic.
+
+# Multi-user MIMO and Band Steering
+
+MU-MIMO or beamforming address the single user limitation in communication that exists in basic 802.11 technologies.
+
+Beamforming allows spatial streams to be focused into a single lane rather than to all directions as it worked in SU-MIMO
+
+802.11ac only provides this feature for the 5GHz band and only for download streams
+802.11ax provides this feature for both 2.4GHz and 5GHz bands
+
+# Band Steering
+
+Feature in an access point that makes it more likely for clients to connect to its 5 and 6 GHz band.
+
+	- Reducing the number of beacons used to advertise the 2.4GHz band
+
+Its purpose is to restrict 2.4GHz usage to 5/6 GHz incapable devices.
+
+# Cellular Technologies
+
+Wifi is typically operated as private infrastructure.
+Cellular radio is operated by telecommunications providers.
+
+A cellular radio establishes a connection with the nearest available cell or base station.
+Each base station has an effective range of up to 5 miles.
+
+2G and 3G were implemented by different technologies in different parts of the world.
+
+Converged 4G and 5G standards are supported by telecommunications providers worldwide.
+4G and 5G can provide fixed-wireless broadband solutions for homes and businesses, and support for IoT networks. They must be installed with a SIM card or chip issued by the network provider.

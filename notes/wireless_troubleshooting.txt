@@ -1,0 +1,133 @@
+# Wireless Performance Assessment
+
+Bit rate: The amount of the total amount of data transferred per second established at the Physical and Data Link layers.
+
+Throughput: the amount of data that can be transferred at the Network Layer, discarding overhead from layers 1 and 2.
+	"Goodput" is used to describe data transfer achieved at Application layer.
+
+Radio Frequency Attenuation: degradation of signal as the distance between a radio transmitter and a receiver increases.
+
+Signal attenuation formula
+
+	(signalPower + antennaGain) - freeSpaceLoss = receivedSignalStrength
+
+Signal strength and noise can be measured using a Wifi Analyzer.
+
+# Antenna Placement
+
+Incorrect antenna placement could exacerbate attenuation or interference problems.
+
+# Antenna Cable Attenuation
+
+LMR/HDF/CFD 200 cables have 0.6 dB/m of attenuation, while 400 cable improves that to about 0.22 dB/m
+
+	Connector loss is usuall calculated at 0.15 dB
+
+i) If a device has removable antennae check that they are screwed in firmly.
+
+# Effective Isotropic Radiated Power/Power Settings
+
+	EIRP = transmitPower - cableLoss + gain
+
+EIRP is the sum of the power, antenna connector/cable loss, and antenna gain, 
+
+The EIRP for each radio is reported through the AP or controller management software
+EIRP must not exceed regulatory limits
+Power Limits are different for 2.4GHz bands 5GHz bands and for point to multipoint vs point to point operation modes.
+
+Increasing transmit power is usually not an effective solution to increase wireless coverage.
+While an AP might have an EIRP of 23 dBm, smartphones usual transmit 10-14 dBm, if the client detects a strong signal, it will set a high data rate.
+
+However, because the EIRP of the client radio is much lower, it will result in excessive packet errors.
+
+Rule of thumb: AP power should be 2 thirds of the weakest client's power. This means, if a client can output 14 dBm of power, AP power should transmit be between 9-10 dBm
+
+# Channel Overlap Issues
+
+	- Co-Channel interference (CCI): Each Wifi channel is a collision domain. Where multiple devices use the same channel, there is collision. Wireless Devices should use CSMA/CA to find opportunities to transmit.
+	A channel should exhibit no more than 50% utilization
+
+	- Adjacent Channel Interference (ACI): Occurs when access points use different for overlapping channels, such as channels 1 and 3 in the 2.4GHz frequency band. ACI slows down the CSMA/CA process and increases noise levels.
+
+The goal of a multi-AP site is to create clean basic service areas so that clients can select an AP with the storngest signals easily and that the WLAN operates at the minimum level of co-channel interference. At least 25MHz spacing should be left to avoid channels from overlapping. Meaning that no more than 3 AP in the 2.4GHz can have non-overlapping channels.
+
+So, for 2.4GHz, you could configure AP1 to work in channel 1, AP2 in channel 6, and AP3 in channel 11. When using 5GHz, within Wifi 4/5/6, there is more non-overlapping channels available.
+
+In complex environments, it may be necessary to adjust the power levle used by an AP.
+
+	Maximum power can result in it interfering with other cells
+	Minimum power can cause wireless devices to listen to the AP, but can't talk to it due to the lack of power.
+
+# Interference Issues
+
+If a device is within the supported range, but the signal is weak or you can't get a connection, there is likely to be interference. Apart from CCI and ACI, there are several other sources of interference to consider.
+
+	- Reflection/bounce: mirrors or shiny surfaces
+
+	- Refraction: glass or water can cause radio waves to bend
+
+	- Absorption: the degree to which walls, windows, and people will reduce signal strength some of wave's energy is lost as heat when passing through construction materials or human bodies. An internal wall might cost somewhere between 3-15 dBm, depending on the material used. To minimize absorption from furniture or people, use ceiling mounted APs
+
+	- Electromagnetic Interference (EMI): Interference from a powerful radio or electromagnetic source working in the same frequency band
+		- Cordless phone
+		- Bluetooth device
+		- Microwave Ovens
+
+EMI can be detected using spectrum analyzers. Unlike wifi analyzers, these detect any radio sources, instead of filtering out non-wifi signals as wifi analyzers do. There units are distributed as handheld devices with an antenna, that can be useful to pinpoint the exact location of the interference.
+
+A 6 dB change in the level of a particular source represents halving or doubling the distance between the spectrum analyzer and RF source.
+
+# Roaming and Client Disassociation Issues
+
+Roaming means the clients can stay connected to the same network ESSID while moving around an ESA.
+
+Roaming Misconfiguration Issues
+
+In order to enable seamless roaming, the cells served by each AP need to overlap to some extent, which can be tricky.
+
+	- Sticky clients that do not identify signal issues and that do not reassociate with a different AP that could provide a better connection.
+
+	- Flapping clients that switch repeatedly between access points.
+
+	- Clients that do not support roaming standards.
+		> 802.11k: mitigates sticky and flapping client issues by transmitting information about wireless topology to the client
+
+		> 802.11r: assists with reauthentication
+
+		> 802.11v: pushes clients to less congested access points.
+
+	- Inconsistent service areas for 2.4GHz and 5GHz. 2.4 supports longer ranges than 5GHz, which can cause it to attract more clients. it is recommended to configure lower transmit power on a 2.4GHz Basic Service Set than the 5GHz Basic Service Set equivalent.
+
+Client Disassociation Issues
+
+The access point and client use management frames to control connections.
+The access point broadcasts a beacon frame to advertise service capabilities.
+A legitimate client might disassociate but not deauthenticate because it is roaming between access points in an extended service area. 
+
+If clients are unexpectedly disassociating and there is no roaming, interference, or standards support issue. consider the possibility of a malicious attack. Disassociation attacks exploit the lack of encryption in management frames.
+
+One type of disassociation attack is injects management frames that spoof the MAC address of the victim in a disassociation notification. Causing it to be disconnected from the network.
+
+Disassociation/Deauthentication attacks might be used in conjuction with replay attacks aimed at recovering the network key.
+
+# Overcapacity Issues
+
+Occurs when to many client devices connect to the same AP.
+Maximum 30 clients to avoid performance issues. Since Wifi is half-duplex, starting from 30 devices, the time each device has to wait for its turn to speak becomes noticeable.
+
+Traffic types: 
+
+	- Web Browsing, which is limited by WAN or Internet speed. Wifi is just waiting for the website to load from the server.
+
+	- Client-Server: pushing a large databse backup to a local server over wifi eats the wireless bandwidth directly.
+
+Load balancing
+
+	- Max Client Threshold: An AP can be configured to allow a maximum of 30 devices
+	- When the 31st person tries to join, the AP ignores the request and the laptop tries to join the next strongest signal.
+
+The more clients there is, the more processing power is used to run CSMA/CA instead of using it to move data.
+
+Collision Domains, Wifi is a big collision domain, adding more APs on different channels, splits one collision domain into smaller, more manageable ones.
+
+ 

@@ -1,0 +1,384 @@
+comparing_remote_access_methods.txt
+
+	# Widea Area Networks and The OSI Model
+
+WAN technologies support data communications over greater distances than LANs.
+The term "Enterprise WAN" refers to a WAN network that is used and controlled by an organization.
+WANS use simple protocols compared to lans at the Data Links layer because of the Point to Point nature of WAN networks. Which require less complexity.
+
+Enterprises rarely own the infrastructure that supports it.
+
+Modems operate at the physical layer and convert different types of digital data into into signals compatible with specific media types.
+
+	- Analog (Dial-up): Digital to analog conversions over voice lines; limited to 56kbps
+	- Digital Subscriber Line: High speed digital data over traditional voice lines
+	- Cable: coaxial cable infrastructure (CATV) for high bandwith delivery
+	- Satellite: uses microwave radio links for remote areas lacking terrestrial cable.
+
+Network layer for WAN, customer and provider sites are address using IPs
+
+	- Customer Edge (CE) routers connect to a provider edge (PE) via the underlying Link layer interface.
+
+Providers allocate public IPv4/IPv6 addresses or address ranges to the customer.
+
+	# Internet Access Types
+
+Demarcation point: service-related entry point at which the access provider's network terminates.
+Minimum Point of Entry (MPOE)
+
+Modems and routers provided or leased by the customer and installed at their site are referred to as:
+	
+	- Customer Premises Equipment
+
+The demarc and CPE should be installed to a secure location within the premises, with access controls to restrict area to authorized staff.
+
+	- This location is referred to as entrance facilities in TIA/EIA structured cabling standards.
+
+	# T-Carrier
+
+Enabled voice traffic to be digitized for transport.
+Based on TDM
+
+	DS0 - 64kbps channel
+	DSI or T1 - 24 channels multiplexed into a single 1.544 Mbps full-duplex digital connection.
+	* T1 lines themselves can be multiplexed to provide even more bandwidth
+
+At the Data Link layer, T1 leased lines typically use High-Level Data Link Control (HDLC) or 
+Point-to-Point Protocol (PPP)
+
+	# DSL (Local Loop)
+
+Technology used to transfer data over voice-grade telephone lines.
+DSL modem is installed as CPE, typically as a multifunction wireless router.
+
+Symmetrical and Asymmetrical DSL
+
+	- Asymmetrical DSL (ADSL): Provides fast download but slow downlink. There are various iterations of ADSL such as (ADSL2+) offering downlinks of 24 Mbps and upinks of 1.25 Mbps or 2.5 Mbps
+
+	- Symmetric DSL offers the same uplink and downlink speeds. These are of more use to businesses and for branch office links.
+
+	# Cable Internet
+
+Cable internet connections are usually available with Cable Access TV (CATV).
+Often described as hybrid fiber coax (HFC)
+Because they combine fiber optic core networks with coax link, often just known as cable broadband.
+
+	- Modem connects to the router via an ethernet cable
+	- Coax segment connects the modem to the street's distribution point
+	- Cable Modem Termination System (CMTS): Where all premises in a street are linked through coax lines
+											 It routes data traffic through the fiber optic backbone through the ISPs PoP
+											 It is a crucial component in a cable internet setup
+
+	# Data Over Cable Service Interface Specification (DOCSIS)
+
+Wired WAN standard determines the communication rules and speeds for cable networks.
+
+DOCSIS 1.x / 2.0		~38 Mbps down / 27 Mbps up		Standard Single Channel transmission
+DOCSIS 3.0				1 Gbps+ Down / 100 Mbps+ up		Channel Bonding: combines multiple channels to multiply speed
+DOCSIS 3.1 / 4.0		10 Gbps+ down					Advanced modulation for multi-gigabit symmetrical speeds
+
+3.0 allows multiplexing channels to achieve higher bandwidth
+
+	# Fiber to the Curb and Fiber to the Premises
+
+	# Fiber to the Curb (FTTC) and VDSL
+
+The major obstacle in providing WAN access that can approach to LAN performance is bandwidth in the last mile, where the copper wiring infrastructure is generally not good. The project to update this wiring to use fiber is referred to by the umbrella term Fiber to the X
+
+	# Fiber to the Curb and VDSL
+
+Fiber to the Curb (FTTC) solution. Retains some sort of copper wiring to the customer premises while extending the fiber link from the point of presence to a communications cabinet servicing multiple subscribers.
+
+Service providers with their roots in telephone networs use very high bit rate DSL (VDSL) to support FTTC.
+
+VDSL has a very short range rate of 100 Mbps downstream bi-rectional
+
+* VDSL over 300 meters can achieve download speeds of 52 Mbps and upload of 6 Mbps 
+
+i) Modems should match the service. For example an ADSL only modem will not be compatible with VDSL
+
+	# Fiber to the Premises (FTTP) and Optical Network Terminals
+
+FTTP internet connection means that the service provider's fiber optic cable is run all the way to the customer's building.
+
+This full fiber connection type is implemented as passive optical network (PON).
+
+In a Passive Optical Network a single fiber cable is run from the point of presence to an optical line terminal located in a street cabinet.
+
+From the OLT, splitters direct each subscriber's traffic over a shorter length of fiber to an optic network terminal (ONT) installed at the customer's premises. The ONT converts optical signal into an electrical one. The ONT is connected to the customer's router using an RJ45 ethernet patch cord.
+
+# Remote Access Considerations
+
+Today, most remote network access are implemented as a virtual private network (VPN) over the internet.
+Remote access means that the user does not make direct cable or wireless connection to a network.
+
+Complexity with remote access arises from the fact that it is more difficult to ensure the security of remote workstations and servers. There is also greater opportunity to exploit remote logins.
+
+Remote access servers (RAS) should be accompanied by documentation describing:
+
+	- Uses of the service
+	- Security risks and counter measures
+	- Authorized users of the service
+
+Remote access policy should implement the measures identified through compiling the documentation
+Typical policy restrictions would be:
+
+	- Restricting access to defined users or groups
+	- Restricting access to defines times of day or particular days of the week
+	- Restricting privileges on the local network (ideally, remote users would only be permitted access to a clearly defined part of the network)
+	- Logging and auditing access logons and attempted logons
+
+	In addition, the organization should ensure that all RASs and other hardware are kept up to date with the latest software or firmware updates.
+
+# Tunneling Protocols
+
+# Virtual Private Network (VPN)
+
+This requires a protocol that can create secure tunnel for private communications through the Internet.
+
+Tunneling is where the hosts are on the same logical network but connected via different physical networks.
+The tunnel encapsulates the packet for the local network within a public network packet.
+Typically the local network packet is encrypted. When the packet is delivered, the remote access server strips the public packet headers, extracts and decrypts the local packet, and forwards it over the local network.
+
+	Concentrator: Deviced focused in encryption and decryption
+					Often integrated into a firewall
+
+# Point to Point Protocol (PPP)
+
+Encapsulation protocol that works at the Data Link Layer.
+PPP is used to encapsulate IP packets for transmission over serial digital lines.
+It has no security mechanisms, so it must be used with other protocols to provision a secure tunnel.
+
+# Generic Routing Encapsulation
+
+A GRE packet can itself encapsulate an IP packets as its payload.
+The outer GRE packet is assigned port 47 and has its own IP source and header address fields.
+
+The GRE packets is then itself encapsulated in a layer 2 frame for transmission to the next hop router.
+Each intermediate router inspects only the GRE header of the packet to determine the forwarding destination
+
+At the final destination, the receiving router de-encapsulates GRE packet to extract the inner IP payload and forwards that inner packet to its destination.
+
+GRE does not have mechanism to authenticate users or devices so it is often used with other protocols within VPN solutions.
+
+
+# IP Security
+
+Operates at the network layer to authenticate users and encrypt IP packets. It is used with other protocols to provide connection security, and it is increasingly being used as a standalone VPN protocol
+
+IPSec operates at the network layer of the OSI model, meaning that it can be implemented without configuring specific application support and incurs less packet overhead.
+
+It consists of 2 core protocols:
+
+	- Authentication header: Performs a cryptographics hash on the whole packet, including the IP header plus a shared secret key, known only to communicating hosts, and adds this value in its header as an integrity check value. 
+
+	- Encapsulating Security Payload (ESP): Can be used to encrypt the payload rather than simple executing an ICV. ESP attaches three fields to a packet: a header, a trailer, and an ICV, unlike AH, ESP excludes the IP header when performing ICV
+
+	i) With ESP, algorithms for both confidentiality and authentication are usually applied together. However, it is possible to just use one or the other.
+
+IPSec can be used in two modes:
+
+	- Transport mode: This mode is used to secure communications in a private network (end-to-end implementation). When ESP is implemented in transport mode, the IP header for each packet is not encrypted, just the payload data.
+
+	- Tunnel mode: This mode is used for communications between VPN gateways across an insecure network (creating a VPN). This is also referred to as router implementation, tunnel mode with ESP encrypts the whole IP packet, (header and payload). AH has no real use case in tunnel mode, as confidentiality will usually be required.
+
+	i)	The principles underlying IPSec are the same for IPv4 and IPv6.
+		
+		- IPv6: IPSec makes use of the extension header in IPv6
+
+		- IPv4: ESP and AH are allocated new IP protocol numbers (50 and 51) and it either modifies the IP header or encapsulate the original packet, depending on whether tunnel or transport mode is used.
+
+# Transport Layer Security
+
+TLS over TCP or Datagram TLS (DTLS) over UDP can be used to encapsulate frames or IP packets.
+
+The main drawback is that TLS already operates at the Session layer, the headers from the inner and outer packets add up to significant overhead.
+
+# Internet Key Exchange (IKE)
+
+Each host or router that uses IPSec must be assigned a policy.
+
+An IPSec policy sets the authentication mechanism and also the use of AH/ESP and transport or tunnel mode for a connection between two peers.
+
+IPSecs encryption and hashing functions depend on a shared secret.
+
+The secret must be communicated to both peers, and the peers have to perform mutual authentication to confirm one another's identity.
+
+IKE protocol implements an authentication method, selects ciphers that are supported by both peers, and performs key exchange. The set of properties is referred to as Security Association (SA)
+
+Phase I - Establishes the identity of two peers and performs key agreement using the Diffie-Hellman algorithm to create a secure channel.
+	Two methods of authenticating peers are commonly used:
+	- Digital Certificates: are issued to each peer by a mutually trusted certificate authority to identify one another.
+	- Pre-shared key (group authentication): is when the same key is configured on both peers.
+
+Phase II - Uses the secure tunnel created in phase I to establish which ciphers will be used with AH and/or ESP in the IPSec session.
+
+IKEv2 has features that have made the protocol popular as a standalone remote access client-to-site VPN solution. The main changes are some of the following.
+	- Supports EAP authentication methods, allowing for example user authentication against a RADIUS server
+	- Provides a simple setup mode than reduces bandwidth without compromising security
+	- Allows NAT Traversal and MOBIKE multihoming
+		* NAT Traversal: makes it easier to configure a tunnel allowed by a home router/firewall
+		* Multihoming makes it so that the user keeps the IPSec connection when switching between them
+
+# Client-to-site VPNs
+
+In a client-to-site or remote access topology, the VPN client connects over the public network to a VPN gateway.
+It is the "telecommuter" model, allowing homeworkers to working in the field to connect to the corporate network.
+
+Client to site VPNs can be configured using a number of protocols. An SSL/TLS VPN solution uses certificates to establish the secure tunnel.
+
+Examples:
+	
+	- Microsoft's Secure Socket Tunneling Protocol (SSTP), SSTP is standalone and does not require IPSec to work. 
+
+	- Cisco's Layer 2 Tunneling Protocol (L2TP):	Which facilitates the tunneling of data, and IPSec works in 														conjunction to encrypt the tunneled data
+
+All these solutions require client software to operate. Most VPN solutions use EAP and AAA/RADIUS architecture to authenticate client devices and users.
+
+
+i) Microsoft's PPP Tunneling Protocol (PPTP) was once widely used but has too many security flaws to be deployed safely.
+
+When a client connected to a remote access VPN tries to access other sites on the internet, there are two ways to manage the connection.
+
+	- Split Tunnel: The client accesses the internet directly using its ISP-managed IP configuration, routers, and DNS servers.
+					
+					VPN traffic is sent through the tunnel
+					Non-VPN traffic is sent normally
+					Configured in the VPN software
+
+	- Full Tunnel:	Internet is mediated by the corporate network, which will alter the client's IP address and DNS servers 				and may use a proxy
+
+					All traffic is sent through the VPN tunnel
+					May require additional configuration at the concentrator
+
+In full tunnel, there can be higher overhead, since all the traffic is going through the tunnel
+
+# Site-to-site
+
+	- Congiured as always on
+	- Turn VPN concentrator function on the firewalls at each site.
+
+# Clientless VPNs
+
+Only available in HTML5
+Usually runs inside of a browser
+
+	- API Based
+	- Creates VPN tunnel without VPN application
+
+Guacamole is an example of clientless VPN that runs on the browser and allows remote connections
+	- Its support of WebSockets make it so it keeps an open connection to transmit data back and forth without the overhead of separate HTTP requests.
+
+# Remote Access Protocols
+
+	- SSH (Terminal):
+	- RDP (GUI)		:
+	- Virtual Network Computing (VNC)
+
+# Telnet
+
+Port 23, must always be disabled, if using Telnet to manage legacy systems is unavoidable, the legacy systems should be deployed to a secure segment.
+
+# Secure Shell
+
+The name "terminal" comes form teletype device (TTY).
+
+The TTY is the terminal or endpoint for communication between the computer and the user.
+	- Terminal handles the user input and displays output
+	- Shell performs the actual processing
+
+Secure Shell (SSH) is the principal means of obtaining access to:
+	- Linux and UNIX servers
+	- Most network appliances (switches, routers, firewalls.)
+
+As well as terminal emulation, secure shell can be sued as secure file transfer protocol.
+
+There are numerous commercial and opean source SSH servers and terminal emulation clients available for all the major NOS platforms (UNIX, Linux, Windows, and macOS). The most widely used is OpenSSH
+
+# SSH Host Key
+
+SSH servers are identified by a public/private key pair, referred to as the host key.
+	* A mapping of hostnames to public keys can be kept manually by each SSH client.
+	* They host key must be changed if any compromise of the host is suspected.
+
+# SSH Client Authentication
+
+The server's host key is used tp set up a secure channel to use for the client to submit authentication credentials.
+
+SSH allows various methods to authenticate to the SSH server. They can be enabled or disabled as required on the server:
+
+	- Username/password: client submits credentials that are verified by the SSH server against a local user database or using a network authentication server.
+
+	- Public key authentication: each remote user's public key is added to a list of keys authorized for each local account on the SSH server.
+
+	- Kerberos: the client submits the Kerberos credentials obtained when the user logged onto the workstation to the server using the Generic Security Services Application Programming Interface. The SSH server the Ticket Granting Service to validate a credential.
+
+	i) If a user's private key is compromised, delete the public key from the appliance, then regenerate a key pair un the user's remediated client device and copy the public key to the SSH server.
+
+# Secure Shell Commands
+
+	`sshd` - start the SSH daemon server. Host's file port to listen on and logging options can be set via switches or in a configuration file
+
+	`ssh-keygen` - create a key pair to use to access servers. The private key must be stored securely on your local computer, to copy the public key you can use `ssh-copy-id`
+
+	`ssh-agent` - configure a service to use to store the keys used to access multiple hosts, stores private keys to reduce amount of times a passphrase has to be entered (basically an SSO)
+
+	`ssh-add` - command is used to add a key to the agent
+
+	`ssh Host` - use the SSH client to connect to the server running at Host
+
+	`ssh Username@Host` - use the SSH client to connect to the server running at Host with a different Username
+
+	`ssh Host "Command or Script"` use the SSH client to execute a command or script on the remote server running at Host without starting a shell
+
+	`scp Usernam@Host:RemoteFile /Local/Destination` - a file transfer client with remote copy/rcp-like command interface
+
+	`sftp` - a file transfer client with FTP-like command interface
+
+# Remote Desktop Protocol
+
+Provides GUI remote administration [PORT 3389]
+
+* RDP should be configure to require Network Level Authentication (NLA)
+
+Without NLA, the system configures a desktop before the user logs on.
+
+To protect privileged account credentials, it is important not to initiate remote connections to servers and appliances from a low-trust workstation. Instead, a Secure Administrative Worksation (SAW) should be used, which is a computer with very low attack surface running the minimum possible apps used solely for remote management.
+
+# Console Connections and Out-of-bound management
+
+Some network appliances such as managed switches do not offer any configuration options or interface, they are plug-n-play
+
+Managed switches and firewalls support more complex functions and can be configured and monitored over several interfaces.
+
+The funcitons of a managed appliance can be accessed via one of the device's management interfaces:
+
+	- Physical Console port: connecting a laptop running terminal emulator software to the switch or router.
+	- AUX port: designed to connect to an analog modem and provide remote access over a dial-up link.
+		> RS-232 or RJ45 to DB9 cable
+
+	- Management Port: This means configuring a virtual network interface an IP address on the device to use for management functions and connecting to it via one of the normal Ethernet ports.
+
+In band management link is one that shares traffic with other communications on the production network
+Out-of-band management is when the link traffic is limited to the attached device
+
+In band management traffic can be isolated by allocating the management port to a VLAN
+	- Use HTTPS and SSH for the management interface.
+
+# Jump Server/Box
+
+A computer used to centrally managed other servers, it must be set up with the minimal amount of programs installed.
+
+Acts as a stepping stone between the user and the servers can when paired with firewalls it creates a DMZ to prevent cyberattackers. 
+
+Has a single entry in its access control list and denies connection attempts from any other hosts.
+
+# API Connection Methods
+
+An appliance that can be automated via scripting exposes an application programming interface, the api is the means by which external entities interact with the appliance, calling it with expected parameters and receiving the expected output.
+
+	- Do not use the root user account for any day-to-day logon activity or automation. Configure specific accounts for automation that are allocated with least privileges.
+
+	- Principals, security groups, roles, and services are enabled for programmatic access by assigning a secret key to the account, it must immediately be transferred to the host and kept securely on that host.
+
+	- Only use HTTPS for API communications, configure mutual authentication and access contorls so that API requests can only be issued from authorized clients.

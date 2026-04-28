@@ -1,0 +1,174 @@
+# Infrastructure Network Type
+
+Wifi uses similar concepts as those found in Ethernet.
+Each radio has a base MAC address. 
+A Dual Band adapter will have one MAC address for the 2.4GHz radio and one for the 5GHz radio.
+
+Each radio is referred to as a station, though the term can also be used to refer to a wireless client device.
+
+Each station can be configured to join a WLAN through the network name or the Service Set Identifier (SSID).
+
+# Service Set Identifier (SSID)
+
+	- Up to 32 bytes in length for maximum compatibility.
+	- Only ASCII plus hyphen and underscore characters.
+
+If the SSID is broadcast, the user can select it from a list, if it is not broadcast, the user has to manually enter the wireless configuration.
+
+Connection process:
+
+	1) Station attempts to connect, probes to establish 802.11 standards support and security configuration.
+	2) Completes any authentication required.
+	3) Requests to associate with the network.
+
+# Infrastructure Topology
+
+Most sites use the infrastructure topology
+
+Means that each station is connected to the WLAN via an AP, which creates a logical star topology.
+Each client station requires a wireless adapter compatible with the wireless standards supported by the AP.
+
+# Basic Service Set (BSS)
+
+A basic service set involves an AP mediating communications between client devices using a specific frequency and channel.
+
+A virtual MAC address derived form one of the AP's radios is used as the Basice Service Set Identifier (BSSID).
+The BSSID identifies the access point hosting a (BSS)
+
+Any given access point could operate multiple BSSs on its 2.4, 5, and 6 GHz radios.
+These BSSs could be configured with separate or the same network name, depending on how many logical networks are required.
+
+Each network can have different security properties.
+
+* For example you might configure a guest network with no authentication, and a home network that requires a passphrase to join.
+
+As well as facilitating communications between stations. An access point can provide a bridge to a cabled network segment.
+The cabled network is referred to as a Distribution System. On an enterprise WLAN, each access point is cabled to a switch. The distrubution system can be used to network multiple acess points.
+
+Multiple switches connected to a DS can host an Extedend Service Set (ESS). An ESS is a group of BSS that are all configured with the same SSID and security information (basically clones of a wireless connection). Each BSS uses a different channel within each frequency band.
+
+# Range and Signal Strength
+
+A device supporting Wifi connectivity should have an indoor range of 30m (100ft) 2.4GHz radios have longer ranges than 5GHz ones, 802.11n improves ranges compared to earlier standards. 
+
+Outdoor range range can be double or triple the range.
+
+Each station uses the Dynamic Rate Switching/Selection mechanism to determine an appropriate data rate based on the signal quality.
+
+Signal strength is represented as the ratio of a measurement to 1 milliwatt (mW) where 1 mW is equal to 0 dBm.
+dB and dBm units can be combined to analyze losses and gain in signal strength along a communications path.
+
+Because 0 dBm is 1 mW, a negative value for dBm represents a fraction of a milliwatt.
+
+	-30 dBm is 0.001, -60 dBm is 0.000001
+
+Wifi devices are constrained by regulations governing radio spectrum use and output only small amounts of power.
+
+# Received Signal Strength Indicator (RSSI)
+
+The strength of the signal measured at the client end.
+When measuring RSSI, value closer to 0 will represent a better performance.
+
+	-30 dBm represents a perfect signal
+	-65 dBm is a good signal
+	< -80 is likely to suffer packet loss or be dropped
+
+The RSSI must exceed the minimum receiver senstivity.
+
+RSSI might be measured directly in dBm or might be an index value related to a scale of dBm measurements.
+
+	0-60, 0-127, 0-255. On a client, the index is displayed as a number of bars of signal strength on the adapter icon.
+
+# Signal to Nose Ratio (SNR)
+
+Comparative strength of the data signal to the background noise. 
+
+Noise is also measured in dBm, but values closer to 0 represent a higher noise amount.
+SNR is the difference between the signal strength and noise
+
+	signal1 = -65 dBm	signal2 = -65 dBm
+	noise1 	= -90 dBm	noise2	= -80 dBm
+
+snr1 = |signal1 - noise1| = 25 dBm	
+snr2 = |signal2 - noise2| = 15 dBm (worse)
+
+# Wireless Surveys and Heat Maps
+
+Critical planning tool used to ensure that the WLAN delivers acceptable datarates to supported number of devices in all expected physical locations.
+
+	- Basic Service Area (BSA):		area serverd by a single AP
+	- Extended Service Area (ESA):	area where stations can roam between access points to stay connected.
+
+* Wireless site surveys ensure that these areas are properly sized.
+
+Performed by examining the blueprints or floor plans of the premises to understand the layout and identify features that might produce `radio frequency interference` (RFI)
+
+Backed up by a visual inspection that may expose features not shown in the blueprints, such as a thick metal shleving surround a room that needs to have WLAN access.
+
+APs need network ports and power jacks, so it will help to obtain plans that show locations of available ports.
+
+i) PoE can work as an alternative
+
+Next, you create a new plan on which you will mark the basic service areas and associated APs and booster antennae
+Place the APs close enough to avoid 'dead zones', but far enough to avoid interference with another or underutilization of an AP and overutilization of the other.
+
+Position an AP in the first planned location, then use a laptop with a wireless adapter and a wireless survey tool to record signal strength across various points in the intended BSA.
+
+The transmit power of an AP can be modified to use less than its maximum output. This to have a better control of the size of the BSA.
+
+# Wireless Roaming
+
+Allows clients to connect to different access points within the same ESSID and security configuration connected by a wired network or Distribution System (DS).
+
+These APs are configured to work with different frequency channels to avoid interference within overlapping BSAs.
+
+When the client detects that it is no longer receiving a good signal, it disassociates from the cuttent AP, to reassociate with a new AP, depending on the security configuration, it may have to reauthenticate.
+
+*) 802.11r fast roaming facilitates the authentication process by generating security properties for the new association.
+
+Adapters support a roaming "aggressiveness" setting to avoid devices from flapping between to APs and to prevent a client from remaining associated with a more distant AP when it could achieve better bandwidth thorugh a closer one.
+
+# SSID Broadcast and Beacon Frame
+
+Beacon: special management frame broadcast by the AP to advertise the VLAN
+Beacon broadcast interval is 100ms, which can be modified.
+Increasing the interval reduces overhead of broadcasting but delays joining the network and can hamper roaming between APs.
+
+# Wireless Distribution System
+
+When it is not possible to run cabling, you can configure access points to create wireless-only networks.
+
+	- Set APs to use the same channel, SSID, and security parameters.
+	- APs are configured in WDS/repeater mode.
+	- One AP is configured as a base station, while the others are configures as remote stations.
+
+i) When implementing WDS it is best to use APs provide by the same vendor
+
+# Wireless Controllers
+
+Wireless controllers allow the centralized management of tens to hundreds of Access Points.
+
+Autonomous APs are those that are able to handle clients without the use of a wireless controller.
+While lightweight APs require a wireless controller to function.
+
+Cisco wireless controllers usually communicate with the APs using the Lightweight Access Point protocol (LWAPP)
+
+LWAPP allows an AP configured to work in lightweight mode to download SSID, standards mode, and security configuration. Alternatives to LWAPP include the derivative Control and Provisioning of Wireless Access Points (CAPWAP) protocol.
+
+A wireless controller can aggregrate traffic and provide a central switching point between the WLAN and wired LAN.
+* It can assign clients to separate VLANs.
+Automated VLAN pooling ensures that the total number of stations is kept within the specified limits. Reducing broadcast traffic.
+
+# Antenna Types
+
+Omnidirectional antenna
+	Receives and sends signals in all directions more or less equally.
+	These should be ceiling mounted for best coverage.
+	Propagation pattern is shaped like a donut.
+	Locating the antenna above head height will minimize interference from obstructing furniture, too high can cause signal loss.
+	There is AP with downtilt omnidirectional antennae to use on high ceilings.
+
+Signal strength obtained by focusing the signal is referred  to as gain and is measured in dBi (decibel isotropic)
+
+Polarization
+	Is the orientation of the wave propagating from the antenna.
