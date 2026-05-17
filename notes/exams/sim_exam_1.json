@@ -1,0 +1,1442 @@
+[
+  {
+    "id": "sim-1-1",
+    "topic": "DNS Truncation",
+    "prompt": "A network administrator notices that DNS queries for certain large records are failing over UDP, but succeed when testing with a tool that forces TCP. Which mechanism is MOST likely responsible for this transition when a UDP response exceeds the MTU or the 512-byte limit?",
+    "choices": [
+      "DNS Recursion",
+      "DNS Truncation (TC Bit)",
+      "DNSSEC Validation",
+      "EDNS0 (Extension Mechanisms for DNS)"
+    ],
+    "answer_indices": [1],
+    "explanation": "When a DNS response is too large for a single UDP packet (traditionally 512 bytes), the server sets the Truncated (TC) bit in the header. This signals the client to retry the request using TCP port 53.",
+    "source_file": "notes/file_database_services.txt",
+    "domain_id": 1,
+    "difficulty": "hard"
+  },
+  {
+    "id": "sim-1-2",
+    "topic": "VLAN Security",
+    "prompt": "Which of the following describes a 'VLAN Hopping' attack that specifically exploits the way some switches handle double-tagged 802.1Q frames?",
+    "choices": [
+      "ARP Spoofing",
+      "Switch Spoofing",
+      "Double Tagging",
+      "MAC Flooding"
+    ],
+    "answer_indices": [2],
+    "explanation": "Double Tagging involves an attacker sending a frame with two 802.1Q tags. The first switch strips the outer tag (corresponding to the native VLAN) and forwards the frame to the next switch with the second tag intact, allowing the frame to jump to a different VLAN.",
+    "source_file": "notes/switch_security.txt",
+    "domain_id": 4,
+    "difficulty": "hard"
+  },
+  {
+    "id": "sim-1-3",
+    "topic": "TCP Handshake",
+    "prompt": "During a packet capture, you see a server sending a packet with the RST flag set immediately after receiving a SYN packet from a client. What does this MOST likely indicate in the context of a firewall policy?",
+    "choices": [
+      "The firewall is configured with a 'DROP' action.",
+      "The firewall is configured with a 'REJECT' action.",
+      "The server is performing a graceful shutdown.",
+      "The MSS negotiation failed."
+    ],
+    "answer_indices": [1],
+    "explanation": "In firewall terminology, a 'DROP' action silently discards the packet, while a 'REJECT' action sends a response back to the sender (typically a TCP RST for TCP or an ICMP Port Unreachable for UDP) to explicitly refuse the connection.",
+    "source_file": "notes/network_security_rules.txt",
+    "domain_id": 4,
+    "difficulty": "hard"
+  },
+  {
+    "id": "sim-1-4",
+    "topic": "Subnetting Logic",
+    "prompt": "A company needs to divide a /24 network into 4 subnets of equal size. What will be the new CIDR notation and the number of usable hosts per subnet?",
+    "choices": [
+      "/26; 62 hosts",
+      "/26; 64 hosts",
+      "/27; 30 hosts",
+      "/28; 14 hosts"
+    ],
+    "answer_indices": [0],
+    "explanation": "Dividing a /24 into 4 equal subnets requires adding 2 bits to the mask (2^2 = 4), resulting in /26. Each /26 subnet has 64 total addresses, with 62 usable (subtracting network and broadcast).",
+    "source_file": "notes/subnetting_concepts.txt",
+    "domain_id": 1,
+    "difficulty": "hard"
+  },
+  {
+    "id": "sim-1-5",
+    "topic": "Automation",
+    "prompt": "An organization is moving away from 'Gold Images' (Master Images) in favor of Infrastructure as Code (IaC) templates. What is the PRIMARY benefit of this shift regarding security auditing?",
+    "choices": [
+      "Templates require less storage space.",
+      "Templates provide a clear, version-controlled audit trail of the environment's desired state.",
+      "Master images are natively encrypted, whereas templates are not.",
+      "Templates eliminate the need for patch management."
+    ],
+    "answer_indices": [1],
+    "explanation": "Infrastructure as Code (IaC) allows the infrastructure definition to be stored in version control (like Git), providing a transparent, repeatable, and auditable history of all configuration changes, which is harder to achieve with opaque binary master images.",
+    "source_file": "notes/summarizing_cloud_concepts.txt",
+    "domain_id": 3,
+    "difficulty": "hard"
+  },
+  {
+    "id": "sim-1-6",
+    "topic": "DNS Troubleshooting",
+    "prompt": "A user can access a website by its IP address but not its FQDN. After running 'ipconfig /flushdns', the issue persists. Which of the following should be the NEXT step in the troubleshooting process?",
+    "choices": [
+      "Check the local HOSTS file.",
+      "Restart the DNS Client service.",
+      "Release and renew the IP address.",
+      "Reinstall the network adapter driver."
+    ],
+    "answer_indices": [0],
+    "explanation": "If flushing the DNS cache doesn't work, the NEXT logical step is to check the local HOSTS file, as it is checked before DNS and can override name resolution with incorrect or malicious entries.",
+    "source_file": "notes/file_database_services.txt",
+    "domain_id": 5,
+    "difficulty": "hard"
+  },
+  {
+    "id": "sim-1-7",
+    "topic": "VLAN Management",
+    "prompt": "What is the security risk of leaving the Native VLAN on its default setting (VLAN 1) on all trunk ports?",
+    "choices": [
+      "It disables Spanning Tree Protocol (STP).",
+      "It facilitates VLAN hopping and unauthorized access to management traffic.",
+      "It increases the CPU load on the switch due to untagged traffic processing.",
+      "It prevents the switch from performing MAC address learning."
+    ],
+    "answer_indices": [1],
+    "explanation": "Leaving the native VLAN as VLAN 1 is a security risk because it is the default for all ports. Attackers can exploit this to perform VLAN hopping or intercept sensitive untagged management traffic. Best practice is to change the native VLAN to an unused ID.",
+    "source_file": "notes/switch_security.txt",
+    "domain_id": 4,
+    "difficulty": "hard"
+  },
+  {
+    "id": "sim-1-8",
+    "topic": "Routing Logic",
+    "prompt": "A router receives a packet with a destination IP of 192.168.10.15. Its routing table has two entries: 192.168.10.0/24 (Static) and 192.168.10.0/25 (OSPF). Which route will the router use to forward the packet?",
+    "choices": [
+      "The Static route because it has a lower Administrative Distance.",
+      "The OSPF route because it has a longer prefix match (/25 vs /24).",
+      "The Static route because it was manually configured.",
+      "It will load balance between both routes."
+    ],
+    "answer_indices": [1],
+    "explanation": "Routers prioritize the 'Longest Prefix Match' above all other metrics, including Administrative Distance. Since /25 is a more specific match for the destination than /24, the OSPF route will be chosen.",
+    "source_file": "notes/routing_logic.txt",
+    "domain_id": 1,
+    "difficulty": "hard"
+  },
+  {
+    "id": "sim-1-9",
+    "topic": "Fiber Optics",
+    "prompt": "Which fiber optic connector type is specifically known for its 'push-pull' latching mechanism and is frequently used in high-density data center environments?",
+    "choices": [
+      "ST (Straight Tip)",
+      "SC (Subscriber Connector)",
+      "LC (Lucent Connector)",
+      "MTRJ"
+    ],
+    "answer_indices": [2],
+    "explanation": "The LC connector is a small form factor connector with a push-pull tab mechanism, making it ideal for high-density environments where space is limited compared to the larger SC connector.",
+    "source_file": "notes/fiber_optics.txt",
+    "domain_id": 2,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-10",
+    "topic": "Network Operations",
+    "prompt": "An organization is implementing a policy that requires all network device configurations to be backed up daily. Which protocol is MOST efficient for sending these small configuration files to a central server without the overhead of authentication or complex session management?",
+    "choices": [
+      "FTP",
+      "SFTP",
+      "TFTP",
+      "SCP"
+    ],
+    "answer_indices": [2],
+    "explanation": "TFTP (Trivial File Transfer Protocol) is a simple, UDP-based protocol with no authentication, making it very efficient for transferring small configuration files or boot images in a secure internal management network.",
+    "source_file": "notes/protocols_ports_compTIA.txt",
+    "domain_id": 3,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-11",
+    "topic": "VLAN Trunking",
+    "prompt": "You are configuring a trunk link between two switches. One side is configured with 'switchport mode dynamic desirable'. Which mode should the other side be in to successfully negotiate an 802.1Q trunk? (Select TWO)",
+    "choices": [
+      "Access",
+      "Trunk",
+      "Dynamic Auto",
+      "Dynamic Desirable"
+    ],
+    "answer_indices": [1, 2, 3],
+    "explanation": "A side configured as 'Dynamic Desirable' will negotiate a trunk if the other side is 'Trunk', 'Dynamic Desirable', or 'Dynamic Auto'. Access mode will never form a trunk.",
+    "source_file": "notes/vlans_trunking.txt",
+    "domain_id": 2,
+    "difficulty": "hard"
+  },
+  {
+    "id": "sim-1-12",
+    "topic": "IPv6 Neighbor Discovery",
+    "prompt": "In IPv6, which message type is used by a host to determine the link-layer address of a neighbor on the same local link, replacing the function of ARP in IPv4?",
+    "choices": [
+      "Router Advertisement",
+      "Neighbor Solicitation",
+      "Neighbor Advertisement",
+      "Router Solicitation"
+    ],
+    "answer_indices": [1],
+    "explanation": "Neighbor Solicitation (NS) is part of the Neighbor Discovery Protocol (NDP) in IPv6. It is used to discover the link-layer address of a neighbor, much like ARP does in IPv4.",
+    "source_file": "notes/ipv6_advanced.txt",
+    "domain_id": 1,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-13",
+    "topic": "Wireless Security",
+    "prompt": "A company wants to implement a wireless security standard that uses Simultaneous Authentication of Equals (SAE) to provide stronger protection against offline dictionary attacks. Which standard should they use?",
+    "choices": [
+      "WPA",
+      "WPA2-Enterprise",
+      "WPA3",
+      "WEP"
+    ],
+    "answer_indices": [2],
+    "explanation": "WPA3 introduces SAE (Simultaneous Authentication of Equals), which replaces the PSK 4-way handshake and provides much stronger protection against password guessing and offline dictionary attacks.",
+    "source_file": "notes/wireless_security.txt",
+    "domain_id": 4,
+    "difficulty": "hard"
+  },
+  {
+    "id": "sim-1-14",
+    "topic": "Troubleshooting Tools",
+    "prompt": "A technician is using a tool that sends ICMP echo requests with incrementing TTL (Time to Live) values to identify the path to a remote destination. Which tool is being used?",
+    "choices": [
+      "ping",
+      "nslookup",
+      "tracert",
+      "netstat"
+    ],
+    "answer_indices": [2],
+    "explanation": "The 'tracert' (Windows) or 'traceroute' (Linux) command uses TTL values to map out each hop in the network path between a source and destination.",
+    "source_file": "notes/network_troubleshooting.txt",
+    "domain_id": 5,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-15",
+    "topic": "Load Balancing",
+    "prompt": "Which load balancing algorithm distributes incoming requests to servers in a simple sequential order without considering server load or capacity?",
+    "choices": [
+      "Least Connections",
+      "Round Robin",
+      "Weighted Round Robin",
+      "IP Hash"
+    ],
+    "answer_indices": [1],
+    "explanation": "Round Robin is a simple algorithm that rotates requests across a pool of servers in order, ensuring each server gets an equal number of connections over time, regardless of their current load.",
+    "source_file": "notes/summarizing_cloud_concepts.txt",
+    "domain_id": 2,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-16",
+    "topic": "Network Monitoring",
+    "prompt": "An administrator wants to receive proactive alerts when a router's CPU usage exceeds 90%. Which protocol is BEST suited for this type of event-driven notification?",
+    "choices": [
+      "SNMP Get",
+      "SNMP Walk",
+      "SNMP Trap",
+      "Syslog"
+    ],
+    "answer_indices": [2],
+    "explanation": "An SNMP Trap is an unsolicited message sent from a device to a management station when a specific condition (like a threshold breach) is met, allowing for real-time alerting.",
+    "source_file": "notes/snmp.txt",
+    "domain_id": 3,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-17",
+    "topic": "Spanning Tree Protocol",
+    "prompt": "Which STP feature is designed to prevent a switch port from transition into a forwarding state if it receives a BPDU, typically used on ports connected to end-user devices?",
+    "choices": [
+      "PortFast",
+      "BPDU Guard",
+      "Root Guard",
+      "Loop Guard"
+    ],
+    "answer_indices": [1],
+    "explanation": "BPDU Guard shuts down a port if a BPDU is received. This is a critical security feature for edge ports (where PortFast is enabled) to prevent unauthorized switches from being added to the network.",
+    "source_file": "notes/spanning_tree.txt",
+    "domain_id": 4,
+    "difficulty": "hard"
+  },
+  {
+    "id": "sim-1-18",
+    "topic": "IPSec",
+    "prompt": "When configuring an IPSec VPN tunnel, which protocol provides both authentication and encryption for the data payload?",
+    "choices": [
+      "AH (Authentication Header)",
+      "ESP (Encapsulating Security Payload)",
+      "IKE (Internet Key Exchange)",
+      "L2TP"
+    ],
+    "answer_indices": [1],
+    "explanation": "ESP (Encapsulating Security Payload) provides both confidentiality (encryption) and authentication/integrity. AH only provides authentication and integrity, not encryption.",
+    "source_file": "notes/comparing_remote_access_methods.txt",
+    "domain_id": 2,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-19",
+    "topic": "Disaster Recovery",
+    "prompt": "A company defines an RPO (Recovery Point Objective) of 4 hours. What does this REQUIRE in terms of data management?",
+    "choices": [
+      "The system must be fully restored within 4 hours of a failure.",
+      "Data must be backed up at least every 4 hours to ensure no more than 4 hours of data is lost.",
+      "The recovery team must arrive on-site within 4 hours.",
+      "The total downtime per year cannot exceed 4 hours."
+    ],
+    "answer_indices": [1],
+    "explanation": "RPO (Recovery Point Objective) defines the maximum tolerable age of data that can be lost. If the RPO is 4 hours, backups must occur at least every 4 hours.",
+    "source_file": "notes/dr_metrics.txt",
+    "domain_id": 3,
+    "difficulty": "hard"
+  },
+  {
+    "id": "sim-1-20",
+    "topic": "Ethernet Standards",
+    "prompt": "Which 10 Gigabit Ethernet standard is designed for use over existing Cat 6a copper cabling at distances up to 100 meters?",
+    "choices": [
+      "10GBASE-SR",
+      "10GBASE-LR",
+      "10GBASE-T",
+      "10GBASE-ER"
+    ],
+    "answer_indices": [2],
+    "explanation": "10GBASE-T is the standard for 10 Gbps Ethernet over twisted-pair copper (Cat 6a or Cat 7) at distances up to 100 meters.",
+    "source_file": "notes/cat_cabling.txt",
+    "domain_id": 1,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-21",
+    "topic": "Network Troubleshooting",
+    "prompt": "A user reports that they cannot connect to a specific server. You successfully ping the server's IP address but fail to connect via SSH. Which layer of the OSI model should you investigate NEXT?",
+    "choices": [
+      "Layer 1 (Physical)",
+      "Layer 3 (Network)",
+      "Layer 4 (Transport)",
+      "Layer 7 (Application)"
+    ],
+    "answer_indices": [2],
+    "explanation": "Since ping (ICMP/Layer 3) works, the network path is functional. The failure of SSH (TCP port 22) suggests a problem at the Transport layer (port blocked) or higher.",
+    "source_file": "notes/osi_layers.txt",
+    "domain_id": 5,
+    "difficulty": "hard"
+  },
+  {
+    "id": "sim-1-22",
+    "topic": "Physical Security",
+    "prompt": "Which physical security control uses an enclosed area with two sets of interlocking doors to prevent unauthorized entry ('tailgating')?",
+    "choices": [
+      "Biometric Scanner",
+      "Mantrap / Access Portal",
+      "Bollards",
+      "Security Camera"
+    ],
+    "answer_indices": [1],
+    "explanation": "A mantrap (or access portal) is a physical security implementation where one door must close before the next can open, allowing for individual authentication and preventing tailgating.",
+    "source_file": "notes/physical_security.txt",
+    "domain_id": 4,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-23",
+    "topic": "IPv4 Addressing",
+    "prompt": "Which of the following is a valid Private IPv4 address range according to RFC 1918?",
+    "choices": [
+      "169.254.0.0 - 169.254.255.255",
+      "172.16.0.0 - 172.31.255.255",
+      "192.169.0.0 - 192.169.255.255",
+      "224.0.0.0 - 239.255.255.255"
+    ],
+    "answer_indices": [1],
+    "explanation": "RFC 1918 defines three private ranges: 10.0.0.0/8, 172.16.0.0/12 (up to 172.31), and 192.168.0.0/16. 169.254 is APIPA, and 224.0.0.0 is Multicast.",
+    "source_file": "notes/ipv4_basics.txt",
+    "domain_id": 1,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-24",
+    "topic": "Wireless Standards",
+    "prompt": "Which 802.11 standard was the first to introduce MIMO (Multiple Input, Multiple Output) to achieve significantly higher throughput?",
+    "choices": [
+      "802.11a",
+      "802.11g",
+      "802.11n",
+      "802.11ac"
+    ],
+    "answer_indices": [2],
+    "explanation": "802.11n was the first standard to utilize MIMO technology, allowing for multiple spatial streams and data rates up to 600 Mbps.",
+    "source_file": "notes/wireless_standards.txt",
+    "domain_id": 1,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-25",
+    "topic": "Power Over Ethernet",
+    "prompt": "Which PoE standard provides up to 71.3 Watts of power at the device, suitable for high-power equipment like PTZ cameras and thin clients?",
+    "choices": [
+      "PoE (802.3af)",
+      "PoE+ (802.3at)",
+      "PoE++ (802.3bt Type 4)",
+      "PoE++ (802.3bt Type 3)"
+    ],
+    "answer_indices": [2],
+    "explanation": "802.3bt Type 4 (also known as 4PPoE or High-Power PoE) can provide up to 90-100W at the source and 71.3W+ at the device.",
+    "source_file": "notes/poe_standards.txt",
+    "domain_id": 2,
+    "difficulty": "hard"
+  },
+  {
+    "id": "sim-1-26",
+    "topic": "Network Troubleshooting",
+    "prompt": "A technician observes 'collisions' increasing on a full-duplex Ethernet port. What is the MOST likely cause?",
+    "choices": [
+      "The cable is too long.",
+      "A duplex mismatch exists between the switch and the connected device.",
+      "The network is experiencing excessive broadcast traffic.",
+      "Collisions are normal in full-duplex Ethernet."
+    ],
+    "answer_indices": [1],
+    "explanation": "Collisions should NOT occur in a full-duplex environment. If they are reported, it almost always indicates a duplex mismatch (one side set to full, the other to half).",
+    "source_file": "notes/switching_fundamentals.txt",
+    "domain_id": 5,
+    "difficulty": "hard"
+  },
+  {
+    "id": "sim-1-27",
+    "topic": "Dynamic Routing",
+    "prompt": "Which routing protocol uses the Dijkstra algorithm to calculate the shortest path based on link-state information?",
+    "choices": [
+      "RIP",
+      "BGP",
+      "OSPF",
+      "EIGRP"
+    ],
+    "answer_indices": [2],
+    "explanation": "OSPF (Open Shortest Path First) is a link-state protocol that uses the Shortest Path First (SPF) or Dijkstra algorithm to build its routing table.",
+    "source_file": "notes/routing_protocols.txt",
+    "domain_id": 1,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-28",
+    "topic": "Identity Management",
+    "prompt": "Which protocol is a modern, XML-based standard used for exchanging authentication and authorization data between an Identity Provider (IdP) and a Service Provider (SP), frequently used in Web SSO?",
+    "choices": [
+      "RADIUS",
+      "LDAP",
+      "SAML",
+      "Kerberos"
+    ],
+    "answer_indices": [2],
+    "explanation": "SAML (Security Assertion Markup Language) is the industry standard for web-based Single Sign-On (SSO), allowing an IdP to pass authentication tokens to various service providers.",
+    "source_file": "notes/authorization_account_management.txt",
+    "domain_id": 4,
+    "difficulty": "hard"
+  },
+  {
+    "id": "sim-1-29",
+    "topic": "Performance Monitoring",
+    "prompt": "An administrator wants to measure the 'jitter' on a VoIP network. What exactly are they measuring?",
+    "choices": [
+      "The total time it takes for a packet to travel round-trip.",
+      "The variation in delay between consecutive packets.",
+      "The percentage of packets that failed to arrive.",
+      "The maximum bandwidth available for VoIP traffic."
+    ],
+    "answer_indices": [1],
+    "explanation": "Jitter is the measure of the variability of packet latency over time. High jitter is detrimental to real-time applications like VoIP and Video.",
+    "source_file": "notes/performance_monitoring_8_2_5.txt",
+    "domain_id": 3,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-30",
+    "topic": "SFP Transceivers",
+    "prompt": "A technician needs to connect a switch to a fiber optic backbone over a distance of 10km. Which type of SFP transceiver and fiber cable should they use?",
+    "choices": [
+      "1000BASE-SX / Multimode",
+      "1000BASE-LX / Singlemode",
+      "1000BASE-T / Cat 6",
+      "10GBASE-SR / Multimode"
+    ],
+    "answer_indices": [1],
+    "explanation": "For long distances (up to 10km), 1000BASE-LX over Singlemode fiber is the standard choice. SX (Short range) and SR are for Multimode and typically capped at 550m.",
+    "source_file": "notes/connectors_sfp.txt",
+    "domain_id": 2,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-31",
+    "topic": "Troubleshooting Methodology",
+    "prompt": "You have identified a network problem and established a theory of probable cause. What is the NEXT step in the standard troubleshooting methodology?",
+    "choices": [
+      "Test the theory to determine the cause.",
+      "Establish a plan of action to resolve the problem.",
+      "Implement the solution or escalate as necessary.",
+      "Verify full system functionality."
+    ],
+    "answer_indices": [0],
+    "explanation": "According to the CompTIA troubleshooting steps: 1. Identify the problem. 2. Establish a theory of probable cause. 3. Test the theory. 4. Establish a plan of action. 5. Implement the solution. 6. Verify functionality. 7. Document findings.",
+    "source_file": "notes/comptia_network_objectives.txt",
+    "domain_id": 5,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-32",
+    "topic": "DNS Hierarchy",
+    "prompt": "Which type of DNS record is used to delegate a subdomain to a different set of authoritative name servers?",
+    "choices": [
+      "A",
+      "CNAME",
+      "NS",
+      "SOA"
+    ],
+    "answer_indices": [2],
+    "explanation": "NS (Name Server) records are used to identify the authoritative DNS servers for a zone. They are used at the parent zone to delegate a subdomain to other servers.",
+    "source_file": "notes/file_database_services.txt",
+    "domain_id": 1,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-33",
+    "topic": "Switch Security",
+    "prompt": "An administrator wants to prevent a malicious user from connecting a rogue DHCP server to the network. Which switch security feature should be implemented?",
+    "choices": [
+      "Port Security",
+      "Dynamic ARP Inspection (DAI)",
+      "DHCP Snooping",
+      "IP Source Guard"
+    ],
+    "answer_indices": [2],
+    "explanation": "DHCP Snooping creates a table of 'trusted' and 'untrusted' ports. DHCP server responses (OFFER/ACK) are only permitted on trusted ports, effectively blocking rogue servers on untrusted ports.",
+    "source_file": "notes/switch_security.txt",
+    "domain_id": 4,
+    "difficulty": "hard"
+  },
+  {
+    "id": "sim-1-34",
+    "topic": "Network Diagrams",
+    "prompt": "Which type of network diagram specifically shows the IP addresses, interface names, and routing protocols used between devices?",
+    "choices": [
+      "Physical Diagram",
+      "Logical Diagram",
+      "Wiring Schematic",
+      "Rack Diagram"
+    ],
+    "answer_indices": [1],
+    "explanation": "A Logical Diagram focuses on the flow of data, including IP addressing, subnets, VLANs, and protocol information, rather than physical locations or cable paths.",
+    "source_file": "notes/physical_net_diagrams_8_1_8.txt",
+    "domain_id": 3,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-35",
+    "topic": "VLAN Tagging",
+    "prompt": "What is the standard header size added to an Ethernet frame by 802.1Q tagging?",
+    "choices": [
+      "2 bytes",
+      "4 bytes",
+      "8 bytes",
+      "32 bytes"
+    ],
+    "answer_indices": [1],
+    "explanation": "802.1Q adds a 4-byte tag to the Ethernet frame between the Source MAC address and the EtherType fields.",
+    "source_file": "notes/vlans_trunking.txt",
+    "domain_id": 1,
+    "difficulty": "hard"
+  },
+  {
+    "id": "sim-1-36",
+    "topic": "BGP",
+    "prompt": "Which routing protocol is categorized as an External Gateway Protocol (EGP) and is the primary protocol used to exchange routing information between Autonomous Systems (AS) on the internet?",
+    "choices": [
+      "OSPF",
+      "EIGRP",
+      "RIP",
+      "BGP"
+    ],
+    "answer_indices": [3],
+    "explanation": "BGP (Border Gateway Protocol) is the only widely used EGP. It manages the path between different organizations' networks (Autonomous Systems).",
+    "source_file": "notes/routing_protocols.txt",
+    "domain_id": 1,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-37",
+    "topic": "Cloud Models",
+    "prompt": "A company wants a cloud solution where they are responsible for managing the OS and applications, but the provider manages the hardware, virtualization, and networking. Which model is this?",
+    "choices": [
+      "SaaS",
+      "PaaS",
+      "IaaS",
+      "Public Cloud"
+    ],
+    "answer_indices": [2],
+    "explanation": "In IaaS (Infrastructure as a Service), the provider gives you the 'raw' compute/network/storage, and the customer is responsible for everything from the Operating System upwards.",
+    "source_file": "notes/summarizing_cloud_concepts.txt",
+    "domain_id": 1,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-38",
+    "topic": "Authentication Protocols",
+    "prompt": "Which authentication protocol uses a 'Ticket-Granting Server' (TGS) to provide secure authentication in a Windows domain environment?",
+    "choices": [
+      "PAP",
+      "CHAP",
+      "Kerberos",
+      "RADIUS"
+    ],
+    "answer_indices": [2],
+    "explanation": "Kerberos is the default authentication protocol for Active Directory. It uses tickets and a Key Distribution Center (KDC) to authenticate users without sending passwords over the wire.",
+    "source_file": "notes/authorization_account_management.txt",
+    "domain_id": 4,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-39",
+    "topic": "Troubleshooting Tools",
+    "prompt": "You suspect a duplicate IP address on the network. Which command-line tool can you use to see the mapping of IP addresses to MAC addresses currently stored in your computer's local cache?",
+    "choices": [
+      "ipconfig /all",
+      "arp -a",
+      "netstat -rn",
+      "nslookup"
+    ],
+    "answer_indices": [1],
+    "explanation": "The 'arp -a' command displays the Address Resolution Protocol cache, showing which MAC address is currently associated with each IP address on the local segment.",
+    "source_file": "notes/network_troubleshooting.txt",
+    "domain_id": 5,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-40",
+    "topic": "Fiber Optic Safety",
+    "prompt": "What is the MOST important safety precaution when working with live fiber optic cables?",
+    "choices": [
+      "Always wear grounding straps to prevent ESD.",
+      "Never look directly into the end of a fiber cable.",
+      "Ensure the cable is not bent beyond its minimum bend radius.",
+      "Use only non-conductive tools."
+    ],
+    "answer_indices": [1],
+    "explanation": "Fiber optics use light (often infrared and invisible) that can cause permanent eye damage. Looking into the end of a live fiber is extremely dangerous.",
+    "source_file": "notes/fiber_optics.txt",
+    "domain_id": 3,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-41",
+    "topic": "SNMP Versions",
+    "prompt": "Which version of SNMP introduced cryptographic security (authentication and encryption), making it suitable for use over untrusted networks?",
+    "choices": [
+      "v1",
+      "v2c",
+      "v3",
+      "v4"
+    ],
+    "answer_indices": [2],
+    "explanation": "SNMPv3 is the secure version of SNMP, adding User-based Security Models (USM) for authentication and encryption. v1 and v2c send community strings in plain text.",
+    "source_file": "notes/snmp_security.txt",
+    "domain_id": 4,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-42",
+    "topic": "Cable Testing",
+    "prompt": "A technician is using a TDR (Time Domain Reflectometer). What information is this tool MOST likely providing?",
+    "choices": [
+      "The bandwidth capacity of a link.",
+      "The distance to a break or short in a copper cable.",
+      "The amount of light loss in a fiber optic cable.",
+      "The specific wiring pinout of a patch cable."
+    ],
+    "answer_indices": [1],
+    "explanation": "A TDR sends electrical pulses down a copper cable and measures the reflection to determine the distance to a fault or the total length of the cable.",
+    "source_file": "notes/structured_cabling.txt",
+    "domain_id": 5,
+    "difficulty": "hard"
+  },
+  {
+    "id": "sim-1-43",
+    "topic": "Network Hardening",
+    "prompt": "Which of the following is an example of 'hardening' a network device? (Select TWO)",
+    "choices": [
+      "Disabling unused services and ports.",
+      "Changing default administrative passwords.",
+      "Enabling all possible protocols for maximum compatibility.",
+      "Increasing the frequency of SNMP polling."
+    ],
+    "answer_indices": [0, 1],
+    "explanation": "Hardening involves reducing the attack surface. Key steps include disabling unneeded services and securing administrative access by changing default credentials.",
+    "source_file": "notes/network_hardening.txt",
+    "domain_id": 4,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-44",
+    "topic": "Syslog Levels",
+    "prompt": "A syslog server receives an 'Emergency' level message. What is the corresponding severity level numerical value for this message according to the syslog standard?",
+    "choices": [
+      "0",
+      "1",
+      "4",
+      "7"
+    ],
+    "answer_indices": [0],
+    "explanation": "Syslog severity levels range from 0 (Emergency - System is unusable) to 7 (Debug). Level 1 is Alert, 4 is Warning.",
+    "source_file": "notes/syslog_standard.txt",
+    "domain_id": 3,
+    "difficulty": "hard"
+  },
+  {
+    "id": "sim-1-45",
+    "topic": "IPv6 SLAAC",
+    "prompt": "Which mechanism allows an IPv6 host to generate its own unique IP address by combining a network prefix provided by a router with its own MAC address (EUI-64)?",
+    "choices": [
+      "DHCPv6",
+      "SLAAC",
+      "NAT64",
+      "Stateful DHCPv6"
+    ],
+    "answer_indices": [1],
+    "explanation": "SLAAC (Stateless Address Autoconfiguration) allows hosts to configure their own address without a central DHCP server by using Router Advertisements to get the prefix.",
+    "source_file": "notes/ipv6_advanced.txt",
+    "domain_id": 2,
+    "difficulty": "hard"
+  },
+  {
+    "id": "sim-1-46",
+    "topic": "Wireless Issues",
+    "prompt": "Users in an office report that their wireless connection is slow and drops frequently. You discover that a nearby office is using the same 2.4 GHz channel. What is this phenomenon called?",
+    "choices": [
+      "Refraction",
+      "Absorption",
+      "Co-channel Interference",
+      "Multipath Distortion"
+    ],
+    "answer_indices": [2],
+    "explanation": "Co-channel Interference occurs when multiple access points or devices are using the same frequency channel, leading to contention and performance degradation.",
+    "source_file": "notes/wireless_troubleshooting.txt",
+    "domain_id": 5,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-47",
+    "topic": "SIEM Fundamentals",
+    "prompt": "What is the PRIMARY purpose of a SIEM (Security Information and Event Management) system in a large enterprise?",
+    "choices": [
+      "To act as a high-speed firewall for the data center.",
+      "To aggregate, correlate, and analyze log data from disparate sources to identify security threats.",
+      "To manage the IP address allocation for all workstations.",
+      "To provide a backup of all server configuration files."
+    ],
+    "answer_indices": [1],
+    "explanation": "A SIEM centralizes logs from routers, switches, servers, and firewalls, using correlation rules to detect complex attack patterns that individual devices might miss.",
+    "source_file": "notes/siem_fundamentals.txt",
+    "domain_id": 3,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-48",
+    "topic": "Common Ports",
+    "prompt": "A technician is troubleshooting a mail delivery issue. They want to check if the outgoing mail server is reachable. Which port should they test for encrypted SMTP communication?",
+    "choices": [
+      "25",
+      "110",
+      "143",
+      "587"
+    ],
+    "answer_indices": [3],
+    "explanation": "While 25 is standard SMTP, 587 is the modern standard for mail submission (SMTPS/STARTTLS). 110 is POP3 and 143 is IMAP.",
+    "source_file": "notes/protocols_ports_compTIA.txt",
+    "domain_id": 1,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-49",
+    "topic": "Network Attacks",
+    "prompt": "Which type of attack involves an attacker flooding a target with traffic that appears to come from many different sources, making it difficult to block?",
+    "choices": [
+      "DoS",
+      "DDoS",
+      "Man-in-the-Middle",
+      "SQL Injection"
+    ],
+    "answer_indices": [1],
+    "explanation": "A DDoS (Distributed Denial of Service) attack uses multiple compromised systems (a botnet) to overwhelm a target, whereas a DoS typically comes from one source.",
+    "source_file": "notes/network_threats_attacks.txt",
+    "domain_id": 4,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-50",
+    "topic": "Routing Metrics",
+    "prompt": "A routing protocol uses 'Hop Count' as its only metric. Which protocol is it?",
+    "choices": [
+      "OSPF",
+      "RIP",
+      "EIGRP",
+      "BGP"
+    ],
+    "answer_indices": [1],
+    "explanation": "RIP (Routing Information Protocol) uses hop count as its metric, with a maximum of 15 hops (16 is unreachable).",
+    "source_file": "notes/routing_metrics.txt",
+    "domain_id": 1,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-51",
+    "topic": "VLAN Trunking",
+    "prompt": "Which protocol is the industry-standard for encapsulation on trunk links, adding a 4-byte tag to Ethernet frames?",
+    "choices": [
+      "ISL",
+      "802.1Q",
+      "802.1X",
+      "802.3ad"
+    ],
+    "answer_indices": [1],
+    "explanation": "802.1Q is the IEEE standard for VLAN tagging. ISL is Cisco-proprietary and largely obsolete. 802.1X is for network access control.",
+    "source_file": "notes/vlans_trunking.txt",
+    "domain_id": 2,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-52",
+    "topic": "BGP Path Selection",
+    "prompt": "BGP is often referred to as a 'Path Vector' protocol. Instead of simple hop counts or link-state costs, what is the PRIMARY metric or attribute used by BGP to prevent routing loops between Autonomous Systems?",
+    "choices": [
+      "Administrative Distance",
+      "AS_PATH",
+      "Local Preference",
+      "Weight"
+    ],
+    "answer_indices": [1],
+    "explanation": "BGP uses the AS_PATH attribute, which lists every Autonomous System a route has traversed. If a router sees its own AS number in the list, it knows a loop has occurred and discards the route.",
+    "source_file": "notes/routing_protocols.txt",
+    "domain_id": 1,
+    "difficulty": "hard"
+  },
+  {
+    "id": "sim-1-53",
+    "topic": "Wireless Antennas",
+    "prompt": "A technician needs to provide wireless coverage for a long, narrow outdoor hallway. Which type of antenna would be MOST appropriate for this scenario?",
+    "choices": [
+      "Omnidirectional",
+      "Unidirectional / Yagi",
+      "Patch",
+      "Dipole"
+    ],
+    "answer_indices": [1],
+    "explanation": "Unidirectional (or directional) antennas like a Yagi or Parabolic dish focus the signal in one direction, making them ideal for long-distance point-to-point links or narrow coverage areas.",
+    "source_file": "notes/enterprise_wireless_network_design.txt",
+    "domain_id": 2,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-54",
+    "topic": "OSPF States",
+    "prompt": "In which OSPF neighbor state have the two routers fully synchronized their link-state databases (LSDBs)?",
+    "choices": [
+      "Init",
+      "2-Way",
+      "ExStart",
+      "Full"
+    ],
+    "answer_indices": [3],
+    "explanation": "The 'Full' state indicates that neighbor adjacency is complete and the databases are synchronized. 2-Way means they can talk but haven't swapped DBs yet.",
+    "source_file": "notes/routing_protocols.txt",
+    "domain_id": 1,
+    "difficulty": "hard"
+  },
+  {
+    "id": "sim-1-55",
+    "topic": "Network Services",
+    "prompt": "Which network service is responsible for automatically assigning IP addresses, subnet masks, and default gateways to client devices on a network?",
+    "choices": [
+      "DNS",
+      "DHCP",
+      "SNMP",
+      "NTP"
+    ],
+    "answer_indices": [1],
+    "explanation": "DHCP (Dynamic Host Configuration Protocol) automates the IP configuration process for clients. DNS is for name resolution, SNMP for monitoring, and NTP for time sync.",
+    "source_file": "notes/ipam.txt",
+    "domain_id": 2,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-56",
+    "topic": "Address Resolution",
+    "prompt": "When a host wants to send data to another host on the SAME local network, but only knows the destination IP address, which protocol does it use to find the destination's MAC address?",
+    "choices": [
+      "DNS",
+      "ARP",
+      "RARP",
+      "ICMP"
+    ],
+    "answer_indices": [1],
+    "explanation": "ARP (Address Resolution Protocol) maps a known Layer 3 IP address to a Layer 2 MAC address for local delivery.",
+    "source_file": "notes/network_fundamentals.txt",
+    "domain_id": 1,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-57",
+    "topic": "Port Security",
+    "prompt": "An administrator configures port security on a switch with a 'violation' mode of 'shutdown'. What happens when an unauthorized MAC address is detected on that port?",
+    "choices": [
+      "The port continues to function but drops the unauthorized traffic.",
+      "The port is immediately disabled (error-disabled state) and an SNMP trap is sent.",
+      "The port resets itself every 30 seconds until the device is removed.",
+      "The switch adds the unauthorized MAC to its permanent table."
+    ],
+    "answer_indices": [1],
+    "explanation": "In 'shutdown' mode, the port is immediately taken offline (err-disable) when a violation occurs. It requires manual intervention (shut/no shut) to restore.",
+    "source_file": "notes/switch_security.txt",
+    "domain_id": 4,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-58",
+    "topic": "Cat Cabling",
+    "prompt": "Which twisted-pair cable type is the MINIMUM requirement for supporting 1000 Mbps (Gigabit) Ethernet at distances up to 100 meters?",
+    "choices": [
+      "Cat 5",
+      "Cat 5e",
+      "Cat 6",
+      "Cat 6a"
+    ],
+    "answer_indices": [1],
+    "explanation": "Cat 5e (Enhanced) was designed specifically to support Gigabit Ethernet. While Cat 6 and 6a also support it, Cat 5e is the minimum standard.",
+    "source_file": "notes/cat_cabling.txt",
+    "domain_id": 1,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-59",
+    "topic": "Network Troubleshooting",
+    "prompt": "You are troubleshooting a connectivity issue. 'ping' to a remote server fails, but 'tracert' shows the packet reaching the 4th hop before timing out. What does this MOST likely indicate?",
+    "choices": [
+      "The destination server is down.",
+      "There is a routing loop at the 5th hop.",
+      "A firewall or router at or after the 4th hop is dropping the ICMP traffic.",
+      "Your computer's network cable is unplugged."
+    ],
+    "answer_indices": [2],
+    "explanation": "If 'tracert' gets partway there, the physical and local network are fine. Timeouts after a certain hop usually indicate a security policy (firewall) or a routing failure at that specific point in the path.",
+    "source_file": "notes/network_troubleshooting.txt",
+    "domain_id": 5,
+    "difficulty": "hard"
+  },
+  {
+    "id": "sim-1-60",
+    "topic": "Cloud Concepts",
+    "prompt": "An organization uses a cloud model where they share infrastructure with other companies that have similar compliance requirements (e.g., healthcare or government). Which cloud type is this?",
+    "choices": [
+      "Public Cloud",
+      "Private Cloud",
+      "Hybrid Cloud",
+      "Community Cloud"
+    ],
+    "answer_indices": [3],
+    "explanation": "A Community Cloud is shared by several organizations with similar concerns (security, compliance, jurisdiction, etc.).",
+    "source_file": "notes/summarizing_cloud_concepts.txt",
+    "domain_id": 1,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-61",
+    "topic": "Time Synchronization",
+    "prompt": "Which protocol is used to ensure all devices on a network have synchronized internal clocks, which is critical for accurate log correlation?",
+    "choices": [
+      "SNMP",
+      "NTP",
+      "DNS",
+      "SMTP"
+    ],
+    "answer_indices": [1],
+    "explanation": "NTP (Network Time Protocol) synchronizes clocks across a network, ensuring log timestamps from different devices can be accurately compared.",
+    "source_file": "notes/time_synchronization.txt",
+    "domain_id": 3,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-62",
+    "topic": "Switching Mechanics",
+    "prompt": "What is the PRIMARY difference between a 'Store-and-Forward' switch and a 'Cut-Through' switch?",
+    "choices": [
+      "Store-and-forward switches are faster but more expensive.",
+      "Store-and-forward switches check the entire frame for errors (CRC) before forwarding, whereas cut-through starts forwarding after reading the destination MAC.",
+      "Cut-through switches are only used in fiber optic networks.",
+      "Store-and-forward switches can only operate at 100 Mbps."
+    ],
+    "answer_indices": [1],
+    "explanation": "Store-and-Forward provides higher reliability by verifying the frame integrity, but adds latency. Cut-Through provides lower latency by forwarding immediately, but may forward corrupt frames.",
+    "source_file": "notes/switching_fundamentals.txt",
+    "domain_id": 1,
+    "difficulty": "hard"
+  },
+  {
+    "id": "sim-1-63",
+    "topic": "VPN Authentication",
+    "prompt": "A company is implementing a client-to-site VPN. They want to ensure that users are authenticated using their existing Active Directory credentials. Which protocol is MOST commonly used as the 'bridge' between the VPN gateway and the Active Directory/LDAP server?",
+    "choices": [
+      "IPSec",
+      "RADIUS",
+      "L2TP",
+      "IKEv2"
+    ],
+    "answer_indices": [1],
+    "explanation": "RADIUS (Remote Authentication Dial-In User Service) is the standard protocol for centralized AAA (Authentication, Authorization, and Accounting). The VPN gateway acts as a RADIUS client and forwards credentials to the RADIUS server, which then checks against Active Directory.",
+    "source_file": "notes/authorization_account_management.txt",
+    "domain_id": 4,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-64",
+    "topic": "OSI Model",
+    "prompt": "At which layer of the OSI model do routers operate?",
+    "choices": [
+      "Layer 1 (Physical)",
+      "Layer 2 (Data Link)",
+      "Layer 3 (Network)",
+      "Layer 4 (Transport)"
+    ],
+    "answer_indices": [2],
+    "explanation": "Routers operate at Layer 3 (Network), using IP addresses to make forwarding decisions. Switches (typically) operate at Layer 2.",
+    "source_file": "notes/osi_layers.txt",
+    "domain_id": 1,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-65",
+    "topic": "IPv6 Addresses",
+    "prompt": "Which IPv6 address is the loopback address, equivalent to 127.0.0.1 in IPv4?",
+    "choices": [
+      "::1",
+      "fe80::1",
+      "ff02::1",
+      "2001:db8::1"
+    ],
+    "answer_indices": [0],
+    "explanation": "::1 is the standard loopback address in IPv6. fe80:: is Link-Local, ff02:: is Multicast, and 2001:db8 is for documentation.",
+    "source_file": "notes/ipv6_advanced.txt",
+    "domain_id": 1,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-66",
+    "topic": "Network Troubleshooting",
+    "prompt": "You are investigating a 'Broadcast Storm' on a flat network. Which of the following is the MOST likely cause?",
+    "choices": [
+      "A failed router interface.",
+      "A physical loop between two switches where STP is disabled.",
+      "A large number of users watching streaming video.",
+      "A duplex mismatch on a busy server port."
+    ],
+    "answer_indices": [1],
+    "explanation": "Broadcast storms are typically caused by physical switching loops. Without Spanning Tree Protocol (STP) to block redundant paths, broadcast frames will circulate infinitely, consuming all available bandwidth.",
+    "source_file": "notes/spanning_tree.txt",
+    "domain_id": 5,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-67",
+    "topic": "Wireless Design",
+    "prompt": "In a high-density environment, which 2.4 GHz channels should be used to ensure there is NO frequency overlap between adjacent access points?",
+    "choices": [
+      "1, 2, 3",
+      "1, 6, 11",
+      "6, 7, 8",
+      "1, 5, 10"
+    ],
+    "answer_indices": [1],
+    "explanation": "In the US, channels 1, 6, and 11 are the only three non-overlapping channels in the 2.4 GHz spectrum.",
+    "source_file": "notes/wireless_standards.txt",
+    "domain_id": 2,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-68",
+    "topic": "Network Documentation",
+    "prompt": "Which document outlines the 'Standard Operating Procedures' (SOP) for responding to a security incident or a system failure?",
+    "choices": [
+      "SLA (Service Level Agreement)",
+      "MOU (Memorandum of Understanding)",
+      "Playbook",
+      "SOW (Statement of Work)"
+    ],
+    "answer_indices": [2],
+    "explanation": "A 'Playbook' is a set of step-by-step instructions (SOPs) for handling specific scenarios, such as a data breach or a disaster recovery event.",
+    "source_file": "notes/common_agreements_8_1_11.txt",
+    "domain_id": 3,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-69",
+    "topic": "Load Balancers",
+    "prompt": "A company wants their load balancer to ensure that a specific user always talks to the same back-end server during their entire session. What is this feature called?",
+    "choices": [
+      "Caching",
+      "SSL Termination",
+      "Sticky Sessions / Session Affinity",
+      "Content Switching"
+    ],
+    "answer_indices": [2],
+    "explanation": "Sticky sessions (or session affinity) ensure that once a user is mapped to a server, all subsequent requests in that session go to the same server, which is critical for stateful applications.",
+    "source_file": "notes/summarizing_cloud_concepts.txt",
+    "domain_id": 2,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-70",
+    "topic": "Security Scanning",
+    "prompt": "Which tool is used to identify open ports and services running on a remote host to map out its attack surface?",
+    "choices": [
+      "Vulnerability Scanner",
+      "Port Scanner (e.g., Nmap)",
+      "Protocol Analyzer",
+      "Packet Sniffer"
+    ],
+    "answer_indices": [1],
+    "explanation": "A Port Scanner like Nmap is designed to scan IP ranges and identify which ports are open and what services are responding, providing a 'map' of the network from an attacker's perspective.",
+    "source_file": "notes/network_threats_attacks.txt",
+    "domain_id": 4,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-71",
+    "topic": "VLAN Hopping",
+    "prompt": "An attacker attempts to gain access to a sensitive VLAN by sending a frame with two 802.1Q tags. The first tag matches the native VLAN of the trunk port. What is this specific attack called?",
+    "choices": [
+      "MAC Spoofing",
+      "Double Tagging",
+      "Switch Spoofing",
+      "Dynamic Trunking"
+    ],
+    "answer_indices": [1],
+    "explanation": "Double Tagging is a type of VLAN hopping attack where the first switch strips the outer tag (native VLAN) and the second switch processes the inner tag, placing the frame on the target VLAN.",
+    "source_file": "notes/switch_security.txt",
+    "domain_id": 4,
+    "difficulty": "hard"
+  },
+  {
+    "id": "sim-1-72",
+    "topic": "DNS Troubleshooting",
+    "prompt": "A company recently migrated to IPv6 and added AAAA records for its web servers. Some clients report they can no longer reach the site. You suspect the large AAAA responses are being dropped by a legacy firewall. Which DNS mechanism allows for larger UDP packet sizes, potentially resolving this issue without switching to TCP?",
+    "choices": [
+      "DNSSEC",
+      "EDNS (Extension Mechanisms for DNS)",
+      "DNS Recursion",
+      "Reverse DNS"
+    ],
+    "answer_indices": [1],
+    "explanation": "EDNS (specifically EDNS0) allows DNS clients and servers to negotiate UDP packet sizes larger than the traditional 512-byte limit, which is essential for carrying large IPv6 addresses (AAAA) and DNSSEC data.",
+    "source_file": "notes/file_database_services.txt",
+    "domain_id": 5,
+    "difficulty": "hard"
+  },
+  {
+    "id": "sim-1-73",
+    "topic": "TCP Troubleshooting",
+    "prompt": "You are analyzing a packet capture of a failed connection. You see a SYN packet followed by a SYN/ACK, but then the client immediately sends a RST (Reset) packet. What is the MOST likely cause?",
+    "choices": [
+      "The server's port is closed.",
+      "The client's firewall is blocking the return traffic.",
+      "The client reached a timeout or the application closed the socket unexpectedly.",
+      "The server is too busy to handle the connection."
+    ],
+    "answer_indices": [2],
+    "explanation": "If the client sends a RST after receiving a SYN/ACK, it typically means the application on the client side decided to abort the connection (e.g., due to a timeout or a manual cancellation) or the client didn't recognize the SYN/ACK.",
+    "source_file": "notes/tcp_handshake.txt",
+    "domain_id": 5,
+    "difficulty": "hard"
+  },
+  {
+    "id": "sim-1-74",
+    "topic": "Subnetting Efficiency",
+    "prompt": "Which technique allows a network administrator to use different subnet masks for different subnets derived from the same base network address, maximizing IP address efficiency?",
+    "choices": [
+      "CIDR",
+      "VLSM (Variable Length Subnet Masking)",
+      "DHCP",
+      "Supernetting"
+    ],
+    "answer_indices": [1],
+    "explanation": "VLSM allows you to 'subnet a subnet,' using different mask lengths (e.g., /24, /27, /30) within the same network to match the specific needs of each segment without wasting addresses.",
+    "source_file": "notes/subnetting_concepts.txt",
+    "domain_id": 1,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-75",
+    "topic": "Automation Security",
+    "prompt": "Why are automated builds using scripts or templates considered more secure than manually creating servers from a 'Golden Image'?",
+    "choices": [
+      "Scripts are encrypted by default.",
+      "Templates can be version-controlled and patched before deployment, ensuring the latest security updates are always applied.",
+      "Manual builds are always faster.",
+      "Golden images cannot be used in a cloud environment."
+    ],
+    "answer_indices": [1],
+    "explanation": "Automated builds (IaC) allow for 'shifting security left' by integrating security checks and patches into the code/template itself, ensuring every new instance is secure from the start, unlike images which can become 'stale' or contain hidden misconfigurations.",
+    "source_file": "notes/summarizing_cloud_concepts.txt",
+    "domain_id": 4,
+    "difficulty": "hard"
+  },
+  {
+    "id": "sim-1-76",
+    "topic": "Dynamic Routing",
+    "prompt": "An EIGRP router has multiple paths to a destination. How does it determine the best path (Successor) and the backup path (Feasible Successor)?",
+    "choices": [
+      "By counting the number of router hops.",
+      "By using the DUAL (Diffusing Update Algorithm) to calculate the composite metric based on bandwidth and delay.",
+      "By choosing the path with the highest bandwidth only.",
+      "By manually assigning a priority value to each interface."
+    ],
+    "answer_indices": [1],
+    "explanation": "EIGRP uses the DUAL algorithm and a composite metric (bandwidth and delay by default) to identify the Successor (best path) and keep a Feasible Successor (backup) ready in the topology table.",
+    "source_file": "notes/routing_protocols.txt",
+    "domain_id": 1,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-77",
+    "topic": "Fiber Optic Testing",
+    "prompt": "A technician needs to identify the exact location of a break in a 2km fiber optic run. Which tool is BEST suited for this task?",
+    "choices": [
+      "Light Meter",
+      "OTDR (Optical Time Domain Reflectometer)",
+      "VFL (Visual Fault Locator)",
+      "Loopback Plug"
+    ],
+    "answer_indices": [1],
+    "explanation": "An OTDR sends light pulses and measures backscatter to provide a detailed 'trace' of the cable, showing exactly where breaks, splices, or excessive loss occur over long distances.",
+    "source_file": "notes/fiber_optics.txt",
+    "domain_id": 5,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-78",
+    "topic": "Wireless Infrastructure",
+    "prompt": "In an enterprise wireless deployment, what is the role of a 'Wireless LAN Controller' (WLC)?",
+    "choices": [
+      "It acts as a high-speed router for wireless traffic.",
+      "It provides centralized management, configuration, and security for multiple 'Lightweight' Access Points.",
+      "It is used to amplify the signal of a single access point.",
+      "It converts analog radio signals into digital Ethernet frames."
+    ],
+    "answer_indices": [1],
+    "explanation": "A WLC centrally manages 'Lightweight' APs (LWAPs), handling tasks like roaming, frequency management, and security policies across the entire building or campus.",
+    "source_file": "notes/enterprise_wireless_network_design.txt",
+    "domain_id": 2,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-79",
+    "topic": "Access Control Models",
+    "prompt": "Which access control model is based on the data's classification label (e.g., Secret, Top Secret) and the user's clearance level?",
+    "choices": [
+      "DAC (Discretionary Access Control)",
+      "MAC (Mandatory Access Control)",
+      "RBAC (Role-Based Access Control)",
+      "ABAC (Attribute-Based Access Control)"
+    ],
+    "answer_indices": [1],
+    "explanation": "Mandatory Access Control (MAC) is the most restrictive model, where the system (not the owner) enforces access based on security labels and clearances.",
+    "source_file": "notes/authorization_account_management.txt",
+    "domain_id": 4,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-80",
+    "topic": "Troubleshooting Commands",
+    "prompt": "You are on a Windows machine and want to see which applications are currently listening on specific TCP ports. Which command and flag should you use?",
+    "choices": [
+      "ipconfig /all",
+      "netstat -ano",
+      "nslookup -type=srv",
+      "route print"
+    ],
+    "answer_indices": [1],
+    "explanation": "The 'netstat -ano' command shows active connections and listening ports, including the Process ID (PID) associated with each.",
+    "source_file": "notes/network_troubleshooting.txt",
+    "domain_id": 5,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-81",
+    "topic": "Power Over Ethernet",
+    "prompt": "You are installing a high-end VoIP phone that requires 20W of power. Which PoE standard is the MINIMUM required to power this device?",
+    "choices": [
+      "802.3af (PoE)",
+      "802.3at (PoE+)",
+      "802.3bt (PoE++)",
+      "Passive PoE"
+    ],
+    "answer_indices": [1],
+    "explanation": "802.3af (PoE) provides up to 15.4W. 802.3at (PoE+) provides up to 30W, which is the minimum standard required for a 20W device.",
+    "source_file": "notes/poe_standards.txt",
+    "domain_id": 2,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-82",
+    "topic": "Security Controls",
+    "prompt": "Which type of security control is a warning sign posted on a fence?",
+    "choices": [
+      "Preventive",
+      "Deterrent",
+      "Corrective",
+      "Detective"
+    ],
+    "answer_indices": [1],
+    "explanation": "A Deterrent control is designed to discourage potential attackers from attempting an intrusion (e.g., signs, cameras, lights).",
+    "source_file": "notes/security_fundamentals.txt",
+    "domain_id": 4,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-83",
+    "topic": "Disaster Recovery",
+    "prompt": "A company has a 'Warm Site' as part of its disaster recovery plan. What does this MOST likely mean in terms of readiness?",
+    "choices": [
+      "The site is fully operational with live data and can be failed over to in minutes.",
+      "The site has hardware and network connectivity, but data must be restored from backups before operations can begin.",
+      "The site is simply an empty room with power and cooling.",
+      "The site is a mobile trailer that can be moved to any location."
+    ],
+    "answer_indices": [1],
+    "explanation": "A Warm Site has the equipment (servers, switches) ready, but unlike a Hot Site, it doesn't have live data. It takes hours or days to become operational as data must be restored.",
+    "source_file": "notes/drp.txt",
+    "domain_id": 3,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-84",
+    "topic": "Switching Mechanics",
+    "prompt": "What does a switch do when it receives a broadcast frame?",
+    "choices": [
+      "It floods the frame out of all ports except the source port.",
+      "It sends the frame only to the default gateway.",
+      "It drops the frame to prevent a loop.",
+      "It stores the frame in its buffer until the destination MAC is found."
+    ],
+    "answer_indices": [0],
+    "explanation": "Switches flood broadcast frames (and unknown unicast frames) out of every port in the same VLAN, excluding the port where the frame originated.",
+    "source_file": "notes/switching_fundamentals.txt",
+    "domain_id": 1,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-85",
+    "topic": "Protocol Analyzers",
+    "prompt": "You are using Wireshark to troubleshoot a slow application. You see many 'TCP Retransmission' packets. What is the MOST likely cause?",
+    "choices": [
+      "The server is too fast for the client.",
+      "Packet loss is occurring in the network, forcing the sender to resend data that was never acknowledged.",
+      "The application is using UDP instead of TCP.",
+      "The MTU is set too high."
+    ],
+    "answer_indices": [1],
+    "explanation": "TCP Retransmissions happen when a sender does not receive an ACK within the expected window, usually indicating that packets are being dropped by a congested or faulty link.",
+    "source_file": "notes/packet_capture_analysis.txt",
+    "domain_id": 5,
+    "difficulty": "hard"
+  },
+  {
+    "id": "sim-1-86",
+    "topic": "Identity Federation",
+    "prompt": "Which of the following allows a user to log in once and gain access to multiple different systems across different organizations or security domains?",
+    "choices": [
+      "Single Sign-On (SSO)",
+      "Federation",
+      "Multifactor Authentication (MFA)",
+      "Role-Based Access Control (RBAC)"
+    ],
+    "answer_indices": [1],
+    "explanation": "While SSO provides access within a single domain, Federation extends this concept to allow trusted authentication across completely different organizations (e.g., using your Google account to log into a third-party app).",
+    "source_file": "notes/authorization_account_management.txt",
+    "domain_id": 4,
+    "difficulty": "hard"
+  },
+  {
+    "id": "sim-1-87",
+    "topic": "Network Troubleshooting",
+    "prompt": "A technician is troubleshooting a fiber link that is experiencing high bit error rates. They suspect a dirty connector. Which tool should they use to safely inspect the end-face of the fiber connector?",
+    "choices": [
+      "Flashlight",
+      "Fiber Inspection Microscope / Scope",
+      "Light Meter",
+      "OTDR"
+    ],
+    "answer_indices": [1],
+    "explanation": "A specialized fiber scope allows a technician to safely view the connector end-face to check for dust, scratches, or oils without exposing their eyes to the laser light.",
+    "source_file": "notes/fiber_optics.txt",
+    "domain_id": 5,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-88",
+    "topic": "Change Management",
+    "prompt": "What is the PRIMARY purpose of a 'Change Advisory Board' (CAB) in a formal change management process?",
+    "choices": [
+      "To perform the actual technical implementation of the change.",
+      "To review and approve or reject proposed changes based on their risk and impact to the business.",
+      "To write the documentation for all new systems.",
+      "To provide the budget for new hardware."
+    ],
+    "answer_indices": [1],
+    "explanation": "The CAB is a group of stakeholders that evaluates proposed changes to ensure they are well-planned, tested, and will not cause unintended outages.",
+    "source_file": "notes/lifecycle_8_1_6.txt",
+    "domain_id": 3,
+    "difficulty": "standard"
+  },
+  {
+    "id": "sim-1-89",
+    "topic": "Common Performance Issues",
+    "prompt": "An administrator sees a large number of 'Input Errors' and 'CRC Errors' on a copper Ethernet interface. Which of the following is the MOST likely cause?",
+    "choices": [
+      "High CPU usage on the switch.",
+      "EMI (Electromagnetic Interference) or a faulty cable.",
+      "A software bug in the network driver.",
+      "A mismatch in the routing protocol timers."
+    ],
+    "answer_indices": [1],
+    "explanation": "CRC (Cyclic Redundancy Check) errors indicate that frames are being corrupted during transit, usually due to physical layer issues like interference (EMI), a damaged cable, or a bad port.",
+    "source_file": "notes/network_troubleshooting.txt",
+    "domain_id": 5,
+    "difficulty": "hard"
+  },
+  {
+    "id": "sim-1-90",
+    "topic": "Final Review",
+    "prompt": "A company wants to ensure 'High Availability' for its web servers. Which of the following should they implement?",
+    "choices": [
+      "Cold Site",
+      "Load Balancer with multiple back-end nodes",
+      "Single Server with RAID 1",
+      "Increased SNMP polling frequency"
+    ],
+    "answer_indices": [1],
+    "explanation": "High Availability (HA) requires eliminating single points of failure. A load balancer distributing traffic across multiple active servers ensures the service stays up even if one server fails.",
+    "source_file": "notes/fault_redundancy.txt",
+    "domain_id": 3,
+    "difficulty": "standard"
+  }
+]

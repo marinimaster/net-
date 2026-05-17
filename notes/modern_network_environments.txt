@@ -1,0 +1,386 @@
+# Infrastructure as Code (IaC)
+
+A replacement to infrastructure management where automation and orchestration fully replace manual configuration.
+One of its goal is to remove snowflake systems.
+
+Snowflakes are configurations or builds that are different from any other.
+
+	- Lack of consitency/drift leads to security issues, such as patches that have not been installed.
+	  such as ascripts that fail to run due to some sort of small configuration difference.
+
+
+	- Immutable architecture means that instances are never updated in place.
+IaC is deployed to provision immutable architecture.
+If a change or update is required, a new instance is deployed to replace the old one.
+
+	- Idempotence: ensures that making the same call with same parameters with produce the same result.
+By rejecting manual configuration and ad hoc patching, IaC ensure idempotence.
+
+i) IaC is not simply a matter of using scripts to perform repetitive tasks. Running scripts that have been written
+   ad hoc is just as likely to cause environment drift as manual configuration. IaC means using carefully developed and
+   tested scripts and orchestration playbooks to generate consistent builds.
+   
+# Automation and Playbooks
+
+When human engineers perform a task manually, they follow a standard operating procedure (SOP).
+Automation using playbooks means that each configuration or build task is performed by a block of code.
+
+	* The script will take standard arguments as data, meaning that there is less scope for uncertainty over configuration
+	  choices leading to errors, also ensures that systems are in compliance with network or security policies.
+
+The aim of an automation playbook is to script as many stages of the SOP as possible.
+	* Leaving clearly defined points for human intervention or verification.
+
+These interaction points should try to present all the contextual information and guidance for the technician to make
+a quick, informed decision about how to remediate a failed task, or one that needs manual input.
+
+There are two types of automation tool:
+
+	- Imperative tools take the precise series of steps required to achieve the desired configuration as input.
+	
+	- Declarative tools take the desired configuration as input and leave the detail fo how that configuration should be
+	  achieved to the implementation playform.
+
+# Orchestration
+
+Orchestrations perform series of automated tasks. For example:
+
+	Adding a new VM to a load-balanced cluster, this process might include:
+		- Provisioning the VM
+
+		- Configuring it with an app and network settings
+
+		- Adding the VM to the load-balanced cluster.
+
+		- Reconfiguring the load-balancing weight distribution
+		  given the new cluster configuration.
+
+When doing this, the orchestration steps would have to run numerous automated scripts or API service calls.
+
+For orchestration to work properly, automated steps mus occur in the right sequence
+When taking dependencies into account, the user must provide the right security credentials along the way, and it
+must have the right security permissions.
+
+Orchestration can autoamte processes that are complex, requiring dozens or hundreds of manual steps.
+
+Automation and orchestration platforms connec to and provide administration, management and orchestration for many popular
+cloud platforms and services.
+
+	> Chef.io
+	> Puppet
+	> Ansible
+	> Kubernetes
+
+# Uses for IaC
+# Non-persistence and Templates
+
+* Automation works best in an environment designed for non-persistence.
+
+Non-persistence means that any given instance is completely static in terms of processing function.
+Data is kept separate from the instance OS/app, so that the instance can be swapped out for an "as new" copy without 
+suffering any configuration problems.
+
+When provisioning a new or replacement instance, the automation system may use one of two types of mastering instructions:
+
+	- Master Images: The "gold" copy of a VM or container instance.
+
+	- Automated build from a template: Build instructions (imperative automation) or desired configuration (declarative)
+	  for an instance. Rather than storing a master image, the software builds and provisions an instance according
+	  to the template instrucitons or desired configuration.
+
+# Upgrades
+
+Moving from an old OS or software version to a newer one. Upgrades might have benefits in usability, performance
+and security, however, changes introduces by an update can have unforeseen impacts.
+
+* Upgrade projects must be treated as a major change and should be supported by test rollback plans.
+  The project must identify dependencies between systems and how they will be impacted by the upgrade.
+
+Automation can assist with this by speeding up deployment of systems into a test network,
+and performing scripted test suites to check for known or anticipated compatibility issues into a test network.
+It can also be used to deploy the upgraded systems on the production network.
+
+# Dynamic Inventories
+
+Instances of VMS and containers launched into a cloud environment just like switches, routers and servers in an
+on-premises network.
+
+Additional complexity comes from the fact that cloud instances are ephemeral.
+- Rather than fixed asset IDs, they need to be identified by tags.
+- Tags can be assigned in the cloud management system when the instance is launched.
+- It is imperative to devise and enforce a tagging system that properly identifies ownership and roles for all instances.
+
+Sprawls: undocumented instances that are launched and left unmanaged.
+Just like in on-premises virtualization, it is important to manage instances to avoid sprawl.
+
+* As well as restricting rights to launch instances,
+  logging and monitoring should be configured to track usage.
+
+Dynamic inventories query a cloud API to return a list of instances and their properties for storage in a database.
+
+# Reusable Tasks
+
+Reusable tasks are blocks of code that can perform a function in multiple different contexts.
+For example:
+
+	Given different inputs, the same block of code could launch a Windows VM into subnet A and a Linux VM into subnet B.
+	
+It is helpful to minimize the number of lines of code or the number of scripts.
+The more code there is to manage, the more likely it is to develop bugs and vulnerabilities.
+
+Rather than separate scripts, you develop function libraries that can be reused for multiple tasks.
+
+# Source Control
+
+Is the overall process of managing code for a software development project. When using IaC,
+Is is important to use the correct version of a script to perform a task.
+
+Tasks eprformed by different versions can lead to configuration drift and noncompliance.
+
+# Version Control
+
+Within the overall process of source control, version control is an ID system for each iteration of a software product
+or automation script.
+
+Version control supports the change management process for software development projects.
+
+# Central Repository
+
+Software development environments use a repository server to maintain source code.
+One example is the Global Information Tracker commonly known as Git.
+
+When a developer commits new or changed code to the repository, the new source code is tagged with an updated version
+number and the old versiona rchived. This allows changes to be rolled back if a problem is discovered.
+
+# Branching
+
+Changes to the source code can be made in a branch copy stored separately to the main or production version.
+
+When the branch code is ready, the developer issues a pull request, and it is tested and validated
+for merging back into the main branch.
+
+# Conflict Identification
+
+When two or more competing changed in branching need to be integrated into the main branch.
+Conflict identification highlights these clashes and provides developers with tools to resolve them.
+
+# Software-Defined Networking (SDN)
+
+APIs and compatible hardware/virtual appliances allowing for programmable network appliances and systems.
+Some properties of SDN are the following:
+
+	- Central policy management:	There is a "single source of truth" for how networks should operate.
+									There is central policy management but distributed policy enforcement
+									
+	- Transport agnostic:	The overlay network can make use of any available forwarding fabric:
+							Ethernet, Wifi, 4G/5G cellular, or satellite. The underlying network is 
+							automatically configured to establish the network link.
+
+	- Zero-touch provisioning:	When nodes are deployed to a network, they use automation to achieve the
+								desired configuration.
+
+	- Application aware:	Forwarding nodes can identify types of traffic, such as
+							voice, video, or IoT.
+							They can reserve capacity for these applications to ensure sufficient
+							bandwidth, low latency and lossless transfers.
+
+# SDN Architecture
+
+In the SDN model defined by the IETF, network functions are divided into three layers.
+The top and bottom layers are applications and infrastructure.
+
+	- Application Layer:	applies the business logic to make decisions about how traffic should be prioritized,
+							secured and where it should be switched.
+
+							This layer defines policies such as segmentation, ACLs, and traffic prioritization.
+
+							It defines the rules but it does not handle forwarding.
+							
+	- Infrastructure Layer:	Uses the devices that handle the actual forwarding of traffic and imposition of ACLs
+							and other policy configurations for security.
+
+The principal innovaton of SDN is to insert a control layer between the application and infrastructure layers.
+The functions of the control pane are implemented by a virtual device called the SDN controller.
+
+# Management Plane
+
+In IEFT's SDN model, there are separate forwarding (data) and operational planes at the infrastructure level.
+THe operational plane implements device state, such as CPU and memory utilization/
+
+Management plane sits at the level as the control plane to interface with the operational plane.
+This is used to implement monitoring of traffic conditions and network status.
+
+# SD-WAN
+
+Software Defined WAN replaces hub-and-spoke with more efficient but still secure connectivity to corporate clouds.
+
+In a branch office topology, access to the datacenter or the cloud will be routed and authorized via the
+hub office.
+
+It is a type of overlay network that provisions a corporate WAN across multiple locations and can secure access to the 
+cloud directly from a branch office or other remote location.
+
+Using IPSec to ensure that traffic is tunneled securely.
+
+The SD-WAN is managed by a controller and management software located in a corporate datacenter or public cloud.
+Each site has a SD-WAN capable router, gateway, or VPN app.
+
+It uses any available IP underlay network, such as:
+
+	- Broadband
+	- 4G/5G cellular
+	- Private Multiprotocol Label Switching VPN 
+
+# Overlay Networks
+
+Are used to implement logical links between nodes or networks.
+
+VPNs are examples of overlay networks
+
+Other types of overlay network use encapsulation protocols and software-defined networking (SDN) to create a logical
+tunnel between nodes or networks that might be located in different physical topologies.
+
+Overlay networks also allow segmentation of the same physical network. Example:
+	* A cloud provider can isolate each tenant's traffic from other tenants.
+
+# Virtual Extensible LANs (VSLANs)
+
+VXLANs use layer 2 encapsulation to create an overlay network that runs on a layer 3 IP underlay network.
+
+Acronyms:
+
+	- Virtual Network Identifier (VNI):	Each overlay network is allocated a 24 bit VNI
+
+	- VXLAN Tunnel Endpoint (VTEP): Encapsulates the layer 2 frame tagged with the VNI in UDP packets.
+
+As an alternative to manually configuring connections between VNIs and VTEPs, an Ethernet VPN (EVPN)
+uses BGP to advertise VXLAN networks and nodes as routes. This implements a control plane for automated
+configuration and management of the overlay network.
+
+# Datacenter Interconnect (DCI)
+
+Refers to ways of creating links between datacenters and hosts/networks in different datacenters.
+
+Datacenter services typically use cluster technologies and other applications that depend upon layer 2 adjacency.
+
+This means that the clustered servers or VMs must be part of the same broadcast domain and subnet, even if they
+are in different data centers.
+
+Simply "streching" the layer 2 boundaries over physical fiber links can generate complex broadcast and spanning tree
+issues. This problem can be mitigated using VXLAN and Ethernet VPN (EVPN) to implement datacenter interconnects.
+
+EVPN allows servers to discover adjacent MAC addresses and forward data using an overlay network to tunnel
+traffic between them.
+
+# Zero Trust Architecture (ZTA)
+
+ZTA is a model that assumes that all devices, users, and services are not inherently trusted.
+* Regardless of wheter inside or outside the network's perimeter. Instead, the zero trust model requires all users
+  and devices be authenticated and authorizes before accessing network resources.
+
+The zero trust model includes several fundamental concepts that provide a comprehensive security solution:
+
+	- Policy-based authentication:	Recognizes that user identities are not static and that identity verification
+									must be continuous and based on a user's current context and the resources
+									they are attempting to access.
+	
+	- Threat scope reduction and least privilege access:	Means that access to network resources is granted on a
+															need to know basis, and access is limmited to only those
+															resources required to complete the a specific task.
+															These concepts reduce the network's attack surface and 
+															limit the damage that a successful attack can cause.
+
+	- Policy-driven authorization:	Describes how list privilege access control policies are used to enforce
+									permissions and restrictions based on user identity, device posture and network
+									context.
+
+Keep in mind authentication and authorization are very different
+
+	o Authentication in establishing identity.
+	o Authorization is enforcing restrictions even after authentication.
+
+In zero trust architecture, the control and data planes are implemented separately and have different functions.
+
+The control plane manages policies that dictate how users and devices are authorized to access network resources.
+It is implemented through a centralized policy decision point.
+
+	Which is responsible for defining policies that limit access to resources on a least privilege basis,
+	monitoring network activity for suspicious behavior. and updating policies to reglect changing network
+	conditions and security threats.
+
+Policy decision points are comprosied of two subsystems:
+
+	o Policy engine: Configured with subject and host identities and credentials.
+
+	o Policy administrator: Responsible for managing the process of issuing access tokens and establishing or tearing
+							down sessions, based on the decisions made by the policy engine.
+							
+							The policy administrator implements an interface between the control plane and the data plane.
+
+Systems in the [control] plane define policies and make decisions.
+
+Systems in the [data] plane, a subject uses a system to make requests for a given resource.
+
+i) The processes implementing the policy enforcement point are the only ones permitted to interface with the policy
+   administrator.
+
+# Secure Access Secure Edge (SASE)
+
+Networking and security architecture that provides `secure` access to cloud applications while reducing complexity.
+It combines security services like:
+
+	o Firewalls
+	o Identity and access management
+	o Secure Web Gateway with networking services
+	  such as SD-WAN
+
+Provides a better and safer way to accessing data and applications
+by integrating networking and security into the cloud infrastructure.
+
+Includes different technologies:
+
+	o Zero Trust Network Access
+	o Secure Web Gateways
+	o SD-WAN
+	o VPNs
+
+Often referred to as the next-generation VPN.
+
+Secure Service Edge (SSE) is a component to SASE
+
+	SSE is a set of technologies that mediate access to cloud services and web applications.
+
+	* It is another cloud security solution that aims to secure access 
+	  to websites, cloud services and private apps.
+	
+	* ZTA is an example of a SSE technology.
+	* Cloud Access Security Broker (CASB)
+
+Some of the functions of CASB are the following:
+
+	o Single sign-on authentication and enforce access controls and authorizations
+	  from the enterprise network or remote employees to the cloud provider.
+
+	o Scan for malware and rogue or noncompliant devices
+
+	o Monitor and audit user resource activity.
+
+	o Mitigate data exfiltration by preventing access to unauthorized resources from a managed devices.
+
+CASBs are implemented in ONE of THREE ways:
+
+	1. Forward Proxy: This is a security appliance or host positioned at the client network edge that forwards user
+					  traffic to the cloud network
+
+	2. Reverse Proxy: Positioned at the cloud network edge and directs traffic to cloud services
+					  if the contents of that traffic comply with policy.
+
+	3. API: Rather than placing a CASB appliance or hosts inline with cloud consumers and the cloud services,
+			an API-based CASB uses brokers' connections between the cloud service and the cloud consumer.
+
+			> Example: if a user account has been disable or an authorization has been revoked on the local network,
+					   the CASB would communnicate this to the cloud service and use its API to disable access there too.
+
+					   This depends on the API supporting the range of functions that the CASB and access and
+					   authorization policies demand. CASB solutions are quite likely to use both proxy and API models
+					   for different security management purposes.

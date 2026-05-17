@@ -10092,5 +10092,2164 @@
         "source_file": "notes/comparing_remote_access_methods.txt",
         "domain_id": 1,
         "difficulty": "hard"
+    },
+    {
+        "id": "q_dns_cname_udp_packet_size_exceed_n09",
+        "topic": "DNS",
+        "prompt": "What is a potential issue when using AAAA records due to the larger address sizes of IPv6?",
+        "choices": [
+            "They can cause DNS poisoning.",
+            "They can exceed the UDP packet size limit.",
+            "They can slow down DNS resolution times.",
+            "They can conflict with A records."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Due to the larger address sizes of IPv6, AAAA records can exceed the default UDP packet size limit of 512 bytes, potentially causing UDP packets to be fragmented.",
+        "source_file": "resources\\questions\\q_dns_cname_udp_packet_size_exceed_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_cable_category_cat_6a_healthcare_n09",
+        "topic": "Structured Cabling",
+        "prompt": "Which cable category is recommended by TIA/EIA for use in healthcare facilities?",
+        "choices": [
+            "Cat 5e",
+            "Cat 6",
+            "Cat 6A",
+            "Cat 7"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "TIA/EIA standards recommend Cat 6A for healthcare facilities due to its support for 10 Gbps over 100 meters and suitability for Power over Ethernet (PoE) 802.3bt installations.",
+        "source_file": "resources\\questions\\q_cable_category_cat_6a_healthcare_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_vlans_native_vlan_role_n09",
+        "topic": "VLANs",
+        "prompt": "What is the role of a native VLAN?",
+        "choices": [
+            "It is used to carry traffic from multiple VLANs over a single link.",
+            "It is the VLAN that all ports belong to by default.",
+            "It is designated for the fastest data transfer speeds.",
+            "It handles untagged traffic on a trunk port."
+        ],
+        "answer_indices": [
+            3
+        ],
+        "explanation": "The native VLAN is designated to manage untagged traffic that arrives on trunk ports, ensuring compatibility with older devices that do not support VLAN tagging.",
+        "source_file": "resources\\questions\\q_vlans_native_vlan_role_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_nslookup_type_mx_option_n09",
+        "topic": "DNS",
+        "prompt": "What does specifying the -type=mx option with the nslookup command do?",
+        "choices": [
+            "Displays the host's MAC address",
+            "Queries for the host's mail exchange records",
+            "Changes the DNS server type",
+            "Lists all DNS records for the host"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The -type=mx option specifies that the query should return mail exchange (MX) records, which identify mail servers responsible for receiving email on behalf of a domain.",
+        "source_file": "resources\\questions\\q_nslookup_type_mx_option_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_loopback_flickering_green_led_n09",
+        "topic": "Switching",
+        "prompt": "What does a flickering green LED on a switch port indicate?",
+        "choices": [
+            "The port is shut down.",
+            "There is a duplex mismatch.",
+            "The link is operating normally with traffic.",
+            "The port is blocked by the spanning tree algorithm."
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "A flickering green LED signifies that the link is operating normally and transmitting traffic.",
+        "source_file": "resources\\questions\\q_loopback_flickering_green_led_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_patch_panels_wiring_order_n09",
+        "topic": "Structured Cabling",
+        "prompt": "Which wiring order is used for terminating structured cabling at the back of a patch panel?",
+        "choices": [
+            "USB wiring order",
+            "T568A or T568B wiring order",
+            "HDMI wiring order",
+            "VGA wiring order"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Structured cabling is terminated at the back of a patch panel using either T568A or T568B wiring standards.",
+        "source_file": "resources\\questions\\q_patch_panels_wiring_order_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_ssh_emulate_remote_gateway_feature_n09",
+        "topic": "Remote Access",
+        "prompt": "What is a key feature of remote desktop gateways?",
+        "choices": [
+            "They exclusively support terminal-only access.",
+            "They provide GUI access to remote desktops.",
+            "They prevent users from accessing virtual desktops.",
+            "They are used to decrease network security."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Remote desktop gateways allow users to access networked applications or virtual desktops through a graphical user interface (GUI).",
+        "source_file": "resources\\questions\\q_ssh_emulate_remote_gateway_feature_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_dhcp_overview_dhcpoffer_n09",
+        "topic": "DHCP",
+        "prompt": "What type of message does a DHCP server send to a client to offer an IP address?",
+        "choices": [
+            "DHCPDISCOVER",
+            "DHCPOFFER",
+            "DHCPREQUEST",
+            "DHCPACK"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The DHCPOFFER message is sent by the DHCP server to offer an IP address to the client.",
+        "source_file": "resources\\questions\\q_dhcp_overview_dhcpoffer_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_ping_output_example_02_n09",
+        "topic": "Troubleshooting Tools",
+        "prompt": "Examine the following output: Reply from 64.78.193.84: bytes=32 time=86ms TTL=115... Which of the following utilities produced this output?",
+        "choices": [
+            "ping",
+            "tracert",
+            "nslookup",
+            "ifconfig"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "The output shown was produced by the ping utility, specifically using the ping -t command, which sends packets continuously.",
+        "source_file": "resources\\questions\\q_ping_output_example_02_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_db_services_enable_tls_scenario_n09",
+        "topic": "Security",
+        "prompt": "Which of the following steps should the database administrator take to secure the database server's communication?",
+        "choices": [
+            "Configure the server to use TCP port 1433 without any encryption.",
+            "Install a certificate on the server and enable TLS transport encryption.",
+            "Change the default port from 1433 to a non-standard port and use it without encryption.",
+            "Disable remote access protocols to ensure that the database can only be accessed locally."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Installing a certificate and enabling TLS transport encryption secures data transmission, protecting it from interception.",
+        "source_file": "resources\\questions\\q_db_services_enable_tls_scenario_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_handshake_refuse_attempt_scenario_n09",
+        "topic": "Networking Protocols",
+        "prompt": "During a security audit, you observe a sequence of TCP packets where a client sends a SYN packet, but instead of a SYN/ACK packet, the server responds with a RST packet. What is the MOST likely reason?",
+        "choices": [
+            "The server is acknowledging the client's SYN packet and establishing the connection.",
+            "The server is currently too busy to handle new connections.",
+            "The server is refusing the connection attempt.",
+            "The server is waiting for more SYN packets before responding with SYN/ACK."
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "A RST (reset) packet sent in response to a SYN packet indicates that the server is refusing the connection attempt.",
+        "source_file": "resources\\questions\\q_handshake_refuse_attempt_scenario_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_vlan_id_vlan_name_n09",
+        "topic": "VLANs",
+        "prompt": "What command is used to create a VLAN with ID 16?",
+        "choices": [
+            "vlan create 16",
+            "vlan 16 create",
+            "vlan 16 name VLAN16",
+            "create vlan 16"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "The vlan 16 name VLAN16 command is used in Cisco switches to create a VLAN with ID 16 and assign it a name.",
+        "source_file": "resources\\questions\\q_vlan_id_vlan_name_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_ifconfig_scenario_01_n09",
+        "topic": "Linux Networking",
+        "prompt": "Which command would you use to report the network interface configuration on the older servers that primarily rely on the net-tools package?",
+        "choices": [
+            "ip addr",
+            "ifconfig",
+            "ip link show",
+            "netstat -i"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The ifconfig command is part of the legacy net-tools package, standard on older Linux distributions.",
+        "source_file": "resources\\questions\\q_ifconfig_scenario_01_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_arp_ip_to_mac_n09",
+        "topic": "ARP",
+        "prompt": "Routing data between computers requires mappings between addresses. Which statement is true?",
+        "choices": [
+            "Hosts use ARP to resolve known IP addresses into MAC addresses.",
+            "Routers use DNS to resolve MAC addresses of diskless workstations into IP addresses.",
+            "Diskless workstations use ARP to ask a server for an IP address.",
+            "ICMP lets routers bypass the general network broadcast by providing a dynamic table of IP-to-MAC address mappings."
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "ARP lets hosts resolve known IP addresses into MAC addresses by broadcasting requests to the network.",
+        "source_file": "resources\\questions\\q_arp_ip_to_mac_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_wifi_bridge_ap_switch_scenario_n09",
+        "topic": "Wireless",
+        "prompt": "You are moving between APs and experience a brief interruption in your video call. What is the most likely reason?",
+        "choices": [
+            "The laptop failed to detect the presence of other APs.",
+            "The laptop was switching between APs to maintain a strong wireless connection.",
+            "The video conference software is incompatible.",
+            "The AP in the conference room was set to a different ESSID."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The brief interruption occurs because the laptop is switching between APs (roaming) to maintain the best signal.",
+        "source_file": "resources\\questions\\q_wifi_bridge_ap_switch_scenario_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_hardening_attack_surface_n09",
+        "topic": "Security",
+        "prompt": "What does the term \"attack surface\" refer to?",
+        "choices": [
+            "The physical area of a network",
+            "The total number of users in a system",
+            "The range of potential vulnerabilities exploitable by attackers",
+            "The graphical interface of security software"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "The attack surface refers to the sum of all possible points (vulnerabilities) where an unauthorized user could enter or extract data.",
+        "source_file": "resources\\questions\\q_hardening_attack_surface_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_ethernet_copper_cabling_types_n09",
+        "topic": "Structured Cabling",
+        "prompt": "Which of the following are the main types of copper cabling used in networking? (Select two.)",
+        "choices": [
+            "Twisted pair",
+            "HDMI",
+            "USB",
+            "Coaxial (coax)",
+            "Fiber optic"
+        ],
+        "answer_indices": [
+            0,
+            3
+        ],
+        "explanation": "Twisted pair and Coaxial (coax) cabling are the main types of copper cabling used in networking.",
+        "source_file": "resources\\questions\\q_ethernet_copper_cabling_types_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_pki_digital_certificate_purpose_n09",
+        "topic": "PKI",
+        "prompt": "What is the primary purpose of a digital certificate?",
+        "choices": [
+            "To increase the speed of internet connections",
+            "To authenticate the identity of a website or server",
+            "To serve as a backup for data encryption",
+            "To replace passwords for user authentication"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Digital certificates are used to authenticate the identity of websites or servers to establish secure communication channels.",
+        "source_file": "resources\\questions\\q_pki_digital_certificate_purpose_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_vlsm_troubleshooting_scenario_n09",
+        "topic": "Subnetting",
+        "prompt": "A company is using VLSM. After allocation, there is a significant number of unused IP addresses. What is the MOST likely reason?",
+        "choices": [
+            "The administrator did not allocate the largest subnet sizes possible for each segment.",
+            "The administrator allocated subnet sizes without considering the hierarchical structure of IP address allocation.",
+            "The administrator allocated subnet sizes based strictly on current requirements without considering future growth.",
+            "The administrator did not properly calculate the subnet sizes."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The most efficient use of IP addresses with VLSM involves allocating subnets in a hierarchical manner, starting with the largest requirements.",
+        "source_file": "resources\\questions\\q_vlsm_troubleshooting_scenario_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_fiber_wan_obstacle_n09",
+        "topic": "WAN",
+        "prompt": "What is the major obstacle to providing WAN access that can approach LAN performance?",
+        "choices": [
+            "The cost of fiber optic cables",
+            "Bandwidth in the last mile",
+            "Availability of skilled technicians",
+            "The complexity of network protocols"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The major obstacle is the bandwidth in the last mile, where existing copper infrastructure limits high-speed transmission.",
+        "source_file": "resources\\questions\\q_fiber_wan_obstacle_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_int_error_baby_giant_frames_n09",
+        "topic": "Switching",
+        "prompt": "Which of the following scenarios could lead to the generation of baby giant frames?",
+        "choices": [
+            "Ethernet frames that are slightly larger than 1518 bytes due to 802.1Q tagging",
+            "Frames smaller than the minimum Ethernet frame size of 64 bytes",
+            "All devices on the network are configured with the same MTU size",
+            "The use of high-quality optical transceivers and cables"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "Baby giant frames refer to frames slightly larger than the standard 1518 bytes due to 802.1Q VLAN tagging.",
+        "source_file": "resources\\questions\\q_int_error_baby_giant_frames_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_fiber_test_single_to_multimode_n09",
+        "topic": "Cabling",
+        "prompt": "What is the primary consequence of connecting single mode fiber to multimode fiber?",
+        "choices": [
+            "Increased signal strength",
+            "Enhanced data security",
+            "Catastrophic signal loss of up to 99%",
+            "Improved fiber alignment"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Connecting single mode fiber to multimode fiber leads to a catastrophic signal loss of up to 99% due to core size mismatch.",
+        "source_file": "resources\\questions\\q_fiber_test_single_to_multimode_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_plenum_example_n09",
+        "topic": "Cabling",
+        "prompt": "You need to run Ethernet cables in a false ceiling that provides an air path for HVAC. Which type of cable must you use?",
+        "choices": [
+            "Plenum-rated cable",
+            "Cat 5e or Cat 6a cables",
+            "Fiber optic cables",
+            "STP cables"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "Plenum-rated cable is fire-resistant and non-toxic, making it mandatory for use in air spaces (plenum) used by heating and air conditioning systems.",
+        "source_file": "resources\\questions\\q_plenum_example_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_path_attack_arp_spoofing_role_n09",
+        "topic": "Security",
+        "prompt": "What is ARP spoofing?",
+        "choices": [
+            "Encrypting ARP packets to secure communications.",
+            "Broadcasting unsolicited ARP reply packets with a spoofed source address.",
+            "A method to increase the efficiency of ARP protocol.",
+            "A technique to physically intercept ARP packets."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "ARP spoofing involves broadcasting unsolicited ARP replies with a spoofed source address to intercept data.",
+        "source_file": "resources\\questions\\q_path_attack_arp_spoofing_role_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_automation_automated_builds_advantage_n09",
+        "topic": "Automation",
+        "prompt": "What is the advantage of using automated builds from templates over master images?",
+        "choices": [
+            "Faster deployment",
+            "Higher security",
+            "Easier updates",
+            "Less storage space"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Automated builds from templates allow for easier updates since the template can be modified to provision new instances.",
+        "source_file": "resources\\questions\\q_automation_automated_builds_advantage_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_detect_device_coaxial_cabling_n09",
+        "topic": "CCTV",
+        "prompt": "How are the cameras in a Closed-Circuit Television (CCTV) network TYPICALLY connected to a multiplexer?",
+        "choices": [
+            "Using Wi-Fi",
+            "Using coaxial cabling",
+            "Through Bluetooth",
+            "With fiber optics"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Cameras in a CCTV network are typically connected to a multiplexer using coaxial cabling.",
+        "source_file": "resources\\questions\\q_detect_device_coaxial_cabling_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_cable_category_cat_6a_issue_n09",
+        "topic": "Structured Cabling",
+        "prompt": "What is the primary reason Cat 6A cable installation can be problematic in pathways designed for older cables?",
+        "choices": [
+            "Because it is less flexible",
+            "Because it is thinner",
+            "Because it is bulkier",
+            "Because it is shorter"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Cat 6A cable is bulkier than older cable types, making it difficult to fit in existing pathways.",
+        "source_file": "resources\\questions\\q_cable_category_cat_6a_issue_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_dhcpv6_ports_used_n09",
+        "topic": "DHCPv6",
+        "prompt": "What ports do DHCPv6 clients and servers use?",
+        "choices": [
+            "Clients: 68, Servers: 67",
+            "Clients: 67, Servers: 68",
+            "Clients: 546, Servers: 547",
+            "Clients: 547, Servers: 546"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "In DHCPv6, clients use port 546 and servers use port 547.",
+        "source_file": "resources\\questions\\q_dhcpv6_ports_used_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_oob_manage_out-of-band_method_n09",
+        "topic": "Management",
+        "prompt": "What is a virtual out-of-band management method?",
+        "choices": [
+            "Using a dedicated management cable",
+            "Using a VLAN to isolate management traffic",
+            "Connecting through a console port",
+            "Using a wireless management interface"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Using a VLAN to isolate management traffic creates a virtual separation that simulates out-of-band management.",
+        "source_file": "resources\\questions\\q_oob_manage_out-of-band_method_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_ipv6_format_leading_zeros_n09",
+        "topic": "IPv6",
+        "prompt": "How are leading zeros handled in IPv6 address notation?",
+        "choices": [
+            "They are always retained for clarity.",
+            "They are replaced with a single zero.",
+            "They can be omitted.",
+            "They are replaced with a colon (:)."
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "IPv6 address notation allows for the omission of leading zeros within any 16-bit block to simplify the address.",
+        "source_file": "resources\\questions\\q_ipv6_format_leading_zeros_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_dyroute_metrics_n09",
+        "topic": "Routing",
+        "prompt": "What role do metrics play in dynamic routing protocols?",
+        "choices": [
+            "They determine the physical layout of the network.",
+            "They are used to calculate the bandwidth of the network.",
+            "They help in selecting the optimal path for data packet transmission.",
+            "They help with the manual configuration of devices."
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Metrics are values used by routing algorithms to determine the best (optimal) path for data to travel across a network.",
+        "source_file": "resources\\questions\\q_dyroute_metrics_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_wifi6_ofdma_n09",
+        "topic": "Wireless",
+        "prompt": "Which modulation scheme is introduced with Wi-Fi 6?",
+        "choices": [
+            "QAM",
+            "OFDMA",
+            "DSSS",
+            "FHSS"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Wi-Fi 6 introduces OFDMA (Orthogonal Frequency Division Multiple Access), which improves efficiency by dividing the spectrum into smaller frequency allocations.",
+        "source_file": "resources\\questions\\q_wifi6_ofdma_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_transceiver_multiple_wavelengths_scenario_n09",
+        "topic": "WDM",
+        "prompt": "Which of the following considerations is MOST critical for ensuring the successful deployment of WDM in the network?",
+        "choices": [
+            "Ensuring all transceivers operate at the same power level",
+            "Selecting transceivers that support the same Ethernet standard",
+            "Choosing transceivers that can operate on multiple wavelengths",
+            "Matching the color of the transceiver casings with the fiber optic cables"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "WDM requires transceivers capable of operating on specific wavelengths (colors) of laser light to multiplex signals correctly.",
+        "source_file": "resources\\questions\\q_transceiver_multiple_wavelengths_scenario_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_data_trans_radiation_def_n09",
+        "topic": "Networking Basics",
+        "prompt": "Network data transfer works by modulating the properties of a transmission medium. Which of the following BEST describes that process?",
+        "choices": [
+            "The process of converting digital signals into analog signals for transmission over telephone lines",
+            "The transmission of signals as electric current, infrared light, or radio waves",
+            "A method of securing network data by encrypting the information before transmission",
+            "The physical infrastructure, such as cables and switches, used to transmit data"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Network data transfer works by transmitting signals as electric current, infrared light, or radio waves.",
+        "source_file": "resources\\questions\\q_data_trans_radiation_def_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_dns_config_udp_53_n09",
+        "topic": "DNS",
+        "prompt": "What port is usually configured for a DNS server to listen for queries?",
+        "choices": [
+            "TCP port 80",
+            "UDP port 53",
+            "TCP port 443",
+            "UDP port 80"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "DNS servers are usually configured to listen for queries on UDP port 53.",
+        "source_file": "resources\\questions\\q_dns_config_udp_53_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_snmp_get_command_n09",
+        "topic": "SNMP",
+        "prompt": "How does an SNMP monitor typically retrieve information from a device?",
+        "choices": [
+            "By using the Set command",
+            "By using the Get command",
+            "By establishing a VPN connection",
+            "By initiating an SSH session"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The Get command is used by an SNMP monitor to query an agent for information.",
+        "source_file": "resources\\questions\\q_snmp_get_command_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_common_agreements_mou_characteristics_n09",
+        "topic": "Agreements",
+        "prompt": "What characterizes a Memorandum of Understanding (MOU)?",
+        "choices": [
+            "It is a legally binding formal contract.",
+            "It is an informal agreement expressing intent to work together.",
+            "It enforces strict performance and security objectives.",
+            "It is used to outline detailed job descriptions for employees."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "An MOU is a preliminary agreement that is usually informal and expresses a mutual intent to work together.",
+        "source_file": "resources\\questions\\q_common_agreements_mou_characteristics_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_dhcp_relay_dhcp_ntp_traffic_n09",
+        "topic": "DHCP",
+        "prompt": "Which types of traffic can the IP helper function be configured to forward?",
+        "choices": [
+            "Only DHCP traffic",
+            "Only DNS queries",
+            "DHCP and Network Time Protocol (NTP) traffic",
+            "Only encrypted traffic"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "The IP helper function can be configured to forward specific types of broadcast traffic, such as DHCP and NTP.",
+        "source_file": "resources\\questions\\q_dhcp_relay_dhcp_ntp_traffic_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_jump_key_on_host_n09",
+        "topic": "Security",
+        "prompt": "What is a key security measure for managing secret keys in the context of a jump box?",
+        "choices": [
+            "Storing the secret key in a shared document",
+            "Using the same secret key for multiple accounts",
+            "Keeping the secret key securely on the host",
+            "Frequently changing the secret key daily"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Keeping the secret key securely on the host is a key security measure.",
+        "source_file": "resources\\questions\\q_jump_key_on_host_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_route_missing_updates_scenario_n09",
+        "topic": "Troubleshooting",
+        "prompt": "During troubleshooting, you find that a router is not receiving routing protocol updates from its neighbors. What should you check first?",
+        "choices": [
+            "The router's power supply",
+            "Basic connectivity with the neighboring routers using ping",
+            "The routing protocol configuration for authentication issues or incorrect parameters",
+            "The administrative distance of the routes"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The first step is to check basic connectivity with neighboring routers using ping.",
+        "source_file": "resources\\questions\\q_route_missing_updates_scenario_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_transceiver_laser_diodes_scenario_n09",
+        "topic": "Cabling",
+        "prompt": "You are designing a network that requires long-distance data transmission using single mode fiber. Which type of transceiver should you select?",
+        "choices": [
+            "A transceiver that uses LEDs",
+            "A transceiver that uses VCSELs",
+            "A transceiver that uses laser diodes",
+            "A transceiver that uses incandescent light sources"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Laser diodes are used with single mode fiber to provide the narrow beam and high power needed for long distances.",
+        "source_file": "resources\\questions\\q_transceiver_laser_diodes_scenario_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_transceiver_strength_optical_link_budget_n09",
+        "topic": "Cabling",
+        "prompt": "What is an optical link budget?",
+        "choices": [
+            "The financial cost of setting up a fiber optic network",
+            "The total length of fiber optic cable used in a network",
+            "The amount of loss suffered by all components along a fiber transmission path",
+            "The maximum data transfer rate of a fiber optic connection"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "An optical link budget is the calculation of the total loss in signal strength across all components in a fiber optic transmission path.",
+        "source_file": "resources\\questions\\q_transceiver_strength_optical_link_budget_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_transceiver_transceiver_models_match_n09",
+        "topic": "Cabling",
+        "prompt": "What is the significance of matching transceiver models in a fiber optic network?",
+        "choices": [
+            "To ensure that all transceivers operate at the same temperature",
+            "To guarantee that data can only travel in one direction",
+            "To ensure compatibility and optimal performance between devices",
+            "To make the network easier to troubleshoot"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Matching transceiver models is crucial to ensure compatibility and optimal performance, particularly in BiDi setups.",
+        "source_file": "resources\\questions\\q_transceiver_transceiver_models_match_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_ipv6_trans_dual_stack_interoperability_n09",
+        "topic": "IPv6",
+        "prompt": "Which of the following is typically preferred for interoperability between IPv4 and IPv6 due to its efficiency?",
+        "choices": [
+            "Tunneling",
+            "Dual Stack",
+            "NAT64",
+            "6to4 automatic tunneling"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Dual Stack is preferred because it allows native communication without the overhead of tunneling.",
+        "source_file": "resources\\questions\\q_ipv6_trans_dual_stack_interoperability_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_netstat_nn_switch_n09",
+        "topic": "Troubleshooting Tools",
+        "prompt": "How can you set netstat to run continuously on Windows?",
+        "choices": [
+            "netstat -c",
+            "netstat -s",
+            "netstat [interval]",
+            "netstat -r"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "On Windows, running netstat followed by a numerical interval value sets the command to refresh at that interval.",
+        "source_file": "resources\\questions\\q_netstat_nn_switch_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_ntp_nts_scenario_n09",
+        "topic": "Security",
+        "prompt": "Which protocol should the IT security specialist implement to secure the NTP server against unauthorized time sources?",
+        "choices": [
+            "HTTPS",
+            "SSH",
+            "TLS",
+            "NTS"
+        ],
+        "answer_indices": [
+            3
+        ],
+        "explanation": "Network Time Security (NTS) is designed to protect NTP synchronization data and prevent unauthorized access to time sources.",
+        "source_file": "resources\\questions\\q_ntp_nts_scenario_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_vlan_hopping_crafted_frame_n09",
+        "topic": "VLANs",
+        "prompt": "How do attackers exploit the native VLAN feature in a VLAN hopping attack?",
+        "choices": [
+            "By encrypting the traffic sent to the native VLAN",
+            "By sending a frame with three VLAN tag headers",
+            "By crafting a frame with two VLAN tag headers",
+            "By deleting the native VLAN from the switch configuration"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Attackers craft a frame with two VLAN tag headers, leveraging the native VLAN design.",
+        "source_file": "resources\\questions\\q_vlan_hopping_crafted_frame_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_vlan_hopping_root_bridge_n09",
+        "topic": "Security",
+        "prompt": "How can an attacker manipulate the Spanning Tree Protocol (STP)?",
+        "choices": [
+            "By inserting their switch into the network and manipulating it to appoint their switch as the root bridge.",
+            "By sending a large number of frames to overwhelm the STP process.",
+            "By using a VLAN hopping attack to bypass the STP protection.",
+            "By encrypting the traffic between switches."
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "An attacker introduces a malicious switch and configures it to be elected as the root bridge.",
+        "source_file": "resources\\questions\\q_vlan_hopping_root_bridge_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_cloud_service_cdn_description_n09",
+        "topic": "Cloud",
+        "prompt": "What is a Content Delivery Network (CDN)?",
+        "choices": [
+            "A service that provides tools for application development",
+            "A network of servers used to deliver content to users worldwide",
+            "A cloud service model for delivering software applications",
+            "A type of IaaS focused on providing storage solutions"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "A CDN is a distributed system of servers that delivers content based on geographic location to improve performance.",
+        "source_file": "resources\\questions\\q_cloud_service_cdn_description_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_frame_highest_mtu_scenario_n09",
+        "topic": "Switching",
+        "prompt": "What is the BEST approach to configuring the MTU settings on a network with a mix of devices supporting different MTU sizes?",
+        "choices": [
+            "Configure all devices to use the standard MTU of 1500 bytes.",
+            "Configure all devices to use the maximum jumbo frame size supported by any device.",
+            "Configure devices that support jumbo frames to use the maximum size available and leave others at default.",
+            "Identify the highest MTU supported by all devices and configure each device to use this MTU."
+        ],
+        "answer_indices": [
+            3
+        ],
+        "explanation": "Identifying the highest MTU supported by all devices ensures efficient communication without fragmentation.",
+        "source_file": "resources\\questions\\q_frame_highest_mtu_scenario_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_arp_cache_arp_s_scenario_n09",
+        "topic": "ARP",
+        "prompt": "Which command would you use on a Windows computer to add a static ARP entry for a printer (IP: 192.168.1.50, MAC: 00:AA:BB:CC:DD:EE)?",
+        "choices": [
+            "arp -s 192.168.1.50 00-AA-BB-CC-DD-EE",
+            "arp -a",
+            "arp -d 192.168.1.50",
+            "ip neigh add 192.168.1.50 lladdr 00:AA:BB:CC:DD:EE nud permanent"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "The arp -s command is used to add a static ARP entry, with MAC address pairs separated by hyphens on Windows.",
+        "source_file": "resources\\questions\\q_arp_cache_arp_s_scenario_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_vlsm_scheme_first_step_n09",
+        "topic": "Subnetting",
+        "prompt": "What is the first step in designing a VLSM scheme?",
+        "choices": [
+            "Identifying the subnets with the fewest hosts",
+            "Organizing the scheme in ascending order of subnet size",
+            "Identifying the subnets with the most hosts",
+            "Allocating the largest possible subnet masks to each subnet"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "The first step is to identify subnets with the most hosts to ensure the largest subnets are accommodated first.",
+        "source_file": "resources\\questions\\q_vlsm_scheme_first_step_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_ipconfig_fact_release_renew_n09",
+        "topic": "Troubleshooting Tools",
+        "prompt": "Which two commands can you use to force a new IP configuration? (Select two.)",
+        "choices": [
+            "ipconfig /release",
+            "ipconfig/flushdns",
+            "ipconfig",
+            "ipconfig /all",
+            "ipconfig /renew"
+        ],
+        "answer_indices": [
+            0,
+            4
+        ],
+        "explanation": "You use ipconfig /release followed by ipconfig /renew to force a client to get a new IP configuration.",
+        "source_file": "resources\\questions\\q_ipconfig_fact_release_renew_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_path_attack_layer_2_spoofing_n09",
+        "topic": "Security",
+        "prompt": "A security analyst is investigating attacks against unencrypted Neighbor Discovery (ND) protocol. What is the attacker most likely trying to accomplish?",
+        "choices": [
+            "ARP cache poisoning",
+            "VLAN hopping",
+            "Evil twin",
+            "Layer 2 spoofing"
+        ],
+        "answer_indices": [
+            3
+        ],
+        "explanation": "Unencrypted Neighbor Discovery (ND) in IPv6 is vulnerable to Layer 2 spoofing.",
+        "source_file": "resources\\questions\\q_path_attack_layer_2_spoofing_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_route_config_router_placement_n09",
+        "topic": "Routing",
+        "prompt": "Which of the following statements is true regarding router placement in a network?",
+        "choices": [
+            "Hosts with addresses in the same subnet must be separated by a router.",
+            "Hosts with addresses in different subnets can be connected without a router.",
+            "Hosts with addresses in different subnets must be separated by a router.",
+            "Routers are not necessary for dividing networks into subnets."
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Hosts in different subnets require a router to facilitate communication between them.",
+        "source_file": "resources\\questions\\q_route_config_router_placement_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_cable_demarcation_point_n09",
+        "topic": "Structured Cabling",
+        "prompt": "Which of the following BEST describes a demarcation point in a structured cabling scheme?",
+        "choices": [
+            "The location where the building's power supply connects to the city's electrical grid",
+            "The point at which the access provider's network terminates and the organization's network begins",
+            "The central location for all wireless access points within a building",
+            "The highest point in the building where signal strength is measured"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The demarcation point is the boundary where the service provider's network ends and the customer's begins.",
+        "source_file": "resources\\questions\\q_cable_demarcation_point_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_sftp_implicit_tls_n09",
+        "topic": "Security",
+        "prompt": "Which method negotiates an SSL/TLS tunnel before the exchange of any FTP commands, using the secure port 990?",
+        "choices": [
+            "Explicit TLS",
+            "SSH",
+            "Implicit TLS",
+            "SFTP"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Implicit TLS negotiates the secure tunnel before any commands are sent, using port 990.",
+        "source_file": "resources\\questions\\q_sftp_implicit_tls_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_layer5_presentation_01_n09",
+        "topic": "OSI Model",
+        "prompt": "An application developer is troubleshooting issues with ASCII conversion. At which layer of the OSI model are they troubleshooting?",
+        "choices": [
+            "Application",
+            "Session",
+            "Data link",
+            "Presentation"
+        ],
+        "answer_indices": [
+            3
+        ],
+        "explanation": "The presentation layer transforms data between formats, including character encoding like ASCII.",
+        "source_file": "resources\\questions\\q_layer5_presentation_01_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_wave_multi_dwdm_scenario_n09",
+        "topic": "WDM",
+        "prompt": "A telecommunications company needs to increase transmission capacity over long distances without additional fibers. Which WDM type should they use?",
+        "choices": [
+            "Bidirectional Wavelength Division Multiplexing (BiDi)",
+            "Coarse Wavelength Division Multiplexing (CWDM)",
+            "Dense Wavelength Division Multiplexing (DWDM)",
+            "Simplex Wavelength Division Multiplexing (SWDM)"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "DWDM supports many channels over long distances, making it ideal for high-capacity long-distance needs.",
+        "source_file": "resources\\questions\\q_wave_multi_dwdm_scenario_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_int_route_interface_gigabit_command_n09",
+        "topic": "Switching",
+        "prompt": "A network administrator wants to set up a switch with a voice VLAN to distinguish PC and VoIP traffic. Which command should they perform first?",
+        "choices": [
+            "interface GigabitEthernet0/0",
+            "switchport mode access",
+            "switchport access vlan 100",
+            "switchport voice vlan 101"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "Configuring the specific interface is the necessary first step.",
+        "source_file": "resources\\questions\\q_int_route_interface_gigabit_command_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_snmp_security_snmp_v3_n09",
+        "topic": "SNMP",
+        "prompt": "Which version of SNMP supports encryption and strong user-based authentication?",
+        "choices": [
+            "SNMP v1",
+            "SNMP v2c",
+            "SNMP v3",
+            "SNMP v4"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "SNMP v3 introduces robust security features, including encryption and user-based authentication.",
+        "source_file": "resources\\questions\\q_snmp_security_snmp_v3_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_nmap_traceroute_scenario_n09",
+        "topic": "Security",
+        "prompt": "A security analyst suspects traffic is being routed through an unknown intermediary. Which Nmap command option traces the path?",
+        "choices": [
+            "nmap -sn 10.10.1.0/24",
+            "nmap -A 10.10.1.0/24",
+            "nmap --traceroute 10.10.1.0/24",
+            "nmap -p 80,443 10.10.1.0/24"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "The --traceroute option in Nmap traces the path packets take from the scanner to the target host.",
+        "source_file": "resources\\questions\\q_nmap_traceroute_scenario_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_apipa6_link_local_purpose_n09",
+        "topic": "IPv6",
+        "prompt": "What is the significance of a link-local address in IPv6?",
+        "choices": [
+            "It is used for routing packets over the Internet.",
+            "It is only necessary for devices acting as routers.",
+            "It must always be configured on an interface.",
+            "It is an optional configuration for improved network security."
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Every IPv6 interface must have a link-local address, which is fundamental for communication on the network segment.",
+        "source_file": "resources\\questions\\q_apipa6_link_local_purpose_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_attenuation_emi_source_n09",
+        "topic": "Cabling",
+        "prompt": "Which of the following can be a source of Electromagnetic Interference (EMI)?",
+        "choices": [
+            "Fiber optic cables transmitting data",
+            "Battery-powered digital watches",
+            "Electrical power cables",
+            "Plastic insulating materials"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Electrical power cables emit electromagnetic fields that can cause EMI in nearby data cables.",
+        "source_file": "resources\\questions\\q_attenuation_emi_source_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_coaxial_twinax_termination_n09",
+        "topic": "Cabling",
+        "prompt": "What type of termination is used with twinaxial cables for 10/40 GbE?",
+        "choices": [
+            "RJ-45 connectors",
+            "HDMI connectors",
+            "Direct Attach Copper (DAC) transceivers",
+            "USB connectors"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Twinaxial cables for 10/40 GbE are terminated using Direct Attach Copper (DAC) transceivers.",
+        "source_file": "resources\\questions\\q_coaxial_twinax_termination_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_snmp_community_string_role_n09",
+        "topic": "SNMP",
+        "prompt": "What is the purpose of a community string in SNMP?",
+        "choices": [
+            "To encrypt data packets",
+            "To serve as a type of password",
+            "To increase network speed",
+            "To identify the network topology"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "A community string in SNMP acts as a rudimentary password for authenticating access to SNMP agents.",
+        "source_file": "resources\\questions\\q_snmp_community_string_role_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_int_stats_discard_frames_n09",
+        "topic": "Troubleshooting",
+        "prompt": "What can cause an interface to discard frames?",
+        "choices": [
+            "Only security policies",
+            "Only network congestion",
+            "Errors, security policies, or high load",
+            "Proper functioning of the network"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Interfaces may discard frames due to various issues, including errors, security policies, or high load.",
+        "source_file": "resources\\questions\\q_int_stats_discard_frames_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_ad_hoc_point-to-point_purpose_n09",
+        "topic": "Wireless",
+        "prompt": "What is the primary purpose of a wireless point-to-point link?",
+        "choices": [
+            "To connect multiple devices in a network without using cables",
+            "To establish a logical and physical connection between two devices",
+            "To create a scalable network for large enterprise implementations",
+            "To replace all wired connections in an office environment"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "A wireless point-to-point link is used to bridge two locations, creating a dedicated connection between exactly two devices.",
+        "source_file": "resources\\questions\\q_ad_hoc_point-to-point_purpose_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_tagged_trunk_link_n09",
+        "topic": "VLANs",
+        "prompt": "Which statement accurately describes the behavior of a switch when forwarding a frame over a trunk link?",
+        "choices": [
+            "The switch always removes any existing 802.1Q tag before forwarding.",
+            "The switch adds the relevant 802.1Q tag to identify the VLAN, then forwards the frame.",
+            "The switch forwards the frame without inspecting or modifying any VLAN tags.",
+            "The switch converts the frame into an untagged frame before forwarding."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The switch adds an 802.1Q tag to frames over a trunk link to ensure the VLAN is identified by the receiving device.",
+        "source_file": "resources\\questions\\q_tagged_trunk_link_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_saml_not_federated_protocol_n09",
+        "topic": "Identity Management",
+        "prompt": "Which protocol is NOT directly associated with federated identity management?",
+        "choices": [
+            "Kerberos",
+            "OAuth",
+            "SAML",
+            "FTP"
+        ],
+        "answer_indices": [
+            3
+        ],
+        "explanation": "FTP is a file transfer protocol and is not associated with federated identity management.",
+        "source_file": "resources\\questions\\q_saml_not_federated_protocol_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_dns_security_compromised_key_n09",
+        "topic": "DNS",
+        "prompt": "In DNSSEC, what happens if the Zone Signing Key is compromised?",
+        "choices": [
+            "The entire domain must be taken offline.",
+            "The key is revoked and a new one is issued.",
+            "DNSSEC becomes ineffective and must be disabled.",
+            "The Key Signing Key must also be replaced."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "If the Zone Signing Key is compromised, it can be revoked and replaced without taking the domain offline.",
+        "source_file": "resources\\questions\\q_dns_security_compromised_key_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_antennas_dual-polarized_n091",
+        "topic": "Wireless",
+        "prompt": "Why are dual-polarized antennas particularly useful for supporting mobile devices?",
+        "choices": [
+            "They focus the signal in a single direction for increased range.",
+            "They can be installed in either orientation",
+            "They reduce the need for precise alignment between the sender and receiver.",
+            "They increase the frequency of the radio waves for better penetration."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Dual-polarized antennas can be installed in either orientation, which accommodates the various ways users hold mobile devices.",
+        "source_file": "resources\\questions\\q_antennas_dual-polarized_n091.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_rbac_permissions_assigned_n09",
+        "topic": "Identity Management",
+        "prompt": "In a Role-Based Access Control (RBAC) system, how are permissions typically assigned?",
+        "choices": [
+            "Directly to individual users",
+            "Based on employee tasks performed",
+            "According to the sensitivity of the data",
+            "Randomly for security purposes"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "In RBAC, permissions are assigned to roles based on the tasks or functions an employee performs.",
+        "source_file": "resources\\questions\\q_rbac_permissions_assigned_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_ntp_stratum_01_scenario_n09",
+        "topic": "NTP",
+        "prompt": "Which type of NTP server should the network administrator plan to connect to directly for the most accurate time?",
+        "choices": [
+            "Stratum 2",
+            "Stratum 1",
+            "Stratum 3",
+            "Stratum 4"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Stratum 1 servers are directly connected to an accurate source like an atomic clock, making them the most accurate.",
+        "source_file": "resources\\questions\\q_ntp_stratum_01_scenario_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_jump_malicious_actors_n09",
+        "topic": "Security",
+        "prompt": "What is the consequence of failing to manage credentials properly for a jump box?",
+        "choices": [
+            "Increased network latency",
+            "Reduced data storage needs",
+            "Exploitation by malicious actors",
+            "Enhanced system performance"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Failing to manage jump box credentials can lead to exploitation by malicious actors who gain unauthorized access.",
+        "source_file": "resources\\questions\\q_jump_malicious_actors_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_rogue_devices_primary_purpose_n09",
+        "topic": "Security",
+        "prompt": "What is one primary purpose of rogue devices and services?",
+        "choices": [
+            "To enhance network security",
+            "To facilitate faster internet connections",
+            "To steal sensitive information.",
+            "To provide backup services in case of network failure"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Rogue devices are often used by attackers to steal sensitive information.",
+        "source_file": "resources\\questions\\q_rogue_devices_primary_purpose_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_detect_device_cctv_ptz_example_n09",
+        "topic": "CCTV",
+        "prompt": "You want to use CCTV and be able to remotely control the camera position. Which camera type should you choose?",
+        "choices": [
+            "PTZ",
+            "Bullet",
+            "C-mount",
+            "Dome"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "A Pan Tilt Zoom (PTZ) camera allows for remote control of the camera's position.",
+        "source_file": "resources\\questions\\q_detect_device_cctv_ptz_example_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_wireless_encrypt_pmf_n09",
+        "topic": "Wireless",
+        "prompt": "Which of the following is a feature introduced in WPA3 to improve security over WPA2?",
+        "choices": [
+            "Use of the RC4 cipher",
+            "Temporal Key Integrity Protocol (TKIP)",
+            "Protected Management Frames (PMF)",
+            "Wired Equivalent Privacy (WEP)"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Protected Management Frames (PMF) is a security feature in WPA3 that encrypts management frames to prevent unauthorized disconnects.",
+        "source_file": "resources\\questions\\q_wireless_encrypt_pmf_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_wireless_design_band_steering_limitation_n09",
+        "topic": "Wireless",
+        "prompt": "What is the primary limitation of band steering that can lead to poor performance in some circumstances?",
+        "choices": [
+            "It requires all devices to support the 6 GHz band.",
+            "It uses signal strength as the primary factor for steering decisions.",
+            "It reduces the number of beacons for the 2.4 GHz network.",
+            "It forces all devices to connect only to the 5 GHz band."
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Band steering reduces 2.4 GHz beacons to encourage 5/6 GHz connections, which can cause poor performance for devices far from the AP.",
+        "source_file": "resources\\questions\\q_wireless_design_band_steering_limitation_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_deception_honeypot_n09",
+        "topic": "Security",
+        "prompt": "What is a honeypot in the context of cybersecurity?",
+        "choices": [
+            "A type of malware designed to steal data",
+            "A computer system set up to attract attackers",
+            "A software tool used for encrypting data",
+            "A firewall configuration technique"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "A honeypot is a decoy system designed to attract and study attackers.",
+        "source_file": "resources\\questions\\q_deception_honeypot_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_hub_physical_layer_n09",
+        "topic": "Networking Basics",
+        "prompt": "At which layer of the OSI model does a hub operate?",
+        "choices": [
+            "Application Layer",
+            "Network Layer",
+            "Data Link Layer",
+            "Physical Layer"
+        ],
+        "answer_indices": [
+            3
+        ],
+        "explanation": "Hubs operate at the Physical layer (Layer 1) of the OSI model, as they just repeat electrical signals.",
+        "source_file": "resources\\questions\\q_hub_physical_layer_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_wifi_cover_site_survey_heat_map_n09",
+        "topic": "Wireless",
+        "prompt": "What is the purpose of conducting a site survey and creating a heat map in the context of wireless coverage?",
+        "choices": [
+            "To identify the best coffee shops for remote work",
+            "To determine the optimum position for access points and antenna direction",
+            "To calculate the total number of users in a network",
+            "To assess the speed of the internet connection"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Site surveys and heat maps are used to determine the optimal placement for access points and antennas.",
+        "source_file": "resources\\questions\\q_wifi_cover_site_survey_heat_map_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_agreements_rfc_scenario_n09",
+        "topic": "Change Management",
+        "prompt": "You are part of the change management team planning a major CRM upgrade. What step should you take first?",
+        "choices": [
+            "Implement the upgrade immediately to minimize downtime.",
+            "Submit a Request for Change (RFC) document for approval.",
+            "Directly inform the IT department to start the upgrade process.",
+            "Bypass the change management process to expedite the upgrade."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The first step in a formal change management process is to submit a Request for Change (RFC) for approval.",
+        "source_file": "resources\\questions\\q_agreements_rfc_scenario_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_nat_static_mapping_n09",
+        "topic": "NAT",
+        "prompt": "Which of the following NAT implementations maps a single private IP address to a single public IP address?",
+        "choices": [
+            "IP masquerade",
+            "Static NAT",
+            "Many-to-one NAT",
+            "Dynamic NAT"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Static NAT creates a fixed one-to-one mapping between a private and public IP address.",
+        "source_file": "resources\\questions\\q_nat_static_mapping_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "q_lag_lacp_active_mode_scenario_n09",
+        "topic": "Switching",
+        "prompt": "What configuration should be applied to effectively increase bandwidth via link aggregation between servers and a switch?",
+        "choices": [
+            "Configure the server's network interfaces and switch ports in LACP passive mode.",
+            "Configure the server's network interfaces in LACP active mode and switch ports in LACP passive mode.",
+            "Disable three network interfaces on each server to focus traffic through a single 1 Gbps connection.",
+            "Configure all network interfaces and switch ports to operate at 100 Mbps."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Configuring the server's interfaces in LACP active mode and the switch ports in LACP passive mode forms the Link Aggregation Group.",
+        "source_file": "resources\\questions\\q_lag_lacp_active_mode_scenario_n09.question.xml",
+        "domain_id": 1,
+        "difficulty": "standard",
+        "tags": []
+    },
+    {
+        "id": "modern-env-1",
+        "topic": "Infrastructure as Code",
+        "prompt": "An organization is struggling with 'snowflake systems' where manual configurations have caused subtle differences across server clusters. Which primary goal of Infrastructure as Code (IaC) is MOST likely being ignored in this scenario?",
+        "choices": [
+            "Encapsulation of legacy protocols",
+            "Elimination of environment drift and lack of consistency",
+            "Reducing the cost of cloud storage",
+            "Implementing physical layer redundancy"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Snowflakes are unique configurations that differ from the rest of the environment. IaC aims to eliminate this 'drift' by using automation to ensure every build is consistent and repeatable.",
+        "source_file": "notes/modern_network_environments.txt",
+        "domain_id": 3,
+        "difficulty": "hard"
+    },
+    {
+        "id": "modern-env-2",
+        "topic": "Immutable Architecture",
+        "prompt": "A developer needs to update a security patch on several production instances. According to the principles of 'Immutable Architecture' as deployed by IaC, what is the CORRECT procedure for applying this change?",
+        "choices": [
+            "Connect to each instance via SSH and run the patch script.",
+            "Schedule a maintenance window to update the instances in place.",
+            "Deploy new instances with the patch included and decommission the old ones.",
+            "Wait for the cloud provider to perform an automatic underlying hardware update."
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Immutable architecture means instances are never updated in place. If a change is needed, new instances are provisioned to replace the old ones, ensuring consistency and preventing configuration rot.",
+        "source_file": "notes/modern_network_environments.txt",
+        "domain_id": 2,
+        "difficulty": "hard"
+    },
+    {
+        "id": "modern-env-3",
+        "topic": "Automation Tools",
+        "prompt": "A network engineer wants to use an automation tool that takes the 'desired configuration' as input and allows the platform to determine the specific steps needed to achieve that state. Which type of tool is the engineer looking for?",
+        "choices": [
+            "Imperative",
+            "Procedural",
+            "Declarative",
+            "Sequential"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Declarative tools focus on the 'what' (the desired end state), leaving the 'how' to the implementation platform. Imperative tools require a precise series of steps (the 'how').",
+        "source_file": "notes/modern_network_environments.txt",
+        "domain_id": 1,
+        "difficulty": "standard"
+    },
+    {
+        "id": "modern-env-4",
+        "topic": "SDN Architecture",
+        "prompt": "In a Software-Defined Networking (SDN) model, an administrator is configuring traffic prioritization and ACL policies. At which layer of the SDN architecture is the business logic for these decisions being applied?",
+        "choices": [
+            "Infrastructure Layer",
+            "Control Layer",
+            "Application Layer",
+            "Management Plane"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "The Application Layer in the SDN model applies the business logic and defines policies such as segmentation, ACLs, and traffic prioritization.",
+        "source_file": "notes/modern_network_environments.txt",
+        "domain_id": 1,
+        "difficulty": "hard"
+    },
+    {
+        "id": "modern-env-5",
+        "topic": "Spine and Leaf",
+        "prompt": "A data center architect is moving away from traditional three-tier designs to a Spine and Leaf topology. What is the PRIMARY benefit regarding latency for 'East-West' traffic in this design?",
+        "choices": [
+            "Traffic must pass through a centralized core router, increasing security.",
+            "Every leaf switch is exactly one hop away from every other leaf switch via the spine, making latency predictable.",
+            "It eliminates the need for any Layer 3 routing between servers.",
+            "Leaf switches handle all North-South traffic, reducing the load on the spine."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Spine and Leaf architecture ensures that any two leaf switches are exactly one hop away through the spine, which provides low and highly predictable latency for server-to-server (East-West) traffic.",
+        "source_file": "notes/modern_network_environments.txt",
+        "domain_id": 2,
+        "difficulty": "hard"
+    },
+    {
+        "id": "modern-env-6",
+        "topic": "Storage Area Networks",
+        "prompt": "A company is implementing a SAN and requires the most modern option for offloading storage transfers from the CPU and OS to improve performance. Which technology should they choose?",
+        "choices": [
+            "Fibre Channel (FC)",
+            "iSCSI",
+            "NVMe over RDMA over Converged Ethernet (RoCE)",
+            "Fibre Channel over Ethernet (FCoE)"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "NVMe over RoCE uses Remote Direct Memory Access (RDMA) to offload transfers from the CPU, providing significantly better performance than older storage protocols.",
+        "source_file": "notes/modern_network_environments.txt",
+        "domain_id": 2,
+        "difficulty": "hard"
+    },
+    {
+        "id": "modern-env-7",
+        "topic": "Fibre Channel",
+        "prompt": "In a Fibre Channel SAN, what is the 64-bit identifier used to identify initiators and targets, functioning as the equivalent of a MAC address?",
+        "choices": [
+            "LUN (Logical Unit Number)",
+            "WWN (WorldWide Name)",
+            "VNI (Virtual Network Identifier)",
+            "HBA (Host Bus Adapter)"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "WWNs (WorldWide Names) are 64-bit identifiers used in Fibre Channel fabrics to uniquely identify nodes (WWNN) and ports (WWPN), similar to MAC addresses in Ethernet.",
+        "source_file": "notes/modern_network_environments.txt",
+        "domain_id": 1,
+        "difficulty": "standard"
+    },
+    {
+        "id": "modern-env-8",
+        "topic": "Zero Trust Architecture",
+        "prompt": "An organization is implementing Zero Trust Architecture (ZTA). A user successfully authenticates with their credentials but is still denied access to a specific database because their device does not meet the required security posture. This is an example of which ZTA concept?",
+        "choices": [
+            "Policy-based Authentication",
+            "Policy-driven Authorization",
+            "Implicit Trust",
+            "Data Plane Isolation"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Policy-driven Authorization enforces restrictions even after authentication, based on factors like user identity, device posture (security state), and network context.",
+        "source_file": "notes/modern_network_environments.txt",
+        "domain_id": 4,
+        "difficulty": "hard"
+    },
+    {
+        "id": "modern-env-9",
+        "topic": "SDN Control Plane",
+        "prompt": "Which component in an SDN architecture is responsible for implementing the rules defined by the application layer and communicating them to the hardware in the infrastructure layer?",
+        "choices": [
+            "Forwarding Plane",
+            "SDN Controller",
+            "Top-of-Rack Switch",
+            "Management Plane"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The SDN Controller resides in the control layer (between application and infrastructure) and is the principal innovation that centralizes management and pushes policy to the data plane hardware.",
+        "source_file": "notes/modern_network_environments.txt",
+        "domain_id": 1,
+        "difficulty": "standard"
+    },
+    {
+        "id": "modern-env-10",
+        "topic": "VXLAN",
+        "prompt": "An administrator needs to create a Layer 2 overlay network across a Layer 3 underlay and requires more than the 4,096 VLAN IDs supported by 802.1Q. Which technology and identifier should they use?",
+        "choices": [
+            "LACP with a 32-bit ID",
+            "VXLAN with a 24-bit Virtual Network Identifier (VNI)",
+            "STP with a 12-bit Bridge ID",
+            "BGP with a 16-bit AS Number"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "VXLAN provides a 24-bit VNI, allowing for up to 16 million logical networks, far exceeding the 12-bit (4,096) limit of standard 802.1Q VLANs.",
+        "source_file": "notes/modern_network_environments.txt",
+        "domain_id": 2,
+        "difficulty": "hard"
+    },
+    {
+        "id": "modern-env-11",
+        "topic": "Datacenter Interconnect",
+        "prompt": "A company wants to stretch a Layer 2 broadcast domain between two geographically separate datacenters. Which combination of technologies is MOST effective for providing Layer 2 adjacency over a Layer 3 link without creating complex spanning tree issues?",
+        "choices": [
+            "Fibre Channel and iSCSI",
+            "VXLAN and Ethernet VPN (EVPN)",
+            "Cat 6a and 10GBASE-T",
+            "RIP and OSPF"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "VXLAN and EVPN together provide a robust way to implement Datacenter Interconnects (DCI), allowing for Layer 2 adjacency over Layer 3 while mitigating broadcast and spanning tree concerns.",
+        "source_file": "notes/modern_network_environments.txt",
+        "domain_id": 2,
+        "difficulty": "hard"
+    },
+    {
+        "id": "modern-env-12",
+        "topic": "Storage Networking",
+        "prompt": "A storage engineer is delivering Fibre Channel packets over a lossless Ethernet fabric. Which specialized component is required on the server to handle this converged traffic?",
+        "choices": [
+            "Standard NIC",
+            "Host Bus Adapter (HBA)",
+            "Converged Network Adapter (CNA)",
+            "SFP+ Transceiver"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "A CNA (Converged Network Adapter) combines the functions of an Ethernet NIC and a Fibre Channel HBA, allowing a single adapter to handle both types of traffic.",
+        "source_file": "notes/modern_network_environments.txt",
+        "domain_id": 2,
+        "difficulty": "standard"
+    },
+    {
+        "id": "modern-env-13",
+        "topic": "Idempotence",
+        "prompt": "When using IaC, a technician is told that the automation scripts must be 'idempotent'. What does this guarantee for the network environment?",
+        "choices": [
+            "That the script will run faster each time it is executed.",
+            "That making the same call with the same parameters will always produce the same result, regardless of the initial state.",
+            "That the script will automatically roll back if it encounters an error.",
+            "That the script is compatible with both Windows and Linux environments."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Idempotence ensures that applying an automation script multiple times results in the same final configuration, which is critical for maintaining consistency and preventing drift.",
+        "source_file": "notes/modern_network_environments.txt",
+        "domain_id": 3,
+        "difficulty": "hard"
+    },
+    {
+        "id": "modern-env-14",
+        "topic": "Automation Playbooks",
+        "prompt": "An automation playbook is being developed to replace a manual Standard Operating Procedure (SOP). What should be the aim of this playbook regarding human intervention?",
+        "choices": [
+            "To eliminate all human intervention to maximize speed.",
+            "To script as many stages as possible while leaving clearly defined points for human verification or decision-making.",
+            "To require human approval for every single line of code executed.",
+            "To only automate the physical layer connections."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Effective automation playbooks script the repetitive parts of an SOP but include defined points where humans can make informed decisions or verify results, especially for remediation tasks.",
+        "source_file": "notes/modern_network_environments.txt",
+        "domain_id": 3,
+        "difficulty": "standard"
+    },
+    {
+        "id": "modern-env-15",
+        "topic": "SD-WAN",
+        "prompt": "A company is replacing their traditional hub-and-spoke WAN with SD-WAN. Which underlay networks can the SD-WAN overlay typically utilize to establish secure tunnels?",
+        "choices": [
+            "Only private MPLS links",
+            "Only dedicated fiber optic lines",
+            "Any available IP fabric, including broadband, 4G/5G, and MPLS",
+            "Only physical serial connections"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "SD-WAN is transport-agnostic, meaning it can use any available IP underlay (broadband, cellular, MPLS) to provision its secure overlay network.",
+        "source_file": "notes/modern_network_environments.txt",
+        "domain_id": 2,
+        "difficulty": "standard"
+    },
+    {
+        "id": "cloud-concept-1",
+        "topic": "Cloud Scalability",
+        "prompt": "An e-commerce company is experiencing a linear increase in costs as their user base grows, but they notice that adding double the users now costs quadruple the resources. According to cloud principles, which property is this system CURRENTLY lacking?",
+        "choices": [
+            "Elasticity",
+            "Scalability",
+            "Non-persistence",
+            "Multi-tenancy"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Scalability means that resources or costs involved in supplying the service are linear. If doubling users costs quadruple the resources, the system is not scaling efficiently.",
+        "source_file": "notes/summarizing_cloud_concepts.txt",
+        "domain_id": 1,
+        "difficulty": "hard"
+    },
+    {
+        "id": "cloud-concept-2",
+        "topic": "Cloud Deployment Models",
+        "prompt": "A highly regulated bank requires cloud infrastructure that is completely isolated and owned by the organization to ensure strict access control. Which deployment model should they implement?",
+        "choices": [
+            "Public Cloud",
+            "Hybrid Cloud",
+            "Private Cloud",
+            "Community Cloud"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Private clouds are owned and used exclusively by a single organization, making them ideal for high-security environments like banking or government.",
+        "source_file": "notes/summarizing_cloud_concepts.txt",
+        "domain_id": 1,
+        "difficulty": "standard"
+    },
+    {
+        "id": "cloud-concept-3",
+        "topic": "VPC Subnets",
+        "prompt": "A cloud engineer has attached an Internet Gateway to a VPC but notices that instances in a specific subnet still cannot reach the internet. What is the MOST likely configuration step that was missed?",
+        "choices": [
+            "The instances need more RAM allocated.",
+            "The Internet Gateway must be configured as the default route for that subnet in its route table.",
+            "The engineer must enable IPv6 on the VPC.",
+            "The instances must be moved to a private subnet."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Attaching an Internet Gateway is only the first step. For a subnet to be 'public', its route table must have a default route (0.0.0.0/0) pointing to that Internet Gateway.",
+        "source_file": "notes/summarizing_cloud_concepts.txt",
+        "domain_id": 2,
+        "difficulty": "hard"
+    },
+    {
+        "id": "cloud-concept-4",
+        "topic": "Cloud Gateways",
+        "prompt": "You need to allow instances in a private subnet to download security updates from the internet, but you must prevent any connections from being INITIATED from the internet. Which gateway type should you use?",
+        "choices": [
+            "Internet Gateway",
+            "NAT Gateway",
+            "Transit Gateway",
+            "Direct Connect"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "A NAT Gateway is a one-way (outbound only) gateway. it allows private instances to reach the internet for updates but blocks unsolicited inbound traffic.",
+        "source_file": "notes/summarizing_cloud_concepts.txt",
+        "domain_id": 2,
+        "difficulty": "standard"
+    },
+    {
+        "id": "cloud-concept-5",
+        "topic": "CASB Implementation",
+        "prompt": "A security team wants to enforce access controls on cloud services without placing an appliance inline between the users and the cloud. Which CASB implementation method is MOST appropriate?",
+        "choices": [
+            "Forward Proxy",
+            "Reverse Proxy",
+            "API-based CASB",
+            "Local Host Firewall"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "An API-based CASB uses direct connections between the cloud service and the consumer via APIs, avoiding the need for an inline proxy appliance.",
+        "source_file": "notes/summarizing_cloud_concepts.txt",
+        "domain_id": 4,
+        "difficulty": "hard"
+    },
+    {
+        "id": "cloud-concept-6",
+        "topic": "VPC Isolation",
+        "prompt": "Within a single Cloud Service Provider (CSP) account, an administrator creates two separate Virtual Private Clouds (VPCs). By default, what is the connectivity status between instances in these two VPCs?",
+        "choices": [
+            "They can communicate freely over the CSP's backbone.",
+            "They are completely isolated from each other.",
+            "They share the same default route table.",
+            "They can communicate if they are in the same region."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Virtual Private Clouds are isolated from other VPCs by default, even within the same account. Communication between them must be explicitly configured via routing or a Transit Gateway.",
+        "source_file": "notes/summarizing_cloud_concepts.txt",
+        "domain_id": 1,
+        "difficulty": "standard"
+    },
+    {
+        "id": "cloud-concept-7",
+        "topic": "Transit Gateways",
+        "prompt": "A company is growing rapidly and now has 50 different VPCs that all need to communicate with each other. What is the MOST efficient way to manage this complex interconnectivity?",
+        "choices": [
+            "Create a full mesh of individual VPC peering links.",
+            "Deploy a Transit Gateway to act as a central virtual router for all VPCs.",
+            "Use a single Internet Gateway for all 50 VPCs.",
+            "Configure a Direct Connect link between every VPC pair."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "A Transit Gateway acts as a central hub, significantly simplifying the routing and connectivity management for a large number of VPCs.",
+        "source_file": "notes/summarizing_cloud_concepts.txt",
+        "domain_id": 2,
+        "difficulty": "standard"
+    },
+    {
+        "id": "cloud-concept-8",
+        "topic": "Cloud Firewalls",
+        "prompt": "An administrator needs to filter traffic based on application-layer protocol headers (like HTTP) within their VPC. At which layer of the OSI model must the firewall operate to achieve this?",
+        "choices": [
+            "Layer 3",
+            "Layer 4",
+            "Layer 7",
+            "Layer 2"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Layer 7 firewalls can parse application-level data to make filtering decisions, whereas Layer 3/4 firewalls are limited to IP addresses and port numbers.",
+        "source_file": "notes/summarizing_cloud_concepts.txt",
+        "domain_id": 4,
+        "difficulty": "standard"
+    },
+    {
+        "id": "cloud-concept-9",
+        "topic": "Security Groups",
+        "prompt": "A cloud engineer is configuring a security group in AWS. They notice that once they allow an inbound connection on port 443, the return traffic is automatically permitted without a separate outbound rule. What is this property called?",
+        "choices": [
+            "Stateless filtering",
+            "Stateful filtering",
+            "Transparent proxying",
+            "Application awareness"
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Security groups are stateful. They track the state of connections and automatically allow return traffic for any accepted session, regardless of outbound rules.",
+        "source_file": "notes/summarizing_cloud_concepts.txt",
+        "domain_id": 4,
+        "difficulty": "hard"
+    },
+    {
+        "id": "cloud-concept-10",
+        "topic": "Internet Gateways",
+        "prompt": "When an instance in a public VPC subnet communicates with the internet through an Internet Gateway, where is the public IP address typically configured?",
+        "choices": [
+            "Directly on the instance's virtual network interface.",
+            "In the instance's cloud profile, with the gateway performing 1:1 NAT.",
+            "On the local router's physical WAN port.",
+            "In the instance's HOSTS file."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "The instance interface is usually configured with a private subnet address. The public IP is associated with the instance in the cloud management layer, and the gateway performs 1:1 NAT.",
+        "source_file": "notes/summarizing_cloud_concepts.txt",
+        "domain_id": 2,
+        "difficulty": "hard"
+    },
+    {
+        "id": "cloud-concept-11",
+        "topic": "NFV Architecture",
+        "prompt": "A service provider is using Network Functions Virtualization (NFV). Which component is responsible for specifically specifying and deploying the instances of virtual appliances like firewalls and routers?",
+        "choices": [
+            "VNF (Virtual Network Function)",
+            "NFV Infrastructure",
+            "MANO (Management and Orchestration)",
+            "SDN Controller"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "The VNF (Virtual Network Function) defines and deploys the specific instances of the virtualized network appliances.",
+        "source_file": "notes/summarizing_cloud_concepts.txt",
+        "domain_id": 2,
+        "difficulty": "standard"
+    },
+    {
+        "id": "cloud-concept-12",
+        "topic": "Direct Connect",
+        "prompt": "A company requires a high-volume, mission-critical connection to their cloud provider that avoids the latency and jitter issues of the public internet. Which connectivity option should they choose?",
+        "choices": [
+            "Client-to-site VPN",
+            "Site-to-site VPN over Broadband",
+            "Direct Connect / Colocation",
+            "Transit Gateway over 5G"
+        ],
+        "answer_indices": [
+            2
+        ],
+        "explanation": "Direct Connect provides a physical, dedicated connection from the customer network to the CSP's datacenter, offering better and more predictable performance than internet-based solutions.",
+        "source_file": "notes/summarizing_cloud_concepts.txt",
+        "domain_id": 2,
+        "difficulty": "standard"
+    },
+    {
+        "id": "cloud-concept-13",
+        "topic": "Hybrid Cloud Risk",
+        "prompt": "A company uses a Hybrid Cloud model, running their primary database on-premises but utilizing public cloud for high-demand web processing. What is a CRITICAL security consideration when moving data between these environments?",
+        "choices": [
+            "Data risk and encryption during transit",
+            "The physical weight of the storage drives",
+            "The color of the Cat 6 cables used in the private cloud",
+            "Ensuring the web server has a static MAC address"
+        ],
+        "answer_indices": [
+            0
+        ],
+        "explanation": "Flexibility is an advantage, but data risk must be managed when moving information between private and public storage environments, particularly ensuring confidentiality and integrity during transit.",
+        "source_file": "notes/summarizing_cloud_concepts.txt",
+        "domain_id": 4,
+        "difficulty": "standard"
+    },
+    {
+        "id": "cloud-concept-14",
+        "topic": "SaaS and Responsibility",
+        "prompt": "An organization adopts a SaaS (Software as a Service) model for their email. According to standard cloud service models, what is the organization MOST likely responsible for managing?",
+        "choices": [
+            "The physical server hardware",
+            "The underlying virtualization layer",
+            "The application software and its updates",
+            "User access and data stored within the service"
+        ],
+        "answer_indices": [
+            3
+        ],
+        "explanation": "In SaaS, the provider manages everything including the app. The customer is typically only responsible for managing their own data and user access.",
+        "source_file": "notes/summarizing_cloud_concepts.txt",
+        "domain_id": 1,
+        "difficulty": "standard"
+    },
+    {
+        "id": "cloud-concept-15",
+        "topic": "Non-persistence",
+        "prompt": "An administrator is designing a cloud environment for 'non-persistence'. What is a key architectural requirement to ensure an instance can be swapped out for an 'as new' copy without loss of data?",
+        "choices": [
+            "Data must be stored on the same partition as the OS.",
+            "Data must be kept separate from the instance OS/application.",
+            "The instance must never be turned off.",
+            "The instance must use a master image for all data storage."
+        ],
+        "answer_indices": [
+            1
+        ],
+        "explanation": "Non-persistence requires decoupling data from the compute instance. This allows the OS/app instance to be replaced at any time without affecting the user's data.",
+        "source_file": "notes/summarizing_cloud_concepts.txt",
+        "domain_id": 3,
+        "difficulty": "hard"
     }
 ]

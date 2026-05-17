@@ -8,6 +8,7 @@ Network Security Fundamentals
   - Phishing.
   - DoS / DDoS attacks.
 * Mitigations:
+  - Test edit
   - Firewalls.
   - IPS/IDS.
   - Strong passwords and MFA.

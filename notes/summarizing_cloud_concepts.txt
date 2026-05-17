@@ -1,0 +1,273 @@
+# Datacenter and Storage Networks
+# Data Center Network Design
+
+Data center is a site dedicated to provisioning server resources. Hosts networks services such as:
+	- Authentication
+	- Addressing
+	- Name resolution
+	- Application Servers
+	- Storage Area Networks (SANs)
+
+Has dedicated networking, power, climate control, and physical access control features to provide a highly available environment for running critical applications.
+
+* Data centers do not include no client PCs other than hardened SAWs.
+
+Historically they followed the three-tiered architecture with core, distribution, and access layer switches.
+
+North-south: Traffic that goes to and from a data center
+East-west: design paradigm accounting for the fact that data center traffic between servers is greater than that passing in and out (north-south).
+
+# Spine and Leaf topology
+
+Provides better support for east-west traffic and the use of SDN and overlay networks within datacenters
+
+	- Each server is a hope away from the backbone, making latency more predictable
+	- There are multiple redundant paths between a leaf switch and the banckpone, allowing for load balancing and failover
+	- Servers are connected to multiple leaf switches for multipath redundancy.
+	- Scalability is improved because adding a spine or leaf nodes does not change the topology. Adding capacity is then, easy.
+
+Leaf layer access switches are implemented as top-of-rack (ToR) switch models. Designed to provide high-speed connectivity to a rack of server appliances and support higher bandwidths than ordinary workgroup switches.
+
+# Storage Area Networks
+
+Network dedicated to provisioning storage resources, typically consisting of storage devices and servers connected to switches via host bus adapters.
+	- SAN provisions access to storage devices using block input/output (I/O). like direct-attached storage.
+	- Difference lies on the fact that read/write requests are communicated from the server to the storage device over the network.
+
+SANs can integrate different types of storage technology. RAID arrays and tape libraries, for instance.
+It can contain a mixture of high-speed and low-cost devices, allowing for tiered storage to support different types of file access requirements without having to overprovision high-cost, fast drives.
+
+# Fibre Channel
+
+Is defined in the T11 ANSI standard.
+It uses its own dedicated cabling system.
+
+Initiator - Server that has access to the SAN through a host bus adapter (HBA)
+Target - 	This is the network port for a storage device.
+			Typical devices include single drives, RAID drive arrays, tape drives, and tape libraries.
+			Space on the storage devices is divided into logical volumes, each identified by a 64-bit logical unit number (LUN)
+			The initiator will use SCSI, Serial Attached SCSI (SAS), SATA or Non-volatile Memory Express. Depending on which interface they support.
+			Most devices have multiple ports for load balancing and fault tolerance.
+				1. The Initiators and targets are identified by 64-bit WorldWide Names (WWN)
+					* The MAC Address Equivalent
+
+				Initiators and Targets are reffered to as nodes, each node can have its own WorldWide Node Name (WWNN)
+				As well as ports on a node can have its own WorldWide Port Name (WWPN)
+
+FC Switch -	This provides the interconnections between initiators and targets (a fabric).
+
+Fibre Channel can use rates from 1GFC (1 Gbps) up to 128GFC. Fibre channel uses dedicates SFP+ and QSFP optical and twinax modular transceivers. Fibre channel transceivers and Ethernet Transceivers are not interchangeable.
+
+i) 	Most SANs now depend on fast, higly parallel SSDs.
+	That is why NVME specification is typically preferred over the older SCSI interface.
+	NVMe in a networked environment is reffered to as NVMe over Fabrics (NVMe-oF)
+
+# Converged Ethernet
+
+SAN requires QoS and that is why fibre channel is used over standard Ethernet.
+
+However, there are new iteraitons of Ethernet, referred to as
+	- Lossless ethernet
+	- Data center ethernet
+	- or Converged Enhanced Ethernet
+
+	Which have been developed as an alternative SAN fabric.
+
+	Fibre Channel over Ethernet (FCoE) is a means of delivering Fibre Channel packets over lossless Ethernet components
+	FCoE requires special 10/40/100G adapters that combine the function of NIC and HBA, referred to as converged network adapters (CNAs).
+
+	A more modern option is NVMe over Remote Direct Memory Access (RDMA) over Converged Ethernet (RoCE)
+
+	RDMA is a way of offloading storage transfers from the CPU and OS to improve performance compared to NVMe/FC
+
+# TCP/IP
+
+NVMe over TCP uses the reliability mechanisms in TCP to substitute of the lossless mechanisms of FC or CE.
+
+	i) A SAN Should not share traffic with production floors. It should have its own dedicated network.
+
+# Cloud Scalability and Elasticity
+
+- End users see cloud computing as a service the provide on-demand resources.
+- Providers see cloud computing like provisioning any other type of large-scale datacenter.
+
+The cloud provides scalability and elasticity.
+
+	- Scalability:	means that the resources or costs involved in supplying the service to more users are linear.
+					Double users should be equal to double the cost.
+					Double users and quadruple cost means there is no good scalability.
+
+	- Elasticity:	Means the ability to maintain performance even if there is an increase in user demand.
+					It also should be able to reduce cost when the demand is low.
+
+To meet scalability and elasticity, the system should be able to provision and deprovision resources automatically through resource pooling and virtualization.
+
+# Cloud Deployment Models
+
+Classifies how the service is owned and provisioned.
+
+	- Public (or multinenant):	offered over the internet by Cloud Service Providers (CSPs) to cloud consumers, often 								referred to as tenants.
+
+	- Hosted Private (or single tenant):	hosted by a third party for the exclusive use of one organization. This is 											secure and can guarantee a better level of performance.
+											More expensive.
+
+	- Private:	Cloud infrastructure that is completely private to and owned by the organization.
+				More towards banking and governmental since it requires strict access control.
+
+	- Hybrid:	Mixes public and private cloud solutions. Like running a web server privately most of the year but 					recurring to public when higher utilization is forecast.
+
+	Flexibility is a key advantage of cloud computing, but the implications of data risk must be well understood when moving data between public and private storage environments.
+
+# Cloud Service Models
+* add content
+
+# Content Delivery Networks
+* missing content
+
+# Cloud Instances
+
+	- VM:	instance of a computer or network appliance running an OS and applications software.
+			Can be allocated with a number of CPUs, RAM, local storage and Network Links
+			Can be managed just like a normal computer by connecting it via RDP or SSH.
+	
+	- Containers are a lightweight computing instance designed to run a single applicaton service or a single workload task.
+	  Containers don't have emulated hardware componenets, but they do still use compute resources and can connect to 
+	  storage devices and networks.
+
+A VM could be an instance of a general server running Windows or Linux.
+It is also possible to provision virtual applainces.
+
+With virtual appliances, the vendor either develops a software product that emulates the functions of an existing
+dedicated hardware appliance (router, firewall, load balancer, or malware intrusion/detection) or creates software
+that implements that kind of functionality in a new product.
+
+These virtual applainces might be developed against a standard architecture, such as ETSI's
+
+	Network Functions Virtualization (NFV)
+
+	- Virtual Network Function (VNF): Specifies and deploys instances of each virtual appliance. VNFs are designed to
+									  run as VMs on standard CPU platforms
+
+	- NFV Infrastructure: Controls the allocation of compute (CPU and memory) plus storage and networking 
+						  resources to each VNF
+
+	- Management and orchestration (MANO): Positions VNFs within workflows to perform the forwarding and filtering
+										   tasks they are designed for.
+
+The advantage of using NFV architecture is that it makes the configuration and operation of the appliance more open to
+automation and orchestration via scripting.
+
+# Virtual Private Clouds (VPCs)
+
+Within the Cloud Service Provider (CSP) establishes a virtualization layer that abstracts the underlying physical
+network of the datacenter hosting the cloud. This allows the CSP to operate a public cloude where the networking
+performed by each tenant account is isolated from the others. 
+
+In terms of tenant-configured cloud networking, there are various contexts:
+
+	- Networks by which the tenant operates and manages the cloud systems
+	- Virtual Networks established to connect VM and container instances within the cloud
+	- Virtual networks by which cloud servies are published to guests or customers on the internet
+
+Virtual Private Clouds are isolated from other CSP accounts and from other VPCs operating in the same account.
+
+Meaning that tenant A cannot view traffic passing over tenant B's VPC
+The instances assigned to each VPC are isolated form other VPCs. Any communications between them must be created by configuring routing.
+
+Within each VPC the cloud consumer can assign an IPv4 CIDR and configure one or more subnets within that block.
+	* IPv6 CIDR can be assigned also.
+
+# Cloud gateways
+
+As with on-premises networking, a gateway refers to the route that instances within a VPNC subnet use to establish communications 
+with other subnets in the same VPN, subnets in other VPCs or over the internet.
+
+Subnets within a VPC can either be private or public
+
+To configure a public subnet:
+
+	1. An internet gateway (virtual router) must be attached to the VPC configuration
+	2. The internet gateway must be configured as the default route for each public subnet
+	   if a default route is not configured, the subnet remains private, even if an Internet gateway is attached to the VPC
+
+Each instance in the subnet must also be configured with a public IP in its cloud profile.
+
+The internet gateway performs 1:1 NAT to route Internet communications to and from the instance.
+
+	i) The instance network interface is not configured with its public IP addres.
+	   The instance's network interface is configured with an IP address for the subnet.
+	   The public address is used by the virtualization management layer only.
+	   Public IP addresses can be assigned from your own pool or from a CSP-managed service, such as Amazon's Elastic IP
+
+There are other ways to provision external connectivity for a subnet if its not appropriate to make it public
+
+	- NAT gateway: Allows an instance to connect out to the internet or to other AWS services but does not allow connections
+				   initiated from the internet.
+
+	- VPN: Either usign VPN at the software layer or using CSP-managed features.
+
+	i) Note that both an internet gateway and a NAT gateway use NAT, but in different ways.
+
+	   An internet gateway is a two-way gateway and requires the VM to be associated with a public IP address instance. A NAT
+	   gateway is a one-way (outbound only) gateway and does not require the VM to be associated with a public IP.
+
+# Cloud Connectivity Options
+
+Cloud connectivity is the mechanism by which clients connect to whatever infrastructure, platform or software that the tenant
+has configured in the cloud.
+
+	- Internet/VPN:	Means configuring a PVN gateway for the VPC. Customers can establish a connection to this VPN gateway using
+					client-to-site or site-to-site models. However, any connection running over the public internet can suffer
+					from poor performance due to latency and bandwidth throttling, so this would not normally be a solution
+					for a mission-critical or high-volume application.
+					
+	- Direct Connect/Colocation:	The CSP will provide a physical connection from the customer's network to the datacenter.
+									Preferred for organizations which have a more centralized operation where the connection to the cloud can be from
+									the main HQ and the comapn'ys own enterprise network is used to allow branch locations access.
+
+	- Transit Gateways:	Used to configure connectivity between VPCs.
+						It is essentially a virtual router that handles routing between VPCs from different subnets.
+
+# Cloud Firewall Security
+
+Firewall filtering decisions can be made based on packet headers and payload contents at various layers,
+identified in terms of the OSI model:
+
+	- Layer 3:	The firewall accepts or denies connections on the basis of IP addresses or address ranges and TCP/UDP port numbers.
+				Ports are actually in layer 4 headers, but this functionality is still always described as basic layer 3
+				packet filtering.
+
+	- Layer 4: 	Used to allow established or related traffic. Because the firewall must maintain a state table of active connections,
+				this requires more processing power (CPU and Memory). 
+
+	- Layer 7:	Firewall can parse application protocol headers and paylaods (such as HTTP packets) and make filtering decisions
+				based on their contents. Requires even processing capacity (or load balancing), or the firewall will become a 
+				bottleneck and increase network latency.
+
+Cloud firewalls can be implemented in several ways to suit different purposes:
+
+	- Software running on an instance (software):	Like the ones found on an on-premises host. It can be a stateful packet filtering firewall.
+										Or a WAF with a ruleset tuned to preventing malicious attacks.
+										Drawback is that the software consumes instance resources and so is not very efficient.
+																			
+	
+	- Service at the virtualization layer (service) to filter traffic between VPC subnets and instances. Equals to an on-premises 
+	  network firewall. Sits atthe subnet/instance boundary.
+
+Default cloud application-aware firewalls incur transaction costs, typically calculated on time deployed and traffic volume.
+These costs might be a reason to choose a third-party solution instead of the CSP's firewall service.
+
+# Security Groups and Security Lists
+
+Security groups provide stateful inbound and outbund filtering at layer 4.
+
+The stateful filtering property means that it will allow established and related traffic if a new conneciton
+has been accepted.
+
+> Oracle Cloud Infrastructure (OCI)
+	- Security Lists: it is a set of rules that applies to an entire subnet
+
+	- Security Groups: it is similar to AWS concept, as it can be applied to selected network interfaces
+
+> Microsoft Azure
+	- Security Groups can be applied to network interfaces or subnets.
